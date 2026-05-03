@@ -17,7 +17,14 @@
 	});
 </script>
 
+<svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <ModeWatcher defaultMode="dark" />
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<nav class="mx-auto flex max-w-xl items-center justify-center">
+	<ul class="flex items-center gap-4">
+		<li><a href="/">Home</a></li>
+		<li><a href="/dot-matrix">Dot Matrix</a></li>
+	</ul>
+</nav>
+
 {@render children()}

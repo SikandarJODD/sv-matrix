@@ -1,3 +1,4 @@
+/* Foundation */
 .dmx-root {
   display: inline-flex;
   align-items: center;
@@ -29,6 +30,7 @@
   will-change: opacity;
 }
 
+/* Bloom, halo, muted, inactive */
 .dmx-bloom .dmx-dot {
   filter:
     drop-shadow(0 0 calc(var(--dmx-dot-size, 3px) * 0.75 * var(--dmx-bloom-level, 0)) currentColor)
@@ -63,6 +65,7 @@
   filter: none;
 }
 
+/* Phase 1 public animation classes */
 .dmx-ripple {
   animation: dmx-ripple calc(var(--dmx-cycle) * var(--dmx-speed, 1)) cubic-bezier(0.42, 0, 0.58, 1)
     infinite;
@@ -338,6 +341,7 @@
   }
 }
 
+/* Parked preset classes for later public expansion */
 .dmx-square9-bit {
   animation-duration: calc(5200ms * var(--dmx-speed, 1));
   animation-timing-function: steps(52, end);
