@@ -4,6 +4,7 @@
 
 <div class="flex h-[90vh] items-center justify-center">
 	<div class="flex flex-col items-center gap-4">
-		<SquareTwo aria-label="Square two loader" boxSize={72} />
+		<!-- <SquareTwo  /> -->
+		<SquareTwo dotSize={4} cellPadding={1} boxSize={50} />
 	</div>
 </div>
