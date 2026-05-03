@@ -30,6 +30,8 @@ export interface DotMatrixOptions {
 export type DotMatrixProps = WithoutChildren<WithElementRef<HTMLAttributes<HTMLDivElement>>> &
 	DotMatrixOptions;
 
+export type DotMatrixCommonProps = Omit<DotMatrixProps, "animation">;
+
 export interface DotAnimationContext {
 	index: number;
 	row: number;
