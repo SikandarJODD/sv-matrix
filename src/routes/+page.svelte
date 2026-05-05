@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SquareTwo from '$lib/components/loaders/square/square-two.svelte';
+	import SquareTwo from '$lib/components/loaders/square/square-2.svelte';
 </script>
 
 <div class="flex h-[90vh] items-center justify-center">
