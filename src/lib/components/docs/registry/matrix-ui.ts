@@ -1,3 +1,5 @@
+import * as square_data from '$lib/components/loaders/square/data';
+
 export type BadgeType = 'New' | 'Updated' | 'Beta';
 
 export type MatrixCategory = 'docs' | 'squares' | 'triangles' | 'circles' | 'hexagons';
@@ -48,64 +50,16 @@ export const docs: MatrixNavigationItem[] = [
 	}
 ];
 
-export const components: MatrixComponent[] = [
-	{
-		id: 'square-1',
-		name: 'Square 1',
-		href: '/components/square-1',
-		desc: 'The first square component example.',
-		category: 'squares'
-	},
-	{
-		id: 'square-2',
-		name: 'Square 2',
-		href: '/components/square-2',
-		desc: 'A second square variation for the docs.',
-		category: 'squares'
-	},
-	{
-		id: 'triangle-1',
-		name: 'Triangle 1',
-		href: '/components/triangle-1',
-		desc: 'The first triangle component example.',
-		category: 'triangles'
-	},
-	{
-		id: 'triangle-2',
-		name: 'Triangle 2',
-		href: '/components/triangle-2',
-		desc: 'A second triangle variation for the docs.',
-		category: 'triangles'
-	},
-	{
-		id: 'circle-1',
-		name: 'Circle 1',
-		href: '/components/circle-1',
-		desc: 'The first circle component example.',
-		category: 'circles'
-	},
-	{
-		id: 'circle-2',
-		name: 'Circle 2',
-		href: '/components/circle-2',
-		desc: 'A second circle variation for the docs.',
-		category: 'circles'
-	},
-	{
-		id: 'hexagon-1',
-		name: 'Hexagon 1',
-		href: '/components/hexagon-1',
-		desc: 'The first hexagon component example.',
-		category: 'hexagons'
-	},
-	{
-		id: 'hexagon-2',
-		name: 'Hexagon 2',
-		href: '/components/hexagon-2',
-		desc: 'A second hexagon variation for the docs.',
-		category: 'hexagons'
-	}
-];
+let squareData: MatrixComponent[] = square_data.data.map((item) => ({
+	id: item.id,
+	name: item.name,
+	href: `/components/squares/${item.id}`,
+	desc: item.desc ?? '',
+	category: 'squares' as MatrixComponentCategory
+}));
+
+
+export const components: MatrixComponent[] = [...squareData];
 
 export const componentCategoryOrder: MatrixComponentCategory[] = [
 	'squares',

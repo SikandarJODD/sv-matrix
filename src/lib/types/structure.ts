@@ -34,6 +34,15 @@ export type InstallComponentDocs = {
 	packages?: string[];
 };
 
+// squares, circles, triangles etc
+export type ComponentDataItem = {
+	id: string;
+	name: string;
+	fileName: string;
+	fileCode: string;
+	desc?: string;
+};
+
 export type ComponentDoc = ComponentMeta & {
 	preview?: Component;
 	previewCode?: CodeBlock | CodeBlock[];

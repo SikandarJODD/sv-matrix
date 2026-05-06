@@ -18,6 +18,7 @@
 	}
 
 	const groups: MatrixSearchGroup[] = searchNavigationGroups;
+	$inspect(groups, 'Groups');
 
 	function isDocsItem(item: MatrixNavigationItem) {
 		return item.category === 'docs';
