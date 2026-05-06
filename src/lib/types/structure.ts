@@ -49,6 +49,7 @@ export type ComponentDoc = ComponentMeta & {
 	previewClass?: string;
 	installBlock?: InstallComponentDocs;
 	examples?: Example[];
+	useCases?: Example[];
 	seo: SEO;
 	props?: PropsTable[];
 	folderStructure?: string;

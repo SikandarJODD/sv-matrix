@@ -7,7 +7,9 @@
 		ref = $bindable(null),
 		class: className,
 		...restProps
-	}: AvatarPrimitive.RootProps = $props();
+	}: AvatarPrimitive.RootProps & {
+		size?: 'default' | 'sm' | 'lg';
+	} = $props();
 </script>
 
 <Root

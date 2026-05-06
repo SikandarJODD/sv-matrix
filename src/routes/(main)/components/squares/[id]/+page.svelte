@@ -28,5 +28,6 @@
 	installFolderStructure={squarePage.installFolderStructure}
 	installTailwindCode={squarePage.installTailwindCode}
 	examples={squarePage.examples}
+	useCases={squarePage.useCases}
 	propsTables={squarePage.propsTables}
 />

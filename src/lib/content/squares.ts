@@ -18,17 +18,24 @@ export type SquarePageData = {
 	installFolderStructure?: string;
 	installTailwindCode?: CodeBlock;
 	examples?: Example[];
+	useCases?: Example[];
 	propsTables?: PropsTable[];
 };
 
-const squareComponents = import.meta.glob<Component>('../components/loaders/square/square-*.svelte', {
-	eager: true,
-	import: 'default'
-});
+const squareComponents = import.meta.glob<Component>(
+	'../components/loaders/square/square-*.svelte',
+	{
+		eager: true,
+		import: 'default'
+	}
+);
 
 const componentById = new Map(
 	Object.entries(squareComponents).map(([filePath, component]) => [
-		filePath.split('/').pop()?.replace(/\.svelte$/i, '') ?? filePath,
+		filePath
+			.split('/')
+			.pop()
+			?.replace(/\.svelte$/i, '') ?? filePath,
 		component
 	])
 );
@@ -108,6 +115,7 @@ export function getSquarePageData(id: string): SquarePageData | null {
 			richDoc.installBlock?.folderStructure ?? defaultPage.installFolderStructure,
 		installTailwindCode: richDoc.installBlock?.tailwind ?? defaultPage.installTailwindCode,
 		examples: richDoc.examples,
+		useCases: richDoc.useCases,
 		propsTables: richDoc.props
 	};
 }

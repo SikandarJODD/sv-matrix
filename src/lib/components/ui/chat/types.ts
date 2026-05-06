@@ -1,4 +1,5 @@
 import type { WithChildren, WithoutChildren } from 'bits-ui';
+import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
 
 export type ChatListPropsWithoutHTML = WithChildren<{
@@ -19,6 +20,7 @@ export type ChatBubbleProps = ChatBubblePropsWithoutHTML &
 export type ChatBubbleMessagePropsWithoutHTML = WithChildren<{
 	ref?: HTMLDivElement | null;
 	typing?: boolean;
+	typingIndicator?: Snippet;
 }>;
 
 export type ChatBubbleMessageProps = ChatBubbleMessagePropsWithoutHTML &
