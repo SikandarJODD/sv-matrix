@@ -8,7 +8,7 @@ export type ComponentBadge = 'new' | 'beta' | 'updated' | 'deprecated';
 export type ComponentMeta = {
 	id: string;
 	title: string;
-	description: string;
+	description?: string;
 	category?: string;
 	badge?: ComponentBadge;
 };
@@ -34,12 +34,22 @@ export type InstallComponentDocs = {
 	packages?: string[];
 };
 
+// squares, circles, triangles etc
+export type ComponentDataItem = {
+	id: string;
+	name: string;
+	fileName: string;
+	fileCode: string;
+	desc?: string;
+};
+
 export type ComponentDoc = ComponentMeta & {
 	preview?: Component;
 	previewCode?: CodeBlock | CodeBlock[];
 	previewClass?: string;
 	installBlock?: InstallComponentDocs;
 	examples?: Example[];
+	useCases?: Example[];
 	seo: SEO;
 	props?: PropsTable[];
 	folderStructure?: string;

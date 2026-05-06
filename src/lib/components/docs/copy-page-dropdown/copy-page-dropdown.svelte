@@ -32,7 +32,6 @@
 
 <ButtonGroup.Root class={className}>
 	<CopyMarkdown {llmsTxtUrl} />
-	<ButtonGroup.Separator />
 	<OpenIn {query}>
 		<DropdownMenu.Trigger>
 			{#snippet child({ props })}

@@ -24,7 +24,7 @@
 		DotMatrixPhase,
 	} from "./types.js";
 
-	import "./dot-matrix.css";
+	import "$lib/styles/dot-matrix.css";
 
 	interface DotMatrixBaseProps extends DotMatrixCommonProps {
 		phase?: DotMatrixPhase;

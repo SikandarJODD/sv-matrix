@@ -3,10 +3,10 @@
 	import * as Command from '$lib/components/ui/command/index.js';
 	import * as Kbd from '$lib/components/ui/kbd/index.js';
 	import {
-		searchNavigationGroups,
-		type MatrixNavigationItem,
-		type MatrixSearchGroup
-	} from '../registry/matrix-ui';
+		navigationSections,
+		type MatrixNavItem,
+		type MatrixNavSection
+	} from '$lib/content/matrix-navigation';
 
 	let open = $state(false);
 
@@ -17,10 +17,10 @@
 		}
 	}
 
-	const groups: MatrixSearchGroup[] = searchNavigationGroups;
+	const groups: MatrixNavSection[] = navigationSections;
 
-	function isDocsItem(item: MatrixNavigationItem) {
-		return item.category === 'docs';
+	function isDocsItem(item: MatrixNavItem) {
+		return item.kind === 'doc';
 	}
 </script>
 
@@ -74,10 +74,14 @@
 	<Command.Input placeholder="Search components, documentation..." />
 	<Command.List>
 		<Command.Empty>No results found.</Command.Empty>
-		{#each groups as group (group.category)}
-			<Command.Group heading={group.heading}>
+		{#each groups as group (group.id)}
+			<Command.Group heading={group.title}>
 				{#each group.items as item (item.id)}
-					<Command.LinkItem value={item.id} onclick={() => (open = false)} href={item.href}>
+					<Command.LinkItem
+						value={`${item.title} ${item.description ?? ''}`}
+						onclick={() => (open = false)}
+						href={item.href}
+					>
 						{#if isDocsItem(item)}
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +135,7 @@
 								></circle>
 							</svg>
 						{/if}
-						{item.name}
+						{item.title}
 					</Command.LinkItem>
 				{/each}
 			</Command.Group>

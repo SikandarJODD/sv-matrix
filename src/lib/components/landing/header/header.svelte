@@ -7,6 +7,7 @@
 	import DesktopNav from './desktop-nav.svelte';
 	import MobileNav from './mobile-nav.svelte';
 	import { getStars, GitHubButton } from '$lib/components/ui/github-button';
+	import { page } from '$app/state';
 
 	let scroll = createScroll(50);
 	let stars = $state(10);
@@ -14,16 +15,19 @@
 	// onMount(async () => {
 	// 	stars = await getStars({ ...repo, fallback: 0 });
 	// });
+	let isMainRoute = $derived(page.url.href === page.url.origin + '/');
+	$inspect(isMainRoute, page.url.href, page.url.origin);
 </script>
 
 <header
 	class={cn(
 		'sticky top-0 z-50 w-full border-b border-transparent',
 		scroll.scrolled &&
-			'border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50'
+			'border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50',
+		!isMainRoute && 'border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50'
 	)}
 >
-	<nav class="mx-auto flex h-12 w-full max-w-5xl items-center justify-between px-4 md:px-0">
+	<nav class="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4 md:px-0">
 		<div class="flex w-full items-center gap-5">
 			<a class="rotate-120 fill-black/90 dark:fill-white/80" href="/">
 				<!-- <Logo class="h-4" /> -->

@@ -1,8 +1,9 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn-svelte/tailwind.css";
-@import "@fontsource-variable/figtree";
-@import "@fontsource-variable/jetbrains-mono";
+@import 'tw-animate-css';
+@import 'shadcn-svelte/tailwind.css';
+@import '@fontsource-variable/figtree';
+@import '@fontsource-variable/jetbrains-mono';
+@source '$lib/styles/dot-matrix.css';
 
 @font-face {
 	font-family: 'GeistPixel';
@@ -87,6 +88,9 @@
 	--sidebar-accent-foreground: oklch(0.205 0 0);
 	--sidebar-border: oklch(0.922 0 0);
 	--sidebar-ring: oklch(0.708 0 0);
+
+	/* Dot Matrix Colors & Animations */
+	--dotmatrix-accent: 220 90% 60%;
 }
 
 .dark {
@@ -121,6 +125,9 @@
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
+
+	/* Dot Matrix Colors & Animations */
+	--dotmatrix-accent: 40 90% 40%;
 }
 
 @theme inline {
@@ -171,6 +178,9 @@
 	--radius-2xl: calc(var(--radius) * 1.8);
 	--radius-3xl: calc(var(--radius) * 2.2);
 	--radius-4xl: calc(var(--radius) * 2.6);
+
+	/* Dot Matrix Colors & Animations */
+	--color-dotmatrix: hsl(var(--dotmatrix-color, var(--dotmatrix-accent)));
 }
 
 @layer base {
@@ -182,5 +192,6 @@
 	}
 	html {
 		@apply font-sans;
+		scroll-behavior: smooth;
 	}
 }

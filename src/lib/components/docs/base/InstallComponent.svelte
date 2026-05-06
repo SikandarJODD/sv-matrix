@@ -44,22 +44,22 @@
 
 <div class={cn("w-full", className)}>
 	<Tabs.Root bind:value={activeTab}>
-		<Tabs.List class="text-foreground h-auto gap-2 rounded-none bg-transparent px-0 py-1">
+		<Tabs.List class="text-foreground h-auto gap-0 rounded-none bg-transparent px-0 py-1">
 			<Tabs.Trigger
 				value="cli"
-				class="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative border-none bg-transparent! px-4 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
+				class="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative border-none bg-transparent! px-3 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
 			>
 				CLI
 			</Tabs.Trigger>
 			<Tabs.Trigger
 				value="manual"
-				class="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative border-none bg-transparent! px-4 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
+				class="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative border-none bg-transparent! px-3 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
 			>
 				Manual
 			</Tabs.Trigger>
 		</Tabs.List>
 
-		<Tabs.Content value="cli" class="mt-4">
+		<Tabs.Content value="cli" class="mt-0">
 			<PMCommand command="execute" args={["shadcn-svelte@latest", "add", installUrl]} />
 		</Tabs.Content>
 
