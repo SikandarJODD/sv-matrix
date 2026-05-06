@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
+	import DocsSearchNavigation from '$lib/components/docs/navigation/DocsSearchNavigation.svelte';
 	import { createScroll } from '$lib/hooks/use-scroll.svelte';
 	import { cn } from '$lib/utils';
 	import { onMount } from 'svelte';
@@ -38,6 +39,7 @@
 			<DesktopNav />
 		</div>
 		<div class="hidden items-center gap-2 md:flex">
+			<DocsSearchNavigation />
 			<Button
 				href="https://x.com/Sikandar_Bhide"
 				target="_blank"
@@ -47,7 +49,7 @@
 			>
 				<svg fill="none" viewBox="0 0 1200 1227"
 					><path
-						fill='currentColor'
+						fill="currentColor"
 						d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
 					/></svg
 				>
