@@ -1,0 +1,175 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry.json",
+	"name": "Svelte Dot Matrix Loaders",
+	"homepage": "https://sv-matrix.vercel.app",
+	"items": [
+		{
+			"name": "square-1",
+			"title": "Square One Loader",
+			"description": "A simple square dot matrix loader.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-1.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-1.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-2",
+			"title": "Square 2 Loader",
+			"description": "A row-cycle square dot matrix loader with a stepped trail animation.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-2.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-2.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-3",
+			"title": "Square 3 Loader",
+			"description": "Square 3 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-3.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-3.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-4",
+			"title": "Square 4 Loader",
+			"description": "Square 4 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-4.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-4.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-5",
+			"title": "Square 5 Loader",
+			"description": "Square 5 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-5.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-5.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-6",
+			"title": "Square 6 Loader",
+			"description": "Square 6 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-6.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-6.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-7",
+			"title": "Square 7 Loader",
+			"description": "Square 7 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-7.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-7.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-8",
+			"title": "Square 8 Loader",
+			"description": "Square 8 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-8.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-8.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-9",
+			"title": "Square 9 Loader",
+			"description": "Square 9 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-9.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-9.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-10",
+			"title": "Square 10 Loader",
+			"description": "Square 10 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-10.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-10.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-11",
+			"title": "Square 11 Loader",
+			"description": "Square 11 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-11.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-11.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-12",
+			"title": "Square 12 Loader",
+			"description": "Square 12 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-12.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-12.svelte"
+				}
+			]
+		}
+	]
+}

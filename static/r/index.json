@@ -1,0 +1,18 @@
+[
+	{
+		"name": "square-1",
+		"title": "Square One Loader",
+		"type": "registry:block",
+		"description": "A simple square dot matrix loader.",
+		"registryDependencies": [],
+		"relativeUrl": "square-1.json"
+	},
+	{
+		"name": "square-2",
+		"title": "Square 2 Loader",
+		"type": "registry:block",
+		"description": "A row-cycle square dot matrix loader with a stepped trail animation.",
+		"registryDependencies": [],
+		"relativeUrl": "square-2.json"
+	}
+]

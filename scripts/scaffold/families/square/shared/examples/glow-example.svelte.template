@@ -1,0 +1,5 @@
+<script lang="ts">
+	import {{COMPONENT_IMPORT_NAME}} from '{{COMPONENT_IMPORT_PATH}}';
+</script>
+
+<{{COMPONENT_IMPORT_NAME}} size={32} dotSize={4} speed={1.2} bloom />
