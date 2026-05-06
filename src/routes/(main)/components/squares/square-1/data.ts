@@ -25,6 +25,7 @@ import ServerActionExample from './use-cases/server-action-example.svelte';
 import ServerActionExampleRaw from './use-cases/server-action-example.svelte?raw';
 import PaymentProcessingExample from './use-cases/payment-processing-example.svelte';
 import PaymentProcessingExampleRaw from './use-cases/payment-processing-example.svelte?raw';
+import Square1Raw from '$lib/components/loaders/square/square-1.svelte?raw';
 
 export const meta: ComponentMeta = {
 	id: 'square-1',
@@ -153,7 +154,14 @@ let useCases: Example[] = [
 ];
 
 const installBlock: InstallComponentDocs = {
-	installCode: [],
+	installCode: [
+		{
+			filename: 'square-1.svelte',
+			filecode: Square1Raw,
+			lang: 'svelte',
+			isExpand: true,
+		}
+	],
 	folderStructure: `src/
 	└── lib/
 		└── components/

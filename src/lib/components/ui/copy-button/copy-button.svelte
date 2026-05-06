@@ -37,6 +37,7 @@
 		onCopy,
 		class: className,
 		tabindex = -1,
+		onclick,
 		children,
 		...rest
 	}: CopyButtonProps = $props();
@@ -47,7 +48,8 @@
 		size = 'default';
 	}
 
-	const clipboard = new UseClipboard();
+	let clipboard = new UseClipboard();
+	$inspect(clipboard.status, 'Status');
 </script>
 
 <Button
@@ -58,12 +60,12 @@
 	class={cn('flex items-center gap-2', className)}
 	type="button"
 	name="copy"
-	onclick={async () => {
-		const status = await clipboard.copy(text);
-
+	onclick={async (e: Event) => {
+		let status = await clipboard.copy(text);
 		onCopy?.(status);
+		onclick?.(e as never);
 	}}
-	{...rest as /* eslint-disable-line @typescript-eslint/no-explicit-any */ any}
+	{...rest as any}
 >
 	{#if clipboard.status === 'success'}
 		<div in:scale={{ duration: animationDuration, start: 0.85 }}>

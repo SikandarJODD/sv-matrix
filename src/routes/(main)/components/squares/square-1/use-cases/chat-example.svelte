@@ -84,7 +84,7 @@
 				}
 			];
 			isReplying = false;
-		}, 1400);
+		}, 2400);
 	}
 
 	function handleSubmit(event: SubmitEvent) {
