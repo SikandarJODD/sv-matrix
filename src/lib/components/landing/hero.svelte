@@ -12,16 +12,16 @@
 		></div>
 	</div>
 
-	<div class="relative z-10 flex max-w-2xl flex-col gap-5 px-4">
+	<div class="relative z-10 flex max-w-3xl flex-col gap-5 px-4">
 		<a
-			class="group flex w-fit animate-in items-center gap-3 rounded-sm border bg-card p-1 shadow-xs transition-all delay-500 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
+			class="group flex w-fit animate-in items-center gap-3 rounded-full border bg-card p-1 shadow-xs transition-all delay-0 delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 			href="/"
 		>
-			<div class="rounded-xs border bg-card px-1.5 py-0.5 shadow-sm">
-				<p class="font-mono text-xs">NOW</p>
+			<div class="rounded-full border bg-card px-1.5 py-0.5 shadow-sm">
+				<p class="font-mono text-xs lowercase">new</p>
 			</div>
 
-			<span class="text-xs">accepting new client projects</span>
+			<span class="text-xs">Checkout New Loaders</span>
 			<span class="block h-5 border-l"></span>
 
 			<div class="pr-1">
@@ -32,27 +32,21 @@
 		</a>
 
 		<h1
-			class="animate-in text-4xl leading-tight font-medium text-balance text-foreground delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in md:text-5xl"
+			class="animate-in font-geist-pixel-circle text-4xl leading-tight font-medium text-balance text-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in md:text-6xl"
 		>
-			Building Digital Experiences That Drive Growth
+			Svelte Dot Matrix
 		</h1>
 
 		<p
-			class="animate-in text-sm tracking-wider text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in sm:text-lg md:text-xl"
+			class="animate-in text-sm tracking-wider text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in sm:text-lg md:text-2xl font-geist-pixel-circle"
 		>
-			We help brands scale faster through design, development
-			<br />
-			and strategic execution.
+			55+ free and open-source loaders, <br /> Built with Svelte, TypeScript, Tailwind CSS
 		</p>
 
 		<div
 			class="flex w-fit animate-in items-center justify-center gap-3 pt-2 delay-300 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 		>
-			<Button href="/" variant="outline">
-				<PhoneCall class="size-4" />
-				Book a Call
-			</Button>
-			<Button href="/">
+			<Button href="/" size="lg">
 				Get started
 				<ArrowRight class="size-4" />
 			</Button>

@@ -7,7 +7,7 @@
 	<ul class="flex items-center gap-px">
 		{#each navs as nav}
 			<li>
-				<Button variant="ghost" class='md:px-6' href={nav.href}>
+				<Button variant="ghost" class='md:px-4' href={nav.href}>
 					{nav.name}
 				</Button>
 			</li>
