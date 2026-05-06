@@ -8,7 +8,7 @@ export type ComponentBadge = 'new' | 'beta' | 'updated' | 'deprecated';
 export type ComponentMeta = {
 	id: string;
 	title: string;
-	description: string;
+	description?: string;
 	category?: string;
 	badge?: ComponentBadge;
 };

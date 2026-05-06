@@ -8,7 +8,7 @@
 	export type ComponentDocPageProps = {
 		id: string;
 		title: string;
-		description: string;
+		description?: string;
 		seo: SEO;
 		preview?: Component;
 		previewCode?: CodeBlock | CodeBlock[];
