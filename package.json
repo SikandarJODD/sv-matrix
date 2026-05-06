@@ -39,6 +39,7 @@
 	"dependencies": {
 		"@fontsource-variable/jetbrains-mono": "^5.2.8",
 		"mode-watcher": "^1.1.0",
+		"package-manager-detector": "^1.6.0",
 		"runed": "^0.37.1"
 	}
 }

@@ -14,6 +14,9 @@ importers:
       mode-watcher:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.55.5)
+      package-manager-detector:
+        specifier: ^1.6.0
+        version: 1.6.0
       runed:
         specifier: ^0.37.1
         version: 0.37.1(@sveltejs/kit@2.59.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.5)(vite@8.0.10(jiti@2.6.1)))(svelte@5.55.5)(typescript@6.0.3)(vite@8.0.10(jiti@2.6.1)))(svelte@5.55.5)
@@ -591,6 +594,9 @@ packages:
 
   obug@2.1.1:
     resolution: {integrity: sha512-uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ==}
+
+  package-manager-detector@1.6.0:
+    resolution: {integrity: sha512-61A5ThoTiDG/C8s8UMZwSorAGwMJ0ERVGj2OjoW5pAalsNOg15+iQiPzrLJ4jhZ1HJzmC2PIHT2oEiH3R5fzNA==}
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -1236,6 +1242,8 @@ snapshots:
   node-fetch-native@1.6.7: {}
 
   obug@2.1.1: {}
+
+  package-manager-detector@1.6.0: {}
 
   picocolors@1.1.1: {}
 
