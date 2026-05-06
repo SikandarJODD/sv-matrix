@@ -14,5 +14,133 @@
 		"description": "A row-cycle square dot matrix loader with a stepped trail animation.",
 		"registryDependencies": [],
 		"relativeUrl": "square-2.json"
+	},
+	{
+		"name": "square-3",
+		"title": "Square 3 Loader",
+		"type": "registry:block",
+		"description": "Square 3 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-3.json"
+	},
+	{
+		"name": "square-4",
+		"title": "Square 4 Loader",
+		"type": "registry:block",
+		"description": "Square 4 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-4.json"
+	},
+	{
+		"name": "square-5",
+		"title": "Square 5 Loader",
+		"type": "registry:block",
+		"description": "Square 5 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-5.json"
+	},
+	{
+		"name": "square-6",
+		"title": "Square 6 Loader",
+		"type": "registry:block",
+		"description": "Square 6 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-6.json"
+	},
+	{
+		"name": "square-7",
+		"title": "Square 7 Loader",
+		"type": "registry:block",
+		"description": "Square 7 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-7.json"
+	},
+	{
+		"name": "square-8",
+		"title": "Square 8 Loader",
+		"type": "registry:block",
+		"description": "Square 8 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-8.json"
+	},
+	{
+		"name": "square-9",
+		"title": "Square 9 Loader",
+		"type": "registry:block",
+		"description": "Square 9 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-9.json"
+	},
+	{
+		"name": "square-10",
+		"title": "Square 10 Loader",
+		"type": "registry:block",
+		"description": "Square 10 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-10.json"
+	},
+	{
+		"name": "square-11",
+		"title": "Square 11 Loader",
+		"type": "registry:block",
+		"description": "Square 11 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-11.json"
+	},
+	{
+		"name": "square-12",
+		"title": "Square 12 Loader",
+		"type": "registry:block",
+		"description": "Square 12 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-12.json"
+	},
+	{
+		"name": "square-13",
+		"title": "Square 13 Loader",
+		"type": "registry:block",
+		"description": "Square 13 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-13.json"
+	},
+	{
+		"name": "square-14",
+		"title": "Square 14 Loader",
+		"type": "registry:block",
+		"description": "Square 14 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-14.json"
+	},
+	{
+		"name": "square-15",
+		"title": "Square 15 Loader",
+		"type": "registry:block",
+		"description": "Square 15 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-15.json"
+	},
+	{
+		"name": "square-16",
+		"title": "Square 16 Loader",
+		"type": "registry:block",
+		"description": "Square 16 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-16.json"
+	},
+	{
+		"name": "square-17",
+		"title": "Square 17 Loader",
+		"type": "registry:block",
+		"description": "Square 17 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-17.json"
+	},
+	{
+		"name": "square-18",
+		"title": "Square 18 Loader",
+		"type": "registry:block",
+		"description": "Square 18 square loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "square-18.json"
 	}
 ]
