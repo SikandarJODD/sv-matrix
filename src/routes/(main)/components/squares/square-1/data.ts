@@ -1,4 +1,9 @@
-import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from '$lib/types/structure';
+import type {
+	ComponentDoc,
+	ComponentMeta,
+	InstallComponentDocs,
+	PropsTable
+} from '$lib/types/structure';
 import type { SEO } from '$lib/types/seo';
 import Preview from './examples/preview.svelte';
 import PreviewCode from './examples/preview.svelte?raw';
@@ -25,6 +30,7 @@ import ServerActionExample from './use-cases/server-action-example.svelte';
 import ServerActionExampleRaw from './use-cases/server-action-example.svelte?raw';
 import PaymentProcessingExample from './use-cases/payment-processing-example.svelte';
 import PaymentProcessingExampleRaw from './use-cases/payment-processing-example.svelte?raw';
+import Square1Raw from '$lib/components/loaders/square/square-1.svelte?raw';
 
 export const meta: ComponentMeta = {
 	id: 'square-1',
@@ -152,8 +158,120 @@ let useCases: Example[] = [
 	}
 ];
 
+const props: PropsTable[] = [
+	{
+		name: 'SquareOneProps',
+		desc: 'Primary loader props. Defaults shown here are the effective defaults applied by square-1.svelte.',
+		props: [
+			{
+				name: 'size',
+				type: 'number',
+				default: '37',
+				description: 'Overall matrix span in pixels before any optional wrapper scaling.'
+			},
+			{
+				name: 'dotSize',
+				type: 'number',
+				default: '5',
+				description: 'Pixel size for each individual dot in the 5x5 matrix.'
+			},
+			{
+				name: 'speed',
+				type: 'number',
+				default: '1.1',
+				description: 'Animation speed multiplier. Values above 1 run faster.'
+			},
+			{
+				name: 'pattern',
+				type: '"diamond" | "full" | "outline" | "rose" | "cross" | "rings"',
+				default: '"full"',
+				description: 'Chooses which cells in the 5x5 matrix are active.'
+			},
+			{
+				name: 'animated',
+				type: 'boolean',
+				default: 'true',
+				description: 'Enables the default loading animation when reduced motion is not active.'
+			},
+			{
+				name: 'hoverAnimated',
+				type: 'boolean',
+				default: 'false',
+				description: 'Switches animation control to hover interactions instead of always running.'
+			},
+			{
+				name: 'color',
+				type: 'string',
+				default: '"currentColor"',
+				description: 'Sets the root CSS color used by active dots.'
+			},
+			{
+				name: 'muted',
+				type: 'boolean',
+				default: 'false',
+				description: 'Applies the muted dot-matrix visual treatment.'
+			},
+			{
+				name: 'bloom',
+				type: 'boolean',
+				default: 'false',
+				description: 'Adds glow to brighter active dots after opacity remapping.'
+			},
+			{
+				name: 'halo',
+				type: 'number',
+				default: '0',
+				description: 'Applies a uniform halo intensity from 0 to 1 across active dots.'
+			},
+			{
+				name: 'dotClass',
+				type: 'string',
+				description: 'Extra class name applied to each rendered dot.'
+			},
+			{
+				name: 'opacityBase',
+				type: 'number',
+				description: 'Overrides the low-end opacity remap target.'
+			},
+			{
+				name: 'opacityMid',
+				type: 'number',
+				description: 'Overrides the mid-point opacity remap target.'
+			},
+			{
+				name: 'opacityPeak',
+				type: 'number',
+				description: 'Overrides the peak opacity remap target before full opacity.'
+			},
+			{
+				name: 'cellPadding',
+				type: 'number',
+				description:
+					'Explicit gap between dots. When omitted, layout derives spacing from size and dotSize.'
+			},
+			{
+				name: 'boxSize',
+				type: 'number',
+				description: 'Wraps the matrix in a fixed square box and scales the matrix to fit.'
+			},
+			{
+				name: 'minSize',
+				type: 'number',
+				description: 'Minimum outer size for the rendered root or wrapper.'
+			}
+		]
+	}
+];
+
 const installBlock: InstallComponentDocs = {
-	installCode: [],
+	installCode: [
+		{
+			filename: 'square-1.svelte',
+			filecode: Square1Raw,
+			lang: 'svelte',
+			isExpand: true
+		}
+	],
 	folderStructure: `src/
 	└── lib/
 		└── components/
@@ -173,5 +291,6 @@ export const data: ComponentDoc = {
 		lang: 'svelte'
 	},
 	examples,
-	useCases
+	useCases,
+	props
 };

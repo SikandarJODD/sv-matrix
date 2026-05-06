@@ -7,8 +7,24 @@ const squareModules = import.meta.glob<string>('./square-*.svelte', {
 });
 
 const squareDescriptions: Record<string, string> = {
-	'square-1.svelte': 'The first square component example.',
-	'square-2.svelte': 'A second square variation for the docs.'
+	// square-description-map:start
+	'square-3.svelte': "Square 3 square loader component.",
+	'square-4.svelte': "Square 4 square loader component.",
+	'square-5.svelte': "Square 5 square loader component.",
+	'square-6.svelte': "Square 6 square loader component.",
+	'square-7.svelte': "Square 7 square loader component.",
+	'square-8.svelte': "Square 8 square loader component.",
+	'square-9.svelte': "Square 9 square loader component.",
+	'square-10.svelte': "Square 10 square loader component.",
+	'square-11.svelte': "Square 11 square loader component.",
+	'square-12.svelte': "Square 12 square loader component.",
+	'square-13.svelte': "Square 13 square loader component.",
+	'square-14.svelte': "Square 14 square loader component.",
+	'square-15.svelte': "Square 15 square loader component.",
+	'square-16.svelte': "Square 16 square loader component.",
+	'square-17.svelte': "Square 17 square loader component.",
+	'square-18.svelte': "Square 18 square loader component."
+// square-description-map:end
 };
 
 function getFileName(filePath: string) {
@@ -47,6 +63,5 @@ export const data: ComponentDataItem[] = Object.entries(squareModules)
 		};
 	})
 	.sort((left, right) => getSortKey(left.fileName) - getSortKey(right.fileName));
-
 
 export default data;

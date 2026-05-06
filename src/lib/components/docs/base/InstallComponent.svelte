@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { CodeBlock } from "$lib/components/ui/code/index";
+	import type { CodeBlock } from '$lib/components/ui/code/index';
 
 	export type DependencyItem = {
 		label: string;
@@ -22,45 +22,78 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils";
-	import * as Tabs from "$lib/components/ui/tabs";
-	import { PMCommand } from "$lib/components/ui/pm-command";
-	import Steps from "$lib/components/docs/markdown/Steps.svelte";
-	import Step from "$lib/components/docs/markdown/Step.svelte";
-	import SingleCode from "$lib/components/ui/code/single-file.svelte";
-
+	import { cn } from '$lib/utils';
+	import * as Tabs from '$lib/components/ui/tabs';
+	import { PMCommand } from '$lib/components/ui/pm-command';
+	import Steps from '$lib/components/docs/markdown/Steps.svelte';
+	import Step from '$lib/components/docs/markdown/Step.svelte';
+	import SingleCode from '$lib/components/ui/code/single-file.svelte';
+	import { createLayoutMotion, motion, STOP_UPDATE, MotionConfig } from 'motion-sv';
+	import { PersistedState } from 'runed';
+	import type { Agent } from 'package-manager-detector';
 	let {
 		installUrl,
 		dependencies = [],
 		tailwindConfig,
 		codeBlocks = [],
 		class: className,
-		folderStructure = "",
-		packages = [],
+		folderStructure = '',
+		packages = []
 	}: InstallComponentProps = $props();
 
-	let activeTab = $state("cli");
+	let activeTab = $state('cli');
+	let layout = createLayoutMotion();
+	let updateActiveTab = layout.update.with((tab: string) => {
+		if (tab === activeTab) return STOP_UPDATE;
+		activeTab = tab;
+	});
+
+	let agent = new PersistedState<Agent>('user-package-manager', 'pnpm');
 </script>
 
-<div class={cn("w-full", className)}>
-	<Tabs.Root bind:value={activeTab}>
-		<Tabs.List class="text-foreground h-auto gap-0 rounded-none bg-transparent px-0 py-1">
-			<Tabs.Trigger
-				value="cli"
-				class="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative border-none bg-transparent! px-3 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-			>
-				CLI
-			</Tabs.Trigger>
-			<Tabs.Trigger
-				value="manual"
-				class="hover:bg-accent hover:text-foreground data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent relative border-none bg-transparent! px-3 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
-			>
-				Manual
-			</Tabs.Trigger>
-		</Tabs.List>
+<div class={cn('w-full', className)}>
+	<Tabs.Root value={activeTab} onValueChange={updateActiveTab}>
+		<MotionConfig transition={{ type: 'tween', bounce: 0, duration: 0.8 }}>
+			<Tabs.List class="relative h-auto gap-1 rounded-none bg-transparent px-0 text-foreground">
+				<layout.div>
+					<Tabs.Trigger
+						value="cli"
+						class="relative border-none bg-transparent! px-4 py-1.5 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
+					>
+						CLI
+						{#if activeTab === 'cli'}
+							<layout.span
+								class="absolute inset-0 -z-10 rounded-md bg-primary/10"
+								layoutId="install-tab-highlight"
+								transition={{ duration: 0.2, type: 'tween' }}
+							></layout.span>
+						{/if}
+					</Tabs.Trigger>
+				</layout.div>
+				<layout.div>
+					<Tabs.Trigger
+						value="manual"
+						class="relative border-none bg-transparent! px-4 py-1.5 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
+					>
+						Manual
+						{#if activeTab === 'manual'}
+							<motion.span
+								class="absolute inset-0 -z-10 rounded-md bg-primary/10"
+								layoutId="install-tab-highlight"
+								transition={{ duration: 0.2, type: 'tween' }}
+							></motion.span>
+						{/if}
+					</Tabs.Trigger>
+				</layout.div>
+			</Tabs.List>
+		</MotionConfig>
 
 		<Tabs.Content value="cli" class="mt-0">
-			<PMCommand command="execute" args={["shadcn-svelte@latest", "add", installUrl]} />
+			<PMCommand
+				command="add"
+				args={['shadcn-svelte@latest', 'add', installUrl]}
+				bind:agent={agent.current}
+			/>
 		</Tabs.Content>
 
 		<Tabs.Content value="manual" class="mt-4" data-toc-ignore="true">
@@ -68,7 +101,7 @@
 				{#if packages.length > 0}
 					<Step title="Install dependencies">
 						<p class="mb-4">Install the required packages for this component:</p>
-						<PMCommand command="add" args={packages} />
+						<PMCommand command="add" args={packages} bind:agent={agent.current} />
 					</Step>
 				{/if}
 
@@ -94,9 +127,7 @@
 
 				{#if codeBlocks}
 					<Step title="Copy the Source Code" titleBaseClass="mb-0">
-						<p class="mb-4 text-sm">
-							Copy and paste the following code into your project:
-						</p>
+						<p class="mb-4 text-sm">Copy and paste the following code into your project:</p>
 						<div class="space-y-4">
 							{#if Array.isArray(codeBlocks)}
 								{#each codeBlocks as codeBlock}
@@ -113,8 +144,7 @@
 				{#if tailwindConfig?.code}
 					<Step title="Add Tailwind CSS">
 						<p class="mb-4">
-							Add the following to your <code
-								class="bg-muted rounded px-1.5 py-0.5 text-sm"
+							Add the following to your <code class="rounded bg-muted px-1.5 py-0.5 text-sm"
 								>routes/layout.css</code
 							> file:
 						</p>
@@ -127,12 +157,12 @@
 				{#if folderStructure}
 					<!-- <H3 id="folder-structure">Folder Structure</H3> -->
 					<Step title="Folder Structure">
-						<SingleCode code={{
-
-								filename: "Folder Structure",
+						<SingleCode
+							code={{
+								filename: 'Folder Structure',
 								filecode: folderStructure,
-								lang: "bash",
-								hideLines: true,
+								lang: 'bash',
+								hideLines: true
 							}}
 						/>
 					</Step>

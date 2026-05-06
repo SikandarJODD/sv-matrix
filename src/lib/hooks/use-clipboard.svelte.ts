@@ -14,9 +14,9 @@ type Options = {
  * </script>
  *
  * <button onclick={() => clipboard.copy('Hello, World!')}>
- *     {#if clipboard.copied === 'success'}
+ *     {#if clipboard.status === 'success'}
  *         Copied!
- *     {:else if clipboard.copied === 'failure'}
+ *     {:else if clipboard.status === 'failure'}
  *         Failed to copy!
  *     {:else}
  *         Copy
@@ -26,7 +26,7 @@ type Options = {
  *
  */
 export class UseClipboard {
-	#copiedStatus = $state<'success' | 'failure'>();
+	#copiedStatus = $state<'success' | 'failure' | undefined>(undefined);
 	private delay: number;
 	private timeout: ReturnType<typeof setTimeout> | undefined = undefined;
 
@@ -50,11 +50,22 @@ export class UseClipboard {
 			clearTimeout(this.timeout);
 		}
 
-		this.#copiedStatus = await copyText(text);
+		try {
+			await navigator.clipboard.writeText(text);
 
-		this.timeout = setTimeout(() => {
-			this.#copiedStatus = undefined;
-		}, this.delay);
+			this.#copiedStatus = 'success';
+
+			this.timeout = setTimeout(() => {
+				this.#copiedStatus = undefined;
+			}, this.delay);
+		} catch {
+			// an error can occur when not in the browser or if the user hasn't given clipboard access
+			this.#copiedStatus = 'failure';
+
+			this.timeout = setTimeout(() => {
+				this.#copiedStatus = undefined;
+			}, this.delay);
+		}
 
 		return this.#copiedStatus;
 	}
@@ -64,36 +75,9 @@ export class UseClipboard {
 		return this.#copiedStatus === 'success';
 	}
 
-	/**	Indicates whether a copy has occurred
-	 * and gives a status of either `success` or `failure`. */
+	/** Indicates whether a copy has occurred.
+	 * `undefined` means the clipboard is in its idle state. */
 	get status() {
 		return this.#copiedStatus;
-	}
-}
-
-export async function copyText(text: string): Promise<'success' | 'failure'> {
-	try {
-		if (navigator.clipboard && window.isSecureContext) {
-			await navigator.clipboard.writeText(text);
-			return 'success';
-		}
-
-		// when navigator.clipboard is unavailable we fallback to this for wider browser compatibility
-		const textArea = document.createElement('textarea');
-		textArea.value = text;
-		textArea.style.position = 'fixed';
-		textArea.style.top = '0';
-		textArea.style.left = '0';
-		document.body.appendChild(textArea);
-		textArea.focus();
-		textArea.select();
-
-		const successful = document.execCommand('copy');
-
-		document.body.removeChild(textArea);
-
-		return successful ? 'success' : 'failure';
-	} catch {
-		return 'failure';
 	}
 }

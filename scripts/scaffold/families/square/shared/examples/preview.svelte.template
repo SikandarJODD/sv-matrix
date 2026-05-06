@@ -1,0 +1,5 @@
+<script lang="ts">
+	import {{COMPONENT_IMPORT_NAME}} from '{{COMPONENT_IMPORT_PATH}}';
+</script>
+
+<{{COMPONENT_IMPORT_NAME}} />

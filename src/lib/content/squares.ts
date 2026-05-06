@@ -4,7 +4,26 @@ import type { Example } from '$lib/types/examples';
 import type { SEO } from '$lib/types/seo';
 import type { ComponentDoc, PropsTable } from '$lib/types/structure';
 import type { Component } from 'svelte';
-import { data as squareOneDoc } from '../../routes/(main)/components/squares/square-1/data';
+// square-doc-imports:start
+import { data as square1Doc } from '../../routes/(main)/components/squares/square-1/data';
+import { data as square2Doc } from '../../routes/(main)/components/squares/square-2/data';
+import { data as square3Doc } from '../../routes/(main)/components/squares/square-3/data';
+import { data as square4Doc } from '../../routes/(main)/components/squares/square-4/data';
+import { data as square5Doc } from '../../routes/(main)/components/squares/square-5/data';
+import { data as square6Doc } from '../../routes/(main)/components/squares/square-6/data';
+import { data as square7Doc } from '../../routes/(main)/components/squares/square-7/data';
+import { data as square8Doc } from '../../routes/(main)/components/squares/square-8/data';
+import { data as square9Doc } from '../../routes/(main)/components/squares/square-9/data';
+import { data as square10Doc } from '../../routes/(main)/components/squares/square-10/data';
+import { data as square11Doc } from '../../routes/(main)/components/squares/square-11/data';
+import { data as square12Doc } from '../../routes/(main)/components/squares/square-12/data';
+import { data as square13Doc } from '../../routes/(main)/components/squares/square-13/data';
+import { data as square14Doc } from '../../routes/(main)/components/squares/square-14/data';
+import { data as square15Doc } from '../../routes/(main)/components/squares/square-15/data';
+import { data as square16Doc } from '../../routes/(main)/components/squares/square-16/data';
+import { data as square17Doc } from '../../routes/(main)/components/squares/square-17/data';
+import { data as square18Doc } from '../../routes/(main)/components/squares/square-18/data';
+// square-doc-imports:end
 
 export type SquarePageData = {
 	id: string;
@@ -41,7 +60,26 @@ const componentById = new Map(
 );
 
 const richSquareDocs: Record<string, ComponentDoc> = {
-	'square-1': squareOneDoc
+	// square-doc-map:start
+	'square-1': square1Doc,
+	'square-2': square2Doc,
+	'square-3': square3Doc,
+	'square-4': square4Doc,
+	'square-5': square5Doc,
+	'square-6': square6Doc,
+	'square-7': square7Doc,
+	'square-8': square8Doc,
+	'square-9': square9Doc,
+	'square-10': square10Doc,
+	'square-11': square11Doc,
+	'square-12': square12Doc,
+	'square-13': square13Doc,
+	'square-14': square14Doc,
+	'square-15': square15Doc,
+	'square-16': square16Doc,
+	'square-17': square17Doc,
+	'square-18': square18Doc
+// square-doc-map:end
 };
 
 function getDefaultDescription(title: string, fallback?: string) {

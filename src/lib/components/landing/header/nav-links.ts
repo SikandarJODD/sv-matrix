@@ -1,20 +1,3 @@
-import {
-	FileTextIcon,
-	GlobeIcon,
-	LayersIcon,
-	PlugIcon,
-	ShieldIcon,
-	UserPlusIcon,
-	UsersIcon,
-	StarIcon,
-	HandshakeIcon,
-	CodeIcon,
-	RotateCcwIcon,
-	LeafIcon,
-	HandHelpingIcon,
-	ChartArea
-} from '@lucide/svelte';
-
 import type { LinkItemType } from './types';
 
 let navs: LinkItemType[] = [
@@ -28,7 +11,7 @@ let navs: LinkItemType[] = [
 	},
 	{
 		name: 'Components',
-		href: '/components'
+		href: '/components/squares/square-1'
 	}
 ];
 
