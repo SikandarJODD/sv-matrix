@@ -8,7 +8,7 @@
 	let pathname = $derived(page.url.pathname);
 </script>
 
-<Sidebar.Root class="mt-14" {...restProps} bind:ref>
+<Sidebar.Root class="pt-14 pb-2" {...restProps} bind:ref>
 	<Sidebar.Content class="bg-background">
 		{#each navigationSections as group (group.id)}
 			<Sidebar.Group>
