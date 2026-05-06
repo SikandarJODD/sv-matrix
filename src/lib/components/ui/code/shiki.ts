@@ -3,10 +3,11 @@ import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 import { createHighlighterCore } from 'shiki/core';
 
 const bundledLanguages = {
+	// diff: () => import('@shikijs/langs/diff'),
+	// javascript: () => import('@shikijs/langs/javascript'),
+	// json: () => import('@shikijs/langs/json'),
+	css: () => import('@shikijs/langs/css'),
 	bash: () => import('@shikijs/langs/bash'),
-	diff: () => import('@shikijs/langs/diff'),
-	javascript: () => import('@shikijs/langs/javascript'),
-	json: () => import('@shikijs/langs/json'),
 	svelte: () => import('@shikijs/langs/svelte'),
 	typescript: () => import('@shikijs/langs/typescript')
 };
@@ -18,7 +19,7 @@ export type SupportedLanguage = keyof typeof bundledLanguages | 'text';
 export const highlighter = createHighlighterCore({
 	themes: [
 		import('@shikijs/themes/github-light-default'),
-		import('@shikijs/themes/github-dark-default')
+		import('@shikijs/themes/vesper')
 	],
 	langs: Object.entries(bundledLanguages).map(([_, lang]) => lang),
 	engine: createJavaScriptRegexEngine()
