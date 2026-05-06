@@ -15,9 +15,8 @@
 	},
 	"devDependencies": {
 		"@fontsource-variable/figtree": "^5.2.10",
-		"@hugeicons/core-free-icons": "^4.1.1",
-		"@hugeicons/svelte": "^1.1.2",
 		"@internationalized/date": "^3.12.1",
+		"@lucide/svelte": "^1.14.0",
 		"@sveltejs/adapter-auto": "latest",
 		"@sveltejs/kit": "latest",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
@@ -38,7 +37,9 @@
 		"vite": "^8.0.7"
 	},
 	"dependencies": {
+		"@fontsource-variable/jetbrains-mono": "^5.2.8",
 		"mode-watcher": "^1.1.0",
+		"package-manager-detector": "^1.6.0",
 		"runed": "^0.37.1"
 	}
 }

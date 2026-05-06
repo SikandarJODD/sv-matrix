@@ -2,6 +2,55 @@
 @import "tw-animate-css";
 @import "shadcn-svelte/tailwind.css";
 @import "@fontsource-variable/figtree";
+@import "@fontsource-variable/jetbrains-mono";
+
+@font-face {
+	font-family: 'GeistPixel';
+	src: url('/fonts/GeistPixel-Square.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GeistPixel Circle';
+	src: url('/fonts/GeistPixel-Circle.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GeistPixel Grid';
+	src: url('/fonts/GeistPixel-Grid.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GeistPixel Line';
+	src: url('/fonts/GeistPixel-Line.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GeistPixel Square';
+	src: url('/fonts/GeistPixel-Square.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'GeistPixel Triangle';
+	src: url('/fonts/GeistPixel-Triangle.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -76,6 +125,14 @@
 
 @theme inline {
 	--font-sans: 'Figtree Variable', sans-serif;
+	--font-mono: 'JetBrains Mono Variable', monospace;
+	--font-geist-pixel: 'GeistPixel', monospace;
+	--font-geist-pixel-circle: 'GeistPixel Circle', monospace;
+	--font-geist-pixel-grid: 'GeistPixel Grid', monospace;
+	--font-geist-pixel-line: 'GeistPixel Line', monospace;
+	--font-geist-pixel-square: 'GeistPixel Square', monospace;
+	--font-geist-pixel-triangle: 'GeistPixel Triangle', monospace;
+
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

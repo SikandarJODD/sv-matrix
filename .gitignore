@@ -21,3 +21,5 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+/src/lib/components/dot-matrix/guide.md
+/src/lib/components/dot-matrix/DOT SIZE GUIDE.md
