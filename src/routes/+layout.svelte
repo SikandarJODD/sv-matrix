@@ -3,6 +3,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { activeElement, PressedKeys } from 'runed';
 	import { ModeWatcher, toggleMode } from 'mode-watcher';
+	import Header from '$lib/components/landing/header/header.svelte';
 
 	let { children } = $props();
 	let keys = new PressedKeys();
@@ -16,15 +17,8 @@
 		toggleMode();
 	});
 </script>
-
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <ModeWatcher defaultMode="dark" />
+<svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<nav class="mx-auto flex max-w-xl items-center justify-center">
-	<ul class="flex items-center gap-4">
-		<li><a href="/">Home</a></li>
-		<li><a href="/dot-matrix">Dot Matrix</a></li>
-	</ul>
-</nav>
-
+<Header />
 {@render children()}
