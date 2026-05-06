@@ -17,7 +17,13 @@ const squareDescriptions: Record<string, string> = {
 	'square-9.svelte': "Square 9 square loader component.",
 	'square-10.svelte': "Square 10 square loader component.",
 	'square-11.svelte': "Square 11 square loader component.",
-	'square-12.svelte': "Square 12 square loader component."
+	'square-12.svelte': "Square 12 square loader component.",
+	'square-13.svelte': "Square 13 square loader component.",
+	'square-14.svelte': "Square 14 square loader component.",
+	'square-15.svelte': "Square 15 square loader component.",
+	'square-16.svelte': "Square 16 square loader component.",
+	'square-17.svelte': "Square 17 square loader component.",
+	'square-18.svelte': "Square 18 square loader component."
 // square-description-map:end
 };
 

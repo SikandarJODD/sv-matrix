@@ -170,6 +170,90 @@
 					"target": "/loaders/square-12.svelte"
 				}
 			]
+		},
+		{
+			"name": "square-13",
+			"title": "Square 13 Loader",
+			"description": "Square 13 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-13.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-13.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-14",
+			"title": "Square 14 Loader",
+			"description": "Square 14 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-14.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-14.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-15",
+			"title": "Square 15 Loader",
+			"description": "Square 15 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-15.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-15.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-16",
+			"title": "Square 16 Loader",
+			"description": "Square 16 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-16.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-16.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-17",
+			"title": "Square 17 Loader",
+			"description": "Square 17 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-17.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-17.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-18",
+			"title": "Square 18 Loader",
+			"description": "Square 18 square loader component.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-18.svelte",
+					"type": "registry:component",
+					"target": "/loaders/square-18.svelte"
+				}
+			]
 		}
 	]
 }
