@@ -1,8 +1,7 @@
 import type { CodeBlock } from '$lib/components/ui/code';
-import { data as squareSourceItems } from '$lib/components/loaders/square/data';
 import type { Example } from '$lib/types/examples';
 import type { SEO } from '$lib/types/seo';
-import type { ComponentDoc, PropsTable } from '$lib/types/structure';
+import type { ComponentDataItem, PropsTable, SquareDocContent } from '$lib/types/structure';
 import type { Component } from 'svelte';
 // square-doc-imports:start
 import { data as square1Doc } from '../../routes/(main)/components/squares/square-1/data';
@@ -41,6 +40,111 @@ export type SquarePageData = {
 	propsTables?: PropsTable[];
 };
 
+export type SquareCatalogEntry = {
+	id: string;
+	title: string;
+	description: string;
+};
+
+export const squareCatalog = [
+	{
+		id: 'square-1',
+		title: 'Neon Drift',
+		description: 'A square loader with a drifting neon pulse across a dot-matrix grid.'
+	},
+	{
+		id: 'square-2',
+		title: 'Pulse Ladder',
+		description: 'A square loader with a stepped pulse that climbs the grid like a ladder.'
+	},
+	{
+		id: 'square-3',
+		title: 'Core Spiral',
+		description: 'A square loader with a spiral pulse that tightens around the core.'
+	},
+	{
+		id: 'square-4',
+		title: 'Twin Orbit',
+		description: 'A square loader with paired highlights orbiting through the square grid.'
+	},
+	{
+		id: 'square-5',
+		title: 'Prism Sweep',
+		description: 'A square loader with a sweeping prism-like shimmer across the matrix.'
+	},
+	{
+		id: 'square-6',
+		title: 'Flux Columns',
+		description: 'A square loader with flowing column pulses that cycle through the grid.'
+	},
+	{
+		id: 'square-7',
+		title: 'Block Drop',
+		description: 'A square loader with a block-drop motion that lands in rhythmic steps.'
+	},
+	{
+		id: 'square-8',
+		title: 'Strobe Stack',
+		description: 'A square loader with stacked strobe flashes that pulse from row to row.'
+	},
+	{
+		id: 'square-9',
+		title: 'Glyph Pulse',
+		description: 'A square loader with crisp glyph-like beats that pulse through the matrix.'
+	},
+	{
+		id: 'square-10',
+		title: 'CRT Glide',
+		description: 'A square loader with a retro scanline glide inspired by CRT displays.'
+	},
+	{
+		id: 'square-11',
+		title: 'Echo Ring',
+		description: 'A square loader with ringed echoes that ripple outward from the center.'
+	},
+	{
+		id: 'square-12',
+		title: 'Origin Wave',
+		description: 'A square loader with a wave that expands cleanly from the origin point.'
+	},
+	{
+		id: 'square-13',
+		title: 'Core Rotar',
+		description: 'A square loader with a rotating core pulse and steady geometric rhythm.'
+	},
+	{
+		id: 'square-14',
+		title: 'Prism Bloom',
+		description: 'A square loader with a bright prism bloom that opens across the grid.'
+	},
+	{
+		id: 'square-15',
+		title: 'Helix Glow',
+		description: 'A square loader with a glowing helix-style twist through the square matrix.'
+	},
+	{
+		id: 'square-16',
+		title: 'Helix Core',
+		description: 'A square loader with a helix-like core pulse and layered depth.'
+	},
+	{
+		id: 'square-17',
+		title: 'Half Helix',
+		description: 'A square loader with a split helix motion that arcs through half the grid.'
+	},
+	{
+		id: 'square-18',
+		title: 'Sound Bars',
+		description: 'A square loader with equalizer-style bars pulsing like live sound levels.'
+	}
+] satisfies SquareCatalogEntry[];
+
+const squareModules = import.meta.glob<string>('../components/loaders/square/square-*.svelte', {
+	eager: true,
+	query: '?raw',
+	import: 'default'
+});
+
 const squareComponents = import.meta.glob<Component>(
 	'../components/loaders/square/square-*.svelte',
 	{
@@ -48,6 +152,8 @@ const squareComponents = import.meta.glob<Component>(
 		import: 'default'
 	}
 );
+
+const squareCatalogById = new Map(squareCatalog.map((entry) => [entry.id, entry] as const));
 
 const componentById = new Map(
 	Object.entries(squareComponents).map(([filePath, component]) => [
@@ -59,7 +165,7 @@ const componentById = new Map(
 	])
 );
 
-const richSquareDocs: Record<string, ComponentDoc> = {
+const richSquareDocs: Record<string, SquareDocContent> = {
 	// square-doc-map:start
 	'square-1': square1Doc,
 	'square-2': square2Doc,
@@ -79,18 +185,33 @@ const richSquareDocs: Record<string, ComponentDoc> = {
 	'square-16': square16Doc,
 	'square-17': square17Doc,
 	'square-18': square18Doc
-// square-doc-map:end
+	// square-doc-map:end
 };
 
-function getDefaultDescription(title: string, fallback?: string) {
-	return fallback ?? `${title} square loader component.`;
+function getFileName(filePath: string) {
+	return filePath.split('/').pop() ?? filePath;
 }
 
-function createDefaultSeo(title: string, description: string): SEO {
+function getFileId(fileName: string) {
+	return fileName.replace(/\.svelte$/i, '');
+}
+
+function getSortKey(fileName: string) {
+	const match = fileName.match(/(\d+)/);
+	return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
+}
+
+function getSquareCatalogEntry(id: string) {
+	return squareCatalogById.get(id) ?? null;
+}
+
+function createSquareSeo(entry: SquareCatalogEntry): SEO {
+	const squareNumberLabel = entry.id.replace(/^square-/, 'Square ');
+
 	return {
-		title: `${title} Loader`,
-		description,
-		keywords: ['Svelte', 'Loader', 'Square', title]
+		title: `${entry.title} Loader`,
+		description: entry.description,
+		keywords: ['Svelte', entry.title, 'Loader', 'Square', entry.id, squareNumberLabel]
 	};
 }
 
@@ -100,15 +221,35 @@ function createFolderStructure(fileName: string) {
 	);
 }
 
+export const squareSourceItems: ComponentDataItem[] = Object.entries(squareModules)
+	.map(([filePath, fileCode]) => {
+		const fileName = getFileName(filePath);
+		const id = getFileId(fileName);
+		const entry = getSquareCatalogEntry(id);
+
+		if (!entry) {
+			throw new Error(`Missing square catalog entry for ${id}.`);
+		}
+
+		return {
+			id,
+			name: entry.title,
+			fileName,
+			fileCode,
+			desc: entry.description
+		};
+	})
+	.sort((left, right) => getSortKey(left.fileName) - getSortKey(right.fileName));
+
 function createDefaultSquarePageData(id: string): SquarePageData | null {
 	const sourceItem = squareSourceItems.find((item) => item.id === id);
 	const preview = componentById.get(id);
+	const catalogEntry = getSquareCatalogEntry(id);
 
-	if (!sourceItem || !preview) {
+	if (!sourceItem || !preview || !catalogEntry) {
 		return null;
 	}
 
-	const description = getDefaultDescription(sourceItem.name, sourceItem.desc);
 	const codeBlock: CodeBlock = {
 		filename: sourceItem.fileName,
 		filecode: sourceItem.fileCode,
@@ -117,9 +258,9 @@ function createDefaultSquarePageData(id: string): SquarePageData | null {
 
 	return {
 		id: sourceItem.id,
-		title: sourceItem.name,
-		description,
-		seo: createDefaultSeo(sourceItem.name, description),
+		title: catalogEntry.title,
+		description: catalogEntry.description,
+		seo: createSquareSeo(catalogEntry),
 		preview,
 		previewCode: codeBlock,
 		installCodeBlocks: codeBlock,
@@ -142,9 +283,6 @@ export function getSquarePageData(id: string): SquarePageData | null {
 
 	return {
 		...defaultPage,
-		title: richDoc.title,
-		description: richDoc.description ?? defaultPage.description,
-		seo: richDoc.seo,
 		preview: richDoc.preview ?? defaultPage.preview,
 		previewCode: richDoc.previewCode ?? defaultPage.previewCode,
 		installCodeBlocks: richDoc.installBlock?.installCode ?? defaultPage.installCodeBlocks,

@@ -1,11 +1,5 @@
-import type {
-	ComponentDoc,
-	ComponentMeta,
-	InstallComponentDocs,
-	PropsTable
-} from '$lib/types/structure';
+import type { InstallComponentDocs, PropsTable, SquareDocContent } from '$lib/types/structure';
 import type { Example } from '$lib/types/examples';
-import type { SEO } from '$lib/types/seo';
 import Preview from './examples/preview.svelte';
 import PreviewCode from './examples/preview.svelte?raw';
 import GlowExample from './examples/glow-example.svelte';
@@ -31,18 +25,6 @@ import ServerActionExampleRaw from './use-cases/server-action-example.svelte?raw
 import PaymentProcessingExample from './use-cases/payment-processing-example.svelte';
 import PaymentProcessingExampleRaw from './use-cases/payment-processing-example.svelte?raw';
 import Square7Raw from '$lib/components/loaders/square/square-7.svelte?raw';
-
-export const meta: ComponentMeta = {
-	id: "square-7",
-	title: "Block Drop",
-	description: "A square loader with a block-dropping animation and various pattern options."
-};
-
-const seo: SEO = {
-	title: "Block Drop Loader",
-	description: "A square loader with a block-dropping animation and various pattern options.",
-	keywords: ["Svelte", "Square 7", "Loader", "Square", "Block Drop"]
-};
 
 const examples: Example[] = [
 	{
@@ -321,10 +303,9 @@ const installBlock: InstallComponentDocs = {
 	folderStructure: "src/\n  lib/\n    components/\n      loaders/\n        square/\n          square-7.svelte"
 };
 
-export const data: ComponentDoc = {
-	...meta,
+export const data: SquareDocContent = {
+	id: 'square-7',
 	installBlock,
-	seo,
 	preview: Preview,
 	previewCode: {
 		filename: 'preview.svelte',

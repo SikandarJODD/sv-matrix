@@ -1,10 +1,8 @@
 import type {
-	ComponentDoc,
-	ComponentMeta,
 	InstallComponentDocs,
-	PropsTable
+	PropsTable,
+	SquareDocContent
 } from '$lib/types/structure';
-import type { SEO } from '$lib/types/seo';
 import Preview from './examples/preview.svelte';
 import PreviewCode from './examples/preview.svelte?raw';
 import type { Example } from '$lib/types/examples';
@@ -31,17 +29,6 @@ import ServerActionExampleRaw from './use-cases/server-action-example.svelte?raw
 import PaymentProcessingExample from './use-cases/payment-processing-example.svelte';
 import PaymentProcessingExampleRaw from './use-cases/payment-processing-example.svelte?raw';
 import Square1Raw from '$lib/components/loaders/square/square-1.svelte?raw';
-
-export const meta: ComponentMeta = {
-	id: 'square-1',
-	title: 'Neon Drift'
-};
-
-const seo: SEO = {
-	title: 'Neon Drift Loader',
-	description: 'Neon Drift Loader component for svelte',
-	keywords: ['Svelte', 'Neon Drift', 'Loader']
-};
 
 let examples: Example[] = [
 	{
@@ -280,10 +267,9 @@ const installBlock: InstallComponentDocs = {
 					└── square-1.svelte`
 };
 
-export const data: ComponentDoc = {
-	...meta,
+export const data: SquareDocContent = {
+	id: 'square-1',
 	installBlock,
-	seo,
 	preview: Preview,
 	previewCode: {
 		filename: 'preview.svelte',

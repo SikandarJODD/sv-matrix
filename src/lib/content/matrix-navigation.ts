@@ -1,4 +1,4 @@
-import { data as squareSourceItems } from '$lib/components/loaders/square/data';
+import { squareSourceItems } from '$lib/content/squares';
 
 export type MatrixNavSectionId = 'get-started' | 'squares' | 'circles';
 export type MatrixNavKind = 'doc' | 'component';

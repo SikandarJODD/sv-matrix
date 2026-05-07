@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Component } from 'svelte';
-	import { data as squareSourceItems } from '$lib/components/loaders/square/data';
-	import { getSquarePageData } from '$lib/content/squares';
+	import { getSquarePageData, squareSourceItems } from '$lib/content/squares';
 
 	type LoaderShowcaseItem = {
 		id: string;
@@ -10,19 +9,14 @@
 		preview: Component;
 	};
 
-	function isGenericTitle(title: string) {
-		return /^Square\s+\d+$/i.test(title.trim());
-	}
-
 	const showcaseItems = squareSourceItems
 		.map((item) => {
 			const pageData = getSquarePageData(item.id);
-			const title = pageData?.title?.trim();
 
 			return {
 				id: pageData?.id ?? item.id,
 				href: `/components/squares/${pageData?.id ?? item.id}`,
-				title: title && !isGenericTitle(title) ? title : item.name,
+				title: pageData?.title ?? item.name,
 				preview: pageData?.preview
 			};
 		})
