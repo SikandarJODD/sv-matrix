@@ -11,9 +11,9 @@
 
 A growing collection of dot-matrix loaders for Svelte. `sv-matrix` gives you reusable square matrix animations built on top of a shared `DotMatrix` foundation, with registry installs, live previews, and component docs.
 
-- Live: https://sv-matrix.vercel.app
-- Docs: https://sv-matrix.vercel.app/docs
-- Components: https://sv-matrix.vercel.app/components
+- Live: [Preview](https://sv-matrix.vercel.app)
+- Docs: [Setup & Usage](https://sv-matrix.vercel.app/docs/setup)
+- Components: [View Loaders](https://sv-matrix.vercel.app/components/squares/square-1)
 
 ## Installation
 
@@ -54,10 +54,19 @@ Example with `square-1`:
 <Square1 size={37} dotSize={5} speed={1.1} color="#f59e0b" />
 ```
 
+## Credits
+
+This project is inspired from the Original Dot Matrix Loaders by [Shawn](https://x.com/zzzzshawn/)
+Original Dot Matrix: [Live Preview](https://dotmatrix.zzzzshawn.cloud)
+
+## Goal
+
+The goal of this project is to bring similar dot matrix loaders to the Svelte ecosystem.
+
 ## Support
 
 GitHub Sponsor: https://github.com/sponsors/SikandarJODD
 
 ## License
 
-MIT
+This project is licensed under the [MIT](LICENSE) License
