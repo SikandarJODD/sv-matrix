@@ -1,4 +1,9 @@
-import type { InstallComponentDocs, PropsTable, SquareDocContent } from '$lib/types/structure';
+import type {
+	InstallComponentDocs,
+	PropsTable,
+	ComponentMeta,
+	ComponentDoc
+} from '$lib/types/structure';
 import type { Example } from '$lib/types/examples';
 import Preview from './examples/preview.svelte';
 import PreviewCode from './examples/preview.svelte?raw';
@@ -25,6 +30,8 @@ import ServerActionExampleRaw from './use-cases/server-action-example.svelte?raw
 import PaymentProcessingExample from './use-cases/payment-processing-example.svelte';
 import PaymentProcessingExampleRaw from './use-cases/payment-processing-example.svelte?raw';
 import Square19Raw from '$lib/components/loaders/square/square-19.svelte?raw';
+import type { SEO } from '$lib/types/seo';
+import { squareItems } from '$lib/content/matrix-navigation';
 
 const examples: Example[] = [
 	{
@@ -305,8 +312,22 @@ const installBlock: InstallComponentDocs = {
 		'src/\n  lib/\n    components/\n      loaders/\n        square/\n          square-19.svelte'
 };
 
-export const data: SquareDocContent = {
-	id: 'square-19',
+const meta: ComponentMeta = {
+	id: squareItems[18].id,
+	title: squareItems[18].title,
+	description: squareItems[18].description,
+	category: squareItems[18].section
+};
+
+const seo: SEO = {
+	title: squareItems[18].title,
+	description: squareItems[18].description || '',
+	keywords: ['svelte loader', 'square loader', 'dot matrix', 'svelte component']
+};
+
+export const data: ComponentDoc = {
+	...meta,
+	seo,
 	installBlock,
 	preview: Preview,
 	previewCode: {

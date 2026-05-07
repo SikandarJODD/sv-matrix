@@ -1,8 +1,4 @@
-import type {
-	InstallComponentDocs,
-	PropsTable,
-	SquareDocContent
-} from '$lib/types/structure';
+import type { InstallComponentDocs, PropsTable, ComponentDoc } from '$lib/types/structure';
 import Preview from './examples/preview.svelte';
 import PreviewCode from './examples/preview.svelte?raw';
 import type { Example } from '$lib/types/examples';
@@ -267,8 +263,18 @@ const installBlock: InstallComponentDocs = {
 					└── square-1.svelte`
 };
 
-export const data: SquareDocContent = {
+export const data: ComponentDoc = {
 	id: 'square-1',
+	title: 'Square One',
+	description:
+		'The original and most versatile dot-matrix style loader in the SV Matrix collection. Square One features a 5x5 grid of dots that can be customized with various patterns, animation styles, and visual effects to create a wide range of loading indicators suitable for different contexts.',
+	category: 'loaders',
+	seo: {
+		title: 'Square One - SV Matrix Loader Component',
+		description:
+			'Discover Square One, the versatile dot-matrix loader from SV Matrix. Customize patterns, animations, and effects to create unique loading indicators for your Svelte projects.',
+		keywords: ['svelte loader', 'dot matrix', 'square one', 'customizable loading indicator']
+	},
 	installBlock,
 	preview: Preview,
 	previewCode: {

@@ -54,7 +54,3 @@ export type ComponentDoc = ComponentMeta & {
 	props?: PropsTable[];
 	folderStructure?: string;
 };
-
-export type SquareDocContent = Omit<ComponentDoc, 'title' | 'description' | 'seo'> & {
-	id: string;
-};
