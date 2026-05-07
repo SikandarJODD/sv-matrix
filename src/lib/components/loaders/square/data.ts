@@ -1,67 +1,62 @@
-import type { ComponentDataItem } from '$lib/types/structure';
+import { squareItems } from '$lib/content/matrix-navigation';
+import type { Component } from 'svelte';
 
-const squareModules = import.meta.glob<string>('./square-*.svelte', {
-	eager: true,
-	query: '?raw',
-	import: 'default'
-});
+import Square1 from './square-1.svelte';
+import Square2 from './square-2.svelte';
+import Square3 from './square-3.svelte';
+import Square4 from './square-4.svelte';
+import Square5 from './square-5.svelte';
+import Square6 from './square-6.svelte';
+import Square7 from './square-7.svelte';
+import Square8 from './square-8.svelte';
+import Square9 from './square-9.svelte';
+import Square10 from './square-10.svelte';
+import Square11 from './square-11.svelte';
+import Square12 from './square-12.svelte';
+import Square13 from './square-13.svelte';
+import Square14 from './square-14.svelte';
+import Square15 from './square-15.svelte';
+import Square16 from './square-16.svelte';
+import Square17 from './square-17.svelte';
+import Square18 from './square-18.svelte';
+import Square19 from './square-19.svelte';
+import Square20 from './square-20.svelte';
 
-const squareDescriptions: Record<string, string> = {
-	// square-description-map:start
-	'square-3.svelte': "Square 3 square loader component.",
-	'square-4.svelte': "Square 4 square loader component.",
-	'square-5.svelte': "Square 5 square loader component.",
-	'square-6.svelte': "Square 6 square loader component.",
-	'square-7.svelte': "Square 7 square loader component.",
-	'square-8.svelte': "Square 8 square loader component.",
-	'square-9.svelte': "Square 9 square loader component.",
-	'square-10.svelte': "Square 10 square loader component.",
-	'square-11.svelte': "Square 11 square loader component.",
-	'square-12.svelte': "Square 12 square loader component.",
-	'square-13.svelte': "Square 13 square loader component.",
-	'square-14.svelte': "Square 14 square loader component.",
-	'square-15.svelte': "Square 15 square loader component.",
-	'square-16.svelte': "Square 16 square loader component.",
-	'square-17.svelte': "Square 17 square loader component.",
-	'square-18.svelte': "Square 18 square loader component."
-// square-description-map:end
+type LoaderShowcaseItem = {
+	id: string;
+	href: string;
+	title: string;
+	preview: Component;
 };
 
-function getFileName(filePath: string) {
-	return filePath.split('/').pop() ?? filePath;
-}
+const squarePreviews = [
+	Square1,
+	Square2,
+	Square3,
+	Square4,
+	Square5,
+	Square6,
+	Square7,
+	Square8,
+	Square9,
+	Square10,
+	Square11,
+	Square12,
+	Square13,
+	Square14,
+	Square15,
+	Square16,
+	Square17,
+	Square18,
+	Square19,
+	Square20
+];
 
-// format : square-1.svelte -> square-1
-function getFileId(fileName: string) {
-	return fileName.replace(/\.svelte$/i, '');
-}
-
-function getComponentName(fileName: string) {
-	return fileName
-		.replace(/\.svelte$/i, '')
-		.split('-')
-		.map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-		.join(' ');
-}
-
-function getSortKey(fileName: string) {
-	const match = fileName.match(/(\d+)/);
-	return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
-}
-
-export const data: ComponentDataItem[] = Object.entries(squareModules)
-	.map(([filePath, fileCode]) => {
-		const fileName = getFileName(filePath);
-		const id = getFileId(fileName);
-
-		return {
-			id,
-			name: getComponentName(fileName),
-			fileName,
-			fileCode,
-			...(squareDescriptions[fileName] ? { desc: squareDescriptions[fileName] } : {})
-		};
-	})
-	.sort((left, right) => getSortKey(left.fileName) - getSortKey(right.fileName));
+export const data: LoaderShowcaseItem[] = squareItems.map((item, index) => ({
+	id: item.id,
+	href: item.href,
+	title: item.title,
+	preview: squarePreviews[index]
+}));
 
 export default data;

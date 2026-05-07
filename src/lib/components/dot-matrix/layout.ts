@@ -1,4 +1,4 @@
-import { MATRIX_SIZE } from "./geometry.js";
+import { MATRIX_SIZE } from './geometry.js';
 
 export function stylePx(value: number): string {
 	return `${value}px`;
@@ -9,19 +9,19 @@ export function styleOpacity(opacity: number): number {
 }
 
 export function styleEntriesToString(
-	entries: Record<string, string | number | undefined>,
+	entries: Record<string, string | number | undefined>
 ): string | undefined {
 	const tokens = Object.entries(entries)
-		.filter(([, value]) => value !== undefined && value !== null && value !== "")
-		.map(([key, value]) => `${key}: ${typeof value === "number" ? styleOpacity(value) : value}`);
+		.filter(([, value]) => value !== undefined && value !== null && value !== '')
+		.map(([key, value]) => `${key}: ${typeof value === 'number' ? styleOpacity(value) : value}`);
 
-	return tokens.length > 0 ? tokens.join("; ") : undefined;
+	return tokens.length > 0 ? tokens.join('; ') : undefined;
 }
 
 export function getMatrixLayout(
 	size: number,
 	dotSize: number,
-	cellPadding?: number,
+	cellPadding?: number
 ): { gap: number; matrixSpan: number } {
 	if (cellPadding != null) {
 		const gap = Math.max(0, cellPadding);
@@ -34,7 +34,7 @@ export function getMatrixLayout(
 }
 
 export function resolveBoxLayout(
-	options: { boxSize?: number; minSize?: number } | null | undefined,
+	options: { boxSize?: number; minSize?: number } | null | undefined
 ): { outerDim: number; useWrapper: boolean } {
 	const boxSize = options?.boxSize;
 	const hasBoxSize = boxSize != null && boxSize > 0 && Number.isFinite(boxSize);

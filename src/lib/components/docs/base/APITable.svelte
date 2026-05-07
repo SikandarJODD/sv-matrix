@@ -1,15 +1,15 @@
 <script lang="ts">
-	import Table from "../markdown/Table.svelte";
-	import Thead from "../markdown/Thead.svelte";
-	import Tbody from "../markdown/Tbody.svelte";
-	import Tr from "../markdown/Tr.svelte";
-	import Th from "../markdown/Th.svelte";
-	import Td from "../markdown/Td.svelte";
-	import InfoPopover from "./InfoPopover.svelte";
-	import { cn } from "$lib/utils";
-	import { H3 } from "../markdown";
-	import { page } from "$app/state";
-	import { watch } from "runed";
+	import Table from '../markdown/Table.svelte';
+	import Thead from '../markdown/Thead.svelte';
+	import Tbody from '../markdown/Tbody.svelte';
+	import Tr from '../markdown/Tr.svelte';
+	import Th from '../markdown/Th.svelte';
+	import Td from '../markdown/Td.svelte';
+	import InfoPopover from './InfoPopover.svelte';
+	import { cn } from '$lib/utils';
+	import { H3 } from '../markdown';
+	import { page } from '$app/state';
+	import { watch } from 'runed';
 
 	type PropDef = {
 		name?: string;
@@ -26,33 +26,33 @@
 	};
 
 	let {
-		data,
+		data
 	}: {
 		data: PropsTable | PropDef[];
 	} = $props();
 
 	const isPropsTable = (data: PropsTable | PropDef[]): data is PropsTable => {
-		return "props" in data;
+		return 'props' in data;
 	};
 
 	let tableData = $derived(isPropsTable(data) ? data.props : data);
-	let tableHeaders = $state(["Name", "Type", "Default", "Description"]);
-	let tableKeys = $state(["name", "type", "default", "description"]);
+	let tableHeaders = $state(['Name', 'Type', 'Default', 'Description']);
+	let tableKeys = $state(['name', 'type', 'default', 'description']);
 
 	let doesIncludeSpell: boolean = $derived.by(() => {
 		let url = page.url.pathname;
-		return url.includes("spell");
+		return url.includes('spell');
 	});
 
 	watch(
 		() => doesIncludeSpell,
 		() => {
 			if (doesIncludeSpell) {
-				tableHeaders = ["Prop", "Type", "Default"];
-				tableKeys = ["name", "type", "default"];
+				tableHeaders = ['Prop', 'Type', 'Default'];
+				tableKeys = ['name', 'type', 'default'];
 			} else {
-				tableHeaders = ["Name", "Type", "Default", "Description"];
-				tableKeys = ["name", "type", "default", "description"];
+				tableHeaders = ['Name', 'Type', 'Default', 'Description'];
+				tableKeys = ['name', 'type', 'default', 'description'];
 				// reset table data to original if it was modified for spell pages
 			}
 		}
@@ -67,7 +67,7 @@
 			</H3>
 		{/if}
 		{#if data.desc}
-			<p class="text-muted-foreground m-0 leading-relaxed">
+			<p class="m-0 leading-relaxed text-muted-foreground">
 				{data.desc}
 			</p>
 		{/if}
@@ -90,12 +90,10 @@
 						<span class="inline-flex items-center gap-1">
 							<code
 								class={cn(
-									"dark:bg-muted/50 bg-muted/75 rounded-md px-2 py-0.5 font-mono text-sm text-neutral-600 dark:text-neutral-300"
+									'rounded-md bg-muted/75 px-2 py-0.5 font-mono text-sm text-neutral-600 dark:bg-muted/50 dark:text-neutral-300'
 								)}
 							>
-								{key === "default" && row.required
-									? "required"
-									: (row as any)[key] || ""}
+								{key === 'default' && row.required ? 'required' : (row as any)[key] || ''}
 							</code>
 							{#if index === 0 && row.description}
 								<InfoPopover description={row.description} />

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { scale } from "svelte/transition";
-	import { onMount, tick } from "svelte";
+	import { scale } from 'svelte/transition';
+	import { onMount, tick } from 'svelte';
 
 	let { description }: { description: string } = $props();
 
@@ -8,7 +8,7 @@
 	let popoverRef: HTMLDivElement | undefined = $state();
 	let triggerRef: HTMLButtonElement | undefined = $state();
 	let coords = $state({ top: 0, left: 0 });
-	let transform = $state("translate(-50%, -100%)");
+	let transform = $state('translate(-50%, -100%)');
 
 	function toggle() {
 		isOpen = !isOpen;
@@ -39,11 +39,11 @@
 		const spaceBelow = window.innerHeight - (triggerRect.bottom + gap + padding);
 
 		let top = triggerRect.top - gap;
-		let trans = "translate(-50%, -100%)";
+		let trans = 'translate(-50%, -100%)';
 
 		if (spaceAbove < popoverRect.height && spaceBelow > spaceAbove) {
 			top = triggerRect.bottom + gap;
-			trans = "translate(-50%, 0)";
+			trans = 'translate(-50%, 0)';
 		}
 
 		coords.top = top;
@@ -65,19 +65,19 @@
 	$effect(() => {
 		if (isOpen) {
 			updatePosition();
-			window.addEventListener("scroll", updatePosition, true);
-			window.addEventListener("resize", updatePosition);
+			window.addEventListener('scroll', updatePosition, true);
+			window.addEventListener('resize', updatePosition);
 			return () => {
-				window.removeEventListener("scroll", updatePosition, true);
-				window.removeEventListener("resize", updatePosition);
+				window.removeEventListener('scroll', updatePosition, true);
+				window.removeEventListener('resize', updatePosition);
 			};
 		}
 	});
 
 	onMount(() => {
-		document.addEventListener("click", handleClickOutside);
+		document.addEventListener('click', handleClickOutside);
 		return () => {
-			document.removeEventListener("click", handleClickOutside);
+			document.removeEventListener('click', handleClickOutside);
 		};
 	});
 </script>
@@ -86,7 +86,7 @@
 	<button
 		bind:this={triggerRef}
 		onclick={toggle}
-		class="text-foreground/70 hover:text-foreground hover:bg-accent rounded-md p-1 transition-colors duration-150 ease-out"
+		class="rounded-md p-1 text-foreground/70 transition-colors duration-150 ease-out hover:bg-accent hover:text-foreground"
 		aria-label="More info"
 	>
 		<svg
@@ -99,7 +99,7 @@
 			stroke-width="2"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			class="lucide lucide-info text-muted-foreground size-4"
+			class="lucide lucide-info size-4 text-muted-foreground"
 			aria-hidden="true"
 			><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"
 			></path></svg
@@ -110,7 +110,7 @@
 		<div
 			bind:this={popoverRef}
 			transition:scale={{ duration: 150, start: 0.95 }}
-			class="border-border bg-card text-foreground fixed z-50 w-72 rounded-lg border p-2 text-sm leading-normal shadow-lg"
+			class="fixed z-50 w-72 rounded-lg border border-border bg-card p-2 text-sm leading-normal text-foreground shadow-lg"
 			style="top: {coords.top}px; left: {coords.left}px; transform: {transform};"
 		>
 			{description}

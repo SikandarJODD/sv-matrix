@@ -1,10 +1,4 @@
-import type {
-	ComponentDoc,
-	ComponentMeta,
-	InstallComponentDocs,
-	PropsTable
-} from '$lib/types/structure';
-import type { SEO } from '$lib/types/seo';
+import type { InstallComponentDocs, PropsTable, ComponentDoc } from '$lib/types/structure';
 import Preview from './examples/preview.svelte';
 import PreviewCode from './examples/preview.svelte?raw';
 import type { Example } from '$lib/types/examples';
@@ -31,17 +25,6 @@ import ServerActionExampleRaw from './use-cases/server-action-example.svelte?raw
 import PaymentProcessingExample from './use-cases/payment-processing-example.svelte';
 import PaymentProcessingExampleRaw from './use-cases/payment-processing-example.svelte?raw';
 import Square1Raw from '$lib/components/loaders/square/square-1.svelte?raw';
-
-export const meta: ComponentMeta = {
-	id: 'square-1',
-	title: 'Neon Drift'
-};
-
-const seo: SEO = {
-	title: 'Neon Drift Loader',
-	description: 'Neon Drift Loader component for svelte',
-	keywords: ['Svelte', 'Neon Drift', 'Loader']
-};
 
 let examples: Example[] = [
 	{
@@ -281,9 +264,18 @@ const installBlock: InstallComponentDocs = {
 };
 
 export const data: ComponentDoc = {
-	...meta,
+	id: 'square-1',
+	title: 'Square One',
+	description:
+		'The original and most versatile dot-matrix style loader in the SV Matrix collection. Square One features a 5x5 grid of dots that can be customized with various patterns, animation styles, and visual effects to create a wide range of loading indicators suitable for different contexts.',
+	category: 'loaders',
+	seo: {
+		title: 'Square One - SV Matrix Loader Component',
+		description:
+			'Discover Square One, the versatile dot-matrix loader from SV Matrix. Customize patterns, animations, and effects to create unique loading indicators for your Svelte projects.',
+		keywords: ['svelte loader', 'dot matrix', 'square one', 'customizable loading indicator']
+	},
 	installBlock,
-	seo,
 	preview: Preview,
 	previewCode: {
 		filename: 'preview.svelte',

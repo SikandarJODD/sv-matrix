@@ -17,6 +17,7 @@
 		toggleMode();
 	});
 </script>
+
 <ModeWatcher defaultMode="dark" />
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 

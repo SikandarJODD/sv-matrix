@@ -56,7 +56,6 @@ export async function createSquare(args) {
 	const componentFilePath = resolveRepoPath(squareFamilyConfig.componentDir, componentFileName);
 	const docsDirPath = resolveRepoPath(squareFamilyConfig.docsDir, args.id);
 	const richDocsFilePath = resolveRepoPath(squareFamilyConfig.richDocsFile);
-	const sourceIndexFilePath = resolveRepoPath(squareFamilyConfig.sourceIndexFile);
 	const registryFilePath = resolveRepoPath(squareFamilyConfig.registryFile);
 	const templateRootPath = resolveRepoPath(squareFamilyConfig.templateDir);
 
@@ -129,8 +128,8 @@ export async function createSquare(args) {
 	await writeFile(path.join(docsDirPath, 'llms.txt', '+server.ts'), renderLlmsRoute());
 	await writeFile(path.join(docsDirPath, 'data.ts'), renderDataFile(manifest));
 
+	await upsertSquareCatalogEntry(richDocsFilePath, manifest);
 	await upsertRichDocsRegistration(richDocsFilePath, manifest.id);
-	await upsertSquareDescription(sourceIndexFilePath, componentFileName, manifest.description);
 	await upsertRegistryEntry(registryFilePath, manifest);
 
 	console.log(`Created square docs scaffold for ${manifest.id}`);
@@ -427,30 +426,14 @@ import ${preset.importName}Raw from './use-cases/${preset.fileName}?raw';`
 		.join(',\n');
 
 	return `import type {
-	ComponentDoc,
-	ComponentMeta,
 	InstallComponentDocs,
-	PropsTable
+	PropsTable,
+	SquareDocContent
 } from '$lib/types/structure';
 import type { Example } from '$lib/types/examples';
-import type { SEO } from '$lib/types/seo';
 import Preview from './examples/preview.svelte';
 import PreviewCode from './examples/preview.svelte?raw';
 ${exampleImports ? `${exampleImports}\n` : ''}${useCaseImports ? `${useCaseImports}\n` : ''}import ${manifest.componentImportName}Raw from '${manifest.componentImportPath}?raw';
-
-export const meta: ComponentMeta = {
-	id: ${JSON.stringify(manifest.id)},
-	title: ${JSON.stringify(manifest.title)},
-	description: ${JSON.stringify(manifest.description)}
-};
-
-const seo: SEO = {
-	title: ${JSON.stringify(`${manifest.title} Loader`)},
-	description: ${JSON.stringify(manifest.description)},
-	keywords: [${['Svelte', manifest.title, 'Loader', 'Square']
-		.map((keyword) => JSON.stringify(keyword))
-		.join(', ')}]
-};
 
 const examples: Example[] = [
 ${exampleEntries}
@@ -496,10 +479,9 @@ const installBlock: InstallComponentDocs = {
           ${manifest.componentFileName}`)}
 };
 
-export const data: ComponentDoc = {
-	...meta,
+export const data: SquareDocContent = {
+	id: ${JSON.stringify(manifest.id)},
 	installBlock,
-	seo,
 	preview: Preview,
 	previewCode: {
 		filename: 'preview.svelte',
@@ -550,38 +532,42 @@ async function upsertRichDocsRegistration(filePath, id) {
 	await fs.writeFile(filePath, nextSource, 'utf8');
 }
 
-function getRichDocImportName(id) {
-	return `${pascalFromKebab(id).charAt(0).toLowerCase()}${pascalFromKebab(id).slice(1)}Doc`;
-}
-
-async function upsertSquareDescription(filePath, componentFileName, description) {
+async function upsertSquareCatalogEntry(filePath, manifest) {
 	const source = await fs.readFile(filePath, 'utf8');
-	const currentDescriptions = parseSquareDescriptionEntries(source);
-	const currentIds = Array.from(currentDescriptions.keys());
-	const id = componentFileName.replace(/\.svelte$/i, '');
-	if (!currentIds.includes(id)) {
-		currentIds.push(id);
-	}
+	const currentEntries = parseSquareCatalogEntries(source);
 
-	const sortedIds = currentIds.sort(compareSquareIds);
-	const block = sortedIds
-		.map(
-			(squareId) =>
-				`\t'${squareId}.svelte': ${JSON.stringify(
-					squareId === id
-						? description
-						: (currentDescriptions.get(squareId) ??
-								`${capitalize(squareId.replace('-', ' '))} square loader component.`)
-				)}`
-		)
+	currentEntries.set(manifest.id, {
+		id: manifest.id,
+		title: manifest.title,
+		description: manifest.description
+	});
+
+	const sortedIds = Array.from(currentEntries.keys()).sort(compareSquareIds);
+	const entryBlock = sortedIds
+		.map((squareId) => {
+			const entry = currentEntries.get(squareId);
+			if (!entry) {
+				throw new Error(`Missing square catalog entry data for ${squareId}.`);
+			}
+
+			return `\t{
+\t\tid: ${quoteTsString(entry.id)},
+\t\ttitle: ${quoteTsString(entry.title)},
+\t\tdescription: ${quoteTsString(entry.description)}
+\t}`;
+		})
 		.join(',\n');
 
-	const nextSource = replaceMarkedBlock(source, 'square-description-map', block);
+	const nextSource = source.replace(
+		/export const squareCatalog = \[[\s\S]*?\] satisfies SquareCatalogEntry\[];/,
+		`export const squareCatalog = [\n${entryBlock}\n] satisfies SquareCatalogEntry[];`
+	);
+
 	await fs.writeFile(filePath, nextSource, 'utf8');
 }
 
-function capitalize(value) {
-	return value.charAt(0).toUpperCase() + value.slice(1);
+function getRichDocImportName(id) {
+	return `${pascalFromKebab(id).charAt(0).toLowerCase()}${pascalFromKebab(id).slice(1)}Doc`;
 }
 
 function findGeneratedSquareIds(source, markerName) {
@@ -603,14 +589,33 @@ function getMarkedBlock(source, markerName) {
 	return source.slice(blockStart, endIndex).trim();
 }
 
-function parseSquareDescriptionEntries(source) {
-	const block = getMarkedBlock(source, 'square-description-map');
+function parseSquareCatalogEntries(source) {
+	const match = source.match(
+		/export const squareCatalog = \[\n(?<entries>[\s\S]*?)\n\] satisfies SquareCatalogEntry\[];/
+	);
+
+	if (!match?.groups?.entries) {
+		throw new Error('Unable to locate squareCatalog in squares.ts.');
+	}
+
 	const entries = Array.from(
-		block.matchAll(/'(?<id>square-\d+)\.svelte':\s*(?<description>"(?:[^"\\]|\\.)*")/g)
+		match.groups.entries.matchAll(
+			/\{\s*id:\s*(?<id>'(?:\\'|[^'])*')\s*,\s*title:\s*(?<title>'(?:\\'|[^'])*')\s*,\s*description:\s*(?<description>'(?:\\'|[^'])*')\s*\}/g
+		)
 	);
 
 	return new Map(
-		entries.map((entry) => [entry.groups?.id ?? '', JSON.parse(entry.groups?.description ?? '""')])
+		entries.map((entry) => {
+			const id = parseSingleQuotedString(entry.groups?.id ?? "''");
+			return [
+				id,
+				{
+					id,
+					title: parseSingleQuotedString(entry.groups?.title ?? "''"),
+					description: parseSingleQuotedString(entry.groups?.description ?? "''")
+				}
+			];
+		})
 	);
 }
 
@@ -625,7 +630,9 @@ function replaceMarkedBlock(source, markerName, body) {
 	}
 
 	const blockStart = source.indexOf('\n', startIndex) + 1;
-	return `${source.slice(0, blockStart)}${body}\n${source.slice(endIndex)}`;
+	const markerLineStart = source.lastIndexOf('\n', endIndex) + 1;
+	const markerIndent = source.slice(markerLineStart, endIndex);
+	return `${source.slice(0, blockStart)}${body}\n${markerIndent}${source.slice(endIndex)}`;
 }
 
 async function upsertRegistryEntry(filePath, manifest) {
@@ -643,7 +650,7 @@ async function upsertRegistryEntry(filePath, manifest) {
 			{
 				path: `./src/lib/components/loaders/square/${manifest.componentFileName}`,
 				type: 'registry:component',
-				target: `/loaders/${manifest.componentFileName}`
+				target: `loaders/${manifest.componentFileName}`
 			}
 		]
 	};
@@ -655,8 +662,24 @@ async function upsertRegistryEntry(filePath, manifest) {
 		registry.items.push(nextItem);
 	}
 
-	registry.items.sort((left, right) => compareSquareIds(String(left.name), String(right.name)));
+	registry.items.sort((left, right) => compareRegistryNames(String(left.name), String(right.name)));
 	await fs.writeFile(filePath, `${JSON.stringify(registry, null, '\t')}\n`, 'utf8');
+}
+
+function compareRegistryNames(left, right) {
+	if (left === right) {
+		return 0;
+	}
+
+	if (left === 'dot-matrix') {
+		return -1;
+	}
+
+	if (right === 'dot-matrix') {
+		return 1;
+	}
+
+	return compareSquareIds(left, right);
 }
 
 function compareSquareIds(left, right) {
@@ -666,4 +689,12 @@ function compareSquareIds(left, right) {
 function getSquareNumber(id) {
 	const match = id.match(/square-(\d+)/);
 	return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
+}
+
+function quoteTsString(value) {
+	return `'${value.replace(/\\/g, '\\\\').replace(/'/g, "\\'")}'`;
+}
+
+function parseSingleQuotedString(value) {
+	return value.slice(1, -1).replace(/\\'/g, "'").replace(/\\\\/g, '\\');
 }

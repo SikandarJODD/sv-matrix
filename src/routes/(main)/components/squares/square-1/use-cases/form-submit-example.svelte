@@ -41,7 +41,7 @@
 	}
 </script>
 
-<form class="w-xl mx-auto mt-10 space-y-4" onsubmit={handleSubmit}>
+<form class="mx-auto mt-10 w-xl space-y-4" onsubmit={handleSubmit}>
 	<div class="grid gap-4 md:grid-cols-2">
 		<div class="space-y-2">
 			<label class="text-sm font-medium" for="company">Company</label>

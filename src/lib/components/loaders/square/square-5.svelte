@@ -15,12 +15,7 @@
 
 	export type Square5Props = DotMatrixCommonProps;
 
-	const animationResolver: DotAnimationResolver = ({
-		isActive,
-		index,
-		reducedMotion,
-		phase
-	}) => {
+	const animationResolver: DotAnimationResolver = ({ isActive, index, reducedMotion, phase }) => {
 		if (!isActive) {
 			return { className: 'dmx-inactive' };
 		}

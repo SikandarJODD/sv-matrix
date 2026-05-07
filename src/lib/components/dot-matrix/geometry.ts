@@ -7,7 +7,7 @@ const GRID_SIDE = MATRIX_SIZE;
 const GRID_CENTER = Math.floor(MATRIX_SIZE / 2);
 const CELL_COUNT = GRID_SIDE * GRID_SIDE;
 const MAX_TOP_RIGHT_BOTTOM_LEFT = (GRID_SIDE - 1) * 2;
-const CORNER_COORDINATES = new Set(["0,0", "0,4", "4,0", "4,4"]);
+const CORNER_COORDINATES = new Set(['0,0', '0,4', '4,0', '4,4']);
 
 export function rowMajorIndex(row: number, col: number): number {
 	return row * MATRIX_SIZE + col;
@@ -16,7 +16,7 @@ export function rowMajorIndex(row: number, col: number): number {
 export function indexToCoord(index: number): { row: number; col: number } {
 	return {
 		row: Math.floor(index / MATRIX_SIZE),
-		col: index % MATRIX_SIZE,
+		col: index % MATRIX_SIZE
 	};
 }
 
@@ -52,7 +52,7 @@ export function harmonicPhase(row: number, col: number, a: number, b: number): n
 export function lissajousOffset(
 	row: number,
 	col: number,
-	amplitude = 2.25,
+	amplitude = 2.25
 ): { x: number; y: number; phase: number } {
 	const x = Math.sin((row + 1) * 1.15 + (col + 1) * 2.2) * amplitude;
 	const y = Math.cos((row + 1) * 2.45 + (col + 1) * 0.95) * amplitude;
@@ -64,7 +64,7 @@ export function lissajousOffset(
 export function spiralOffset(
 	angle: number,
 	radiusNormalizedValue: number,
-	amplitude = 2.8,
+	amplitude = 2.8
 ): { x: number; y: number; phase: number } {
 	const spin = angle + radiusNormalizedValue * Math.PI * 2.1;
 	const radius = radiusNormalizedValue * amplitude;
@@ -205,7 +205,7 @@ function buildOuterRingClockwiseOrderToIndexMap(): number[] {
 		[4, 0],
 		[3, 0],
 		[2, 0],
-		[1, 0],
+		[1, 0]
 	];
 
 	for (let step = 0; step < coords.length; step += 1) {
@@ -226,7 +226,7 @@ function buildMiddleRingAntiClockwiseOrderToIndexMap(): number[] {
 		[3, 3],
 		[2, 3],
 		[1, 3],
-		[1, 2],
+		[1, 2]
 	];
 
 	for (let step = 0; step < coords.length; step += 1) {
@@ -297,19 +297,19 @@ export function diagonalSnakeNormFromIndex(index: number): number {
 
 function buildRowWaveSnakeOrderToIndexMap(): number[] {
 	const order = new Array<number>(CELL_COUNT);
-	const route: Array<{ col: number; dir: "up" | "down" }> = [
-		{ col: 0, dir: "up" },
-		{ col: 2, dir: "down" },
-		{ col: 1, dir: "up" },
-		{ col: 3, dir: "down" },
-		{ col: 2, dir: "up" },
-		{ col: 4, dir: "down" },
+	const route: Array<{ col: number; dir: 'up' | 'down' }> = [
+		{ col: 0, dir: 'up' },
+		{ col: 2, dir: 'down' },
+		{ col: 1, dir: 'up' },
+		{ col: 3, dir: 'down' },
+		{ col: 2, dir: 'up' },
+		{ col: 4, dir: 'down' }
 	];
 
 	let step = 0;
 
 	for (const routeStep of route) {
-		if (routeStep.dir === "up") {
+		if (routeStep.dir === 'up') {
 			for (let row = GRID_SIDE - 1; row >= 0; row -= 1) {
 				order[rowMajorIndex(row, routeStep.col)] = step;
 				step += 1;

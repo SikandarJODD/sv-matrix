@@ -1,6 +1,6 @@
-import type { DotMatrixPhase } from "$lib/components/dot-matrix/types.js";
+import type { DotMatrixPhase } from '$lib/components/dot-matrix/types.js';
 
-import { resolveSafeSpeed } from "./timing.js";
+import { resolveSafeSpeed } from './timing.js';
 
 export interface DotMatrixPhaseControllerOptions {
 	animated: () => boolean;
@@ -17,9 +17,9 @@ export interface DotMatrixPhaseController {
 export function createDotMatrixPhaseController({
 	animated,
 	hoverAnimated,
-	speed = () => 1,
+	speed = () => 1
 }: DotMatrixPhaseControllerOptions): DotMatrixPhaseController {
-	let hoverPhase = $state<DotMatrixPhase>("idle");
+	let hoverPhase = $state<DotMatrixPhase>('idle');
 	let timeouts: number[] = [];
 	let hoverGeneration = 0;
 
@@ -51,7 +51,7 @@ export function createDotMatrixPhaseController({
 
 		clearTimers();
 		const generation = ++hoverGeneration;
-		hoverPhase = "collapse";
+		hoverPhase = 'collapse';
 
 		const collapseMs = Math.max(1, Math.round(300 / resolveSafeSpeed(speed())));
 		const timeout = window.setTimeout(() => {
@@ -59,7 +59,7 @@ export function createDotMatrixPhaseController({
 				return;
 			}
 
-			hoverPhase = "hoverRipple";
+			hoverPhase = 'hoverRipple';
 		}, collapseMs);
 
 		timeouts.push(timeout);
@@ -72,11 +72,11 @@ export function createDotMatrixPhaseController({
 
 		hoverGeneration += 1;
 		clearTimers();
-		hoverPhase = "idle";
+		hoverPhase = 'idle';
 	};
 
 	const phase = $derived<DotMatrixPhase>(
-		autoRun ? "loadingRipple" : hoverAnimated() ? hoverPhase : "idle",
+		autoRun ? 'loadingRipple' : hoverAnimated() ? hoverPhase : 'idle'
 	);
 
 	return {
@@ -84,6 +84,6 @@ export function createDotMatrixPhaseController({
 			return phase;
 		},
 		onMouseEnter,
-		onMouseLeave,
+		onMouseLeave
 	};
 }

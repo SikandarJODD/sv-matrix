@@ -1,5 +1,13 @@
 [
 	{
+		"name": "dot-matrix",
+		"title": "Dot Matrix",
+		"type": "registry:block",
+		"description": "Shared 5x5 dot matrix foundation with hooks, helpers, and styles for sv-matrix loaders.",
+		"registryDependencies": [],
+		"relativeUrl": "dot-matrix.json"
+	},
+	{
 		"name": "square-1",
 		"title": "Square One Loader",
 		"type": "registry:block",
@@ -142,5 +150,21 @@
 		"description": "Square 18 square loader component.",
 		"registryDependencies": [],
 		"relativeUrl": "square-18.json"
+	},
+	{
+		"name": "square-19",
+		"title": "Lemniscate Pulse Loader",
+		"type": "registry:block",
+		"description": "A square loader with twin heads tracing a lemniscate path and a soft pulse through the center.",
+		"registryDependencies": [],
+		"relativeUrl": "square-19.json"
+	},
+	{
+		"name": "square-20",
+		"title": "Mobius Ring Loader",
+		"type": "registry:block",
+		"description": "A square loader with a perimeter ring, countertail motion, and Mobius-style twist cues at each corner.",
+		"registryDependencies": [],
+		"relativeUrl": "square-20.json"
 	}
 ]

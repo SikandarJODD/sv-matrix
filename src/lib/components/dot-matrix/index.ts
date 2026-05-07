@@ -1,9 +1,9 @@
-import Root from "./dot-matrix.svelte";
+import Root from './dot-matrix.svelte';
 
 export {
 	Root,
 	//
-	Root as DotMatrix,
+	Root as DotMatrix
 };
 
 export type {
@@ -11,5 +11,5 @@ export type {
 	DotMatrixAnimation,
 	DotMatrixPhase,
 	DotMatrixPattern,
-	DotMatrixProps,
-} from "./types.js";
+	DotMatrixProps
+} from './types.js';

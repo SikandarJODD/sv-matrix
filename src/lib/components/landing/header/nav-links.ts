@@ -7,7 +7,7 @@ let navs: LinkItemType[] = [
 	},
 	{
 		name: 'Docs',
-		href: '/docs'
+		href: '/docs/introduction'
 	},
 	{
 		name: 'Components',

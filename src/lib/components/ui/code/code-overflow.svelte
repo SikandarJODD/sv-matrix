@@ -29,7 +29,7 @@
 	{@render children?.()}
 	{#if collapsed}
 		<div
-			class="from-background absolute bottom-0 left-0 z-10 h-full w-full bg-linear-to-t to-transparent"
+			class="absolute bottom-0 left-0 z-10 h-full w-full bg-linear-to-t from-background to-transparent"
 		></div>
 	{/if}
 	{#if collapsed}

@@ -29,5 +29,5 @@
 			</Sidebar.Group>
 		{/each}
 	</Sidebar.Content>
-	<Sidebar.Rail />
+	<!-- <Sidebar.Rail /> -->
 </Sidebar.Root>

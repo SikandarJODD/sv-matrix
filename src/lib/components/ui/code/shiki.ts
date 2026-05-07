@@ -17,10 +17,7 @@ export type SupportedLanguage = keyof typeof bundledLanguages | 'text';
 
 /** A preloaded highlighter instance. */
 export const highlighter = createHighlighterCore({
-	themes: [
-		import('@shikijs/themes/github-light-default'),
-		import('@shikijs/themes/vesper')
-	],
+	themes: [import('@shikijs/themes/github-light-default'), import('@shikijs/themes/vesper')],
 	langs: Object.entries(bundledLanguages).map(([_, lang]) => lang),
 	engine: createJavaScriptRegexEngine()
 });

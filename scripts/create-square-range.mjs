@@ -30,7 +30,10 @@ async function main() {
 		throw new Error(`Invalid range: start ${args.start} is greater than end ${args.end}.`);
 	}
 
-	const numbers = Array.from({ length: args.end - args.start + 1 }, (_, index) => args.start + index);
+	const numbers = Array.from(
+		{ length: args.end - args.start + 1 },
+		(_, index) => args.start + index
+	);
 	await preflightRange(numbers, args.force);
 
 	for (const number of numbers) {

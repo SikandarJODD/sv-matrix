@@ -1,10 +1,11 @@
-import type { HTMLAttributes } from "svelte/elements";
+import type { HTMLAttributes } from 'svelte/elements';
 
-import type { WithElementRef, WithoutChildren } from "$lib/utils.js";
+type WithoutChildren<T> = T extends { children?: any } ? Omit<T, 'children'> : T;
+type WithElementRef<T, U extends HTMLElement = HTMLElement> = T & { ref?: U | null };
 
-export type DotMatrixPattern = "diamond" | "full" | "outline" | "rose" | "cross" | "rings";
-export type DotMatrixPhase = "idle" | "collapse" | "hoverRipple" | "loadingRipple";
-export type DotMatrixAnimation = "none" | "path-wave";
+export type DotMatrixPattern = 'diamond' | 'full' | 'outline' | 'rose' | 'cross' | 'rings';
+export type DotMatrixPhase = 'idle' | 'collapse' | 'hoverRipple' | 'loadingRipple';
+export type DotMatrixAnimation = 'none' | 'path-wave';
 
 export interface DotMatrixOptions {
 	animation?: DotMatrixAnimation;
@@ -30,7 +31,7 @@ export interface DotMatrixOptions {
 export type DotMatrixProps = WithoutChildren<WithElementRef<HTMLAttributes<HTMLDivElement>>> &
 	DotMatrixOptions;
 
-export type DotMatrixCommonProps = Omit<DotMatrixProps, "animation">;
+export type DotMatrixCommonProps = Omit<DotMatrixProps, 'animation'>;
 
 export interface DotAnimationContext {
 	index: number;

@@ -1,42 +1,72 @@
-# sv
+# Svelte Dot Matrix Loaders
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+<p>
+  <img src="https://gitviews.com/user/SikandarJODD/repos.svg?style=flat&label-color=%23555&color=blue" alt="Views" />
+  <a href="https://github.com/sponsors/SikandarJODD">
+    <img src="https://img.shields.io/github/sponsors/SikandarJODD?label=Sponsor&logo=githubsponsors&color=EA4AAA" alt="GitHub Sponsors" /></a>
+  <a href="https://github.com/SikandarJODD/sv-matrix/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
+  </a>
+</p>
 
-## Creating a project
+A growing collection of dot-matrix loaders for Svelte. `sv-matrix` gives you reusable square matrix animations built on top of a shared `DotMatrix` foundation, with registry installs, live previews, and component docs.
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Live: [Preview](https://sv-matrix.vercel.app)
+- Docs: [Setup & Usage](https://sv-matrix.vercel.app/docs/setup)
+- Components: [View Loaders](https://sv-matrix.vercel.app/components/squares/square-1)
 
-```sh
-# create a new project
-npx sv create my-app
+## Installation
+
+Each loader depends on the shared dot-matrix foundation.
+
+### 1. Install the base dot-matrix component
+
+This installs the shared `DotMatrix` component, hooks, helpers, and styles.
+
+```bash
+npx shadcn-svelte@latest add https://sv-matrix.vercel.app/r/dot-matrix.json
 ```
 
-To recreate this project with the same configuration:
+### 2. Install any matrix loader
 
-```sh
-# recreate this project
-pnpm dlx sv@0.15.2 create --template minimal --types ts --add tailwindcss="plugins:none" prettier --install pnpm .
+Pick any loader you want from the registry.
+
+```bash
+npx shadcn-svelte@latest add https://sv-matrix.vercel.app/r/square-1.json
 ```
 
-## Developing
+Examples:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```bash
+npx shadcn-svelte@latest add https://sv-matrix.vercel.app/r/square-4.json
+npx shadcn-svelte@latest add https://sv-matrix.vercel.app/r/square-8.json
 ```
 
-## Building
+## Usage
 
-To create a production version of your app:
+Example with `square-1`:
 
-```sh
-npm run build
+```svelte
+<script lang="ts">
+	import Square1 from '$lib/components/loaders/square-1.svelte';
+</script>
+
+<Square1 size={37} dotSize={5} speed={1.1} color="#f59e0b" />
 ```
 
-You can preview the production build with `npm run preview`.
+## Credits
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+This project is inspired from the Original Dot Matrix Loaders by [Shawn](https://x.com/zzzzshawn/)
+Original Dot Matrix: [Live Preview](https://dotmatrix.zzzzshawn.cloud)
+
+## Goal
+
+The goal of this project is to bring similar dot matrix loaders to the Svelte ecosystem.
+
+## Support
+
+GitHub Sponsor: https://github.com/sponsors/SikandarJODD
+
+## License
+
+This project is licensed under the [MIT](LICENSE) License

@@ -14,7 +14,7 @@
 		"format": "prettier --write .",
 		"create:square": "node scripts/create-square.mjs",
 		"create:squares": "node scripts/create-square-range.mjs",
-		"build:blocks": "pnpm shadcn-svelte registry build"
+		"build:loaders": "pnpm shadcn-svelte registry build"
 	},
 	"devDependencies": {
 		"@fontsource-variable/figtree": "^5.2.10",
@@ -26,6 +26,7 @@
 		"@sveltejs/kit": "latest",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/vite": "^4.2.2",
+		"@types/node": "^25.6.0",
 		"clsx": "^2.1.1",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.1",

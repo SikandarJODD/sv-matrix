@@ -10,13 +10,13 @@
 	import { page } from '$app/state';
 
 	let scroll = createScroll(50);
-	let stars = $state(10);
+	let stars = $state(0);
 	const repo = { owner: 'SikandarJODD', repo: 'sv-matrix' };
-	// onMount(async () => {
-	// 	stars = await getStars({ ...repo, fallback: 0 });
-	// });
+	onMount(async () => {
+		stars = await getStars({ ...repo, fallback: 0 });
+	});
 	let isMainRoute = $derived(page.url.href === page.url.origin + '/');
-	$inspect(isMainRoute, page.url.href, page.url.origin);
+	// $inspect(isMainRoute, page.url.href, page.url.origin);
 </script>
 
 <header
@@ -24,10 +24,11 @@
 		'sticky top-0 z-50 w-full border-b border-transparent',
 		scroll.scrolled &&
 			'border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50',
-		!isMainRoute && 'border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50'
+		!isMainRoute &&
+			'border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50'
 	)}
 >
-	<nav class="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4 md:px-0">
+	<nav class="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4 md:px-0!">
 		<div class="flex w-full items-center gap-5">
 			<a class="rotate-120 fill-black/90 dark:fill-white/80" href="/">
 				<!-- <Logo class="h-4" /> -->
@@ -42,23 +43,25 @@
 			</a>
 			<DesktopNav />
 		</div>
-		<div class="hidden items-center gap-2 md:flex">
+		<div class="hidden items-center gap-4 md:flex">
 			<DocsSearchNavigation />
-			<Button
-				href="https://x.com/Sikandar_Bhide"
-				target="_blank"
-				variant="ghost"
-				size="icon"
-				class="rounded-sm text-primary"
-			>
-				<svg fill="none" viewBox="0 0 1200 1227"
-					><path
-						fill="currentColor"
-						d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
-					/></svg
+			<div class="flex items-center gap-2">
+				<Button
+					href="https://x.com/Sikandar_Bhide"
+					target="_blank"
+					variant="ghost"
+					size="icon"
+					class="rounded-sm text-primary"
 				>
-			</Button>
-			<GitHubButton class="rounded-sm" {repo} {stars} />
+					<svg fill="none" viewBox="0 0 1200 1227"
+						><path
+							fill="currentColor"
+							d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
+						/></svg
+					>
+				</Button>
+				<GitHubButton class="rounded-sm" {repo} {stars} />
+			</div>
 		</div>
 		<MobileNav />
 	</nav>
