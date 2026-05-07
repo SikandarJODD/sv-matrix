@@ -348,6 +348,34 @@
 					"target": "loaders/square-18.svelte"
 				}
 			]
+		},
+		{
+			"name": "square-19",
+			"title": "Lemniscate Pulse Loader",
+			"description": "A square loader with twin heads tracing a lemniscate path and a soft pulse through the center.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-19.svelte",
+					"type": "registry:component",
+					"target": "loaders/square-19.svelte"
+				}
+			]
+		},
+		{
+			"name": "square-20",
+			"title": "Mobius Ring Loader",
+			"description": "A square loader with a perimeter ring, countertail motion, and Mobius-style twist cues at each corner.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/square/square-20.svelte",
+					"type": "registry:component",
+					"target": "loaders/square-20.svelte"
+				}
+			]
 		}
 	]
 }

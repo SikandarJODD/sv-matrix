@@ -22,6 +22,8 @@ import { data as square15Doc } from '../../routes/(main)/components/squares/squa
 import { data as square16Doc } from '../../routes/(main)/components/squares/square-16/data';
 import { data as square17Doc } from '../../routes/(main)/components/squares/square-17/data';
 import { data as square18Doc } from '../../routes/(main)/components/squares/square-18/data';
+import { data as square19Doc } from '../../routes/(main)/components/squares/square-19/data';
+import { data as square20Doc } from '../../routes/(main)/components/squares/square-20/data';
 // square-doc-imports:end
 
 export type SquarePageData = {
@@ -136,6 +138,18 @@ export const squareCatalog = [
 		id: 'square-18',
 		title: 'Sound Bars',
 		description: 'A square loader with equalizer-style bars pulsing like live sound levels.'
+	},
+	{
+		id: 'square-19',
+		title: 'Lemniscate Pulse',
+		description:
+			'A square loader with twin heads tracing a lemniscate path and a soft pulse through the center.'
+	},
+	{
+		id: 'square-20',
+		title: 'Mobius Ring',
+		description:
+			'A square loader with a perimeter ring, countertail motion, and Mobius-style twist cues at each corner.'
 	}
 ] satisfies SquareCatalogEntry[];
 
@@ -184,7 +198,9 @@ const richSquareDocs: Record<string, SquareDocContent> = {
 	'square-15': square15Doc,
 	'square-16': square16Doc,
 	'square-17': square17Doc,
-	'square-18': square18Doc
+	'square-18': square18Doc,
+	'square-19': square19Doc,
+	'square-20': square20Doc
 	// square-doc-map:end
 };
 

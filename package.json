@@ -26,6 +26,7 @@
 		"@sveltejs/kit": "latest",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/vite": "^4.2.2",
+		"@types/node": "^25.6.0",
 		"clsx": "^2.1.1",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.1",
