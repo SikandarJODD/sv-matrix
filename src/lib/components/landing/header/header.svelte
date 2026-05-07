@@ -8,6 +8,8 @@
 	import MobileNav from './mobile-nav.svelte';
 	import { getStars, GitHubButton } from '$lib/components/ui/github-button';
 	import { page } from '$app/state';
+	import { mode, toggleMode } from 'mode-watcher';
+	import { SunIcon, MoonIcon } from '@lucide/svelte';
 
 	let scroll = createScroll(50);
 	let stars = $state(0);
@@ -50,7 +52,7 @@
 					href="https://x.com/Sikandar_Bhide"
 					target="_blank"
 					variant="ghost"
-					size="icon"
+					size="icon-sm"
 					class="rounded-sm text-primary"
 				>
 					<svg fill="none" viewBox="0 0 1200 1227"
@@ -60,7 +62,14 @@
 						/></svg
 					>
 				</Button>
-				<GitHubButton class="rounded-sm" {repo} {stars} />
+				<GitHubButton class="rounded-sm border-none" size="sm" {repo} {stars} />
+				<Button onclick={toggleMode} variant="outline" size="icon-sm">
+					{#if mode.current === 'dark'}
+						<SunIcon class="size-4 animate-in fade-in duration-500 fill-mode-backwards" />
+					{:else}
+						<MoonIcon class="size-4 animate-in fade-in duration-500 fill-mode-backwards" />
+					{/if}
+				</Button>
 			</div>
 		</div>
 		<MobileNav />

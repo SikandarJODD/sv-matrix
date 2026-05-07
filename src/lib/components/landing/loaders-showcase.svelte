@@ -2,7 +2,7 @@
 	import { data as showcaseItems } from '../loaders/square/data';
 </script>
 
-<section class="mx-auto w-full max-w-7xl px-4 pt-10 pb-16 md:mt-14 md:mb-24 md:px-6">
+<section class="mx-auto w-full max-w-7xl px-4 pt-10 pb-16 md:mt-14 md:mb-24 md:px-6 animate-in fade-in delay-400 blur-in duration-300 ease-out fill-mode-backwards">
 	<div class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-5">
 		{#each showcaseItems as item (item.id)}
 			{@const ShowcaseComponent = item.preview}

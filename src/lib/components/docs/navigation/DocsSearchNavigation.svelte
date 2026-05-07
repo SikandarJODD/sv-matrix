@@ -29,12 +29,11 @@
 <div class="text-sm text-muted-foreground">
 	<Button
 		variant="ghost"
-		size="sm"
-		class="flex justify-between rounded-full bg-secondary px-1.5 md:min-w-46 md:pr-2.5  dark:bg-muted/60"
+		size="icon"
+		class="flex justify-center md:justify-between items-center rounded-lg bg-secondary px-1.5 md:min-w-46 md:rounded-full md:pr-2.5  dark:bg-muted/60"
 		onclick={() => (open = true)}
 	>
 		<span class="hidden pl-1 md:block"> Search... </span>
-
 		<Kbd.Group class="hidden gap-1 md:flex">
 			<!-- <Kbd.Root>⌘</Kbd.Root> -->
 			<Kbd.Root>Ctrl</Kbd.Root>

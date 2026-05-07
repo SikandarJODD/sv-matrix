@@ -1,14 +1,12 @@
 <script lang="ts">
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
-	import PhoneCall from '@lucide/svelte/icons/phone-call';
-
 	import { Button } from '$lib/components/ui/button';
 </script>
 
-<section class="mx-auto w-full max-w-6xl overflow-hidden pt-16">
+<section class="mx-auto w-full max-w-6xl overflow-hidden pt-16 pb-10 md:pb-0">
 	<div aria-hidden="true" class="absolute inset-0 size-full overflow-hidden">
 		<div
-			class="absolute inset-0 isolate -z-10 bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
+			class="absolute inset-0 isolate -z-10 bg-[radial-gradient(60%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)] lg:bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
 		></div>
 	</div>
 
@@ -40,7 +38,7 @@
 		<p
 			class="animate-in font-geist-pixel-circle text-sm tracking-wider text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in sm:text-lg md:text-2xl"
 		>
-			20+ free and open-source loaders, <br /> Built with Svelte, TypeScript, Tailwind CSS
+			50+ free and open-source loaders, <br /> Built with Svelte, TypeScript, Tailwind CSS
 		</p>
 
 		<div
