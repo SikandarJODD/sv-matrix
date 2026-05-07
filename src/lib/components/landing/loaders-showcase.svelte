@@ -1,26 +1,5 @@
 <script lang="ts">
-	import type { Component } from 'svelte';
-	import { getSquarePageData, squareSourceItems } from '$lib/content/squares';
-
-	type LoaderShowcaseItem = {
-		id: string;
-		href: string;
-		title: string;
-		preview: Component;
-	};
-
-	const showcaseItems = squareSourceItems
-		.map((item) => {
-			const pageData = getSquarePageData(item.id);
-
-			return {
-				id: pageData?.id ?? item.id,
-				href: `/components/squares/${pageData?.id ?? item.id}`,
-				title: pageData?.title ?? item.name,
-				preview: pageData?.preview
-			};
-		})
-		.filter((item): item is LoaderShowcaseItem => item.preview !== undefined);
+	import { data as showcaseItems } from '../loaders/square/data';
 </script>
 
 <section class="mx-auto w-full max-w-7xl px-4 pb-16 pt-10 md:px-6 md:mb-24 md:mt-14">
