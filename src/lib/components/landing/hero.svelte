@@ -5,14 +5,14 @@
 	import { Button } from '$lib/components/ui/button';
 </script>
 
-<section class="mx-auto w-full max-w-5xl overflow-hidden pt-16">
+<section class="mx-auto w-full max-w-6xl overflow-hidden pt-16">
 	<div aria-hidden="true" class="absolute inset-0 size-full overflow-hidden">
 		<div
 			class="absolute inset-0 isolate -z-10 bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
 		></div>
 	</div>
 
-	<div class="relative z-10 flex max-w-3xl flex-col gap-5 px-4">
+	<div class="relative z-10 flex max-w-3xl flex-col gap-5 px-4 md:px-0">
 		<a
 			class="group flex w-fit animate-in items-center gap-3 rounded-full border bg-card p-1 shadow-xs transition-all delay-0 delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 			href="/"

@@ -34,14 +34,14 @@ import Square7Raw from '$lib/components/loaders/square/square-7.svelte?raw';
 
 export const meta: ComponentMeta = {
 	id: "square-7",
-	title: "Square 7",
-	description: "Square 7 square loader component."
+	title: "Block Drop",
+	description: "A square loader with a block-dropping animation and various pattern options."
 };
 
 const seo: SEO = {
-	title: "Square 7 Loader",
-	description: "Square 7 square loader component.",
-	keywords: ["Svelte", "Square 7", "Loader", "Square"]
+	title: "Block Drop Loader",
+	description: "A square loader with a block-dropping animation and various pattern options.",
+	keywords: ["Svelte", "Square 7", "Loader", "Square", "Block Drop"]
 };
 
 const examples: Example[] = [

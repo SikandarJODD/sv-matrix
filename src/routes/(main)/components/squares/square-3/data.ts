@@ -34,8 +34,8 @@ import Square3Raw from '$lib/components/loaders/square/square-3.svelte?raw';
 
 export const meta: ComponentMeta = {
 	id: "square-3",
-	title: "Square 3",
-	description: "Square 3 square loader component."
+	title: "Core Spiral",
+	description: "A square loader with a spiral animation and various pattern options."
 };
 
 const seo: SEO = {

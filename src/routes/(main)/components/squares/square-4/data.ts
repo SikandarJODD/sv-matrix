@@ -34,8 +34,8 @@ import Square4Raw from '$lib/components/loaders/square/square-4.svelte?raw';
 
 export const meta: ComponentMeta = {
 	id: "square-4",
-	title: "Square 4",
-	description: "Square 4 square loader component."
+	title: "Twin Orbit",
+	description: "A square loader with two interlocking orbits of dots and various pattern options."
 };
 
 const seo: SEO = {

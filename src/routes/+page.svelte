@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Hero from '$lib/components/landing/hero.svelte';
+	import LoadersShowcase from '$lib/components/landing/loaders-showcase.svelte';
 	import { JsonLd, MetaTags } from 'svelte-meta-tags';
 
 	const siteName = 'Svelte Dot Matrix';
@@ -105,3 +106,4 @@
 <JsonLd schema={jsonLd} />
 
 <Hero />
+<LoadersShowcase />

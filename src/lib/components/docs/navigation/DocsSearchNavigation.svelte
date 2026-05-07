@@ -30,7 +30,7 @@
 	<Button
 		variant="ghost"
 		size="sm"
-		class="flex justify-between bg-secondary px-1.5 md:min-w-46 md:pr-1  dark:bg-muted/60"
+		class="flex justify-between bg-secondary rounded-full px-1.5 md:min-w-46 md:pr-2.5  dark:bg-muted/60"
 		onclick={() => (open = true)}
 	>
 		<span class="hidden pl-1 md:block"> Search... </span>

@@ -27,7 +27,7 @@
 		!isMainRoute && 'border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50'
 	)}
 >
-	<nav class="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4 md:px-0">
+	<nav class="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4 md:px-0!">
 		<div class="flex w-full items-center gap-5">
 			<a class="rotate-120 fill-black/90 dark:fill-white/80" href="/">
 				<!-- <Logo class="h-4" /> -->
@@ -42,9 +42,10 @@
 			</a>
 			<DesktopNav />
 		</div>
-		<div class="hidden items-center gap-2 md:flex">
+		<div class="hidden items-center gap-4 md:flex">
 			<DocsSearchNavigation />
-			<Button
+		<div class="flex items-center gap-2">
+		<Button
 				href="https://x.com/Sikandar_Bhide"
 				target="_blank"
 				variant="ghost"
@@ -59,6 +60,7 @@
 				>
 			</Button>
 			<GitHubButton class="rounded-sm" {repo} {stars} />
+			</div>
 		</div>
 		<MobileNav />
 	</nav>

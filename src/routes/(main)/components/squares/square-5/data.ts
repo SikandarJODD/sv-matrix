@@ -34,8 +34,8 @@ import Square5Raw from '$lib/components/loaders/square/square-5.svelte?raw';
 
 export const meta: ComponentMeta = {
 	id: "square-5",
-	title: "Square 5",
-	description: "Square 5 square loader component."
+	title: "Prism Sweep",
+	description: "A square loader with a prism-like sweeping animation and various pattern options."
 };
 
 const seo: SEO = {

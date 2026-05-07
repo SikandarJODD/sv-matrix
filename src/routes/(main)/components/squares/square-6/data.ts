@@ -34,8 +34,8 @@ import Square6Raw from '$lib/components/loaders/square/square-6.svelte?raw';
 
 export const meta: ComponentMeta = {
 	id: "square-6",
-	title: "Square 6",
-	description: "Square 6 square loader component."
+	title: "Flux Columns",
+	description: "A square loader with vertical column animations and various pattern options."
 };
 
 const seo: SEO = {

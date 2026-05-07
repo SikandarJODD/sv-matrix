@@ -34,7 +34,7 @@ import Square2Raw from '$lib/components/loaders/square/square-2.svelte?raw';
 
 export const meta: ComponentMeta = {
 	id: 'square-2',
-	title: 'Square 2',
+	title: 'Pulse Ladder',
 	description: 'A row-cycle square loader with a stepped trail animation.'
 };
 
