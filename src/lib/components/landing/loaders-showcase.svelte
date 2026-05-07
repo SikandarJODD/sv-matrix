@@ -9,12 +9,12 @@
 			<a
 				href={item.href}
 				aria-label={`Open ${item.title} details`}
-				class="dark:bg-secondary/10 bg-secondary text-foreground ring-foreground/10 focus-visible:ring-ring/50 group relative aspect-square overflow-hidden rounded-[2rem] border border-white/5 dark:shadow-[0_24px_80px_rgba(0,0,0,0.28)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-white/10 focus-visible:outline-none focus-visible:ring-[3px]"
+				class="dark:bg-secondary/10 bg-secondary text-foreground ring-foreground/10 focus-visible:ring-ring/50 group relative aspect-square overflow-hidden rounded-[2rem]  dark:shadow-[0_24px_80px_rgba(0,0,0,0.28)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-white/10 focus-visible:outline-none focus-visible:ring-[3px]"
 			>
-				<div
+				<!-- <div
 					aria-hidden="true"
 					class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.05),transparent_45%)] opacity-70 transition-opacity duration-200 group-hover:opacity-100"
-				></div>
+				></div> -->
 
 				<div class="absolute inset-x-0 top-1/2 flex translate-y-[-58%] items-center justify-center px-6">
 					<ShowcaseComponent />

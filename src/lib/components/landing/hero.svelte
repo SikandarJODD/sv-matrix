@@ -15,7 +15,7 @@
 	<div class="relative z-10 flex max-w-3xl flex-col gap-5 px-4 md:px-0">
 		<a
 			class="group flex w-fit animate-in items-center gap-3 rounded-full border bg-card p-1 shadow-xs transition-all delay-0 delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
-			href="/"
+			href="/components/squares/square-18"
 		>
 			<div class="rounded-full border bg-card px-1.5 py-0.5 shadow-sm">
 				<p class="font-mono text-xs lowercase">new</p>
@@ -40,7 +40,7 @@
 		<p
 			class="animate-in text-sm tracking-wider text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in sm:text-lg md:text-2xl font-geist-pixel-circle"
 		>
-			55+ free and open-source loaders, <br /> Built with Svelte, TypeScript, Tailwind CSS
+			20+ free and open-source loaders, <br /> Built with Svelte, TypeScript, Tailwind CSS
 		</p>
 
 		<div

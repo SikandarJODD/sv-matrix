@@ -36,15 +36,6 @@ const getStartedItems: MatrixNavItem[] = [
 		kind: 'doc',
 		placeholder: true
 	},
-	{
-		id: 'get-started-usage',
-		title: 'Usage',
-		href: '/docs/usage',
-		description: 'How to browse the loaders, copy code, and use the docs site.',
-		section: 'get-started',
-		kind: 'doc',
-		placeholder: true
-	}
 ];
 
 export const squareItems: MatrixNavItem[] = [
@@ -244,11 +235,11 @@ export const navigationSections: MatrixNavSection[] = [
 		title: 'Squares',
 		items: squareItems
 	},
-	{
-		id: 'circles',
-		title: 'Circles',
-		items: circleItems
-	}
+	// {
+	// 	id: 'circles',
+	// 	title: 'Circles',
+	// 	items: circleItems
+	// }
 ];
 
 export const navigationItems: MatrixNavItem[] = navigationSections.flatMap(

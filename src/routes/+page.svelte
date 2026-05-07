@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Footer from '$lib/components/landing/footer.svelte';
 	import Hero from '$lib/components/landing/hero.svelte';
 	import LoadersShowcase from '$lib/components/landing/loaders-showcase.svelte';
 	import { JsonLd, MetaTags } from 'svelte-meta-tags';
@@ -107,3 +108,4 @@
 
 <Hero />
 <LoadersShowcase />
+<Footer/>
