@@ -30,7 +30,7 @@
 	}
 </script>
 
-<div class="w-md mx-auto space-y-4">
+<div class="mx-auto w-md space-y-4">
 	<div class="rounded-xl border bg-muted/30 p-4">
 		<div class="flex items-center justify-between gap-3">
 			<div>

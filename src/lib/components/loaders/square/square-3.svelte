@@ -19,12 +19,7 @@
 	// 1. Keep the wrapper thin.
 	// 2. Move only the preset-specific math into the resolver.
 	// 3. Reuse DotMatrixBase + shared hooks for phases and reduced motion.
-	const animationResolver: DotAnimationResolver = ({
-		isActive,
-		index,
-		reducedMotion,
-		phase
-	}) => {
+	const animationResolver: DotAnimationResolver = ({ isActive, index, reducedMotion, phase }) => {
 		if (!isActive) {
 			return { className: 'dmx-inactive' };
 		}

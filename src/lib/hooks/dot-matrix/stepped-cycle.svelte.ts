@@ -1,5 +1,5 @@
-import { subscribeFrame } from "./raf.js";
-import { resolveCycleDuration, resolveSafeSpeed } from "./timing.js";
+import { subscribeFrame } from './raf.js';
+import { resolveCycleDuration, resolveSafeSpeed } from './timing.js';
 
 export interface SteppedCycleOptions {
 	active: () => boolean;
@@ -22,7 +22,7 @@ export function createSteppedCycle({
 	cycleMsBase,
 	steps,
 	speed = () => 1,
-	idleStep = () => 0,
+	idleStep = () => 0
 }: SteppedCycleOptions): SteppedCycleController {
 	let current = $state(0);
 
@@ -63,6 +63,6 @@ export function createSteppedCycle({
 	return {
 		get current() {
 			return current;
-		},
+		}
 	};
 }

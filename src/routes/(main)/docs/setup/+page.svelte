@@ -97,7 +97,9 @@
 
 		<div class="mt-4 max-w-2xl">
 			<Paragraph>
-				Neon Drift Loader would be installed inside <CodeSpan>src/lib/components/loaders/square-1</CodeSpan> folder.
+				Neon Drift Loader would be installed inside <CodeSpan
+					>src/lib/components/loaders/square-1</CodeSpan
+				> folder.
 				<br />
 				You can tune props like <CodeSpan>size</CodeSpan>, <CodeSpan>dotSize</CodeSpan>, and
 				<CodeSpan>speed</CodeSpan> and many more.

@@ -39,7 +39,7 @@
 	const currentYear = new Date().getFullYear();
 </script>
 
-<div class="relative bg-background overflow-clip w-full pt-2">
+<div class="relative w-full overflow-clip bg-background pt-2">
 	<div class="relative mx-auto w-full max-w-7xl">
 		<footer class="relative">
 			<FullWidthDivider position="top" class="bg-border/80" />

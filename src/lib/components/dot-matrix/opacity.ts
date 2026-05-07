@@ -38,7 +38,7 @@ export function remapOpacityToTriplet(
 	opacity: number,
 	opacityBase: number | undefined,
 	opacityMid: number | undefined,
-	opacityPeak: number | undefined,
+	opacityPeak: number | undefined
 ): number {
 	if (!Number.isFinite(opacity)) {
 		return opacity;
@@ -80,8 +80,8 @@ export function opacityToBloomLevel(remappedOpacity: number): number {
 		0,
 		Math.min(
 			1,
-			(remappedOpacity - DOT_MATRIX_BLOOM_OPACITY_MIN) / (1 - DOT_MATRIX_BLOOM_OPACITY_MIN),
-		),
+			(remappedOpacity - DOT_MATRIX_BLOOM_OPACITY_MIN) / (1 - DOT_MATRIX_BLOOM_OPACITY_MIN)
+		)
 	);
 }
 
@@ -101,8 +101,8 @@ export function isBloomRootActive(bloom: boolean, halo: number | undefined): boo
 	return bloom || clampHalo(halo) > 0;
 }
 
-export function getBloomHaloSpreadClass(halo: number | undefined): "dmx-bloom-halo" | undefined {
-	return clampHalo(halo) > 0 ? "dmx-bloom-halo" : undefined;
+export function getBloomHaloSpreadClass(halo: number | undefined): 'dmx-bloom-halo' | undefined {
+	return clampHalo(halo) > 0 ? 'dmx-bloom-halo' : undefined;
 }
 
 export function getDotBloomParts(
@@ -112,7 +112,7 @@ export function getDotBloomParts(
 	halo: number | undefined,
 	opacityBase: number | undefined,
 	opacityMid: number | undefined,
-	opacityPeak: number | undefined,
+	opacityPeak: number | undefined
 ): { level: number; bloomDot: boolean } {
 	const haloLevel = clampHalo(halo);
 
@@ -120,16 +120,11 @@ export function getDotBloomParts(
 		return { level: 0, bloomDot: false };
 	}
 
-	const remappedOpacity = remapOpacityToTriplet(
-		curveOpacity,
-		opacityBase,
-		opacityMid,
-		opacityPeak,
-	);
+	const remappedOpacity = remapOpacityToTriplet(curveOpacity, opacityBase, opacityMid, opacityPeak);
 	const bloomLevel = bloom ? opacityToBloomLevel(remappedOpacity) : 0;
 
 	return {
 		level: Math.max(haloLevel, bloomLevel),
-		bloomDot: haloLevel > 0 || (bloom && qualifiesForBloom(remappedOpacity)),
+		bloomDot: haloLevel > 0 || (bloom && qualifiesForBloom(remappedOpacity))
 	};
 }

@@ -51,13 +51,13 @@
 
 <Button
 	href={`https://github.com/${repo.owner}/${repo.repo}`}
-	class={cn('[&_span]:text-muted-foreground gap-2 font-mono text-xs', className)}
+	class={cn('gap-2 font-mono text-xs [&_span]:text-muted-foreground', className)}
 	{variant}
 	size={stars === undefined ? sizeMap[size].icon : sizeMap[size].normal}
 	{...rest}
 >
 	<svg
-		class={cn('text-foreground size-4 shrink-0 fill-current', className)}
+		class={cn('size-4 shrink-0 fill-current text-foreground', className)}
 		viewBox="0 0 256 250"
 		xmlns="http://www.w3.org/2000/svg"
 		preserveAspectRatio="xMidYMid"

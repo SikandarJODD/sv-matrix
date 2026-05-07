@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { page } from "$app/state";
-	import { MetaTags } from "svelte-meta-tags";
+	import { page } from '$app/state';
+	import { MetaTags } from 'svelte-meta-tags';
 	type Props = {
 		title: string;
 		description: string;
@@ -18,10 +18,10 @@
 		keywords,
 		images = [
 			{
-				url: "https://sv-matrix.vercel.app/og.png",
-				alt: "Svelte Dot Matrix Loaders",
-			},
-		],
+				url: 'https://sv-matrix.vercel.app/og.png',
+				alt: 'Svelte Dot Matrix Loaders'
+			}
+		]
 	}: Props = $props();
 
 	let canonical = $derived(page.url.origin);
@@ -57,15 +57,15 @@
 		title: title,
 		description: description,
 		images: images,
-		siteName: "Svelte Dot Matrix",
+		siteName: 'Svelte Dot Matrix'
 	}}
 	twitter={{
-		creator: "@Sikandar_Bhide",
-		site: "@Sikandar_Bhide",
-		cardType: "summary_large_image",
+		creator: '@Sikandar_Bhide',
+		site: '@Sikandar_Bhide',
+		cardType: 'summary_large_image',
 		title: title,
 		description: description,
 		// image: images && images[0] ? images[0].url : "https://sv-matrix.vercel.app/svelte.svg",
-		imageAlt: images && images[0] ? images[0].alt : "Svelte Dot Matrix Loaders",
+		imageAlt: images && images[0] ? images[0].alt : 'Svelte Dot Matrix Loaders'
 	}}
 />

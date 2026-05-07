@@ -91,7 +91,7 @@
 								</Button>
 							{/snippet}
 						</Tooltip.Trigger>
-						<Tooltip.Content side='bottom'>
+						<Tooltip.Content side="bottom">
 							Press <Kbd.Root>←</Kbd.Root>
 						</Tooltip.Content>
 					</Tooltip.Root>
@@ -113,7 +113,7 @@
 								</Button>
 							{/snippet}
 						</Tooltip.Trigger>
-						<Tooltip.Content side='bottom'>
+						<Tooltip.Content side="bottom">
 							Press <Kbd.Root>→</Kbd.Root>
 						</Tooltip.Content>
 					</Tooltip.Root>

@@ -1,4 +1,4 @@
-import Badge from "./badge.svelte";
+import Badge from './badge.svelte';
 
 export { Badge };
-export { badgeVariants, type BadgeSize, type BadgeVariant } from "./badge.svelte";
+export { badgeVariants, type BadgeSize, type BadgeVariant } from './badge.svelte';

@@ -1,8 +1,8 @@
-import { GRID_RANGE, MATRIX_CENTER, MATRIX_SIZE, indexToCoord, rowMajorIndex } from "./geometry.js";
-import type { DotMatrixPattern } from "./types.js";
+import { GRID_RANGE, MATRIX_CENTER, MATRIX_SIZE, indexToCoord, rowMajorIndex } from './geometry.js';
+import type { DotMatrixPattern } from './types.js';
 
 export const FULL_INDEXES = GRID_RANGE.flatMap((row) =>
-	GRID_RANGE.map((col) => rowMajorIndex(row, col)),
+	GRID_RANGE.map((col) => rowMajorIndex(row, col))
 );
 
 export const DIAMOND_INDEXES = FULL_INDEXES.filter((index) => {
@@ -43,9 +43,9 @@ const PATTERN_INDEXES: Record<DotMatrixPattern, number[]> = {
 	outline: OUTLINE_INDEXES,
 	rose: ROSE_INDEXES,
 	cross: CROSS_INDEXES,
-	rings: RINGS_INDEXES,
+	rings: RINGS_INDEXES
 };
 
-export function getPatternIndexes(pattern: DotMatrixPattern = "diamond"): number[] {
+export function getPatternIndexes(pattern: DotMatrixPattern = 'diamond'): number[] {
 	return PATTERN_INDEXES[pattern];
 }

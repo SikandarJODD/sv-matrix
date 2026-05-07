@@ -5,7 +5,6 @@
 	import { Input } from '$lib/components/ui/input';
 	import Square1 from '$lib/components/loaders/square/square-1.svelte';
 
-
 	type Message = {
 		id: number;
 		variant: 'sent' | 'received';

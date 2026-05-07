@@ -38,7 +38,7 @@
 		</h1>
 
 		<p
-			class="animate-in text-sm tracking-wider text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in sm:text-lg md:text-2xl font-geist-pixel-circle"
+			class="animate-in font-geist-pixel-circle text-sm tracking-wider text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in sm:text-lg md:text-2xl"
 		>
 			20+ free and open-source loaders, <br /> Built with Svelte, TypeScript, Tailwind CSS
 		</p>

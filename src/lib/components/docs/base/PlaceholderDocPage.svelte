@@ -37,7 +37,7 @@
 	{#if content.highlights.length > 0}
 		<section>
 			<H2 id="included">Included</H2>
-			<ul class="text-foreground/80 mt-3 list-disc space-y-2 pl-5">
+			<ul class="mt-3 list-disc space-y-2 pl-5 text-foreground/80">
 				{#each content.highlights as highlight}
 					<li>{highlight}</li>
 				{/each}

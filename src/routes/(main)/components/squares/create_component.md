@@ -2,7 +2,7 @@
 
 Use this file when creating or updating a square doc package under `src/routes/(main)/components/squares/<square-id>/`.
 
-For family-level work such as adding `square-19`, wiring a new registry entry, or creating a new family like circles, also read [add_component_guide.md](/s:/advance_svelte/sv-matrix/src/routes/(main)/components/add_component_guide.md).
+For family-level work such as adding `square-19`, wiring a new registry entry, or creating a new family like circles, also read [add_component_guide.md](</s:/advance_svelte/sv-matrix/src/routes/(main)/components/add_component_guide.md>).
 
 ## Current square architecture
 

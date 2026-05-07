@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-	import { getOpenInContext, providers } from "./open-in-context.svelte.js";
-	import ExternalLink from "@lucide/svelte/icons/external-link";
-	import ClaudeIcon from "./ClaudeIcon.svelte";
+	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
+	import { getOpenInContext, providers } from './open-in-context.svelte.js';
+	import ExternalLink from '@lucide/svelte/icons/external-link';
+	import ClaudeIcon from './ClaudeIcon.svelte';
 
 	interface Props {
 		class?: string;

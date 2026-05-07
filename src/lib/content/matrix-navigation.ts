@@ -35,7 +35,7 @@ const getStartedItems: MatrixNavItem[] = [
 		section: 'get-started',
 		kind: 'doc',
 		placeholder: true
-	},
+	}
 ];
 
 export const squareItems: MatrixNavItem[] = [
@@ -234,7 +234,7 @@ export const navigationSections: MatrixNavSection[] = [
 		id: 'squares',
 		title: 'Squares',
 		items: squareItems
-	},
+	}
 	// {
 	// 	id: 'circles',
 	// 	title: 'Circles',

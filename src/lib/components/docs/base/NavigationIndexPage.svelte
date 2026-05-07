@@ -14,7 +14,7 @@
 	} = $props();
 </script>
 
-<SEOComponent title={title} description={description} />
+<SEOComponent {title} {description} />
 
 <div class="space-y-6 md:space-y-8">
 	<section>
@@ -30,10 +30,10 @@
 			<ul class="mt-4 space-y-3">
 				{#each section.items as item (item.id)}
 					<li>
-						<a class="hover:text-foreground text-foreground/80 transition-colors" href={item.href}>
+						<a class="text-foreground/80 transition-colors hover:text-foreground" href={item.href}>
 							<span class="font-medium">{item.title}</span>
 							{#if item.description}
-								<span class="text-foreground/55 mt-1 block text-sm">{item.description}</span>
+								<span class="mt-1 block text-sm text-foreground/55">{item.description}</span>
 							{/if}
 						</a>
 					</li>

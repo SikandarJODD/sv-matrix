@@ -4,7 +4,7 @@
 		size?: string | number;
 	}
 
-	let { class: className = "", size = "1em", ...restProps }: Props = $props();
+	let { class: className = '', size = '1em', ...restProps }: Props = $props();
 </script>
 
 <svg

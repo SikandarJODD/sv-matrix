@@ -40,7 +40,8 @@
 					Triggers a server action to send a fresh invite email.
 				</p>
 			</div>
-			<Button variant="outline" onclick={runServerAction} disabled={isRunning}>Resend invite</Button>
+			<Button variant="outline" onclick={runServerAction} disabled={isRunning}>Resend invite</Button
+			>
 		</div>
 
 		<div class="mt-4 flex min-h-8 items-center gap-2 text-sm">

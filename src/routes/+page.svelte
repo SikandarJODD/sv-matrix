@@ -108,4 +108,4 @@
 
 <Hero />
 <LoadersShowcase />
-<Footer/>
+<Footer />
