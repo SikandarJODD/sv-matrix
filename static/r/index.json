@@ -1,5 +1,13 @@
 [
 	{
+		"name": "dot-matrix",
+		"title": "Dot Matrix",
+		"type": "registry:block",
+		"description": "Shared 5x5 dot matrix foundation with hooks, helpers, and styles for sv-matrix loaders.",
+		"registryDependencies": [],
+		"relativeUrl": "dot-matrix.json"
+	},
+	{
 		"name": "square-1",
 		"title": "Square One Loader",
 		"type": "registry:block",

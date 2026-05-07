@@ -1,6 +1,7 @@
 import type { HTMLAttributes } from "svelte/elements";
 
-import type { WithElementRef, WithoutChildren } from "$lib/utils.js";
+type WithoutChildren<T> = T extends { children?: any } ? Omit<T, "children"> : T;
+type WithElementRef<T, U extends HTMLElement = HTMLElement> = T & { ref?: U | null };
 
 export type DotMatrixPattern = "diamond" | "full" | "outline" | "rose" | "cross" | "rings";
 export type DotMatrixPhase = "idle" | "collapse" | "hoverRipple" | "loadingRipple";

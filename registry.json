@@ -4,6 +4,100 @@
 	"homepage": "https://sv-matrix.vercel.app",
 	"items": [
 		{
+			"name": "dot-matrix",
+			"title": "Dot Matrix",
+			"description": "Shared 5x5 dot matrix foundation with hooks, helpers, and styles for sv-matrix loaders.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/dot-matrix/dot-matrix.svelte",
+					"type": "registry:component",
+					"target": "dot-matrix/dot-matrix.svelte"
+				},
+				{
+					"path": "./src/lib/components/dot-matrix/dot-matrix-base.svelte",
+					"type": "registry:component",
+					"target": "dot-matrix/dot-matrix-base.svelte"
+				},
+				{
+					"path": "./src/lib/components/dot-matrix/index.ts",
+					"type": "registry:lib",
+					"target": "components/dot-matrix/index.ts"
+				},
+				{
+					"path": "./src/lib/components/dot-matrix/animations.ts",
+					"type": "registry:lib",
+					"target": "components/dot-matrix/animations.ts"
+				},
+				{
+					"path": "./src/lib/components/dot-matrix/geometry.ts",
+					"type": "registry:lib",
+					"target": "components/dot-matrix/geometry.ts"
+				},
+				{
+					"path": "./src/lib/components/dot-matrix/layout.ts",
+					"type": "registry:lib",
+					"target": "components/dot-matrix/layout.ts"
+				},
+				{
+					"path": "./src/lib/components/dot-matrix/opacity.ts",
+					"type": "registry:lib",
+					"target": "components/dot-matrix/opacity.ts"
+				},
+				{
+					"path": "./src/lib/components/dot-matrix/patterns.ts",
+					"type": "registry:lib",
+					"target": "components/dot-matrix/patterns.ts"
+				},
+				{
+					"path": "./src/lib/components/dot-matrix/types.ts",
+					"type": "registry:lib",
+					"target": "components/dot-matrix/types.ts"
+				},
+				{
+					"path": "./src/lib/hooks/dot-matrix/index.ts",
+					"type": "registry:hook",
+					"target": "dot-matrix/index.ts"
+				},
+				{
+					"path": "./src/lib/hooks/dot-matrix/cycle-progress.svelte.ts",
+					"type": "registry:hook",
+					"target": "dot-matrix/cycle-progress.svelte.ts"
+				},
+				{
+					"path": "./src/lib/hooks/dot-matrix/phase-controller.svelte.ts",
+					"type": "registry:hook",
+					"target": "dot-matrix/phase-controller.svelte.ts"
+				},
+				{
+					"path": "./src/lib/hooks/dot-matrix/raf.ts",
+					"type": "registry:hook",
+					"target": "dot-matrix/raf.ts"
+				},
+				{
+					"path": "./src/lib/hooks/dot-matrix/reduced-motion.ts",
+					"type": "registry:hook",
+					"target": "dot-matrix/reduced-motion.ts"
+				},
+				{
+					"path": "./src/lib/hooks/dot-matrix/stepped-cycle.svelte.ts",
+					"type": "registry:hook",
+					"target": "dot-matrix/stepped-cycle.svelte.ts"
+				},
+				{
+					"path": "./src/lib/hooks/dot-matrix/timing.ts",
+					"type": "registry:hook",
+					"target": "dot-matrix/timing.ts"
+				},
+				{
+					"path": "./src/lib/styles/dot-matrix.css",
+					"type": "registry:file",
+					"target": "src/lib/styles/dot-matrix.css"
+				}
+			]
+		},
+		{
 			"name": "square-1",
 			"title": "Square One Loader",
 			"description": "A simple square dot matrix loader.",
@@ -13,7 +107,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-1.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-1.svelte"
+					"target": "loaders/square-1.svelte"
 				}
 			]
 		},
@@ -27,7 +121,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-2.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-2.svelte"
+					"target": "loaders/square-2.svelte"
 				}
 			]
 		},
@@ -41,7 +135,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-3.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-3.svelte"
+					"target": "loaders/square-3.svelte"
 				}
 			]
 		},
@@ -55,7 +149,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-4.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-4.svelte"
+					"target": "loaders/square-4.svelte"
 				}
 			]
 		},
@@ -69,7 +163,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-5.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-5.svelte"
+					"target": "loaders/square-5.svelte"
 				}
 			]
 		},
@@ -83,7 +177,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-6.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-6.svelte"
+					"target": "loaders/square-6.svelte"
 				}
 			]
 		},
@@ -97,7 +191,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-7.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-7.svelte"
+					"target": "loaders/square-7.svelte"
 				}
 			]
 		},
@@ -111,7 +205,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-8.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-8.svelte"
+					"target": "loaders/square-8.svelte"
 				}
 			]
 		},
@@ -125,7 +219,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-9.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-9.svelte"
+					"target": "loaders/square-9.svelte"
 				}
 			]
 		},
@@ -139,7 +233,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-10.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-10.svelte"
+					"target": "loaders/square-10.svelte"
 				}
 			]
 		},
@@ -153,7 +247,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-11.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-11.svelte"
+					"target": "loaders/square-11.svelte"
 				}
 			]
 		},
@@ -167,7 +261,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-12.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-12.svelte"
+					"target": "loaders/square-12.svelte"
 				}
 			]
 		},
@@ -181,7 +275,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-13.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-13.svelte"
+					"target": "loaders/square-13.svelte"
 				}
 			]
 		},
@@ -195,7 +289,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-14.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-14.svelte"
+					"target": "loaders/square-14.svelte"
 				}
 			]
 		},
@@ -209,7 +303,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-15.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-15.svelte"
+					"target": "loaders/square-15.svelte"
 				}
 			]
 		},
@@ -223,7 +317,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-16.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-16.svelte"
+					"target": "loaders/square-16.svelte"
 				}
 			]
 		},
@@ -237,7 +331,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-17.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-17.svelte"
+					"target": "loaders/square-17.svelte"
 				}
 			]
 		},
@@ -251,7 +345,7 @@
 				{
 					"path": "./src/lib/components/loaders/square/square-18.svelte",
 					"type": "registry:component",
-					"target": "/loaders/square-18.svelte"
+					"target": "loaders/square-18.svelte"
 				}
 			]
 		}

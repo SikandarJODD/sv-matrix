@@ -14,7 +14,7 @@
 		"format": "prettier --write .",
 		"create:square": "node scripts/create-square.mjs",
 		"create:squares": "node scripts/create-square-range.mjs",
-		"build:blocks": "pnpm shadcn-svelte registry build"
+		"build:loaders": "pnpm shadcn-svelte registry build"
 	},
 	"devDependencies": {
 		"@fontsource-variable/figtree": "^5.2.10",

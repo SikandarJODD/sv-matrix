@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { cn } from "$lib/utils.js";
-
 	import {
 		MATRIX_SIZE,
 		distanceFromCenter,
@@ -30,6 +28,11 @@
 		phase?: DotMatrixPhase;
 		reducedMotion?: boolean;
 		animationResolver?: DotAnimationResolver;
+	}
+
+	function cn(...tokens: Array<string | false | null | undefined>): string | undefined {
+		const value = tokens.filter(Boolean).join(" ");
+		return value.length > 0 ? value : undefined;
 	}
 
 	function mergeStyles(...styles: Array<string | undefined>): string | undefined {
