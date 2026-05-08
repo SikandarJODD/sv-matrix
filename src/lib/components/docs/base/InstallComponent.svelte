@@ -12,6 +12,8 @@
 
 	export type InstallComponentProps = {
 		installUrl: string;
+		jsrepoRegistry?: string;
+		jsrepoItems?: string[];
 		dependencies?: DependencyItem[];
 		tailwindConfig?: TailwindConfig;
 		codeBlocks?: CodeBlock[] | CodeBlock;
@@ -33,6 +35,8 @@
 	import type { Agent } from 'package-manager-detector';
 	let {
 		installUrl,
+		jsrepoRegistry = '@sv/loaders',
+		jsrepoItems = [],
 		dependencies = [],
 		tailwindConfig,
 		codeBlocks = [],
@@ -49,6 +53,19 @@
 	});
 
 	let agent = new PersistedState<Agent>('user-package-manager', 'pnpm');
+	let installItemName = $derived(
+		installUrl
+			.split('/')
+			.pop()
+			?.replace(/\.json$/, '') ?? ''
+	);
+	let resolvedJsrepoItems = $derived(jsrepoItems.length > 0 ? jsrepoItems : [installItemName]);
+	let resolvedJsrepoTargets = $derived(
+		resolvedJsrepoItems
+			.filter(Boolean)
+			.map((item) => (item.startsWith(`${jsrepoRegistry}/`) ? item : `${jsrepoRegistry}/${item}`))
+	);
+	let jsrepoArgs = $derived(['jsrepo', 'add', ...resolvedJsrepoTargets]);
 </script>
 
 <div class={cn('w-full', className)}>
@@ -70,6 +87,7 @@
 						{/if}
 					</Tabs.Trigger>
 				</layout.div>
+
 				<layout.div>
 					<Tabs.Trigger
 						value="manual"
@@ -85,15 +103,34 @@
 						{/if}
 					</Tabs.Trigger>
 				</layout.div>
+				<layout.div>
+					<Tabs.Trigger
+						value="jsrepo"
+						class="relative border-none text-yellow-500 bg-transparent! px-4 py-1.5 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-amber-400/8 hover:text-amber-100 data-[state=active]:bg-transparent data-[state=active]:text-amber-500! data-[state=active]:shadow-none data-[state=active]:after:bg-amber-300 data-[state=active]:hover:bg-amber-400/8"
+					>
+						jsrepo
+						{#if activeTab === 'jsrepo'}
+							<motion.span
+								class="absolute inset-0 -z-10 rounded-md bg-amber-300/12"
+								layoutId="install-tab-highlight"
+								transition={{ duration: 0.2, type: 'tween' }}
+							></motion.span>
+						{/if}
+					</Tabs.Trigger>
+				</layout.div>
 			</Tabs.List>
 		</MotionConfig>
 
 		<Tabs.Content value="cli" class="mt-0">
 			<PMCommand
-				command='execute'
+				command="execute"
 				args={['shadcn-svelte@latest', 'add', installUrl]}
 				bind:agent={agent.current}
 			/>
+		</Tabs.Content>
+
+		<Tabs.Content value="jsrepo" class="mt-0">
+			<PMCommand command="execute" args={jsrepoArgs} bind:agent={agent.current} />
 		</Tabs.Content>
 
 		<Tabs.Content value="manual" class="mt-4" data-toc-ignore="true">
@@ -109,7 +146,7 @@
 					<Step title="Install Dependencies">
 						<p class="mb-4">Install the following dependencies:</p>
 						<ul class="mb-4 list-inside list-disc space-y-1">
-							{#each dependencies as dep}
+							{#each dependencies as dep (`${dep.label}:${dep.url}`)}
 								<li>
 									<a
 										href={dep.url}
@@ -130,7 +167,7 @@
 						<p class="mb-4 text-sm">Copy and paste the following code into your project:</p>
 						<div class="space-y-4">
 							{#if Array.isArray(codeBlocks)}
-								{#each codeBlocks as codeBlock}
+								{#each codeBlocks as codeBlock, index (`${codeBlock.filename}:${index}`)}
 									<SingleCode code={codeBlock} />
 								{/each}
 							{:else}

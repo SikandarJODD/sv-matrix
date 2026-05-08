@@ -103,7 +103,7 @@
 			"title": "Square One Loader",
 			"description": "A simple square dot matrix loader.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-1.svelte",
@@ -117,7 +117,7 @@
 			"title": "Square 2 Loader",
 			"description": "A row-cycle square dot matrix loader with a stepped trail animation.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-2.svelte",
@@ -131,7 +131,7 @@
 			"title": "Square 3 Loader",
 			"description": "Square 3 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-3.svelte",
@@ -145,7 +145,7 @@
 			"title": "Square 4 Loader",
 			"description": "Square 4 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-4.svelte",
@@ -159,7 +159,7 @@
 			"title": "Square 5 Loader",
 			"description": "Square 5 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-5.svelte",
@@ -173,7 +173,7 @@
 			"title": "Square 6 Loader",
 			"description": "Square 6 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-6.svelte",
@@ -187,7 +187,7 @@
 			"title": "Square 7 Loader",
 			"description": "Square 7 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-7.svelte",
@@ -201,7 +201,7 @@
 			"title": "Square 8 Loader",
 			"description": "Square 8 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-8.svelte",
@@ -215,7 +215,7 @@
 			"title": "Square 9 Loader",
 			"description": "Square 9 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-9.svelte",
@@ -229,7 +229,7 @@
 			"title": "Square 10 Loader",
 			"description": "Square 10 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-10.svelte",
@@ -243,7 +243,7 @@
 			"title": "Square 11 Loader",
 			"description": "Square 11 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-11.svelte",
@@ -257,7 +257,7 @@
 			"title": "Square 12 Loader",
 			"description": "Square 12 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-12.svelte",
@@ -271,7 +271,7 @@
 			"title": "Square 13 Loader",
 			"description": "Square 13 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-13.svelte",
@@ -285,7 +285,7 @@
 			"title": "Square 14 Loader",
 			"description": "Square 14 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-14.svelte",
@@ -299,7 +299,7 @@
 			"title": "Square 15 Loader",
 			"description": "Square 15 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-15.svelte",
@@ -313,7 +313,7 @@
 			"title": "Square 16 Loader",
 			"description": "Square 16 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-16.svelte",
@@ -327,7 +327,7 @@
 			"title": "Square 17 Loader",
 			"description": "Square 17 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-17.svelte",
@@ -341,7 +341,7 @@
 			"title": "Square 18 Loader",
 			"description": "Square 18 square loader component.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-18.svelte",
@@ -355,7 +355,7 @@
 			"title": "Lemniscate Pulse Loader",
 			"description": "A square loader with twin heads tracing a lemniscate path and a soft pulse through the center.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-19.svelte",
@@ -369,7 +369,7 @@
 			"title": "Mobius Ring Loader",
 			"description": "A square loader with a perimeter ring, countertail motion, and Mobius-style twist cues at each corner.",
 			"type": "registry:block",
-			"registryDependencies": [],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/square/square-20.svelte",
