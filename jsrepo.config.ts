@@ -1,4 +1,4 @@
-import { defineConfig, repository } from 'jsrepo';
+import { defineConfig, fs, repository } from 'jsrepo';
 
 export default defineConfig({
 	registry: {
@@ -8,7 +8,7 @@ export default defineConfig({
 		homepage: 'https://sv-matrix.vercel.app',
 		repository: 'https://github.com/SikandarJODD/sv-matrix',
 		bugs: 'https://github.com/SikandarJODD/sv-matrix/issues',
-		authors:['Sikandar JODD'],
+		authors: ['Sikandar JODD'],
 		tags: ['svelte', 'loaders', 'components', 'hooks', 'css'],
 		items: [
 			{
@@ -19,14 +19,17 @@ export default defineConfig({
 				files: [
 					{
 						path: 'src/lib/components/dot-matrix',
-						type: 'component'
+						type: 'component',
+						target: 'src/lib/components/dot-matrix'
 					},
 					{
 						path: 'src/lib/hooks/dot-matrix',
-						type: 'hook'
+						type: 'hook',
+						target: 'src/lib/hooks/dot-matrix'
 					},
 					{
-						path: 'src/lib/styles/dot-matrix.css'
+						path: 'src/lib/styles/dot-matrix.css',
+						target: 'src/lib/styles/dot-matrix.css'
 					}
 				]
 			}
@@ -37,5 +40,10 @@ export default defineConfig({
 	// configure where stuff comes from here
 	registries: [],
 	// configure where stuff goes here
-	paths: {}
+	paths: {
+		component: '',
+		hook: '',
+		block: ''
+	},
+	// providers: [fs()]
 });
