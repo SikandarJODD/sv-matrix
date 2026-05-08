@@ -1,4 +1,4 @@
-import type { InstallComponentDocs, PropsTable, ComponentDoc } from '$lib/types/structure';
+import type { ComponentMeta, InstallComponentDocs, PropsTable, ComponentDoc } from '$lib/types/structure';
 import type { Example } from '$lib/types/examples';
 import type { SEO } from '$lib/types/seo';
 import Preview from './examples/preview.svelte';
@@ -26,6 +26,13 @@ import ServerActionExampleRaw from './use-cases/server-action-example.svelte?raw
 import PaymentProcessingExample from './use-cases/payment-processing-example.svelte';
 import PaymentProcessingExampleRaw from './use-cases/payment-processing-example.svelte?raw';
 import Circle9Raw from '$lib/components/loaders/circles/circle-9.svelte?raw';
+
+const meta: ComponentMeta = {
+	id: "circle-9",
+	title: "Circle 9",
+	description: "Circle 9 loader component.",
+	category: "loaders"
+};
 
 const examples: Example[] = [
 	{
@@ -306,16 +313,13 @@ const installBlock: InstallComponentDocs = {
 };
 
 const seo: SEO = {
-	title: "Circle 9 - SV Matrix Loader Component",
-	description: "Circle 9 loader component.",
+	title: meta.title,
+	description: meta.description || '',
 	keywords: ['svelte loader', "circle loader", 'dot matrix', 'svelte component']
 };
 
 export const data: ComponentDoc = {
-	id: "circle-9",
-	title: "Circle 9",
-	description: "Circle 9 loader component.",
-	category: "loaders",
+	...meta,
 	seo,
 	installBlock,
 	preview: Preview,

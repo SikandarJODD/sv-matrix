@@ -15,7 +15,9 @@
 		"title": "Circle 1 Loader",
 		"type": "registry:block",
 		"description": "Circle 1 loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "circle-1.json"
 	},
 	{
@@ -23,7 +25,9 @@
 		"title": "Circle 2 Loader",
 		"type": "registry:block",
 		"description": "Circle 2 loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "circle-2.json"
 	},
 	{
@@ -31,7 +35,9 @@
 		"title": "Circle 3 Loader",
 		"type": "registry:block",
 		"description": "Circle 3 loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "circle-3.json"
 	},
 	{
@@ -39,7 +45,9 @@
 		"title": "Circle 4 Loader",
 		"type": "registry:block",
 		"description": "Circle 4 loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "circle-4.json"
 	},
 	{
@@ -47,8 +55,160 @@
 		"title": "Circle 5 Loader",
 		"type": "registry:block",
 		"description": "Circle 5 loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "circle-5.json"
+	},
+	{
+		"name": "circle-6",
+		"title": "Circle 6 Loader",
+		"type": "registry:block",
+		"description": "Circle 6 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-6.json"
+	},
+	{
+		"name": "circle-7",
+		"title": "Circle 7 Loader",
+		"type": "registry:block",
+		"description": "Circle 7 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-7.json"
+	},
+	{
+		"name": "circle-8",
+		"title": "Circle 8 Loader",
+		"type": "registry:block",
+		"description": "Circle 8 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-8.json"
+	},
+	{
+		"name": "circle-9",
+		"title": "Circle 9 Loader",
+		"type": "registry:block",
+		"description": "Circle 9 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-9.json"
+	},
+	{
+		"name": "circle-10",
+		"title": "Circle 10 Loader",
+		"type": "registry:block",
+		"description": "Circle 10 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-10.json"
+	},
+	{
+		"name": "circle-11",
+		"title": "Circle 11 Loader",
+		"type": "registry:block",
+		"description": "Circle 11 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-11.json"
+	},
+	{
+		"name": "circle-12",
+		"title": "Circle 12 Loader",
+		"type": "registry:block",
+		"description": "Circle 12 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-12.json"
+	},
+	{
+		"name": "circle-13",
+		"title": "Circle 13 Loader",
+		"type": "registry:block",
+		"description": "Circle 13 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-13.json"
+	},
+	{
+		"name": "circle-14",
+		"title": "Circle 14 Loader",
+		"type": "registry:block",
+		"description": "Circle 14 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-14.json"
+	},
+	{
+		"name": "circle-15",
+		"title": "Circle 15 Loader",
+		"type": "registry:block",
+		"description": "Circle 15 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-15.json"
+	},
+	{
+		"name": "circle-16",
+		"title": "Circle 16 Loader",
+		"type": "registry:block",
+		"description": "Circle 16 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-16.json"
+	},
+	{
+		"name": "circle-17",
+		"title": "Circle 17 Loader",
+		"type": "registry:block",
+		"description": "Circle 17 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-17.json"
+	},
+	{
+		"name": "circle-18",
+		"title": "Circle 18 Loader",
+		"type": "registry:block",
+		"description": "Circle 18 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-18.json"
+	},
+	{
+		"name": "circle-19",
+		"title": "Circle 19 Loader",
+		"type": "registry:block",
+		"description": "Circle 19 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-19.json"
+	},
+	{
+		"name": "circle-20",
+		"title": "Circle 20 Loader",
+		"type": "registry:block",
+		"description": "Circle 20 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-20.json"
 	},
 	{
 		"name": "square-1",

@@ -3,7 +3,7 @@ import { defineConfig, distributed, repository } from 'jsrepo';
 export default defineConfig({
 	registry: {
 		name: '@sv/loaders',
-		version: '0.0.6',
+		version: '0.0.8',
 		description: 'A collection of loaders for Svelte projects',
 		homepage: 'https://sv-matrix.vercel.app',
 		repository: 'https://github.com/SikandarJODD/sv-matrix',
@@ -330,6 +330,186 @@ export default defineConfig({
 					{
 						path: 'src/lib/components/loaders/circles/circle-5.svelte',
 						target: 'src/lib/components/loaders/circle-5.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-6',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-6.svelte',
+						target: 'src/lib/components/loaders/circle-6.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-7',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-7.svelte',
+						target: 'src/lib/components/loaders/circle-7.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-8',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-8.svelte',
+						target: 'src/lib/components/loaders/circle-8.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-9',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-9.svelte',
+						target: 'src/lib/components/loaders/circle-9.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-10',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-10.svelte',
+						target: 'src/lib/components/loaders/circle-10.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-11',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-11.svelte',
+						target: 'src/lib/components/loaders/circle-11.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-12',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-12.svelte',
+						target: 'src/lib/components/loaders/circle-12.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-13',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-13.svelte',
+						target: 'src/lib/components/loaders/circle-13.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-14',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-14.svelte',
+						target: 'src/lib/components/loaders/circle-14.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-15',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-15.svelte',
+						target: 'src/lib/components/loaders/circle-15.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-16',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-16.svelte',
+						target: 'src/lib/components/loaders/circle-16.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-17',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-17.svelte',
+						target: 'src/lib/components/loaders/circle-17.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-18',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-18.svelte',
+						target: 'src/lib/components/loaders/circle-18.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-19',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-19.svelte',
+						target: 'src/lib/components/loaders/circle-19.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-20',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-20.svelte',
+						target: 'src/lib/components/loaders/circle-20.svelte'
 					}
 				]
 			},
