@@ -70,11 +70,11 @@
 			<CopyPageDropdown componentName={title} {llmsTxtUrl} />
 		</div>
 
-		<div class="mt-3 max-w-2xl">
+		<!-- <div class="mt-3 max-w-2xl">
 			<Paragraph class={descriptionClass}>
 				{description}
 			</Paragraph>
-		</div>
+		</div> -->
 	</section>
 
 	<section>
