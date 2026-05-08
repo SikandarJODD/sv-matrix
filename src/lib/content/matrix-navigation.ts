@@ -1,4 +1,4 @@
-export type MatrixNavSectionId = 'get-started' | 'squares' | 'circles';
+export type MatrixNavSectionId = 'get-started' | 'squares' | 'circles' | 'hex';
 export type MatrixNavKind = 'doc' | 'component';
 
 export interface MatrixNavItem {
@@ -243,6 +243,209 @@ export const circleItems: MatrixNavItem[] = [
 		description: 'A circular loader with a pinwheel-style pulse through the matrix.',
 		section: 'circles',
 		kind: 'component'
+	},
+	{
+		id: 'circle-6',
+		title: 'Circle 6',
+		href: '/components/circles/circle-6',
+		description: 'Circle 6 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-7',
+		title: 'Circle 7',
+		href: '/components/circles/circle-7',
+		description: 'Circle 7 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-8',
+		title: 'Circle 8',
+		href: '/components/circles/circle-8',
+		description: 'Circle 8 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-9',
+		title: 'Circle 9',
+		href: '/components/circles/circle-9',
+		description: 'Circle 9 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-10',
+		title: 'Circle 10',
+		href: '/components/circles/circle-10',
+		description: 'Circle 10 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-11',
+		title: 'Circle 11',
+		href: '/components/circles/circle-11',
+		description: 'Circle 11 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-12',
+		title: 'Circle 12',
+		href: '/components/circles/circle-12',
+		description: 'Circle 12 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-13',
+		title: 'Circle 13',
+		href: '/components/circles/circle-13',
+		description: 'Circle 13 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-14',
+		title: 'Circle 14',
+		href: '/components/circles/circle-14',
+		description: 'Circle 14 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-15',
+		title: 'Circle 15',
+		href: '/components/circles/circle-15',
+		description: 'Circle 15 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-16',
+		title: 'Circle 16',
+		href: '/components/circles/circle-16',
+		description: 'Circle 16 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-17',
+		title: 'Circle 17',
+		href: '/components/circles/circle-17',
+		description: 'Circle 17 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-18',
+		title: 'Circle 18',
+		href: '/components/circles/circle-18',
+		description: 'Circle 18 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-19',
+		title: 'Circle 19',
+		href: '/components/circles/circle-19',
+		description: 'Circle 19 loader component.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-20',
+		title: 'Circle 20',
+		href: '/components/circles/circle-20',
+		description: 'Circle 20 loader component.',
+		section: 'circles',
+		kind: 'component'
+	}
+];
+
+export const hexItems: MatrixNavItem[] = [
+	{
+		id: 'hex-1',
+		title: 'Hex 1',
+		href: '/components/hex/hex-1',
+		description: 'Hex 1 loader component.',
+		section: 'hex',
+		kind: 'component'
+	},
+	{
+		id: 'hex-2',
+		title: 'Hex 2',
+		href: '/components/hex/hex-2',
+		description: 'Hex 2 loader component.',
+		section: 'hex',
+		kind: 'component'
+	},
+	{
+		id: 'hex-3',
+		title: 'Hex 3',
+		href: '/components/hex/hex-3',
+		description: 'Hex 3 loader component.',
+		section: 'hex',
+		kind: 'component'
+	},
+	{
+		id: 'hex-4',
+		title: 'Hex 4',
+		href: '/components/hex/hex-4',
+		description: 'Hex 4 loader component.',
+		section: 'hex',
+		kind: 'component'
+	},
+	{
+		id: 'hex-5',
+		title: 'Hex 5',
+		href: '/components/hex/hex-5',
+		description: 'Hex 5 loader component.',
+		section: 'hex',
+		kind: 'component'
+	},
+	{
+		id: 'hex-6',
+		title: 'Hex 6',
+		href: '/components/hex/hex-6',
+		description: 'Hex 6 loader component.',
+		section: 'hex',
+		kind: 'component'
+	},
+	{
+		id: 'hex-7',
+		title: 'Hex 7',
+		href: '/components/hex/hex-7',
+		description: 'Hex 7 loader component.',
+		section: 'hex',
+		kind: 'component'
+	},
+	{
+		id: 'hex-8',
+		title: 'Hex 8',
+		href: '/components/hex/hex-8',
+		description: 'Hex 8 loader component.',
+		section: 'hex',
+		kind: 'component'
+	},
+	{
+		id: 'hex-9',
+		title: 'Hex 9',
+		href: '/components/hex/hex-9',
+		description: 'Hex 9 loader component.',
+		section: 'hex',
+		kind: 'component'
+	},
+	{
+		id: 'hex-10',
+		title: 'Hex 10',
+		href: '/components/hex/hex-10',
+		description: 'Hex 10 loader component.',
+		section: 'hex',
+		kind: 'component'
 	}
 ];
 
@@ -261,6 +464,11 @@ export const navigationSections: MatrixNavSection[] = [
 		id: 'circles',
 		title: 'Circles',
 		items: circleItems
+	},
+	{
+		id: 'hex',
+		title: 'Hex',
+		items: hexItems
 	}
 ];
 

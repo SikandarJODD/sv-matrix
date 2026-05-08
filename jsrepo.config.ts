@@ -3,7 +3,7 @@ import { defineConfig, distributed, repository } from 'jsrepo';
 export default defineConfig({
 	registry: {
 		name: '@sv/loaders',
-		version: '0.0.8',
+		version: '0.1.0',
 		description: 'A collection of loaders for Svelte projects',
 		homepage: 'https://sv-matrix.vercel.app',
 		repository: 'https://github.com/SikandarJODD/sv-matrix',
@@ -30,6 +30,143 @@ export default defineConfig({
 					{
 						path: 'src/lib/styles/dot-matrix.css',
 						target: 'src/lib/styles/dot-matrix.css'
+					}
+				]
+			},
+			{
+				name: 'hex-base',
+				description: 'hex dot matrix base and shared geometry helpers',
+				type: 'block',
+				dependencies: ['clsx'],
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-base.svelte',
+						target: 'src/lib/components/loaders/hex/hex-base.svelte'
+					},
+					{
+						path: 'src/lib/components/loaders/hex/shared.ts',
+						target: 'src/lib/components/loaders/hex/shared.ts'
+					}
+				]
+			},
+			{
+				name: 'hex-1',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-1.svelte',
+						target: 'src/lib/components/loaders/hex/hex-1.svelte'
+					}
+				]
+			},
+			{
+				name: 'hex-2',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-2.svelte',
+						target: 'src/lib/components/loaders/hex/hex-2.svelte'
+					}
+				]
+			},
+			{
+				name: 'hex-3',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-3.svelte',
+						target: 'src/lib/components/loaders/hex/hex-3.svelte'
+					}
+				]
+			},
+			{
+				name: 'hex-4',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-4.svelte',
+						target: 'src/lib/components/loaders/hex/hex-4.svelte'
+					}
+				]
+			},
+			{
+				name: 'hex-5',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-5.svelte',
+						target: 'src/lib/components/loaders/hex/hex-5.svelte'
+					}
+				]
+			},
+			{
+				name: 'hex-6',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-6.svelte',
+						target: 'src/lib/components/loaders/hex/hex-6.svelte'
+					}
+				]
+			},
+			{
+				name: 'hex-7',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-7.svelte',
+						target: 'src/lib/components/loaders/hex/hex-7.svelte'
+					}
+				]
+			},
+			{
+				name: 'hex-8',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-8.svelte',
+						target: 'src/lib/components/loaders/hex/hex-8.svelte'
+					}
+				]
+			},
+			{
+				name: 'hex-9',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-9.svelte',
+						target: 'src/lib/components/loaders/hex/hex-9.svelte'
+					}
+				]
+			},
+			{
+				name: 'hex-10',
+				description: 'hex dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix', 'hex-base'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/hex/hex-10.svelte',
+						target: 'src/lib/components/loaders/hex/hex-10.svelte'
 					}
 				]
 			},

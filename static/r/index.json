@@ -11,6 +11,129 @@
 		"relativeUrl": "dot-matrix.json"
 	},
 	{
+		"name": "hex-base",
+		"title": "Hex Base",
+		"type": "registry:block",
+		"description": "Shared hex dot matrix base and geometry helpers for sv-matrix loaders.",
+		"dependencies": [
+			"clsx"
+		],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "hex-base.json"
+	},
+	{
+		"name": "hex-1",
+		"title": "Hex 1 Loader",
+		"type": "registry:block",
+		"description": "Hex 1 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-1.json"
+	},
+	{
+		"name": "hex-2",
+		"title": "Hex 2 Loader",
+		"type": "registry:block",
+		"description": "Hex 2 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-2.json"
+	},
+	{
+		"name": "hex-3",
+		"title": "Hex 3 Loader",
+		"type": "registry:block",
+		"description": "Hex 3 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-3.json"
+	},
+	{
+		"name": "hex-4",
+		"title": "Hex 4 Loader",
+		"type": "registry:block",
+		"description": "Hex 4 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-4.json"
+	},
+	{
+		"name": "hex-5",
+		"title": "Hex 5 Loader",
+		"type": "registry:block",
+		"description": "Hex 5 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-5.json"
+	},
+	{
+		"name": "hex-6",
+		"title": "Hex 6 Loader",
+		"type": "registry:block",
+		"description": "Hex 6 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-6.json"
+	},
+	{
+		"name": "hex-7",
+		"title": "Hex 7 Loader",
+		"type": "registry:block",
+		"description": "Hex 7 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-7.json"
+	},
+	{
+		"name": "hex-8",
+		"title": "Hex 8 Loader",
+		"type": "registry:block",
+		"description": "Hex 8 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-8.json"
+	},
+	{
+		"name": "hex-9",
+		"title": "Hex 9 Loader",
+		"type": "registry:block",
+		"description": "Hex 9 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-9.json"
+	},
+	{
+		"name": "hex-10",
+		"title": "Hex 10 Loader",
+		"type": "registry:block",
+		"description": "Hex 10 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-10.json"
+	},
+	{
 		"name": "circle-1",
 		"title": "Circle 1 Loader",
 		"type": "registry:block",

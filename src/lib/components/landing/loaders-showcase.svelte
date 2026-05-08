@@ -1,10 +1,16 @@
 <script lang="ts">
-	import { data as showcaseItems } from '../loaders/square/data';
+	import { data as squares } from '../loaders/square/data';
+	import { data as circles } from '$lib/components/loaders/circles/data';
+	import { data as hex } from '$lib/components/loaders/hex/data';
+
+	let items = [...squares, ...circles, ...hex];
 </script>
 
-<section class="mx-auto w-full max-w-7xl px-4 pt-10 pb-16 md:mt-14 md:mb-24 md:px-6 animate-in fade-in delay-400 blur-in duration-300 ease-out fill-mode-backwards">
+<section
+	class="mx-auto w-full max-w-7xl animate-in px-4 pt-10 pb-16 delay-400 duration-300 ease-out fill-mode-backwards blur-in fade-in md:mt-14 md:mb-24 md:px-6"
+>
 	<div class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-5">
-		{#each showcaseItems as item (item.id)}
+		{#each items as item (item.id)}
 			{@const ShowcaseComponent = item.preview}
 			<a
 				href={item.href}

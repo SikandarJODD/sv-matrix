@@ -94,6 +94,21 @@
 								</a>
 							{/each}
 						</div>
+						<div>
+							<div class="text-sm text-muted-foreground">Hex Loaders</div>
+							{#each navigationItems.filter((n) => n.section === 'hex') as item}
+								<a
+									href={item.href}
+									class={cn(
+										'flex items-center gap-x-2 rounded-lg py-1.5 active:bg-muted dark:active:bg-muted/50'
+									)}
+								>
+									<div class="flex flex-col items-start justify-center">
+										<span class="font-medium">{item.title}</span>
+									</div>
+								</a>
+							{/each}
+						</div>
 				</div>
 				<div class="mt-5 flex items-center justify-end gap-2 fixed animate-in fade-in-5 delay-200 fill-mode-backwards duration-400 bottom-4 right-4">
 					<Button
