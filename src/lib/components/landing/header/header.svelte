@@ -45,9 +45,9 @@
 			</a>
 			<DesktopNav />
 		</div>
-		<div class="hidden items-center gap-4 md:flex">
+		<div class="flex items-center gap-2 md:gap-4">
 			<DocsSearchNavigation />
-			<div class="flex items-center gap-2">
+			<div class="hidden items-center gap-2 md:flex">
 				<Button
 					href="https://x.com/Sikandar_Bhide"
 					target="_blank"
@@ -71,7 +71,7 @@
 					{/if}
 				</Button>
 			</div>
+			<MobileNav />
 		</div>
-		<MobileNav />
 	</nav>
 </header>

@@ -7,7 +7,6 @@
 	import { navigationItems } from '$lib/content/matrix-navigation';
 	import { getStars, GitHubButton } from '$lib/components/ui/github-button';
 	import { onMount } from 'svelte';
-	import DocsSearchNavigation from '$lib/components/docs/navigation/DocsSearchNavigation.svelte';
 	import { mode, toggleMode } from 'mode-watcher';
 
 	let open = $state(false);
@@ -19,7 +18,6 @@
 </script>
 
 <div class="md:hidden flex items-center gap-2">
-	<DocsSearchNavigation />
 	<Button
 		aria-controls="mobile-menu"
 		aria-expanded={open}

@@ -30,7 +30,7 @@
 	<Button
 		variant="ghost"
 		size="icon"
-		class="flex justify-center md:justify-between items-center rounded-lg bg-secondary px-1.5 md:min-w-46 md:rounded-full md:pr-2.5  dark:bg-muted/60"
+		class="flex items-center justify-center rounded-lg bg-secondary px-1.5 md:min-w-46 md:justify-between md:rounded-full md:pr-2.5  dark:bg-muted/60"
 		onclick={() => (open = true)}
 	>
 		<span class="hidden pl-1 md:block"> Search... </span>
@@ -76,11 +76,7 @@
 		{#each groups as group (group.id)}
 			<Command.Group heading={group.title}>
 				{#each group.items as item (item.id)}
-					<Command.LinkItem
-						value={`${item.title} ${item.description ?? ''}`}
-						onclick={() => (open = false)}
-						href={item.href}
-					>
+					<Command.LinkItem value={item.title} onclick={() => (open = false)} href={item.href}>
 						{#if isDocsItem(item)}
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

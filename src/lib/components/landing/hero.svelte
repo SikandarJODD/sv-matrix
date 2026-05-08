@@ -44,10 +44,10 @@
 		<div
 			class="flex w-fit animate-in items-center justify-center gap-3 pt-2 delay-300 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 		>
-			<Button href="/" size="lg">
-				Get started
-				<ArrowRight class="size-4" />
+			<Button href="/components/squares/square-1" size="lg" class='px-3'>
+				View Loaders
 			</Button>
+			<Button href="/docs/setup" size="lg" variant="outline" class='px-3'>Setup guide</Button>
 		</div>
 	</div>
 </section>
