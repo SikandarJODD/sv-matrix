@@ -46,7 +46,18 @@ export default defineConfig({
 					},
 					{
 						path: "src/lib/components/loaders/hex/shared.ts",
-						target: "src/lib/components/loaders/hex/shared.ts",
+						target: "src/lib/components/loaders/hex/shared-hex.ts",
+					},
+				],
+			},
+			{
+				name: "triangle-base",
+				description: "triangle dot matrix shared geometry helpers",
+				type: "block",
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/shared.ts",
+						target: "src/lib/components/loaders/triangle/shared-triangle.ts",
 					},
 				],
 			},
@@ -58,7 +69,7 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-1.svelte",
-						target: "src/lib/components/loaders/hex/hex-1.svelte",
+						target: "src/lib/components/loaders/hex-1.svelte",
 					},
 				],
 			},
@@ -70,7 +81,7 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-2.svelte",
-						target: "src/lib/components/loaders/hex/hex-2.svelte",
+						target: "src/lib/components/loaders/hex-2.svelte",
 					},
 				],
 			},
@@ -82,7 +93,7 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-3.svelte",
-						target: "src/lib/components/loaders/hex/hex-3.svelte",
+						target: "src/lib/components/loaders/hex-3.svelte",
 					},
 				],
 			},
@@ -94,7 +105,7 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-4.svelte",
-						target: "src/lib/components/loaders/hex/hex-4.svelte",
+						target: "src/lib/components/loaders/hex-4.svelte",
 					},
 				],
 			},
@@ -106,7 +117,7 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-5.svelte",
-						target: "src/lib/components/loaders/hex/hex-5.svelte",
+						target: "src/lib/components/loaders/hex-5.svelte",
 					},
 				],
 			},
@@ -118,7 +129,7 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-6.svelte",
-						target: "src/lib/components/loaders/hex/hex-6.svelte",
+						target: "src/lib/components/loaders/hex-6.svelte",
 					},
 				],
 			},
@@ -130,7 +141,7 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-7.svelte",
-						target: "src/lib/components/loaders/hex/hex-7.svelte",
+						target: "src/lib/components/loaders/hex-7.svelte",
 					},
 				],
 			},
@@ -142,7 +153,7 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-8.svelte",
-						target: "src/lib/components/loaders/hex/hex-8.svelte",
+						target: "src/lib/components/loaders/hex-8.svelte",
 					},
 				],
 			},
@@ -154,7 +165,7 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-9.svelte",
-						target: "src/lib/components/loaders/hex/hex-9.svelte",
+						target: "src/lib/components/loaders/hex-9.svelte",
 					},
 				],
 			},
@@ -166,7 +177,247 @@ export default defineConfig({
 				files: [
 					{
 						path: "src/lib/components/loaders/hex/hex-10.svelte",
-						target: "src/lib/components/loaders/hex/hex-10.svelte",
+						target: "src/lib/components/loaders/hex-10.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-1",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-1.svelte",
+						target: "src/lib/components/loaders/triangle-1.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-2",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-2.svelte",
+						target: "src/lib/components/loaders/triangle-2.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-3",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-3.svelte",
+						target: "src/lib/components/loaders/triangle-3.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-4",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-4.svelte",
+						target: "src/lib/components/loaders/triangle-4.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-5",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-5.svelte",
+						target: "src/lib/components/loaders/triangle-5.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-6",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-6.svelte",
+						target: "src/lib/components/loaders/triangle-6.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-7",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-7.svelte",
+						target: "src/lib/components/loaders/triangle-7.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-8",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-8.svelte",
+						target: "src/lib/components/loaders/triangle-8.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-9",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-9.svelte",
+						target: "src/lib/components/loaders/triangle-9.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-10",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-10.svelte",
+						target: "src/lib/components/loaders/triangle-10.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-11",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-11.svelte",
+						target: "src/lib/components/loaders/triangle-11.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-12",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-12.svelte",
+						target: "src/lib/components/loaders/triangle-12.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-13",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-13.svelte",
+						target: "src/lib/components/loaders/triangle-13.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-14",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-14.svelte",
+						target: "src/lib/components/loaders/triangle-14.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-15",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-15.svelte",
+						target: "src/lib/components/loaders/triangle-15.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-16",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-16.svelte",
+						target: "src/lib/components/loaders/triangle-16.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-17",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-17.svelte",
+						target: "src/lib/components/loaders/triangle-17.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-18",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-18.svelte",
+						target: "src/lib/components/loaders/triangle-18.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-19",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-19.svelte",
+						target: "src/lib/components/loaders/triangle-19.svelte",
+					},
+				],
+			},
+			{
+				name: "triangle-20",
+				description: "triangle dot matrix loader",
+				type: "component",
+				registryDependencies: ["dot-matrix", "triangle-base"],
+				files: [
+					{
+						path: "src/lib/components/loaders/triangle/triangle-20.svelte",
+						target: "src/lib/components/loaders/triangle-20.svelte",
 					},
 				],
 			},

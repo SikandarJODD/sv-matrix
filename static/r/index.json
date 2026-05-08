@@ -24,6 +24,14 @@
 		"relativeUrl": "hex-base.json"
 	},
 	{
+		"name": "triangle-base",
+		"title": "Triangle Base",
+		"type": "registry:block",
+		"description": "Shared triangle geometry helpers for sv-matrix loaders.",
+		"registryDependencies": [],
+		"relativeUrl": "triangle-base.json"
+	},
+	{
 		"name": "hex-1",
 		"title": "Hex 1 Loader",
 		"type": "registry:block",
@@ -132,6 +140,226 @@
 			"local:hex-base"
 		],
 		"relativeUrl": "hex-10.json"
+	},
+	{
+		"name": "triangle-1",
+		"title": "Triangle 1 Loader",
+		"type": "registry:block",
+		"description": "Triangle 1 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-1.json"
+	},
+	{
+		"name": "triangle-2",
+		"title": "Triangle 2 Loader",
+		"type": "registry:block",
+		"description": "Triangle 2 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-2.json"
+	},
+	{
+		"name": "triangle-3",
+		"title": "Triangle 3 Loader",
+		"type": "registry:block",
+		"description": "Triangle 3 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-3.json"
+	},
+	{
+		"name": "triangle-4",
+		"title": "Triangle 4 Loader",
+		"type": "registry:block",
+		"description": "Triangle 4 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-4.json"
+	},
+	{
+		"name": "triangle-5",
+		"title": "Triangle 5 Loader",
+		"type": "registry:block",
+		"description": "Triangle 5 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-5.json"
+	},
+	{
+		"name": "triangle-6",
+		"title": "Triangle 6 Loader",
+		"type": "registry:block",
+		"description": "Triangle 6 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-6.json"
+	},
+	{
+		"name": "triangle-7",
+		"title": "Triangle 7 Loader",
+		"type": "registry:block",
+		"description": "Triangle 7 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-7.json"
+	},
+	{
+		"name": "triangle-8",
+		"title": "Triangle 8 Loader",
+		"type": "registry:block",
+		"description": "Triangle 8 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-8.json"
+	},
+	{
+		"name": "triangle-9",
+		"title": "Triangle 9 Loader",
+		"type": "registry:block",
+		"description": "Triangle 9 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-9.json"
+	},
+	{
+		"name": "triangle-10",
+		"title": "Triangle 10 Loader",
+		"type": "registry:block",
+		"description": "Triangle 10 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-10.json"
+	},
+	{
+		"name": "triangle-11",
+		"title": "Triangle 11 Loader",
+		"type": "registry:block",
+		"description": "Triangle 11 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-11.json"
+	},
+	{
+		"name": "triangle-12",
+		"title": "Triangle 12 Loader",
+		"type": "registry:block",
+		"description": "Triangle 12 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-12.json"
+	},
+	{
+		"name": "triangle-13",
+		"title": "Triangle 13 Loader",
+		"type": "registry:block",
+		"description": "Triangle 13 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-13.json"
+	},
+	{
+		"name": "triangle-14",
+		"title": "Triangle 14 Loader",
+		"type": "registry:block",
+		"description": "Triangle 14 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-14.json"
+	},
+	{
+		"name": "triangle-15",
+		"title": "Triangle 15 Loader",
+		"type": "registry:block",
+		"description": "Triangle 15 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-15.json"
+	},
+	{
+		"name": "triangle-16",
+		"title": "Triangle 16 Loader",
+		"type": "registry:block",
+		"description": "Triangle 16 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-16.json"
+	},
+	{
+		"name": "triangle-17",
+		"title": "Triangle 17 Loader",
+		"type": "registry:block",
+		"description": "Triangle 17 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-17.json"
+	},
+	{
+		"name": "triangle-18",
+		"title": "Triangle 18 Loader",
+		"type": "registry:block",
+		"description": "Triangle 18 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-18.json"
+	},
+	{
+		"name": "triangle-19",
+		"title": "Triangle 19 Loader",
+		"type": "registry:block",
+		"description": "Triangle 19 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-19.json"
+	},
+	{
+		"name": "triangle-20",
+		"title": "Triangle 20 Loader",
+		"type": "registry:block",
+		"description": "Triangle 20 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-20.json"
 	},
 	{
 		"name": "circle-1",

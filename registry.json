@@ -114,7 +114,21 @@
 				{
 					"path": "./src/lib/components/loaders/hex/shared.ts",
 					"type": "registry:lib",
-					"target": "loaders/hex/shared.ts"
+					"target": "loaders/shared-hex.ts"
+				}
+			]
+		},
+		{
+			"name": "triangle-base",
+			"title": "Triangle Base",
+			"description": "Shared triangle geometry helpers for sv-matrix loaders.",
+			"type": "registry:block",
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/shared.ts",
+					"type": "registry:lib",
+					"target": "loaders/shared-triangle.ts"
 				}
 			]
 		},
@@ -128,7 +142,7 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-1.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-1.svelte"
+					"target": "loaders/hex-1.svelte"
 				}
 			]
 		},
@@ -142,7 +156,7 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-2.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-2.svelte"
+					"target": "loaders/hex-2.svelte"
 				}
 			]
 		},
@@ -156,7 +170,7 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-3.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-3.svelte"
+					"target": "loaders/hex-3.svelte"
 				}
 			]
 		},
@@ -170,7 +184,7 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-4.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-4.svelte"
+					"target": "loaders/hex-4.svelte"
 				}
 			]
 		},
@@ -184,7 +198,7 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-5.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-5.svelte"
+					"target": "loaders/hex-5.svelte"
 				}
 			]
 		},
@@ -198,7 +212,7 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-6.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-6.svelte"
+					"target": "loaders/hex-6.svelte"
 				}
 			]
 		},
@@ -212,7 +226,7 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-7.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-7.svelte"
+					"target": "loaders/hex-7.svelte"
 				}
 			]
 		},
@@ -226,7 +240,7 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-8.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-8.svelte"
+					"target": "loaders/hex-8.svelte"
 				}
 			]
 		},
@@ -240,7 +254,7 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-9.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-9.svelte"
+					"target": "loaders/hex-9.svelte"
 				}
 			]
 		},
@@ -254,7 +268,287 @@
 				{
 					"path": "./src/lib/components/loaders/hex/hex-10.svelte",
 					"type": "registry:component",
-					"target": "loaders/hex/hex-10.svelte"
+					"target": "loaders/hex-10.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-1",
+			"title": "Triangle 1 Loader",
+			"description": "Triangle 1 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-1.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-1.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-2",
+			"title": "Triangle 2 Loader",
+			"description": "Triangle 2 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-2.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-2.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-3",
+			"title": "Triangle 3 Loader",
+			"description": "Triangle 3 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-3.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-3.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-4",
+			"title": "Triangle 4 Loader",
+			"description": "Triangle 4 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-4.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-4.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-5",
+			"title": "Triangle 5 Loader",
+			"description": "Triangle 5 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-5.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-5.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-6",
+			"title": "Triangle 6 Loader",
+			"description": "Triangle 6 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-6.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-6.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-7",
+			"title": "Triangle 7 Loader",
+			"description": "Triangle 7 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-7.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-7.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-8",
+			"title": "Triangle 8 Loader",
+			"description": "Triangle 8 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-8.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-8.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-9",
+			"title": "Triangle 9 Loader",
+			"description": "Triangle 9 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-9.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-9.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-10",
+			"title": "Triangle 10 Loader",
+			"description": "Triangle 10 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-10.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-10.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-11",
+			"title": "Triangle 11 Loader",
+			"description": "Triangle 11 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-11.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-11.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-12",
+			"title": "Triangle 12 Loader",
+			"description": "Triangle 12 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-12.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-12.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-13",
+			"title": "Triangle 13 Loader",
+			"description": "Triangle 13 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-13.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-13.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-14",
+			"title": "Triangle 14 Loader",
+			"description": "Triangle 14 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-14.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-14.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-15",
+			"title": "Triangle 15 Loader",
+			"description": "Triangle 15 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-15.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-15.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-16",
+			"title": "Triangle 16 Loader",
+			"description": "Triangle 16 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-16.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-16.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-17",
+			"title": "Triangle 17 Loader",
+			"description": "Triangle 17 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-17.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-17.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-18",
+			"title": "Triangle 18 Loader",
+			"description": "Triangle 18 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-18.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-18.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-19",
+			"title": "Triangle 19 Loader",
+			"description": "Triangle 19 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-19.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-19.svelte"
+				}
+			]
+		},
+		{
+			"name": "triangle-20",
+			"title": "Triangle 20 Loader",
+			"description": "Triangle 20 loader component.",
+			"type": "registry:block",
+			"registryDependencies": ["local:dot-matrix", "local:triangle-base"],
+			"files": [
+				{
+					"path": "./src/lib/components/loaders/triangle/triangle-20.svelte",
+					"type": "registry:component",
+					"target": "loaders/triangle-20.svelte"
 				}
 			]
 		},

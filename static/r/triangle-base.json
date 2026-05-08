@@ -1,0 +1,14 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "triangle-base",
+	"title": "Triangle Base",
+	"type": "registry:block",
+	"description": "Shared triangle geometry helpers for sv-matrix loaders.",
+	"files": [
+		{
+			"content": "export const TRIANGLE_MATRIX_SIZE = 7;\n\nexport const TRIANGLE_COORDS = [\n\t[1, 3],\n\t[2, 2],\n\t[2, 4],\n\t[3, 1],\n\t[3, 3],\n\t[3, 5],\n\t[4, 0],\n\t[4, 2],\n\t[4, 4],\n\t[4, 6],\n] as const satisfies ReadonlyArray<readonly [number, number]>;\n\nexport function triangleIndex(row: number, col: number): number {\n\treturn row * TRIANGLE_MATRIX_SIZE + col;\n}\n\nexport const TRIANGLE_ACTIVE_INDEXES = TRIANGLE_COORDS.map(([row, col]) => triangleIndex(row, col));\n\nconst TRIANGLE_KEYS = new Set(TRIANGLE_COORDS.map(([row, col]) => `${row},${col}`));\n\nexport function isWithinTriangleMask(row: number, col: number): boolean {\n\tif (row < 0 || row >= TRIANGLE_MATRIX_SIZE || col < 0 || col >= TRIANGLE_MATRIX_SIZE) {\n\t\treturn false;\n\t}\n\n\treturn TRIANGLE_KEYS.has(`${row},${col}`);\n}\n",
+			"type": "registry:lib",
+			"target": "loaders/shared-triangle.ts"
+		}
+	]
+}

@@ -15,9 +15,11 @@
 		"create:square": "node scripts/create-square.mjs",
 		"create:circle": "node scripts/create-circle.mjs",
 		"create:hex": "node scripts/create-hex.mjs",
+		"create:triangle": "node scripts/create-triangle.mjs",
 		"create:squares": "node scripts/create-square-range.mjs",
 		"create:circles": "node scripts/create-circle-range.mjs",
 		"create:hexes": "node scripts/create-hex-range.mjs",
+		"create:triangles": "node scripts/create-triangle-range.mjs",
 		"build:loaders": "pnpm shadcn-svelte registry build",
 		"build:blocks": "pnpm shadcn-svelte registry build ./loaders.json -o ./static/r"
 	},
