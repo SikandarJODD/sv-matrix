@@ -4,6 +4,9 @@
 		"title": "Dot Matrix",
 		"type": "registry:block",
 		"description": "Shared 5x5 dot matrix foundation with hooks, helpers, and styles for sv-matrix loaders.",
+		"dependencies": [
+			"clsx"
+		],
 		"registryDependencies": [],
 		"relativeUrl": "dot-matrix.json"
 	},

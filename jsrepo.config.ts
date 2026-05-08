@@ -1,0 +1,41 @@
+import { defineConfig, repository } from 'jsrepo';
+
+export default defineConfig({
+	registry: {
+		name: '@sv/loaders',
+		version: '0.0.1',
+		description: 'A collection of loaders for Svelte projects',
+		homepage: 'https://sv-matrix.vercel.app',
+		repository: 'https://github.com/SikandarJODD/sv-matrix',
+		bugs: 'https://github.com/SikandarJODD/sv-matrix/issues',
+		authors:['Sikandar JODD'],
+		tags: ['svelte', 'loaders', 'components', 'hooks', 'css'],
+		items: [
+			{
+				name: 'dot-matrix',
+				description: 'base dot matrix loaders for all loaders',
+				type: 'block',
+				dependencies: ['clsx'],
+				files: [
+					{
+						path: 'src/lib/components/dot-matrix',
+						type: 'component'
+					},
+					{
+						path: 'src/lib/hooks/dot-matrix',
+						type: 'hook'
+					},
+					{
+						path: 'src/lib/styles/dot-matrix.css'
+					}
+				]
+			}
+		],
+		outputs: [repository()],
+		excludeDeps: ['svelte']
+	},
+	// configure where stuff comes from here
+	registries: [],
+	// configure where stuff goes here
+	paths: {}
+});

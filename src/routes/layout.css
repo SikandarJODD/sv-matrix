@@ -3,6 +3,7 @@
 @import 'shadcn-svelte/tailwind.css';
 @import '@fontsource-variable/figtree';
 @import '@fontsource-variable/jetbrains-mono';
+/* For Pattern Example usage only */
 @source '$lib/styles/dot-matrix.css';
 
 @font-face {
