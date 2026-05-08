@@ -1,9 +1,9 @@
-import { defineConfig, fs, repository } from 'jsrepo';
+import { defineConfig, distributed, repository } from 'jsrepo';
 
 export default defineConfig({
 	registry: {
 		name: '@sv/loaders',
-		version: '0.0.1',
+		version: '0.0.2',
 		description: 'A collection of loaders for Svelte projects',
 		homepage: 'https://sv-matrix.vercel.app',
 		repository: 'https://github.com/SikandarJODD/sv-matrix',
@@ -34,16 +34,16 @@ export default defineConfig({
 				]
 			}
 		],
-		outputs: [repository()],
+		outputs: [distributed({ dir: './static/m' })],
 		excludeDeps: ['svelte']
 	},
 	// configure where stuff comes from here
 	registries: [],
 	// configure where stuff goes here
 	paths: {
-		component: '',
-		hook: '',
-		block: ''
-	},
-	// providers: [fs()]
+		component: 'src/lib/components',
+		hook: 'src/lib/hooks',
+		block: 'src/lib/blocks',
+		styles: 'src/lib/styles'
+	}
 });
