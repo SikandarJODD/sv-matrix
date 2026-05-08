@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import { MoonIcon, SunIcon } from '@lucide/svelte';
-	import { mode, toggleMode } from 'mode-watcher';
-	import { FullWidthDivider } from '../ui/full-width-divider';
-	import { DecorIcon } from '../ui/decor-icon';
+	import { Button } from "$lib/components/ui/button";
+	import { MoonIcon, SunIcon } from "@lucide/svelte";
+	import { mode, toggleMode } from "mode-watcher";
+	import { FullWidthDivider } from "../ui/full-width-divider";
+	import { DecorIcon } from "../ui/decor-icon";
 
 	type FooterLink = {
 		label: string;
@@ -12,28 +12,28 @@
 	};
 
 	const projectLinks: FooterLink[] = [
-		{ label: 'Home', href: '/' },
-		{ label: 'Components', href: '/components/squares/square-1' },
-		{ label: 'Setup', href: '/docs/setup' }
+		{ label: "Home", href: "/" },
+		{ label: "Components", href: "/components/squares/square-1" },
+		{ label: "Setup", href: "/docs/setup" },
 	];
 
 	const resourceLinks: FooterLink[] = [
-		{ label: 'Docs', href: '/docs' },
-		{ label: 'GitHub', href: 'https://github.com/SikandarJODD/sv-matrix', external: true },
-		{ label: 'X / Twitter', href: 'https://x.com/Sikandar_Bhide', external: true }
+		{ label: "Docs", href: "/docs" },
+		{ label: "GitHub", href: "https://github.com/SikandarJODD/sv-matrix", external: true },
+		{ label: "X / Twitter", href: "https://x.com/Sikandar_Bhide", external: true },
 	];
 
 	const socialLinks = [
 		{
-			id: 'x',
-			label: 'X',
-			href: 'https://x.com/Sikandar_Bhide'
+			id: "x",
+			label: "X",
+			href: "https://x.com/Sikandar_Bhide",
 		},
 		{
-			id: 'github',
-			label: 'GitHub',
-			href: 'https://github.com/SikandarJODD/sv-matrix'
-		}
+			id: "github",
+			label: "GitHub",
+			href: "https://github.com/SikandarJODD/sv-matrix",
+		},
 	] as const;
 
 	const currentYear = new Date().getFullYear();
@@ -66,12 +66,14 @@
 								>
 									Svelte Dot Matrix
 								</a>
-								<p class="max-w-sm text-sm text-muted-foreground">Pixel Perfect Loaders</p>
+								<p class="max-w-sm text-sm text-muted-foreground">
+									Pixel Perfect Loaders
+								</p>
 							</div>
 
 							<div class="flex flex-wrap items-center gap-2">
 								<Button onclick={toggleMode} variant="outline" size="icon-sm">
-									{#if mode.current === 'dark'}
+									{#if mode.current === "dark"}
 										<SunIcon class="size-4" />
 									{:else}
 										<MoonIcon class="size-4" />
@@ -87,7 +89,7 @@
 										target="_blank"
 										variant="ghost"
 									>
-										{#if social.id === 'x'}
+										{#if social.id === "x"}
 											<!-- <XLogo class="size-4" /> -->
 											<svg fill="none" class="size-4" viewBox="0 0 1200 1227"
 												><path

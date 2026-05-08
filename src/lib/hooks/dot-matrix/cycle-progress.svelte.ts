@@ -1,5 +1,5 @@
-import { subscribeFrame } from './raf.js';
-import { resolveCycleDuration } from './timing.js';
+import { subscribeFrame } from "./raf.js";
+import { resolveCycleDuration } from "./timing.js";
 
 export interface CycleProgressOptions {
 	active: () => boolean;
@@ -14,7 +14,7 @@ export interface CycleProgressController {
 export function createCycleProgress({
 	active,
 	cycleMsBase,
-	speed = () => 1
+	speed = () => 1,
 }: CycleProgressOptions): CycleProgressController {
 	let current = $state(0);
 
@@ -42,6 +42,6 @@ export function createCycleProgress({
 	return {
 		get current() {
 			return current;
-		}
+		},
 	};
 }

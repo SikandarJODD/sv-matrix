@@ -1,13 +1,13 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Square9Props = DotMatrixCommonProps;
 
@@ -62,16 +62,16 @@
 		row,
 		col,
 		reducedMotion,
-		phase
+		phase,
 	}) => {
 		if (!isActive) {
-			return { className: 'dmx-inactive' };
+			return { className: "dmx-inactive" };
 		}
 
 		const braille = resolveBraille(row, col);
 		const isGapColumn = row >= CELL_ROW_START && row <= CELL_ROW_START + 2 && col === 2;
 
-		if (reducedMotion || phase === 'idle') {
+		if (reducedMotion || phase === "idle") {
 			if (braille) {
 				const isOn = (CHECK_A & braille.bit) !== 0;
 				return { style: { opacity: isOn ? MID_OPACITY : BASE_OPACITY } };
@@ -92,17 +92,17 @@
 			return { style: { opacity: BASE_OPACITY } };
 		}
 
-		let bitClass = 'dmx-square9-d1';
+		let bitClass = "dmx-square9-d1";
 		if (braille.bit === D2) {
-			bitClass = 'dmx-square9-d2';
+			bitClass = "dmx-square9-d2";
 		} else if (braille.bit === D3) {
-			bitClass = 'dmx-square9-d3';
+			bitClass = "dmx-square9-d3";
 		} else if (braille.bit === D4) {
-			bitClass = 'dmx-square9-d4';
+			bitClass = "dmx-square9-d4";
 		} else if (braille.bit === D5) {
-			bitClass = 'dmx-square9-d5';
+			bitClass = "dmx-square9-d5";
 		} else if (braille.bit === D6) {
-			bitClass = 'dmx-square9-d6';
+			bitClass = "dmx-square9-d6";
 		}
 
 		return { className: `dmx-square9-bit ${bitClass}` };
@@ -112,7 +112,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1.5,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 36,
@@ -125,7 +125,7 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

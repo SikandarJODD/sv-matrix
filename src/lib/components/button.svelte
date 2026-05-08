@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { MouseEventHandler } from 'svelte/elements';
+	import type { MouseEventHandler } from "svelte/elements";
 
 	export type ButtonProps = ButtonPrimitiveProps & {
 		loading?: boolean;
@@ -10,36 +10,36 @@
 		) => Promise<void>;
 	};
 
-	export type Size = 'default' | 'xs' | 'sm' | 'lg';
+	export type Size = "default" | "xs" | "sm" | "lg";
 
 	/**
 	 * Map sizes to their icon/normal size variant
 	 */
 	export const sizeMap = {
 		default: {
-			icon: 'icon',
-			normal: 'default'
+			icon: "icon",
+			normal: "default",
 		},
 		xs: {
-			icon: 'icon-xs',
-			normal: 'xs'
+			icon: "icon-xs",
+			normal: "xs",
 		},
 		sm: {
-			icon: 'icon-sm',
-			normal: 'sm'
+			icon: "icon-sm",
+			normal: "sm",
 		},
 		lg: {
-			icon: 'icon-lg',
-			normal: 'lg'
-		}
+			icon: "icon-lg",
+			normal: "lg",
+		},
 	} as const;
 
-	export { type ButtonSize, type ButtonVariant } from '$lib/components/ui/button';
+	export { type ButtonSize, type ButtonVariant } from "$lib/components/ui/button";
 </script>
 
 <script lang="ts">
-	import { Button, type ButtonProps as ButtonPrimitiveProps } from '$lib/components/ui/button';
-	import { Spinner } from '$lib/components/ui/spinner';
+	import { Button, type ButtonProps as ButtonPrimitiveProps } from "$lib/components/ui/button";
+	import { Spinner } from "$lib/components/ui/spinner";
 
 	let {
 		ref = $bindable(null),

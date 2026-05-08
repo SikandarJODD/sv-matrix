@@ -39,7 +39,7 @@ export class UseAutoScroll {
 		// start from bottom or start position
 		this.#ref.scrollTo(0, this.#scrollY ? this.#scrollY : this.#ref.scrollHeight);
 
-		this.#ref.addEventListener('scroll', () => {
+		this.#ref.addEventListener("scroll", () => {
 			if (!this.#ref) return;
 
 			this.#scrollY = this.#ref.scrollTop;
@@ -47,7 +47,7 @@ export class UseAutoScroll {
 			this.disableAutoScroll();
 		});
 
-		window.addEventListener('resize', () => {
+		window.addEventListener("resize", () => {
 			this.scrollToBottom(true);
 		});
 

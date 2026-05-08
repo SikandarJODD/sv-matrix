@@ -11,11 +11,564 @@
 		"relativeUrl": "dot-matrix.json"
 	},
 	{
+		"name": "hex-base",
+		"title": "Hex Base",
+		"type": "registry:block",
+		"description": "Shared hex dot matrix base and geometry helpers for sv-matrix loaders.",
+		"dependencies": [
+			"clsx"
+		],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "hex-base.json"
+	},
+	{
+		"name": "triangle-base",
+		"title": "Triangle Base",
+		"type": "registry:block",
+		"description": "Shared triangle geometry helpers for sv-matrix loaders.",
+		"registryDependencies": [],
+		"relativeUrl": "triangle-base.json"
+	},
+	{
+		"name": "hex-1",
+		"title": "Hex 1 Loader",
+		"type": "registry:block",
+		"description": "Hex 1 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-1.json"
+	},
+	{
+		"name": "hex-2",
+		"title": "Hex 2 Loader",
+		"type": "registry:block",
+		"description": "Hex 2 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-2.json"
+	},
+	{
+		"name": "hex-3",
+		"title": "Hex 3 Loader",
+		"type": "registry:block",
+		"description": "Hex 3 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-3.json"
+	},
+	{
+		"name": "hex-4",
+		"title": "Hex 4 Loader",
+		"type": "registry:block",
+		"description": "Hex 4 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-4.json"
+	},
+	{
+		"name": "hex-5",
+		"title": "Hex 5 Loader",
+		"type": "registry:block",
+		"description": "Hex 5 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-5.json"
+	},
+	{
+		"name": "hex-6",
+		"title": "Hex 6 Loader",
+		"type": "registry:block",
+		"description": "Hex 6 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-6.json"
+	},
+	{
+		"name": "hex-7",
+		"title": "Hex 7 Loader",
+		"type": "registry:block",
+		"description": "Hex 7 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-7.json"
+	},
+	{
+		"name": "hex-8",
+		"title": "Hex 8 Loader",
+		"type": "registry:block",
+		"description": "Hex 8 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-8.json"
+	},
+	{
+		"name": "hex-9",
+		"title": "Hex 9 Loader",
+		"type": "registry:block",
+		"description": "Hex 9 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-9.json"
+	},
+	{
+		"name": "hex-10",
+		"title": "Hex 10 Loader",
+		"type": "registry:block",
+		"description": "Hex 10 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:hex-base"
+		],
+		"relativeUrl": "hex-10.json"
+	},
+	{
+		"name": "triangle-1",
+		"title": "Triangle 1 Loader",
+		"type": "registry:block",
+		"description": "Triangle 1 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-1.json"
+	},
+	{
+		"name": "triangle-2",
+		"title": "Triangle 2 Loader",
+		"type": "registry:block",
+		"description": "Triangle 2 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-2.json"
+	},
+	{
+		"name": "triangle-3",
+		"title": "Triangle 3 Loader",
+		"type": "registry:block",
+		"description": "Triangle 3 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-3.json"
+	},
+	{
+		"name": "triangle-4",
+		"title": "Triangle 4 Loader",
+		"type": "registry:block",
+		"description": "Triangle 4 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-4.json"
+	},
+	{
+		"name": "triangle-5",
+		"title": "Triangle 5 Loader",
+		"type": "registry:block",
+		"description": "Triangle 5 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-5.json"
+	},
+	{
+		"name": "triangle-6",
+		"title": "Triangle 6 Loader",
+		"type": "registry:block",
+		"description": "Triangle 6 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-6.json"
+	},
+	{
+		"name": "triangle-7",
+		"title": "Triangle 7 Loader",
+		"type": "registry:block",
+		"description": "Triangle 7 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-7.json"
+	},
+	{
+		"name": "triangle-8",
+		"title": "Triangle 8 Loader",
+		"type": "registry:block",
+		"description": "Triangle 8 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-8.json"
+	},
+	{
+		"name": "triangle-9",
+		"title": "Triangle 9 Loader",
+		"type": "registry:block",
+		"description": "Triangle 9 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-9.json"
+	},
+	{
+		"name": "triangle-10",
+		"title": "Triangle 10 Loader",
+		"type": "registry:block",
+		"description": "Triangle 10 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-10.json"
+	},
+	{
+		"name": "triangle-11",
+		"title": "Triangle 11 Loader",
+		"type": "registry:block",
+		"description": "Triangle 11 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-11.json"
+	},
+	{
+		"name": "triangle-12",
+		"title": "Triangle 12 Loader",
+		"type": "registry:block",
+		"description": "Triangle 12 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-12.json"
+	},
+	{
+		"name": "triangle-13",
+		"title": "Triangle 13 Loader",
+		"type": "registry:block",
+		"description": "Triangle 13 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-13.json"
+	},
+	{
+		"name": "triangle-14",
+		"title": "Triangle 14 Loader",
+		"type": "registry:block",
+		"description": "Triangle 14 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-14.json"
+	},
+	{
+		"name": "triangle-15",
+		"title": "Triangle 15 Loader",
+		"type": "registry:block",
+		"description": "Triangle 15 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-15.json"
+	},
+	{
+		"name": "triangle-16",
+		"title": "Triangle 16 Loader",
+		"type": "registry:block",
+		"description": "Triangle 16 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-16.json"
+	},
+	{
+		"name": "triangle-17",
+		"title": "Triangle 17 Loader",
+		"type": "registry:block",
+		"description": "Triangle 17 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-17.json"
+	},
+	{
+		"name": "triangle-18",
+		"title": "Triangle 18 Loader",
+		"type": "registry:block",
+		"description": "Triangle 18 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-18.json"
+	},
+	{
+		"name": "triangle-19",
+		"title": "Triangle 19 Loader",
+		"type": "registry:block",
+		"description": "Triangle 19 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-19.json"
+	},
+	{
+		"name": "triangle-20",
+		"title": "Triangle 20 Loader",
+		"type": "registry:block",
+		"description": "Triangle 20 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix",
+			"local:triangle-base"
+		],
+		"relativeUrl": "triangle-20.json"
+	},
+	{
+		"name": "circle-1",
+		"title": "Circle 1 Loader",
+		"type": "registry:block",
+		"description": "Circle 1 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-1.json"
+	},
+	{
+		"name": "circle-2",
+		"title": "Circle 2 Loader",
+		"type": "registry:block",
+		"description": "Circle 2 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-2.json"
+	},
+	{
+		"name": "circle-3",
+		"title": "Circle 3 Loader",
+		"type": "registry:block",
+		"description": "Circle 3 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-3.json"
+	},
+	{
+		"name": "circle-4",
+		"title": "Circle 4 Loader",
+		"type": "registry:block",
+		"description": "Circle 4 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-4.json"
+	},
+	{
+		"name": "circle-5",
+		"title": "Circle 5 Loader",
+		"type": "registry:block",
+		"description": "Circle 5 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-5.json"
+	},
+	{
+		"name": "circle-6",
+		"title": "Circle 6 Loader",
+		"type": "registry:block",
+		"description": "Circle 6 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-6.json"
+	},
+	{
+		"name": "circle-7",
+		"title": "Circle 7 Loader",
+		"type": "registry:block",
+		"description": "Circle 7 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-7.json"
+	},
+	{
+		"name": "circle-8",
+		"title": "Circle 8 Loader",
+		"type": "registry:block",
+		"description": "Circle 8 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-8.json"
+	},
+	{
+		"name": "circle-9",
+		"title": "Circle 9 Loader",
+		"type": "registry:block",
+		"description": "Circle 9 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-9.json"
+	},
+	{
+		"name": "circle-10",
+		"title": "Circle 10 Loader",
+		"type": "registry:block",
+		"description": "Circle 10 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-10.json"
+	},
+	{
+		"name": "circle-11",
+		"title": "Circle 11 Loader",
+		"type": "registry:block",
+		"description": "Circle 11 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-11.json"
+	},
+	{
+		"name": "circle-12",
+		"title": "Circle 12 Loader",
+		"type": "registry:block",
+		"description": "Circle 12 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-12.json"
+	},
+	{
+		"name": "circle-13",
+		"title": "Circle 13 Loader",
+		"type": "registry:block",
+		"description": "Circle 13 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-13.json"
+	},
+	{
+		"name": "circle-14",
+		"title": "Circle 14 Loader",
+		"type": "registry:block",
+		"description": "Circle 14 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-14.json"
+	},
+	{
+		"name": "circle-15",
+		"title": "Circle 15 Loader",
+		"type": "registry:block",
+		"description": "Circle 15 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-15.json"
+	},
+	{
+		"name": "circle-16",
+		"title": "Circle 16 Loader",
+		"type": "registry:block",
+		"description": "Circle 16 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-16.json"
+	},
+	{
+		"name": "circle-17",
+		"title": "Circle 17 Loader",
+		"type": "registry:block",
+		"description": "Circle 17 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-17.json"
+	},
+	{
+		"name": "circle-18",
+		"title": "Circle 18 Loader",
+		"type": "registry:block",
+		"description": "Circle 18 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-18.json"
+	},
+	{
+		"name": "circle-19",
+		"title": "Circle 19 Loader",
+		"type": "registry:block",
+		"description": "Circle 19 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-19.json"
+	},
+	{
+		"name": "circle-20",
+		"title": "Circle 20 Loader",
+		"type": "registry:block",
+		"description": "Circle 20 loader component.",
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
+		"relativeUrl": "circle-20.json"
+	},
+	{
 		"name": "square-1",
 		"title": "Square One Loader",
 		"type": "registry:block",
 		"description": "A simple square dot matrix loader.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-1.json"
 	},
 	{
@@ -23,7 +576,9 @@
 		"title": "Square 2 Loader",
 		"type": "registry:block",
 		"description": "A row-cycle square dot matrix loader with a stepped trail animation.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-2.json"
 	},
 	{
@@ -31,7 +586,9 @@
 		"title": "Square 3 Loader",
 		"type": "registry:block",
 		"description": "Square 3 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-3.json"
 	},
 	{
@@ -39,7 +596,9 @@
 		"title": "Square 4 Loader",
 		"type": "registry:block",
 		"description": "Square 4 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-4.json"
 	},
 	{
@@ -47,7 +606,9 @@
 		"title": "Square 5 Loader",
 		"type": "registry:block",
 		"description": "Square 5 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-5.json"
 	},
 	{
@@ -55,7 +616,9 @@
 		"title": "Square 6 Loader",
 		"type": "registry:block",
 		"description": "Square 6 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-6.json"
 	},
 	{
@@ -63,7 +626,9 @@
 		"title": "Square 7 Loader",
 		"type": "registry:block",
 		"description": "Square 7 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-7.json"
 	},
 	{
@@ -71,7 +636,9 @@
 		"title": "Square 8 Loader",
 		"type": "registry:block",
 		"description": "Square 8 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-8.json"
 	},
 	{
@@ -79,7 +646,9 @@
 		"title": "Square 9 Loader",
 		"type": "registry:block",
 		"description": "Square 9 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-9.json"
 	},
 	{
@@ -87,7 +656,9 @@
 		"title": "Square 10 Loader",
 		"type": "registry:block",
 		"description": "Square 10 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-10.json"
 	},
 	{
@@ -95,7 +666,9 @@
 		"title": "Square 11 Loader",
 		"type": "registry:block",
 		"description": "Square 11 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-11.json"
 	},
 	{
@@ -103,7 +676,9 @@
 		"title": "Square 12 Loader",
 		"type": "registry:block",
 		"description": "Square 12 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-12.json"
 	},
 	{
@@ -111,7 +686,9 @@
 		"title": "Square 13 Loader",
 		"type": "registry:block",
 		"description": "Square 13 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-13.json"
 	},
 	{
@@ -119,7 +696,9 @@
 		"title": "Square 14 Loader",
 		"type": "registry:block",
 		"description": "Square 14 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-14.json"
 	},
 	{
@@ -127,7 +706,9 @@
 		"title": "Square 15 Loader",
 		"type": "registry:block",
 		"description": "Square 15 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-15.json"
 	},
 	{
@@ -135,7 +716,9 @@
 		"title": "Square 16 Loader",
 		"type": "registry:block",
 		"description": "Square 16 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-16.json"
 	},
 	{
@@ -143,7 +726,9 @@
 		"title": "Square 17 Loader",
 		"type": "registry:block",
 		"description": "Square 17 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-17.json"
 	},
 	{
@@ -151,7 +736,9 @@
 		"title": "Square 18 Loader",
 		"type": "registry:block",
 		"description": "Square 18 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-18.json"
 	},
 	{
@@ -159,7 +746,9 @@
 		"title": "Lemniscate Pulse Loader",
 		"type": "registry:block",
 		"description": "A square loader with twin heads tracing a lemniscate path and a soft pulse through the center.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-19.json"
 	},
 	{
@@ -167,7 +756,9 @@
 		"title": "Mobius Ring Loader",
 		"type": "registry:block",
 		"description": "A square loader with a perimeter ring, countertail motion, and Mobius-style twist cues at each corner.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-20.json"
 	}
 ]

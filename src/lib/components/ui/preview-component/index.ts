@@ -1,3 +1,3 @@
-import PreviewComponent from './preview-component.svelte';
+import PreviewComponent from "./preview-component.svelte";
 
 export { PreviewComponent };

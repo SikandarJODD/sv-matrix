@@ -1,17 +1,17 @@
 <script lang="ts">
-	import DotMatrixBase from './dot-matrix-base.svelte';
+	import DotMatrixBase from "./dot-matrix-base.svelte";
 	import {
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
-	import { getAnimationResolver } from './animations.js';
-	import type { DotMatrixProps } from './types.js';
+	import { getAnimationResolver } from "./animations.js";
+	import type { DotMatrixProps } from "./types.js";
 
 	let {
 		onmouseenter,
 		onmouseleave,
-		animation = 'path-wave',
+		animation = "path-wave",
 		speed = 1,
 		animated = true,
 		hoverAnimated = false,
@@ -21,9 +21,9 @@
 	const reducedMotionQuery = createReducedMotionQuery();
 	const reducedMotion = $derived(reducedMotionQuery.current);
 	const phaseController = createDotMatrixPhaseController({
-		animated: () => Boolean(animated && animation !== 'none' && !reducedMotion),
-		hoverAnimated: () => Boolean(hoverAnimated && animation !== 'none' && !reducedMotion),
-		speed: () => speed
+		animated: () => Boolean(animated && animation !== "none" && !reducedMotion),
+		hoverAnimated: () => Boolean(hoverAnimated && animation !== "none" && !reducedMotion),
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived(getAnimationResolver(animation));

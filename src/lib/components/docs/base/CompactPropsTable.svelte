@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { PropDef, PropsTable } from '$lib/types/structure';
+	import type { PropDef, PropsTable } from "$lib/types/structure";
 
 	export type CompactPropsTableProps = {
 		data: PropsTable | PropDef[];
@@ -8,13 +8,13 @@
 </script>
 
 <script lang="ts">
-	import { H3 } from '$lib/components/docs/markdown';
-	import { cn } from '$lib/utils';
+	import { H3 } from "$lib/components/docs/markdown";
+	import { cn } from "$lib/utils";
 
 	let { data, class: className }: CompactPropsTableProps = $props();
 
 	const isPropsTable = (value: PropsTable | PropDef[]): value is PropsTable => {
-		return 'props' in value;
+		return "props" in value;
 	};
 
 	let tableData = $derived(isPropsTable(data) ? data.props : data);
@@ -35,7 +35,7 @@
 	</div>
 {/if}
 
-<div class={cn('overflow-hidden rounded-lg border border-border', className)}>
+<div class={cn("overflow-hidden rounded-lg border border-border", className)}>
 	<div class="overflow-x-auto">
 		<table class="w-full min-w-[780px] table-fixed text-left text-xs sm:text-sm">
 			<colgroup>
@@ -73,13 +73,13 @@
 							<code
 								class="inline-block max-w-full rounded-md bg-muted/50 px-1.5 py-0.5 font-mono text-xs leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap text-muted-foreground"
 							>
-								{row.required ? 'required' : (row.default ?? '-')}
+								{row.required ? "required" : (row.default ?? "-")}
 							</code>
 						</td>
 						<td
 							class="py-3 pr-3 pl-2 leading-5 [overflow-wrap:anywhere] break-words text-muted-foreground"
 						>
-							{row.description ?? '-'}
+							{row.description ?? "-"}
 						</td>
 					</tr>
 				{/each}

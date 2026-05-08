@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-	import { onMount } from 'svelte';
-	import Button from '$lib/components/button.svelte';
-	import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
-	import { scale } from 'svelte/transition';
-	import { UseAutoScroll } from '$lib/hooks/use-auto-scroll.svelte.js';
-	import type { ChatListProps } from './types';
+	import { cn } from "$lib/utils.js";
+	import { onMount } from "svelte";
+	import Button from "$lib/components/button.svelte";
+	import ArrowDownIcon from "@lucide/svelte/icons/arrow-down";
+	import { scale } from "svelte/transition";
+	import { UseAutoScroll } from "$lib/hooks/use-auto-scroll.svelte.js";
+	import type { ChatListProps } from "./types";
 
 	let { ref = $bindable(null), children, class: className, ...rest }: ChatListProps = $props();
 
@@ -23,8 +23,8 @@
 	<div
 		{...rest}
 		bind:this={ref}
-		class={cn('no-scrollbar flex h-full w-full flex-col gap-4 overflow-y-auto p-4', className, {
-			'scroll-smooth': canScrollSmooth
+		class={cn("no-scrollbar flex h-full w-full flex-col gap-4 overflow-y-auto p-4", className, {
+			"scroll-smooth": canScrollSmooth,
 		})}
 		bind:this={autoScroll.ref}
 	>

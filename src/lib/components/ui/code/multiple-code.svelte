@@ -1,9 +1,9 @@
 <script lang="ts">
-	import * as Code from './index';
-	import type { CodeBlock as MagicCode } from './index';
-	import Button from '$lib/components/ui/button/button.svelte';
-	import { cn } from '$lib/utils';
-	import { Svelte, TypeScript, Terminal } from '$lib/components/icons';
+	import * as Code from "./index";
+	import type { CodeBlock as MagicCode } from "./index";
+	import Button from "$lib/components/ui/button/button.svelte";
+	import { cn } from "$lib/utils";
+	import { Svelte, TypeScript, Terminal } from "$lib/components/icons";
 	type Props = {
 		code: MagicCode[];
 	};
@@ -47,23 +47,25 @@
 					class={cn(
 						`flex w-full items-center justify-start gap-1.5 rounded-none border-l-2 border-transparent pl-6! text-xs hover:bg-neutral-200/70 hover:dark:bg-zinc-900 [&_svg:not([class*='size-'])]:size-3`,
 						selectedIndex === index &&
-							'border-l-2 border-muted-foreground bg-neutral-200/40 dark:bg-zinc-800/50'
+							"border-l-2 border-muted-foreground bg-neutral-200/40 dark:bg-zinc-800/50"
 					)}
 					variant="ghost"
 					onclick={() => (selectedIndex = index)}
 				>
-					{#if item.lang === 'svelte'}
+					{#if item.lang === "svelte"}
 						<Svelte class="size-3" />
-					{:else if item.lang === 'typescript'}
+					{:else if item.lang === "typescript"}
 						<TypeScript class="size-3" />
 					{:else}
 						<Terminal class="size-3" />
 					{/if}
 					<span
 						class={[
-							'transition-all duration-200',
-							selectedIndex === index ? '!text-black dark:!text-white' : 'text-muted-foreground'
-						]}>{item?.filename || 'Svelte'}</span
+							"transition-all duration-200",
+							selectedIndex === index
+								? "!text-black dark:!text-white"
+								: "text-muted-foreground",
+						]}>{item?.filename || "Svelte"}</span
 					>
 				</Button>
 			{/each}

@@ -1,4 +1,4 @@
-import { getContext, setContext } from 'svelte';
+import { getContext, setContext } from "svelte";
 
 export interface ProviderConfig {
 	title: string;
@@ -11,7 +11,7 @@ export interface OpenInContextType {
 }
 
 class OpenInContextClass {
-	private _query = $state('');
+	private _query = $state("");
 
 	constructor(query: string) {
 		this._query = query;
@@ -26,7 +26,7 @@ class OpenInContextClass {
 	}
 }
 
-const OPEN_IN_CONTEXT_KEY = Symbol('open-in-context');
+const OPEN_IN_CONTEXT_KEY = Symbol("open-in-context");
 
 export function createOpenInContext(query: string): OpenInContextClass {
 	const context = new OpenInContextClass(query);
@@ -37,50 +37,50 @@ export function createOpenInContext(query: string): OpenInContextClass {
 export function getOpenInContext(): OpenInContextClass {
 	const context = getContext<OpenInContextClass>(OPEN_IN_CONTEXT_KEY);
 	if (!context) {
-		throw new Error('OpenIn components must be used within an OpenIn provider');
+		throw new Error("OpenIn components must be used within an OpenIn provider");
 	}
 	return context;
 }
 
 export const providers = {
 	github: {
-		title: 'Open in GitHub',
-		createUrl: (url: string) => url
+		title: "Open in GitHub",
+		createUrl: (url: string) => url,
 	},
 	scira: {
-		title: 'Open in Scira',
+		title: "Open in Scira",
 		createUrl: (q: string) =>
 			`https://scira.ai/?${new URLSearchParams({
-				q
-			})}`
+				q,
+			})}`,
 	},
 	chatgpt: {
-		title: 'Open in ChatGPT',
+		title: "Open in ChatGPT",
 		createUrl: (q: string) =>
 			`https://chatgpt.com/?${new URLSearchParams({
-				hints: 'search',
-				q
-			})}`
+				hints: "search",
+				q,
+			})}`,
 	},
 	claude: {
-		title: 'Open in Claude',
+		title: "Open in Claude",
 		createUrl: (q: string) =>
 			`https://claude.ai/new?${new URLSearchParams({
-				q
-			})}`
+				q,
+			})}`,
 	},
 	t3: {
-		title: 'Open in T3 Chat',
+		title: "Open in T3 Chat",
 		createUrl: (q: string) =>
 			`https://t3.chat/new?${new URLSearchParams({
-				q
-			})}`
+				q,
+			})}`,
 	},
 	v0: {
-		title: 'Open in v0',
+		title: "Open in v0",
 		createUrl: (q: string) =>
 			`https://v0.app?${new URLSearchParams({
-				q
-			})}`
-	}
+				q,
+			})}`,
+	},
 } as const;

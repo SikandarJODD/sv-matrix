@@ -1,15 +1,15 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { rowMajorIndex } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { rowMajorIndex } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
 		createReducedMotionQuery,
-		createSteppedCycle
-	} from '$lib/hooks/dot-matrix/index.js';
+		createSteppedCycle,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Square20Props = DotMatrixCommonProps;
 
@@ -29,7 +29,7 @@
 		rowMajorIndex(4, 0),
 		rowMajorIndex(3, 0),
 		rowMajorIndex(2, 0),
-		rowMajorIndex(1, 0)
+		rowMajorIndex(1, 0),
 	];
 
 	const LOOP_LEN = PERIMETER_PATH.length;
@@ -46,7 +46,7 @@
 		[0, rowMajorIndex(1, 1)],
 		[4, rowMajorIndex(1, 3)],
 		[8, rowMajorIndex(3, 3)],
-		[12, rowMajorIndex(3, 1)]
+		[12, rowMajorIndex(3, 1)],
 	]);
 
 	function pathStepForCellIndex(cellIndex: number): number {
@@ -65,7 +65,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 36,
@@ -78,14 +78,14 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const headStep = createSteppedCycle({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1600,
 		steps: () => LOOP_LEN,
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -94,13 +94,13 @@
 
 		return ({ isActive, index, phase }) => {
 			if (!isActive) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
 			const onLoop = pathStepForCellIndex(index);
 			const backHead = (step + HALF_LOOP) % LOOP_LEN;
 
-			if (motionDisabled || phase === 'idle') {
+			if (motionDisabled || phase === "idle") {
 				if (onLoop >= 0) {
 					return { style: { opacity: IDLE_RING_OPACITY } };
 				}
@@ -135,8 +135,8 @@
 
 			return {
 				style: {
-					opacity: Math.min(1, opacity)
-				}
+					opacity: Math.min(1, opacity),
+				},
 			};
 		};
 	});

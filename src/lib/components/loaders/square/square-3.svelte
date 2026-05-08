@@ -1,17 +1,17 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
 	import {
 		spiralInwardNormFromIndex,
-		spiralInwardOrderValue
-	} from '$lib/components/dot-matrix/geometry.js';
+		spiralInwardOrderValue,
+	} from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type SquareThreeProps = DotMatrixCommonProps;
 
@@ -21,32 +21,32 @@
 	// 3. Reuse DotMatrixBase + shared hooks for phases and reduced motion.
 	const animationResolver: DotAnimationResolver = ({ isActive, index, reducedMotion, phase }) => {
 		if (!isActive) {
-			return { className: 'dmx-inactive' };
+			return { className: "dmx-inactive" };
 		}
 
 		const order = spiralInwardOrderValue(index);
 		const pathNorm = spiralInwardNormFromIndex(index);
 		const style = {
-			'--dmx-spiral-order': order
+			"--dmx-spiral-order": order,
 		};
 
-		if (reducedMotion || phase === 'idle') {
+		if (reducedMotion || phase === "idle") {
 			return {
 				style: {
 					...style,
-					opacity: 0.16 + pathNorm * 0.78
-				}
+					opacity: 0.16 + pathNorm * 0.78,
+				},
 			};
 		}
 
-		return { className: 'dmx-spiral-snake', style };
+		return { className: "dmx-spiral-snake", style };
 	};
 
 	let {
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 29,
@@ -59,7 +59,7 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

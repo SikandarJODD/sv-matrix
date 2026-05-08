@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { TypeScript } from '$lib/components/icons';
-	import { Svelte, Terminal, CSS, Markdown } from '$lib/components/icons';
-	import * as Code from '$lib/components/ui/code';
-	import type { CodeBlock as MagicCode } from '$lib/components/ui/code/index';
-	import CopyButton from '../copy-button/copy-button.svelte';
+	import { TypeScript } from "$lib/components/icons";
+	import { Svelte, Terminal, CSS, Markdown } from "$lib/components/icons";
+	import * as Code from "$lib/components/ui/code";
+	import type { CodeBlock as MagicCode } from "$lib/components/ui/code/index";
+	import CopyButton from "../copy-button/copy-button.svelte";
 
 	type Props = {
 		code: MagicCode;
@@ -15,15 +15,15 @@
 	<div class="overflow-hidden rounded-lg border border-border">
 		<div class="flex items-center justify-between border-b border-border py-1 pr-1 pl-4">
 			<div class="flex items-center gap-1.5">
-				{#if code.lang === 'svelte'}
+				{#if code.lang === "svelte"}
 					<Svelte />
-				{:else if code.lang === 'typescript'}
+				{:else if code.lang === "typescript"}
 					<TypeScript />
-				{:else if code.lang === 'css'}
+				{:else if code.lang === "css"}
 					<CSS />
 					<!-- {:else if code.lang === "markdown"}
 					<Markdown /> -->
-				{:else if code.lang === 'bash'}
+				{:else if code.lang === "bash"}
 					<Terminal />
 				{:else}
 					<Svelte />
@@ -37,7 +37,7 @@
 		{#if code.isExpand}
 			<Code.Overflow collapsed={true}>
 				<Code.Root
-					lang={code.lang || 'svelte'}
+					lang={code.lang || "svelte"}
 					class="w-full rounded-none border-none bg-background"
 					code={code.filecode}
 					highlight={code.highlight}
@@ -48,7 +48,7 @@
 			</Code.Overflow>
 		{:else}
 			<Code.Root
-				lang={code.lang || 'svelte'}
+				lang={code.lang || "svelte"}
 				class="w-full rounded-none border-none bg-background"
 				code={code.filecode}
 				highlight={code.highlight}

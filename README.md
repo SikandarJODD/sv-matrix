@@ -51,7 +51,7 @@ Example with `square-1`:
 
 ```svelte
 <script lang="ts">
-	import Square1 from '$lib/components/loaders/square-1.svelte';
+  import Square1 from "$lib/components/loaders/square-1.svelte";
 </script>
 
 <Square1 size={37} dotSize={5} speed={1.1} color="#f59e0b" />

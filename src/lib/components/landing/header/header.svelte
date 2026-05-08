@@ -1,33 +1,33 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import DocsSearchNavigation from '$lib/components/docs/navigation/DocsSearchNavigation.svelte';
-	import { createScroll } from '$lib/hooks/use-scroll.svelte';
-	import { cn } from '$lib/utils';
-	import { onMount } from 'svelte';
-	import DesktopNav from './desktop-nav.svelte';
-	import MobileNav from './mobile-nav.svelte';
-	import { getStars, GitHubButton } from '$lib/components/ui/github-button';
-	import { page } from '$app/state';
-	import { mode, toggleMode } from 'mode-watcher';
-	import { SunIcon, MoonIcon } from '@lucide/svelte';
+	import { Button } from "$lib/components/ui/button";
+	import DocsSearchNavigation from "$lib/components/docs/navigation/DocsSearchNavigation.svelte";
+	import { createScroll } from "$lib/hooks/use-scroll.svelte";
+	import { cn } from "$lib/utils";
+	import { onMount } from "svelte";
+	import DesktopNav from "./desktop-nav.svelte";
+	import MobileNav from "./mobile-nav.svelte";
+	import { getStars, GitHubButton } from "$lib/components/ui/github-button";
+	import { page } from "$app/state";
+	import { mode, toggleMode } from "mode-watcher";
+	import { SunIcon, MoonIcon } from "@lucide/svelte";
 
 	let scroll = createScroll(50);
 	let stars = $state(0);
-	const repo = { owner: 'SikandarJODD', repo: 'sv-matrix' };
+	const repo = { owner: "SikandarJODD", repo: "sv-matrix" };
 	onMount(async () => {
 		stars = await getStars({ ...repo, fallback: 0 });
 	});
-	let isMainRoute = $derived(page.url.href === page.url.origin + '/');
+	let isMainRoute = $derived(page.url.href === page.url.origin + "/");
 	// $inspect(isMainRoute, page.url.href, page.url.origin);
 </script>
 
 <header
 	class={cn(
-		'sticky top-0 z-50 w-full border-b border-transparent',
+		"sticky top-0 z-50 w-full border-b border-transparent",
 		scroll.scrolled &&
-			'border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50',
+			"border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50",
 		!isMainRoute &&
-			'border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50'
+			"border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50"
 	)}
 >
 	<nav class="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4 md:px-0!">
@@ -64,10 +64,14 @@
 				</Button>
 				<GitHubButton class="rounded-sm border-none" size="sm" {repo} {stars} />
 				<Button onclick={toggleMode} variant="outline" size="icon-sm">
-					{#if mode.current === 'dark'}
-						<SunIcon class="size-4 animate-in fade-in duration-500 fill-mode-backwards" />
+					{#if mode.current === "dark"}
+						<SunIcon
+							class="size-4 animate-in duration-500 fill-mode-backwards fade-in"
+						/>
 					{:else}
-						<MoonIcon class="size-4 animate-in fade-in duration-500 fill-mode-backwards" />
+						<MoonIcon
+							class="size-4 animate-in duration-500 fill-mode-backwards fade-in"
+						/>
 					{/if}
 				</Button>
 			</div>

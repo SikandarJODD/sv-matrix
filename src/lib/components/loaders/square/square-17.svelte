@@ -1,14 +1,14 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createCycleProgress,
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Square17Props = DotMatrixCommonProps;
 
@@ -22,7 +22,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 2.5,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 36,
@@ -35,13 +35,13 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const cycleProgress = createCycleProgress({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1600,
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -50,10 +50,10 @@
 
 		return ({ isActive, row, col, phase }) => {
 			if (!isActive) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
-			const progress = motionDisabled || phase === 'idle' ? 0 : animPhase * STEP_COUNT;
+			const progress = motionDisabled || phase === "idle" ? 0 : animPhase * STEP_COUNT;
 			const rowPhase = progress * HELIX_LOOP_RADIANS + row * 1.24;
 			const strandCol = Math.round(2 + 2 * Math.sin(rowPhase));
 

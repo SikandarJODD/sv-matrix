@@ -1,15 +1,15 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { MATRIX_SIZE, rowMajorIndex } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { MATRIX_SIZE, rowMajorIndex } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
 		createReducedMotionQuery,
-		createSteppedCycle
-	} from '$lib/hooks/dot-matrix/index.js';
+		createSteppedCycle,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type SquareTwoProps = DotMatrixCommonProps;
 
@@ -58,7 +58,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 29,
@@ -71,14 +71,14 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const headCycle = createSteppedCycle({
-		active: () => !reducedMotion && phaseController.phase !== 'idle' && ROW_CYCLE_LENGTH > 0,
+		active: () => !reducedMotion && phaseController.phase !== "idle" && ROW_CYCLE_LENGTH > 0,
 		cycleMsBase: () => 1500,
 		steps: () => ROW_CYCLE_LENGTH,
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -86,7 +86,7 @@
 
 		return ({ isActive, index }) => {
 			if (!isActive) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
 			if (ROW_CYCLE_LENGTH <= 0) {

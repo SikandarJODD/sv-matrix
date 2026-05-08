@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { Button } from '$lib/components/ui/button';
-	import * as ButtonGroup from '$lib/components/ui/button-group';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { getPrevNext } from '$lib/content/matrix-navigation';
-	import { cn } from '$lib/utils';
-	import * as Kbd from '$lib/components/ui/kbd';
+	import { page } from "$app/state";
+	import { Button } from "$lib/components/ui/button";
+	import * as ButtonGroup from "$lib/components/ui/button-group";
+	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
+	import { getPrevNext } from "$lib/content/matrix-navigation";
+	import { cn } from "$lib/utils";
+	import * as Kbd from "$lib/components/ui/kbd";
 	import {
 		OpenIn,
 		OpenInContent,
@@ -13,12 +13,12 @@
 		OpenInChatGPT,
 		OpenInClaude,
 		OpenInScira,
-		OpenInT3
-	} from '$lib/components/ui/open-in-chat';
-	import * as Tooltip from '$lib/components/ui/tooltip';
-	import { CopyMarkdown } from '$lib/components/ui/copy-markdown';
-	import MarkdownIcon from '$lib/components/icons/markdown.svelte';
-	import { ChevronDown, ChevronLeft, ChevronRight, ExternalLink } from '@lucide/svelte';
+		OpenInT3,
+	} from "$lib/components/ui/open-in-chat";
+	import * as Tooltip from "$lib/components/ui/tooltip";
+	import { CopyMarkdown } from "$lib/components/ui/copy-markdown";
+	import MarkdownIcon from "$lib/components/icons/markdown.svelte";
+	import { ChevronDown, ChevronLeft, ChevronRight, ExternalLink } from "@lucide/svelte";
 
 	interface Props {
 		componentName: string;
@@ -29,17 +29,19 @@
 	let { componentName, llmsTxtUrl, class: className }: Props = $props();
 
 	// Create the query for AI assistants
-	$inspect(llmsTxtUrl, 'llmsTxtUrl');
-	let query = $derived(`Read ${llmsTxtUrl} and help me understand the ${componentName} component`);
+	$inspect(llmsTxtUrl, "llmsTxtUrl");
+	let query = $derived(
+		`Read ${llmsTxtUrl} and help me understand the ${componentName} component`
+	);
 
 	let navigation = $derived(getPrevNext(page.url.pathname));
 	let previousLabel = $derived(
-		navigation.prev ? `Previous: ${navigation.prev.title}` : 'Previous page'
+		navigation.prev ? `Previous: ${navigation.prev.title}` : "Previous page"
 	);
-	let nextLabel = $derived(navigation.next ? `Next: ${navigation.next.title}` : 'Next page');
+	let nextLabel = $derived(navigation.next ? `Next: ${navigation.next.title}` : "Next page");
 </script>
 
-<div class={cn('flex items-center gap-2', className)}>
+<div class={cn("flex items-center gap-2", className)}>
 	<ButtonGroup.Root>
 		<CopyMarkdown {llmsTxtUrl} />
 		<OpenIn {query}>

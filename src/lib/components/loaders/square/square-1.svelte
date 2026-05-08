@@ -1,14 +1,14 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { trBlPathNormFromIndex } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { trBlPathNormFromIndex } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type SquareOneProps = DotMatrixCommonProps;
 
@@ -18,37 +18,37 @@
 		row,
 		col,
 		reducedMotion,
-		phase
+		phase,
 	}) => {
 		if (!isActive) {
-			return { className: 'dmx-inactive' };
+			return { className: "dmx-inactive" };
 		}
 
 		const path = trBlPathNormFromIndex(index);
 		const slice = row + (4 - col);
 		const parity = slice % 2;
 		const style = {
-			'--dmx-path': path,
-			'--dmx-diagonal-parity': parity
+			"--dmx-path": path,
+			"--dmx-diagonal-parity": parity,
 		};
 
-		if (reducedMotion || phase === 'idle') {
+		if (reducedMotion || phase === "idle") {
 			return {
 				style: {
 					...style,
-					opacity: parity === 0 ? 0.88 : 0.14
-				}
+					opacity: parity === 0 ? 0.88 : 0.14,
+				},
 			};
 		}
 
-		return { className: 'dmx-diagonal-alt-sweep', style };
+		return { className: "dmx-diagonal-alt-sweep", style };
 	};
 
 	let {
 		onmouseenter,
 		onmouseleave,
 		speed = 1.1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 37,
@@ -61,7 +61,7 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

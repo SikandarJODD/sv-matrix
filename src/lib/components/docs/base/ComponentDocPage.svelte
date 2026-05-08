@@ -1,9 +1,9 @@
 <script lang="ts" module>
-	import type { Component } from 'svelte';
-	import type { SEO } from '$lib/types/seo';
-	import type { Example } from '$lib/types/examples';
-	import type { PropsTable } from '$lib/types/structure';
-	import type { CodeBlock } from '$lib/components/ui/code';
+	import type { Component } from "svelte";
+	import type { SEO } from "$lib/types/seo";
+	import type { Example } from "$lib/types/examples";
+	import type { PropsTable } from "$lib/types/structure";
+	import type { CodeBlock } from "$lib/components/ui/code";
 
 	export type ComponentDocPageProps = {
 		id: string;
@@ -24,13 +24,13 @@
 </script>
 
 <script lang="ts">
-	import { page } from '$app/state';
-	import { H1, H2, Paragraph, H3 } from '$lib/components/docs/markdown/index';
-	import { PreviewComponent } from '$lib/components/ui/preview-component';
-	import InstallComponent from '$lib/components/docs/base/InstallComponent.svelte';
-	import APITable from '$lib/components/docs/base/APITable.svelte';
-	import { CopyPageDropdown } from '$lib/components/docs/copy-page-dropdown';
-	import SEOComponent from './SEO.svelte';
+	import { page } from "$app/state";
+	import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
+	import { PreviewComponent } from "$lib/components/ui/preview-component";
+	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
+	import APITable from "$lib/components/docs/base/APITable.svelte";
+	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import SEOComponent from "./SEO.svelte";
 
 	let {
 		id,
@@ -46,16 +46,16 @@
 		examples = [],
 		useCases = [],
 		propsTables = [],
-		descriptionClass = ''
+		descriptionClass = "",
 	}: ComponentDocPageProps = $props();
 
 	let PreviewComp = $derived(preview);
-	let isSpellRoute = $derived(page.url.pathname.split('/').includes('spell'));
-	let installUrl = $derived(`${page.url.origin}/${isSpellRoute ? 's' : 'r'}/${id}.json`);
+	let isSpellRoute = $derived(page.url.pathname.split("/").includes("spell"));
+	let installUrl = $derived(`${page.url.origin}/${isSpellRoute ? "s" : "r"}/${id}.json`);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
-		let cleanUrl = url.split('?')[0].split('#')[0];
+		let cleanUrl = url.split("?")[0].split("#")[0];
 		return cleanUrl;
 	};
 
@@ -103,7 +103,7 @@
 			<div class="mt-4 space-y-8">
 				{#each examples as example (example.name)}
 					<div class="space-y-0">
-						<H3 id={example.name.toLowerCase().replace(/\s+/g, '-')} class="mt-0">
+						<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")} class="mt-0">
 							{example.name}
 						</H3>
 						<!-- {#if example.description}
@@ -126,7 +126,7 @@
 			<div class="mt-4 space-y-8">
 				{#each useCases as useCase (useCase.name)}
 					<div class="space-y-0">
-						<H3 id={useCase.name.toLowerCase().replace(/\s+/g, '-')} class="mt-0">
+						<H3 id={useCase.name.toLowerCase().replace(/\s+/g, "-")} class="mt-0">
 							{useCase.name}
 						</H3>
 						<PreviewComponent code={useCase.code} class={useCase.previewClass}>

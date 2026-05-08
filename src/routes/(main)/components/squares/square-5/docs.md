@@ -30,7 +30,7 @@ bun x shadcn-svelte@latest add http://localhost:5173/r/square-5.json
 
 ```svelte
 <script lang="ts">
-	import Square5 from '$lib/components/loaders/square/square-5.svelte';
+  import Square5 from "$lib/components/loaders/square/square-5.svelte";
 </script>
 
 <Square5 />

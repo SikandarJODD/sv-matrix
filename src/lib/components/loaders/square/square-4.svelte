@@ -1,19 +1,19 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
 	import {
 		middleRingAntiClockwiseNormFromIndex,
 		middleRingAntiClockwiseOrderValue,
 		outerRingClockwiseNormFromIndex,
-		outerRingClockwiseOrderValue
-	} from '$lib/components/dot-matrix/geometry.js';
+		outerRingClockwiseOrderValue,
+	} from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type SquareFourProps = DotMatrixCommonProps;
 
@@ -25,59 +25,59 @@
 		row,
 		col,
 		reducedMotion,
-		phase
+		phase,
 	}) => {
 		if (!isActive) {
-			return { className: 'dmx-inactive' };
+			return { className: "dmx-inactive" };
 		}
 
 		const isCenter = row === 2 && col === 2;
 		if (isCenter) {
-			return { className: 'dmx-inactive' };
+			return { className: "dmx-inactive" };
 		}
 
 		const outerOrder = outerRingClockwiseOrderValue(index);
 		if (outerOrder >= 0) {
 			const outerNorm = outerRingClockwiseNormFromIndex(index);
 			const style = {
-				'--dmx-outer-order': outerOrder
+				"--dmx-outer-order": outerOrder,
 			};
 
-			if (reducedMotion || phase === 'idle') {
+			if (reducedMotion || phase === "idle") {
 				return {
 					style: {
 						...style,
-						opacity: 0.2 + outerNorm * 0.72
-					}
+						opacity: 0.2 + outerNorm * 0.72,
+					},
 				};
 			}
 
-			return { className: 'dmx-outer-snake', style };
+			return { className: "dmx-outer-snake", style };
 		}
 
 		const middleOrder = middleRingAntiClockwiseOrderValue(index);
 		const middleNorm = middleRingAntiClockwiseNormFromIndex(index);
 		const style = {
-			'--dmx-middle-order': middleOrder
+			"--dmx-middle-order": middleOrder,
 		};
 
-		if (reducedMotion || phase === 'idle') {
+		if (reducedMotion || phase === "idle") {
 			return {
 				style: {
 					...style,
-					opacity: 0.2 + middleNorm * 0.72
-				}
+					opacity: 0.2 + middleNorm * 0.72,
+				},
 			};
 		}
 
-		return { className: 'dmx-middle-snake', style };
+		return { className: "dmx-middle-snake", style };
 	};
 
 	let {
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 29,
@@ -90,7 +90,7 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import LoadingDots from './loading-dots.svelte';
-	import { cn } from '$lib/utils.js';
-	import type { ChatBubbleMessageProps } from './types';
-	import { fade } from 'svelte/transition';
+	import LoadingDots from "./loading-dots.svelte";
+	import { cn } from "$lib/utils.js";
+	import type { ChatBubbleMessageProps } from "./types";
+	import { fade } from "svelte/transition";
 
 	let {
 		ref = $bindable(null),

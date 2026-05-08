@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-	import { codeVariants } from '.';
-	import type { CodeRootProps } from './types';
-	import { useCode } from './code.svelte.js';
-	import { box } from 'svelte-toolbelt';
-	import '../../../../routes/layout.css';
+	import { cn } from "$lib/utils.js";
+	import { codeVariants } from ".";
+	import type { CodeRootProps } from "./types";
+	import { useCode } from "./code.svelte.js";
+	import { box } from "svelte-toolbelt";
+	import "../../../../routes/layout.css";
 
 	let {
 		ref = $bindable(null),
-		variant = 'default',
-		lang = 'typescript',
+		variant = "default",
+		lang = "typescript",
 		code,
 		class: className,
 		hideLines = false,
@@ -22,7 +22,7 @@
 		code: box.with(() => code.trimEnd()),
 		hideLines: box.with(() => hideLines),
 		highlight: box.with(() => highlight),
-		lang: box.with(() => lang)
+		lang: box.with(() => lang),
 	});
 </script>
 

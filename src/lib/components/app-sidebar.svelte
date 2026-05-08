@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import { navigationSections } from '$lib/content/matrix-navigation';
-	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import { watch } from 'runed';
-	import { tick, type ComponentProps } from 'svelte';
+	import { page } from "$app/state";
+	import { navigationSections } from "$lib/content/matrix-navigation";
+	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import { watch } from "runed";
+	import { tick, type ComponentProps } from "svelte";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 	let contentRef = $state<HTMLElement | null>(null);
@@ -17,9 +17,9 @@
 			);
 
 			activeItem?.scrollIntoView({
-				block: 'nearest',
-				inline: 'nearest',
-				behavior: 'smooth'
+				block: "nearest",
+				inline: "nearest",
+				behavior: "smooth",
 			});
 		}
 	);
@@ -34,7 +34,10 @@
 					<Sidebar.Menu>
 						{#each group.items as item (item.id)}
 							<Sidebar.MenuItem>
-								<Sidebar.MenuButton isActive={pathname === item.href} class='scroll-mt-10'>
+								<Sidebar.MenuButton
+									isActive={pathname === item.href}
+									class="scroll-mt-10"
+								>
 									{#snippet child({ props })}
 										<a href={item.href} {...props}>{item.title}</a>
 									{/snippet}
