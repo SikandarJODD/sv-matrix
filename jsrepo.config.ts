@@ -3,7 +3,7 @@ import { defineConfig, distributed, repository } from 'jsrepo';
 export default defineConfig({
 	registry: {
 		name: '@sv/loaders',
-		version: '0.0.5',
+		version: '0.0.6',
 		description: 'A collection of loaders for Svelte projects',
 		homepage: 'https://sv-matrix.vercel.app',
 		repository: 'https://github.com/SikandarJODD/sv-matrix',
@@ -270,6 +270,66 @@ export default defineConfig({
 					{
 						path: 'src/lib/components/loaders/square/square-20.svelte',
 						target: 'src/lib/components/loaders/square-20.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-1',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-1.svelte',
+						target: 'src/lib/components/loaders/circle-1.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-2',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-2.svelte',
+						target: 'src/lib/components/loaders/circle-2.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-3',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-3.svelte',
+						target: 'src/lib/components/loaders/circle-3.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-4',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-4.svelte',
+						target: 'src/lib/components/loaders/circle-4.svelte'
+					}
+				]
+			},
+			{
+				name: 'circle-5',
+				description: 'circle dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/circles/circle-5.svelte',
+						target: 'src/lib/components/loaders/circle-5.svelte'
 					}
 				]
 			},

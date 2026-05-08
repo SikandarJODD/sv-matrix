@@ -11,11 +11,53 @@
 		"relativeUrl": "dot-matrix.json"
 	},
 	{
+		"name": "circle-1",
+		"title": "Circle 1 Loader",
+		"type": "registry:block",
+		"description": "Circle 1 loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "circle-1.json"
+	},
+	{
+		"name": "circle-2",
+		"title": "Circle 2 Loader",
+		"type": "registry:block",
+		"description": "Circle 2 loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "circle-2.json"
+	},
+	{
+		"name": "circle-3",
+		"title": "Circle 3 Loader",
+		"type": "registry:block",
+		"description": "Circle 3 loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "circle-3.json"
+	},
+	{
+		"name": "circle-4",
+		"title": "Circle 4 Loader",
+		"type": "registry:block",
+		"description": "Circle 4 loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "circle-4.json"
+	},
+	{
+		"name": "circle-5",
+		"title": "Circle 5 Loader",
+		"type": "registry:block",
+		"description": "Circle 5 loader component.",
+		"registryDependencies": [],
+		"relativeUrl": "circle-5.json"
+	},
+	{
 		"name": "square-1",
 		"title": "Square One Loader",
 		"type": "registry:block",
 		"description": "A simple square dot matrix loader.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-1.json"
 	},
 	{
@@ -23,7 +65,9 @@
 		"title": "Square 2 Loader",
 		"type": "registry:block",
 		"description": "A row-cycle square dot matrix loader with a stepped trail animation.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-2.json"
 	},
 	{
@@ -31,7 +75,9 @@
 		"title": "Square 3 Loader",
 		"type": "registry:block",
 		"description": "Square 3 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-3.json"
 	},
 	{
@@ -39,7 +85,9 @@
 		"title": "Square 4 Loader",
 		"type": "registry:block",
 		"description": "Square 4 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-4.json"
 	},
 	{
@@ -47,7 +95,9 @@
 		"title": "Square 5 Loader",
 		"type": "registry:block",
 		"description": "Square 5 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-5.json"
 	},
 	{
@@ -55,7 +105,9 @@
 		"title": "Square 6 Loader",
 		"type": "registry:block",
 		"description": "Square 6 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-6.json"
 	},
 	{
@@ -63,7 +115,9 @@
 		"title": "Square 7 Loader",
 		"type": "registry:block",
 		"description": "Square 7 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-7.json"
 	},
 	{
@@ -71,7 +125,9 @@
 		"title": "Square 8 Loader",
 		"type": "registry:block",
 		"description": "Square 8 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-8.json"
 	},
 	{
@@ -79,7 +135,9 @@
 		"title": "Square 9 Loader",
 		"type": "registry:block",
 		"description": "Square 9 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-9.json"
 	},
 	{
@@ -87,7 +145,9 @@
 		"title": "Square 10 Loader",
 		"type": "registry:block",
 		"description": "Square 10 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-10.json"
 	},
 	{
@@ -95,7 +155,9 @@
 		"title": "Square 11 Loader",
 		"type": "registry:block",
 		"description": "Square 11 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-11.json"
 	},
 	{
@@ -103,7 +165,9 @@
 		"title": "Square 12 Loader",
 		"type": "registry:block",
 		"description": "Square 12 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-12.json"
 	},
 	{
@@ -111,7 +175,9 @@
 		"title": "Square 13 Loader",
 		"type": "registry:block",
 		"description": "Square 13 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-13.json"
 	},
 	{
@@ -119,7 +185,9 @@
 		"title": "Square 14 Loader",
 		"type": "registry:block",
 		"description": "Square 14 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-14.json"
 	},
 	{
@@ -127,7 +195,9 @@
 		"title": "Square 15 Loader",
 		"type": "registry:block",
 		"description": "Square 15 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-15.json"
 	},
 	{
@@ -135,7 +205,9 @@
 		"title": "Square 16 Loader",
 		"type": "registry:block",
 		"description": "Square 16 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-16.json"
 	},
 	{
@@ -143,7 +215,9 @@
 		"title": "Square 17 Loader",
 		"type": "registry:block",
 		"description": "Square 17 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-17.json"
 	},
 	{
@@ -151,7 +225,9 @@
 		"title": "Square 18 Loader",
 		"type": "registry:block",
 		"description": "Square 18 square loader component.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-18.json"
 	},
 	{
@@ -159,7 +235,9 @@
 		"title": "Lemniscate Pulse Loader",
 		"type": "registry:block",
 		"description": "A square loader with twin heads tracing a lemniscate path and a soft pulse through the center.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-19.json"
 	},
 	{
@@ -167,7 +245,9 @@
 		"title": "Mobius Ring Loader",
 		"type": "registry:block",
 		"description": "A square loader with a perimeter ring, countertail motion, and Mobius-style twist cues at each corner.",
-		"registryDependencies": [],
+		"registryDependencies": [
+			"local:dot-matrix"
+		],
 		"relativeUrl": "square-20.json"
 	}
 ]
