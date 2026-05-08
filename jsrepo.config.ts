@@ -59,6 +59,21 @@ export default defineConfig({
 						path: "src/lib/components/loaders/triangle/shared.ts",
 						target: "src/lib/components/loaders/triangle/shared-triangle.ts",
 					},
+					{
+						path: "src/lib/components/loaders/triangle/triangle-base.svelte",
+						target: "src/lib/components/loaders/triangle/triangle-base.svelte",
+					},
+				],
+			},
+			{
+				name: 'circle-base',
+				description: 'circle dot matrix shared geometry helpers',
+				type: 'block',
+				files: [
+					{
+						path: "src/lib/components/loaders/circles/circle-base.svelte",
+						target: "src/lib/components/loaders/circle-base.svelte",
+					},
 				],
 			},
 			{
@@ -665,7 +680,7 @@ export default defineConfig({
 				name: "circle-1",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-1.svelte",
@@ -677,7 +692,7 @@ export default defineConfig({
 				name: "circle-2",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-2.svelte",
@@ -689,7 +704,7 @@ export default defineConfig({
 				name: "circle-3",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-3.svelte",
@@ -701,7 +716,7 @@ export default defineConfig({
 				name: "circle-4",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-4.svelte",
@@ -713,7 +728,7 @@ export default defineConfig({
 				name: "circle-5",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-5.svelte",
@@ -725,7 +740,7 @@ export default defineConfig({
 				name: "circle-6",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-6.svelte",
@@ -737,7 +752,7 @@ export default defineConfig({
 				name: "circle-7",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-7.svelte",
@@ -749,7 +764,7 @@ export default defineConfig({
 				name: "circle-8",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-8.svelte",
@@ -761,7 +776,7 @@ export default defineConfig({
 				name: "circle-9",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-9.svelte",
@@ -773,7 +788,7 @@ export default defineConfig({
 				name: "circle-10",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-10.svelte",
@@ -785,7 +800,7 @@ export default defineConfig({
 				name: "circle-11",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-11.svelte",
@@ -797,7 +812,7 @@ export default defineConfig({
 				name: "circle-12",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-12.svelte",
@@ -809,7 +824,7 @@ export default defineConfig({
 				name: "circle-13",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-13.svelte",
@@ -821,7 +836,7 @@ export default defineConfig({
 				name: "circle-14",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-14.svelte",
@@ -833,7 +848,7 @@ export default defineConfig({
 				name: "circle-15",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-15.svelte",
@@ -845,7 +860,7 @@ export default defineConfig({
 				name: "circle-16",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-16.svelte",
@@ -857,7 +872,7 @@ export default defineConfig({
 				name: "circle-17",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-17.svelte",
@@ -869,7 +884,7 @@ export default defineConfig({
 				name: "circle-18",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-18.svelte",
@@ -881,7 +896,7 @@ export default defineConfig({
 				name: "circle-19",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-19.svelte",
@@ -893,7 +908,7 @@ export default defineConfig({
 				name: "circle-20",
 				description: "circle dot matrix loader",
 				type: "component",
-				registryDependencies: ["dot-matrix"],
+				registryDependencies: ["dot-matrix", "circle-base"],
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-20.svelte",

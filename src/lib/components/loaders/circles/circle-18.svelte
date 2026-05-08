@@ -1,5 +1,5 @@
 <script lang="ts">
-	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import CircleMatrixBase from "./circle-base.svelte";
 	import { isWithinCircularMask } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
@@ -83,7 +83,7 @@
 	}
 </script>
 
-<DotMatrixBase
+<CircleMatrixBase
 	{speed}
 	{pattern}
 	{animated}
@@ -95,3 +95,4 @@
 	onmouseleave={handleMouseLeave}
 	{...restProps}
 />
+

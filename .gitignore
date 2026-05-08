@@ -25,5 +25,6 @@ vite.config.ts.timestamp-*
 /src/lib/components/dot-matrix/DOT SIZE GUIDE.md
 /dot-matrix-guide.md
 /DOT_SIZE_GUIDE.md
+/SHAPE_SIZE_GUIDE.md
 /create_component.md
 /commands.md

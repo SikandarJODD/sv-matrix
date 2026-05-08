@@ -1,9 +1,6 @@
 <script lang="ts">
 	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
-	import type {
-		DotAnimationResolver,
-		DotMatrixCommonProps,
-	} from "$lib/components/dot-matrix/types.js";
+	import type { DotAnimationResolver, DotMatrixCommonProps } from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
 		createReducedMotionQuery,
@@ -40,11 +37,10 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 30,
-		dotSize = 4,
+		dotSize = 6,
 		...restProps
 	}: Triangle1Props = $props();
 
@@ -108,7 +104,6 @@
 
 <DotMatrixBase
 	{speed}
-	{pattern}
 	{animated}
 	{hoverAnimated}
 	{size}
