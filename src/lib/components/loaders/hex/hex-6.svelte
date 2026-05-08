@@ -48,7 +48,7 @@
 		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
-		size = 34,
+		size = 33,
 		dotSize = 5,
 		...restProps
 	}: Hex6Props = $props();
@@ -97,3 +97,4 @@
 	onmouseleave={handleMouseLeave}
 	{...restProps}
 />
+

@@ -4,7 +4,7 @@
 	import { data as triangles } from "$lib/components/loaders/triangle/data";
 	import { data as hex } from "$lib/components/loaders/hex/data";
 
-	let items = [...squares, ...circles, ...triangles, ...hex];
+	let items = [...squares, ...hex, ...circles, ...triangles,];
 </script>
 
 <section

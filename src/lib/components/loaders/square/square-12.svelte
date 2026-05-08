@@ -54,7 +54,7 @@
 		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
-		size = 36,
+		size = 37,
 		dotSize = 5,
 		...restProps
 	}: Square12Props = $props();

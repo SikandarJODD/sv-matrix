@@ -46,7 +46,7 @@
 		"aria-label": ariaLabel = "Loading",
 		onmouseenter,
 		onmouseleave,
-		size = 34,
+		size = 33,
 		dotSize = 5,
 		color = "currentColor",
 		speed = 1,
@@ -266,3 +266,4 @@
 		justify-content: center;
 	}
 </style>
+

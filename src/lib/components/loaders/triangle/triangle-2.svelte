@@ -1,5 +1,5 @@
 <script lang="ts">
-	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import TriangleMatrixBase from "./triangle-base.svelte";
 	import type {
 		DotAnimationResolver,
 		DotMatrixCommonProps,
@@ -31,7 +31,8 @@
 		animated = true,
 		hoverAnimated = false,
 		size = 30,
-		dotSize = 4,
+		cellPadding = 0,
+		dotSize = 6,
 		...restProps
 	}: Triangle2Props = $props();
 
@@ -87,7 +88,7 @@
 	}
 </script>
 
-<DotMatrixBase
+<TriangleMatrixBase
 	{speed}
 	{pattern}
 	{animated}

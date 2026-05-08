@@ -206,7 +206,7 @@ export const squareItems: MatrixNavItem[] = [
 export const circleItems: MatrixNavItem[] = [
 	{
 		id: "circle-1",
-		title: "Helix Orbit",
+		title: "Halo Drift",
 		href: "/components/circles/circle-1",
 		description: "A circular loader with a helix-style strand orbiting the ring.",
 		section: "circles",
@@ -214,7 +214,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-2",
-		title: "Ring Sweep",
+		title: "Tri Orbit",
 		href: "/components/circles/circle-2",
 		description: "A circular loader with a sweeping ring and a lit center core.",
 		section: "circles",
@@ -222,7 +222,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-3",
-		title: "Twin Comet",
+		title: "Plasma Veil",
 		href: "/components/circles/circle-3",
 		description: "A circular loader with twin comet heads tracing the outer ring.",
 		section: "circles",
@@ -230,7 +230,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-4",
-		title: "Radial Sweep",
+		title: "Radar Arc",
 		href: "/components/circles/circle-4",
 		description: "A circular loader with a radial sweep that crosses the circle.",
 		section: "circles",
@@ -238,7 +238,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-5",
-		title: "Pinwheel Pulse",
+		title: "Nova Wheel",
 		href: "/components/circles/circle-5",
 		description: "A circular loader with a pinwheel-style pulse through the matrix.",
 		section: "circles",
@@ -246,7 +246,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-6",
-		title: "Circle 6",
+		title: "Phase Orb",
 		href: "/components/circles/circle-6",
 		description: "Circle 6 loader component.",
 		section: "circles",
@@ -254,7 +254,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-7",
-		title: "Circle 7",
+		title: "Gate Shift",
 		href: "/components/circles/circle-7",
 		description: "Circle 7 loader component.",
 		section: "circles",
@@ -262,7 +262,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-8",
-		title: "Circle 8",
+		title: "heart Pulse",
 		href: "/components/circles/circle-8",
 		description: "Circle 8 loader component.",
 		section: "circles",
@@ -270,7 +270,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-9",
-		title: "Circle 9",
+		title: "Star Compass",
 		href: "/components/circles/circle-9",
 		description: "Circle 9 loader component.",
 		section: "circles",
@@ -278,7 +278,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-10",
-		title: "Circle 10",
+		title: "Binary Bloom",
 		href: "/components/circles/circle-10",
 		description: "Circle 10 loader component.",
 		section: "circles",
@@ -286,7 +286,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-11",
-		title: "Circle 11",
+		title: "Lunar Breathe",
 		href: "/components/circles/circle-11",
 		description: "Circle 11 loader component.",
 		section: "circles",
@@ -294,7 +294,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-12",
-		title: "Circle 12",
+		title: "Arc Beacon",
 		href: "/components/circles/circle-12",
 		description: "Circle 12 loader component.",
 		section: "circles",
@@ -302,7 +302,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-13",
-		title: "Circle 13",
+		title: "Twin Helix",
 		href: "/components/circles/circle-13",
 		description: "Circle 13 loader component.",
 		section: "circles",
@@ -310,7 +310,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-14",
-		title: "Circle 14",
+		title: "Rung Shift",
 		href: "/components/circles/circle-14",
 		description: "Circle 14 loader component.",
 		section: "circles",
@@ -318,7 +318,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-15",
-		title: "Circle 15",
+		title: "Glyph Cluster",
 		href: "/components/circles/circle-15",
 		description: "Circle 15 loader component.",
 		section: "circles",
@@ -326,7 +326,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-16",
-		title: "Circle 16",
+		title: "Rail Scan",
 		href: "/components/circles/circle-16",
 		description: "Circle 16 loader component.",
 		section: "circles",
@@ -334,7 +334,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-17",
-		title: "Circle 17",
+		title: "Checker Shift",
 		href: "/components/circles/circle-17",
 		description: "Circle 17 loader component.",
 		section: "circles",
@@ -342,7 +342,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-18",
-		title: "Circle 18",
+		title: "Pulse Pair",
 		href: "/components/circles/circle-18",
 		description: "Circle 18 loader component.",
 		section: "circles",
@@ -350,7 +350,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-19",
-		title: "Circle 19",
+		title: "Orbit Cell",
 		href: "/components/circles/circle-19",
 		description: "Circle 19 loader component.",
 		section: "circles",
@@ -358,7 +358,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-20",
-		title: "Circle 20",
+		title: "Glyph Cycle",
 		href: "/components/circles/circle-20",
 		description: "Circle 20 loader component.",
 		section: "circles",
@@ -369,7 +369,7 @@ export const circleItems: MatrixNavItem[] = [
 export const triangleItems: MatrixNavItem[] = [
 	{
 		id: "triangle-1",
-		title: "Triangle 1",
+		title: "Core Spokes",
 		href: "/components/triangles/triangle-1",
 		description: "Triangle 1 loader component.",
 		section: "triangles",
@@ -377,7 +377,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-2",
-		title: "Triangle 2",
+		title: "Altitude Wave",
 		href: "/components/triangles/triangle-2",
 		description: "Triangle 2 loader component.",
 		section: "triangles",
@@ -385,7 +385,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-3",
-		title: "Triangle 3",
+		title: "Corner Bounce",
 		href: "/components/triangles/triangle-3",
 		description: "Triangle 3 loader component.",
 		section: "triangles",
@@ -393,7 +393,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-4",
-		title: "Triangle 4",
+		title: "Vertex Chase",
 		href: "/components/triangles/triangle-4",
 		description: "Triangle 4 loader component.",
 		section: "triangles",
@@ -401,7 +401,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-5",
-		title: "Triangle 5",
+		title: "Row Sweep",
 		href: "/components/triangles/triangle-5",
 		description: "Triangle 5 loader component.",
 		section: "triangles",
@@ -409,7 +409,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-6",
-		title: "Triangle 6",
+		title: "Braille Beat",
 		href: "/components/triangles/triangle-6",
 		description: "Triangle 6 loader component.",
 		section: "triangles",
@@ -417,7 +417,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-7",
-		title: "Triangle 7",
+		title: "Oblique Weave",
 		href: "/components/triangles/triangle-7",
 		description: "Triangle 7 loader component.",
 		section: "triangles",
@@ -425,7 +425,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-8",
-		title: "Triangle 8",
+		title: "Wing Metronome",
 		href: "/components/triangles/triangle-8",
 		description: "Triangle 8 loader component.",
 		section: "triangles",
@@ -433,7 +433,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-9",
-		title: "Triangle 9",
+		title: "Corona Tier",
 		href: "/components/triangles/triangle-9",
 		description: "Triangle 9 loader component.",
 		section: "triangles",
@@ -441,7 +441,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-10",
-		title: "Triangle 10",
+		title: "Column Rake",
 		href: "/components/triangles/triangle-10",
 		description: "Triangle 10 loader component.",
 		section: "triangles",
@@ -449,7 +449,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-11",
-		title: "Triangle 11",
+		title: "Shelf Descent",
 		href: "/components/triangles/triangle-11",
 		description: "Triangle 11 loader component.",
 		section: "triangles",
@@ -457,7 +457,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-12",
-		title: "Triangle 12",
+		title: "Skew Drift",
 		href: "/components/triangles/triangle-12",
 		description: "Triangle 12 loader component.",
 		section: "triangles",
@@ -465,7 +465,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-13",
-		title: "Triangle 13",
+		title: "Serpent Zip",
 		href: "/components/triangles/triangle-13",
 		description: "Triangle 13 loader component.",
 		section: "triangles",
@@ -473,7 +473,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-14",
-		title: "Triangle 14",
+		title: "Pillar Sweep",
 		href: "/components/triangles/triangle-14",
 		description: "Triangle 14 loader component.",
 		section: "triangles",
@@ -481,7 +481,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-15",
-		title: "Triangle 15",
+		title: "Tripod Handoff",
 		href: "/components/triangles/triangle-15",
 		description: "Triangle 15 loader component.",
 		section: "triangles",
@@ -489,7 +489,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-16",
-		title: "Triangle 16",
+		title: "Updraft",
 		href: "/components/triangles/triangle-16",
 		description: "Triangle 16 loader component.",
 		section: "triangles",
@@ -497,7 +497,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-17",
-		title: "Triangle 17",
+		title: "Infinity Trace",
 		href: "/components/triangles/triangle-17",
 		description: "Triangle 17 loader component.",
 		section: "triangles",
@@ -505,7 +505,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-18",
-		title: "Triangle 18",
+		title: "Hollow Shell",
 		href: "/components/triangles/triangle-18",
 		description: "Triangle 18 loader component.",
 		section: "triangles",
@@ -513,7 +513,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-19",
-		title: "Triangle 19",
+		title: "Pivot Ray",
 		href: "/components/triangles/triangle-19",
 		description: "Triangle 19 loader component.",
 		section: "triangles",
@@ -521,7 +521,7 @@ export const triangleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "triangle-20",
-		title: "Triangle 20",
+		title: "Twin Perimeter",
 		href: "/components/triangles/triangle-20",
 		description: "Triangle 20 loader component.",
 		section: "triangles",
@@ -532,7 +532,7 @@ export const triangleItems: MatrixNavItem[] = [
 export const hexItems: MatrixNavItem[] = [
 	{
 		id: "hex-1",
-		title: "Hex 1",
+		title: "Hex Orbit",
 		href: "/components/hex/hex-1",
 		description: "Hex 1 loader component.",
 		section: "hex",
@@ -540,7 +540,7 @@ export const hexItems: MatrixNavItem[] = [
 	},
 	{
 		id: "hex-2",
-		title: "Hex 2",
+		title: "Prism Bloom",
 		href: "/components/hex/hex-2",
 		description: "Hex 2 loader component.",
 		section: "hex",
@@ -548,7 +548,7 @@ export const hexItems: MatrixNavItem[] = [
 	},
 	{
 		id: "hex-3",
-		title: "Hex 3",
+		title: "Honey Gate",
 		href: "/components/hex/hex-3",
 		description: "Hex 3 loader component.",
 		section: "hex",
@@ -556,7 +556,7 @@ export const hexItems: MatrixNavItem[] = [
 	},
 	{
 		id: "hex-4",
-		title: "Hex 4",
+		title: "Vertex Relay",
 		href: "/components/hex/hex-4",
 		description: "Hex 4 loader component.",
 		section: "hex",
@@ -564,7 +564,7 @@ export const hexItems: MatrixNavItem[] = [
 	},
 	{
 		id: "hex-5",
-		title: "Hex 5",
+		title: "Spiral Lattice",
 		href: "/components/hex/hex-5",
 		description: "Hex 5 loader component.",
 		section: "hex",
@@ -572,7 +572,7 @@ export const hexItems: MatrixNavItem[] = [
 	},
 	{
 		id: "hex-6",
-		title: "Hex 6",
+		title: "Chevron March",
 		href: "/components/hex/hex-6",
 		description: "Hex 6 loader component.",
 		section: "hex",
@@ -580,7 +580,7 @@ export const hexItems: MatrixNavItem[] = [
 	},
 	{
 		id: "hex-7",
-		title: "Hex 7",
+		title: "Hourglass Flip",
 		href: "/components/hex/hex-7",
 		description: "Hex 7 loader component.",
 		section: "hex",
@@ -588,7 +588,7 @@ export const hexItems: MatrixNavItem[] = [
 	},
 	{
 		id: "hex-8",
-		title: "Hex 8",
+		title: "Glyph Flip",
 		href: "/components/hex/hex-8",
 		description: "Hex 8 loader component.",
 		section: "hex",
@@ -596,7 +596,7 @@ export const hexItems: MatrixNavItem[] = [
 	},
 	{
 		id: "hex-9",
-		title: "Hex 9",
+		title: "Petal Shimmer",
 		href: "/components/hex/hex-9",
 		description: "Hex 9 loader component.",
 		section: "hex",
@@ -604,7 +604,7 @@ export const hexItems: MatrixNavItem[] = [
 	},
 	{
 		id: "hex-10",
-		title: "Hex 10",
+		title: "Liquid Vortex",
 		href: "/components/hex/hex-10",
 		description: "Hex 10 loader component.",
 		section: "hex",
