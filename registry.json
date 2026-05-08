@@ -9,6 +9,7 @@
 			"description": "Shared 5x5 dot matrix foundation with hooks, helpers, and styles for sv-matrix loaders.",
 			"type": "registry:block",
 			"registryDependencies": [],
+			"dependencies": ["clsx"],
 			"files": [
 				{
 					"path": "./src/lib/components/dot-matrix/dot-matrix.svelte",
@@ -93,7 +94,7 @@
 				{
 					"path": "./src/lib/styles/dot-matrix.css",
 					"type": "registry:file",
-					"target": "src/lib/styles/dot-matrix.css"
+					"target": "~/src/lib/styles/dot-matrix.css"
 				}
 			]
 		},

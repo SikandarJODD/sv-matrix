@@ -50,7 +50,7 @@
 
 		<div class="mt-4">
 			<PmCommand
-				command="add"
+				command="execute"
 				args={['shadcn-svelte@latest', 'add', `${page.url.origin}/r/dot-matrix.json`]}
 				bind:agent={agent.current}
 			/>
@@ -74,7 +74,7 @@
 
 		<div class="mt-4">
 			<PmCommand
-				command="add"
+				command="execute"
 				args={['shadcn-svelte@latest', 'add', `${page.url.origin}/r/square-1.json`]}
 				bind:agent={agent.current}
 			/>

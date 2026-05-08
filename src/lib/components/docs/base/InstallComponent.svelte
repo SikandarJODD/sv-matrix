@@ -90,7 +90,7 @@
 
 		<Tabs.Content value="cli" class="mt-0">
 			<PMCommand
-				command="add"
+				command='execute'
 				args={['shadcn-svelte@latest', 'add', installUrl]}
 				bind:agent={agent.current}
 			/>
