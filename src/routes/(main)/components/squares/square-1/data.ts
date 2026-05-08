@@ -266,8 +266,7 @@ const installBlock: InstallComponentDocs = {
 export const data: ComponentDoc = {
 	id: 'square-1',
 	title: 'Square One',
-	description:
-		'The original and most versatile dot-matrix style loader in the SV Matrix collection. Square One features a 5x5 grid of dots that can be customized with various patterns, animation styles, and visual effects to create a wide range of loading indicators suitable for different contexts.',
+	description: 'A square loader with a drifting neon pulse across a dot-matrix grid.',
 	category: 'loaders',
 	seo: {
 		title: 'Square One - SV Matrix Loader Component',
