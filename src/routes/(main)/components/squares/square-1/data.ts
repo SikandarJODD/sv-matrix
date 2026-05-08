@@ -1,4 +1,9 @@
-import type { InstallComponentDocs, PropsTable, ComponentDoc } from '$lib/types/structure';
+import type {
+	InstallComponentDocs,
+	PropsTable,
+	ComponentMeta,
+	ComponentDoc
+} from '$lib/types/structure';
 import Preview from './examples/preview.svelte';
 import PreviewCode from './examples/preview.svelte?raw';
 import type { Example } from '$lib/types/examples';
@@ -25,6 +30,8 @@ import ServerActionExampleRaw from './use-cases/server-action-example.svelte?raw
 import PaymentProcessingExample from './use-cases/payment-processing-example.svelte';
 import PaymentProcessingExampleRaw from './use-cases/payment-processing-example.svelte?raw';
 import Square1Raw from '$lib/components/loaders/square/square-1.svelte?raw';
+import type { SEO } from '$lib/types/seo';
+import { squareItems } from '$lib/content/matrix-navigation';
 
 let examples: Example[] = [
 	{
@@ -263,17 +270,22 @@ const installBlock: InstallComponentDocs = {
 					└── square-1.svelte`
 };
 
+const meta: ComponentMeta = {
+	id: squareItems[0].id,
+	title: squareItems[0].title,
+	description: squareItems[0].description,
+	category: squareItems[0].section
+};
+
+const seo: SEO = {
+	title: squareItems[0].title,
+	description: squareItems[0].description || '',
+	keywords: ['svelte loader', 'square loader', 'dot matrix', 'svelte component']
+};
+
 export const data: ComponentDoc = {
-	id: 'square-1',
-	title: 'Square One',
-	description: 'A square loader with a drifting neon pulse across a dot-matrix grid.',
-	category: 'loaders',
-	seo: {
-		title: 'Square One - SV Matrix Loader Component',
-		description:
-			'Discover Square One, the versatile dot-matrix loader from SV Matrix. Customize patterns, animations, and effects to create unique loading indicators for your Svelte projects.',
-		keywords: ['svelte loader', 'dot matrix', 'square one', 'customizable loading indicator']
-	},
+	...meta,
+	seo,
 	installBlock,
 	preview: Preview,
 	previewCode: {

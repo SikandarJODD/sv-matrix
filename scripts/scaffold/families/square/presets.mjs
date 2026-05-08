@@ -22,12 +22,29 @@
 
 export const squareFamilyConfig = {
 	familyId: 'square',
+	familyLabel: 'Square',
 	componentDir: 'src/lib/components/loaders/square',
+	componentImportDir: '$lib/components/loaders/square',
 	docsDir: 'src/routes/(main)/components/squares',
-	richDocsFile: 'src/lib/content/squares.ts',
-	sourceIndexFile: 'src/lib/components/loaders/square/data.ts',
-	registryFile: 'registry.json',
 	templateDir: 'scripts/scaffold/families/square/shared',
+	idPattern: /^square-\d+$/,
+	category: 'loaders',
+	runtimeDefaultFallbacks: {
+		size: '24',
+		dotSize: '3',
+		speed: '1',
+		pattern: "'diamond'"
+	},
+	registryFiles: [
+		{
+			path: 'registry.json',
+			registryDependencies: []
+		},
+		{
+			path: 'loaders.json',
+			registryDependencies: ['local:dot-matrix']
+		}
+	],
 	defaultExamples: ['glow', 'opacity-speed', 'fixed-gap-box', 'pattern-look'],
 	defaultUseCases: [
 		'chat',

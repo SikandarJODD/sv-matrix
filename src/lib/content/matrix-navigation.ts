@@ -203,24 +203,46 @@ export const squareItems: MatrixNavItem[] = [
 	}
 ];
 
-const circleItems: MatrixNavItem[] = [
+export const circleItems: MatrixNavItem[] = [
 	{
-		id: 'circle-circle-1',
-		title: 'Circle 1',
+		id: 'circle-1',
+		title: 'Helix Orbit',
 		href: '/components/circles/circle-1',
-		description: 'Placeholder entry for the first circle loader.',
+		description: 'A circular loader with a helix-style strand orbiting the ring.',
 		section: 'circles',
-		kind: 'component',
-		placeholder: true
+		kind: 'component'
 	},
 	{
-		id: 'circle-circle-2',
-		title: 'Circle 2',
+		id: 'circle-2',
+		title: 'Ring Sweep',
 		href: '/components/circles/circle-2',
-		description: 'Placeholder entry for the second circle loader.',
+		description: 'A circular loader with a sweeping ring and a lit center core.',
 		section: 'circles',
-		kind: 'component',
-		placeholder: true
+		kind: 'component'
+	},
+	{
+		id: 'circle-3',
+		title: 'Twin Comet',
+		href: '/components/circles/circle-3',
+		description: 'A circular loader with twin comet heads tracing the outer ring.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-4',
+		title: 'Radial Sweep',
+		href: '/components/circles/circle-4',
+		description: 'A circular loader with a radial sweep that crosses the circle.',
+		section: 'circles',
+		kind: 'component'
+	},
+	{
+		id: 'circle-5',
+		title: 'Pinwheel Pulse',
+		href: '/components/circles/circle-5',
+		description: 'A circular loader with a pinwheel-style pulse through the matrix.',
+		section: 'circles',
+		kind: 'component'
 	}
 ];
 
@@ -234,12 +256,12 @@ export const navigationSections: MatrixNavSection[] = [
 		id: 'squares',
 		title: 'Squares',
 		items: squareItems
+	},
+	{
+		id: 'circles',
+		title: 'Circles',
+		items: circleItems
 	}
-	// {
-	// 	id: 'circles',
-	// 	title: 'Circles',
-	// 	items: circleItems
-	// }
 ];
 
 export const navigationItems: MatrixNavItem[] = navigationSections.flatMap(

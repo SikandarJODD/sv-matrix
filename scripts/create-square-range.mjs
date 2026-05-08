@@ -3,21 +3,26 @@
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createSquare } from './create-square.mjs';
 import { squareFamilyConfig } from './scaffold/families/square/presets.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
 
-const args = parseArgs(process.argv.slice(2));
+const isCliEntrypoint =
+	process.argv[1] !== undefined && import.meta.url === pathToFileURL(process.argv[1]).href;
 
-main().catch((error) => {
-	console.error(error instanceof Error ? error.message : String(error));
-	process.exitCode = 1;
-});
+if (isCliEntrypoint) {
+	const args = parseArgs(process.argv.slice(2));
 
-async function main() {
+	main(args).catch((error) => {
+		console.error(error instanceof Error ? error.message : String(error));
+		process.exitCode = 1;
+	});
+}
+
+async function main(args) {
 	if (args.start === undefined || args.end === undefined) {
 		throw new Error('Usage: pnpm create:squares 2 5 [--force] [--examples glow,pattern-look]');
 	}
@@ -34,20 +39,22 @@ async function main() {
 		{ length: args.end - args.start + 1 },
 		(_, index) => args.start + index
 	);
-	await preflightRange(numbers, args.force);
+	await preflightRange(numbers, args.force, squareFamilyConfig);
 
 	for (const number of numbers) {
-		const id = `square-${number}`;
+		const id = `${squareFamilyConfig.familyId}-${number}`;
 		await createSquare({
 			id,
-			title: `Square ${number}`,
+			title: `${squareFamilyConfig.familyLabel} ${number}`,
 			force: args.force,
 			examples: args.examples,
 			useCases: args.useCases
 		});
 	}
 
-	console.log(`Created square docs for range square-${args.start} through square-${args.end}`);
+	console.log(
+		`Created ${squareFamilyConfig.familyId} docs for range ${squareFamilyConfig.familyId}-${args.start} through ${squareFamilyConfig.familyId}-${args.end}`
+	);
 }
 
 /**
@@ -127,13 +134,13 @@ function splitCsv(value) {
 		.filter(Boolean);
 }
 
-async function preflightRange(numbers, force) {
+async function preflightRange(numbers, force, familyConfig) {
 	const errors = [];
 
 	for (const number of numbers) {
-		const id = `square-${number}`;
-		const componentPath = path.join(repoRoot, squareFamilyConfig.componentDir, `${id}.svelte`);
-		const docsDirPath = path.join(repoRoot, squareFamilyConfig.docsDir, id);
+		const id = `${familyConfig.familyId}-${number}`;
+		const componentPath = path.join(repoRoot, familyConfig.componentDir, `${id}.svelte`);
+		const docsDirPath = path.join(repoRoot, familyConfig.docsDir, id);
 
 		try {
 			await fs.access(componentPath);
