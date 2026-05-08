@@ -3,7 +3,7 @@ import { defineConfig, distributed, repository } from 'jsrepo';
 export default defineConfig({
 	registry: {
 		name: '@sv/loaders',
-		version: '0.0.3',
+		version: '0.0.5',
 		description: 'A collection of loaders for Svelte projects',
 		homepage: 'https://sv-matrix.vercel.app',
 		repository: 'https://github.com/SikandarJODD/sv-matrix',
@@ -140,7 +140,139 @@ export default defineConfig({
 						target: 'src/lib/components/loaders/square-9.svelte'
 					}
 				]
-			}
+			},
+			{
+				name: 'square-10',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-10.svelte',
+						target: 'src/lib/components/loaders/square-10.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-11',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-11.svelte',
+						target: 'src/lib/components/loaders/square-11.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-12',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-12.svelte',
+						target: 'src/lib/components/loaders/square-12.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-13',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-13.svelte',
+						target: 'src/lib/components/loaders/square-13.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-14',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-14.svelte',
+						target: 'src/lib/components/loaders/square-14.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-15',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-15.svelte',
+						target: 'src/lib/components/loaders/square-15.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-16',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-16.svelte',
+						target: 'src/lib/components/loaders/square-16.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-17',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-17.svelte',
+						target: 'src/lib/components/loaders/square-17.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-18',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-18.svelte',
+						target: 'src/lib/components/loaders/square-18.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-19',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-19.svelte',
+						target: 'src/lib/components/loaders/square-19.svelte'
+					}
+				]
+			},
+			{
+				name: 'square-20',
+				description: 'square dot matrix loader',
+				type: 'component',
+				registryDependencies: ['dot-matrix'],
+				files: [
+					{
+						path: 'src/lib/components/loaders/square/square-20.svelte',
+						target: 'src/lib/components/loaders/square-20.svelte'
+					}
+				]
+			},
 		],
 		outputs: [distributed({ dir: './static/m' })],
 		excludeDeps: ['svelte']
