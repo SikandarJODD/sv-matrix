@@ -3,7 +3,6 @@
 	import { Portal, PortalBackdrop } from "$lib/components/ui/portal";
 	import { cn } from "$lib/utils";
 	import { MenuIcon, MoonIcon, SunIcon, XIcon } from "@lucide/svelte";
-	import LinkItem from "./link-item.svelte";
 	import { navigationItems } from "$lib/content/matrix-navigation";
 	import { getStars, GitHubButton } from "$lib/components/ui/github-button";
 	import { onMount } from "svelte";
@@ -12,6 +11,9 @@
 	let open = $state(false);
 	let stars = $state(0);
 	const repo = { owner: "SikandarJODD", repo: "sv-matrix" };
+	function closeMenu() {
+		open = false;
+	}
 	onMount(async () => {
 		stars = await getStars({ ...repo, fallback: 0 });
 	});
@@ -57,6 +59,7 @@
 						{#each navigationItems.filter((n) => n.section === "get-started") as item}
 							<a
 								href={item.href}
+								onclick={closeMenu}
 								class={cn(
 									"flex items-center gap-x-2 rounded-lg py-1.5 active:bg-muted dark:active:bg-muted/50"
 								)}
@@ -72,6 +75,7 @@
 						{#each navigationItems.filter((n) => n.section === "squares") as item}
 							<a
 								href={item.href}
+								onclick={closeMenu}
 								class={cn(
 									"flex items-center gap-x-2 rounded-lg py-1.5 active:bg-muted dark:active:bg-muted/50"
 								)}
@@ -87,6 +91,23 @@
 						{#each navigationItems.filter((n) => n.section === "circles") as item}
 							<a
 								href={item.href}
+								onclick={closeMenu}
+								class={cn(
+									"flex items-center gap-x-2 rounded-lg py-1.5 active:bg-muted dark:active:bg-muted/50"
+								)}
+							>
+								<div class="flex flex-col items-start justify-center">
+									<span class="font-medium">{item.title}</span>
+								</div>
+							</a>
+						{/each}
+					</div>
+					<div>
+						<div class="text-sm text-muted-foreground">Triangle Loaders</div>
+						{#each navigationItems.filter((n) => n.section === "triangles") as item}
+							<a
+								href={item.href}
+								onclick={closeMenu}
 								class={cn(
 									"flex items-center gap-x-2 rounded-lg py-1.5 active:bg-muted dark:active:bg-muted/50"
 								)}
@@ -102,6 +123,7 @@
 						{#each navigationItems.filter((n) => n.section === "hex") as item}
 							<a
 								href={item.href}
+								onclick={closeMenu}
 								class={cn(
 									"flex items-center gap-x-2 rounded-lg py-1.5 active:bg-muted dark:active:bg-muted/50"
 								)}

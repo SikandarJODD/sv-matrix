@@ -1,4 +1,4 @@
-export type MatrixNavSectionId = "get-started" | "squares" | "circles" | "hex";
+export type MatrixNavSectionId = "get-started" | "squares" | "circles" | "triangles" | "hex";
 export type MatrixNavKind = "doc" | "component";
 
 export interface MatrixNavItem {
@@ -366,6 +366,169 @@ export const circleItems: MatrixNavItem[] = [
 	},
 ];
 
+export const triangleItems: MatrixNavItem[] = [
+	{
+		id: "triangle-1",
+		title: "Triangle 1",
+		href: "/components/triangles/triangle-1",
+		description: "Triangle 1 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-2",
+		title: "Triangle 2",
+		href: "/components/triangles/triangle-2",
+		description: "Triangle 2 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-3",
+		title: "Triangle 3",
+		href: "/components/triangles/triangle-3",
+		description: "Triangle 3 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-4",
+		title: "Triangle 4",
+		href: "/components/triangles/triangle-4",
+		description: "Triangle 4 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-5",
+		title: "Triangle 5",
+		href: "/components/triangles/triangle-5",
+		description: "Triangle 5 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-6",
+		title: "Triangle 6",
+		href: "/components/triangles/triangle-6",
+		description: "Triangle 6 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-7",
+		title: "Triangle 7",
+		href: "/components/triangles/triangle-7",
+		description: "Triangle 7 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-8",
+		title: "Triangle 8",
+		href: "/components/triangles/triangle-8",
+		description: "Triangle 8 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-9",
+		title: "Triangle 9",
+		href: "/components/triangles/triangle-9",
+		description: "Triangle 9 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-10",
+		title: "Triangle 10",
+		href: "/components/triangles/triangle-10",
+		description: "Triangle 10 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-11",
+		title: "Triangle 11",
+		href: "/components/triangles/triangle-11",
+		description: "Triangle 11 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-12",
+		title: "Triangle 12",
+		href: "/components/triangles/triangle-12",
+		description: "Triangle 12 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-13",
+		title: "Triangle 13",
+		href: "/components/triangles/triangle-13",
+		description: "Triangle 13 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-14",
+		title: "Triangle 14",
+		href: "/components/triangles/triangle-14",
+		description: "Triangle 14 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-15",
+		title: "Triangle 15",
+		href: "/components/triangles/triangle-15",
+		description: "Triangle 15 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-16",
+		title: "Triangle 16",
+		href: "/components/triangles/triangle-16",
+		description: "Triangle 16 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-17",
+		title: "Triangle 17",
+		href: "/components/triangles/triangle-17",
+		description: "Triangle 17 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-18",
+		title: "Triangle 18",
+		href: "/components/triangles/triangle-18",
+		description: "Triangle 18 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-19",
+		title: "Triangle 19",
+		href: "/components/triangles/triangle-19",
+		description: "Triangle 19 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+	{
+		id: "triangle-20",
+		title: "Triangle 20",
+		href: "/components/triangles/triangle-20",
+		description: "Triangle 20 loader component.",
+		section: "triangles",
+		kind: "component",
+	},
+];
+
 export const hexItems: MatrixNavItem[] = [
 	{
 		id: "hex-1",
@@ -464,6 +627,11 @@ export const navigationSections: MatrixNavSection[] = [
 		id: "circles",
 		title: "Circles",
 		items: circleItems,
+	},
+	{
+		id: "triangles",
+		title: "Triangles",
+		items: triangleItems,
 	},
 	{
 		id: "hex",

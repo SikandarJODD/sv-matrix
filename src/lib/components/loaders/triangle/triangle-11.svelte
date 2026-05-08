@@ -1,0 +1,120 @@
+<script lang="ts">
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import type {
+		DotAnimationResolver,
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
+	import {
+		createCycleProgress,
+		createDotMatrixPhaseController,
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
+
+	import {
+		TRIANGLE_ACTIVE_INDEXES,
+		TRIANGLE_MATRIX_SIZE,
+		isWithinTriangleMask,
+	} from "./shared.js";
+
+	export type Triangle11Props = DotMatrixCommonProps;
+
+	const BASE_OPACITY = 0.13;
+	const MID_OPACITY = 0.36;
+	const HIGH_OPACITY = 0.96;
+	const APEX_ROW = 1;
+	const APEX_COL = 3;
+
+	function manhattanFromApex(row: number, col: number): number {
+		return Math.abs(row - APEX_ROW) + Math.abs(col - APEX_COL);
+	}
+
+	function smoothstep01(edge0: number, edge1: number, x: number): number {
+		if (edge1 <= edge0) {
+			return x >= edge1 ? 1 : 0;
+		}
+
+		const t = Math.max(0, Math.min(1, (x - edge0) / (edge1 - edge0)));
+		return t * t * (3 - 2 * t);
+	}
+
+	function opacityForCell(row: number, col: number, phase: number): number {
+		const tier = manhattanFromApex(row, col);
+		const t = phase * Math.PI * 2;
+		const u = (tier / 6) * Math.PI * 2 - t;
+		const wave = 0.5 + 0.5 * Math.cos(u);
+		const crest = smoothstep01(0.28, 0.98, wave);
+		let opacity = BASE_OPACITY + crest * (HIGH_OPACITY - BASE_OPACITY);
+
+		if (row === 3 && col === 3) {
+			opacity = Math.max(opacity, MID_OPACITY + crest * 0.35);
+		}
+
+		return Math.min(HIGH_OPACITY, opacity);
+	}
+
+	let {
+		onmouseenter,
+		onmouseleave,
+		speed = 1,
+		pattern = "full",
+		animated = true,
+		hoverAnimated = false,
+		size = 30,
+		dotSize = 4,
+		...restProps
+	}: Triangle11Props = $props();
+
+	const reducedMotionQuery = createReducedMotionQuery();
+	const reducedMotion = $derived(reducedMotionQuery.current);
+	const phaseController = createDotMatrixPhaseController({
+		animated: () => Boolean(animated && !reducedMotion),
+		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
+		speed: () => speed,
+	});
+
+	const cycleProgress = createCycleProgress({
+		active: () => !reducedMotion && phaseController.phase !== "idle",
+		cycleMsBase: () => 1400,
+		speed: () => speed,
+	});
+
+	const animationResolver = $derived.by((): DotAnimationResolver => {
+		const currentPhase =
+			reducedMotion || phaseController.phase === "idle" ? 0.18 : cycleProgress.current;
+
+		return ({ isActive, row, col }) => {
+			if (!isActive || !isWithinTriangleMask(row, col)) {
+				return { className: "dmx-inactive" };
+			}
+
+			return { style: { opacity: opacityForCell(row, col, currentPhase) } };
+		};
+	});
+
+	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {
+		phaseController.onMouseEnter();
+		onmouseenter?.(event);
+	}
+
+	function handleMouseLeave(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {
+		phaseController.onMouseLeave();
+		onmouseleave?.(event);
+	}
+</script>
+
+<DotMatrixBase
+	{speed}
+	{pattern}
+	{animated}
+	{hoverAnimated}
+	{size}
+	{dotSize}
+	gridSize={TRIANGLE_MATRIX_SIZE}
+	activeIndexes={TRIANGLE_ACTIVE_INDEXES}
+	phase={phaseController.phase}
+	{reducedMotion}
+	{animationResolver}
+	onmouseenter={handleMouseEnter}
+	onmouseleave={handleMouseLeave}
+	{...restProps}
+/>

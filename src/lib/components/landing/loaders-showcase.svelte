@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { data as squares } from "../loaders/square/data";
 	import { data as circles } from "$lib/components/loaders/circles/data";
+	import { data as triangles } from "$lib/components/loaders/triangle/data";
 	import { data as hex } from "$lib/components/loaders/hex/data";
 
-	let items = [...squares, ...circles, ...hex];
+	let items = [...squares, ...circles, ...triangles, ...hex];
 </script>
 
 <section

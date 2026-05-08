@@ -1,14 +1,7 @@
 <script lang="ts">
 	import clsx from "clsx";
 	import type { ClassValue } from "svelte/elements";
-	import {
-		MATRIX_SIZE,
-		distanceFromCenter,
-		indexToCoord,
-		manhattanDistance,
-		normalizedRadius,
-		polarAngle,
-	} from "./geometry.js";
+	import { MATRIX_SIZE } from "./geometry.js";
 	import { getMatrixLayout, resolveBoxLayout, styleEntriesToString, stylePx } from "./layout.js";
 	import {
 		clampUnitInterval,
@@ -23,6 +16,8 @@
 	import "$lib/styles/dot-matrix.css";
 
 	interface DotMatrixBaseProps extends DotMatrixCommonProps {
+		gridSize?: number;
+		activeIndexes?: Iterable<number>;
 		phase?: DotMatrixPhase;
 		reducedMotion?: boolean;
 		animationResolver?: DotAnimationResolver;
@@ -41,6 +36,30 @@
 		return style ?? undefined;
 	}
 
+	function indexToCoord(index: number, gridSize: number): { row: number; col: number } {
+		return {
+			row: Math.floor(index / gridSize),
+			col: index % gridSize,
+		};
+	}
+
+	function distanceFromCenter(row: number, col: number, center: number): number {
+		return Math.hypot(row - center, col - center);
+	}
+
+	function polarAngle(row: number, col: number, center: number): number {
+		return Math.atan2(row - center, col - center);
+	}
+
+	function normalizedRadius(distance: number, center: number): number {
+		const maxRadius = Math.hypot(center, center);
+		return maxRadius > 0 ? distance / maxRadius : 0;
+	}
+
+	function manhattanDistance(row: number, col: number, center: number): number {
+		return Math.abs(row - center) + Math.abs(col - center);
+	}
+
 	let {
 		ref = $bindable(null),
 		class: className,
@@ -55,6 +74,8 @@
 		color = "currentColor",
 		speed = 1,
 		pattern = "diamond",
+		gridSize = MATRIX_SIZE,
+		activeIndexes = undefined,
 		muted = false,
 		bloom = false,
 		halo = 0,
@@ -75,8 +96,13 @@
 
 	const safeSpeed = $derived(speed > 0 ? speed : 1);
 	const speedScale = $derived(1 / safeSpeed);
-	const patternIndexes = $derived(new Set(getPatternIndexes(pattern)));
-	const matrixLayout = $derived(getMatrixLayout(size, dotSize, cellPadding));
+	const safeGridSize = $derived(Math.max(1, Math.floor(gridSize)));
+	const gridCenter = $derived(Math.floor(safeGridSize / 2));
+	const totalCells = $derived(safeGridSize * safeGridSize);
+	const patternIndexes = $derived(
+		new Set(activeIndexes ? Array.from(activeIndexes) : getPatternIndexes(pattern))
+	);
+	const matrixLayout = $derived(getMatrixLayout(size, dotSize, cellPadding, safeGridSize));
 	const boxLayout = $derived(resolveBoxLayout({ boxSize, minSize }));
 	const scale = $derived(
 		boxLayout.useWrapper && matrixLayout.matrixSpan > 0
@@ -142,21 +168,23 @@
 	const gridStyle = $derived(
 		styleEntriesToString({
 			gap: stylePx(matrixLayout.gap),
+			"grid-template-columns": `repeat(${safeGridSize}, minmax(0, 1fr))`,
+			"grid-template-rows": `repeat(${safeGridSize}, minmax(0, 1fr))`,
 		})
 	);
 
 	const dots = $derived.by(() => {
 		const items: Array<{ index: number; className: string; style: string | undefined }> = [];
 
-		for (let index = 0; index < MATRIX_SIZE * MATRIX_SIZE; index += 1) {
-			const { row, col } = indexToCoord(index);
+		for (let index = 0; index < totalCells; index += 1) {
+			const { row, col } = indexToCoord(index, safeGridSize);
 			const isActive = patternIndexes.has(index);
-			const distance = distanceFromCenter(index);
-			const angle = polarAngle(index);
-			const radius = normalizedRadius(index);
-			const manhattan = manhattanDistance(index);
-			const deltaX = (col - Math.floor(MATRIX_SIZE / 2)) * unit;
-			const deltaY = (row - Math.floor(MATRIX_SIZE / 2)) * unit;
+			const distance = distanceFromCenter(row, col, gridCenter);
+			const angle = polarAngle(row, col, gridCenter);
+			const radius = normalizedRadius(distance, gridCenter);
+			const manhattan = manhattanDistance(row, col, gridCenter);
+			const deltaX = (col - gridCenter) * unit;
+			const deltaY = (row - gridCenter) * unit;
 			const animationState = animationResolver
 				? animationResolver({
 						index,

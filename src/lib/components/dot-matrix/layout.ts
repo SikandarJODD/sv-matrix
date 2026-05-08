@@ -23,15 +23,16 @@ export function styleEntriesToString(
 export function getMatrixLayout(
 	size: number,
 	dotSize: number,
-	cellPadding?: number
+	cellPadding?: number,
+	gridSize = MATRIX_SIZE
 ): { gap: number; matrixSpan: number } {
 	if (cellPadding != null) {
 		const gap = Math.max(0, cellPadding);
-		const matrixSpan = dotSize * MATRIX_SIZE + gap * (MATRIX_SIZE - 1);
+		const matrixSpan = dotSize * gridSize + gap * (gridSize - 1);
 		return { gap, matrixSpan };
 	}
 
-	const gap = Math.max(1, Math.floor((size - dotSize * MATRIX_SIZE) / (MATRIX_SIZE - 1)));
+	const gap = Math.max(1, Math.floor((size - dotSize * gridSize) / (gridSize - 1)));
 	return { gap, matrixSpan: size };
 }
 
