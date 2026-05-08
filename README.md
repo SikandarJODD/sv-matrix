@@ -3,9 +3,13 @@
 <p>
   <img src="https://gitviews.com/user/SikandarJODD/repos.svg?style=flat&label-color=%23555&color=blue" alt="Views" />
   <a href="https://github.com/sponsors/SikandarJODD">
-    <img src="https://img.shields.io/github/sponsors/SikandarJODD?label=Sponsor&logo=githubsponsors&color=EA4AAA" alt="GitHub Sponsors" /></a>
+    <img src="https://img.shields.io/github/sponsors/SikandarJODD?label=Sponsor&logo=githubsponsors&color=EA4AAA" alt="GitHub Sponsors" />
+  </a>
   <a href="https://github.com/SikandarJODD/sv-matrix/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
+  </a>
+  <a href="https://jsrepo.com/badges/@sv/loaders/dm">
+    <img src="https://jsrepo.com/badges/@sv/loaders/dm" alt="jsrepo downloads" />
   </a>
 </p>
 
