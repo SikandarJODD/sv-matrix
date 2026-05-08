@@ -1,2 +1,2 @@
-import CopyMarkdown from './copy-markdown.svelte';
+import CopyMarkdown from "./copy-markdown.svelte";
 export { CopyMarkdown };

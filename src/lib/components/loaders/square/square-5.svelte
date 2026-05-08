@@ -1,48 +1,48 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
 	import {
 		diagonalSnakeNormFromIndex,
-		diagonalSnakeOrderValue
-	} from '$lib/components/dot-matrix/geometry.js';
+		diagonalSnakeOrderValue,
+	} from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Square5Props = DotMatrixCommonProps;
 
 	const animationResolver: DotAnimationResolver = ({ isActive, index, reducedMotion, phase }) => {
 		if (!isActive) {
-			return { className: 'dmx-inactive' };
+			return { className: "dmx-inactive" };
 		}
 
 		const order = diagonalSnakeOrderValue(index);
 		const pathNorm = diagonalSnakeNormFromIndex(index);
 		const style = {
-			'--dmx-diagonal-snake-order': order
+			"--dmx-diagonal-snake-order": order,
 		};
 
-		if (reducedMotion || phase === 'idle') {
+		if (reducedMotion || phase === "idle") {
 			return {
 				style: {
 					...style,
-					opacity: 0.16 + pathNorm * 0.78
-				}
+					opacity: 0.16 + pathNorm * 0.78,
+				},
 			};
 		}
 
-		return { className: 'dmx-diagonal-snake', style };
+		return { className: "dmx-diagonal-snake", style };
 	};
 
 	let {
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 29,
@@ -55,7 +55,7 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

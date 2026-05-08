@@ -1,11 +1,11 @@
 <script lang="ts">
-	import * as Tabs from '$lib/components/ui/tabs/index.js';
-	import type { Snippet } from 'svelte';
-	import type { CodeBlock as MagicCode } from '$lib/components/ui/code/index';
-	import MultipleCode from '$lib/components/ui/code/multiple-code.svelte';
-	import SingleCode from '../code/single-file.svelte';
-	import { Button } from '$lib/components/ui/button';
-	import { cn } from '$lib/utils';
+	import * as Tabs from "$lib/components/ui/tabs/index.js";
+	import type { Snippet } from "svelte";
+	import type { CodeBlock as MagicCode } from "$lib/components/ui/code/index";
+	import MultipleCode from "$lib/components/ui/code/multiple-code.svelte";
+	import SingleCode from "../code/single-file.svelte";
+	import { Button } from "$lib/components/ui/button";
+	import { cn } from "$lib/utils";
 
 	interface PreviewComponentProps {
 		children: Snippet;
@@ -21,11 +21,11 @@
 		children,
 		showRetry = true,
 		isCentered = true,
-		class: className = ''
+		class: className = "",
 	}: PreviewComponentProps = $props();
 
-	type TabValue = 'preview' | 'code';
-	let value: TabValue = $state('preview');
+	type TabValue = "preview" | "code";
+	let value: TabValue = $state("preview");
 	let retryKey = $state(0);
 
 	function handleRetry() {
@@ -42,22 +42,25 @@
 			>
 				Preview
 			</Tabs.Trigger>
-			<Tabs.Trigger value="code" class="group border-none bg-transparent! text-base shadow-none! ">
+			<Tabs.Trigger
+				value="code"
+				class="group border-none bg-transparent! text-base shadow-none! "
+			>
 				Code
 			</Tabs.Trigger>
 		</Tabs.List>
 	</Tabs.Root>
 	<div class="mt-1" data-toc-ignore>
-		{#if value === 'preview'}
+		{#if value === "preview"}
 			<!-- <ComponentView> -->
 			<div
 				class={cn(
-					'relative flex min-h-64 w-full overflow-hidden rounded-lg border border-border p-6',
-					isCentered ? 'items-center justify-center' : '',
+					"relative flex min-h-64 w-full overflow-hidden rounded-lg border border-border p-6",
+					isCentered ? "items-center justify-center" : "",
 					className
 				)}
 			>
-				{#if showRetry && value === 'preview'}
+				{#if showRetry && value === "preview"}
 					<Button
 						variant="secondary"
 						size="icon-sm"
@@ -91,7 +94,7 @@
 					{/if}
 				{/key}
 			</div>
-		{:else if value === 'code'}
+		{:else if value === "code"}
 			<div>
 				{#if Array.isArray(code)}
 					<MultipleCode {code} />

@@ -1,23 +1,23 @@
 <script lang="ts">
-	import clsx from 'clsx';
-	import type { ClassValue } from 'svelte/elements';
+	import clsx from "clsx";
+	import type { ClassValue } from "svelte/elements";
 	import {
 		resolveBoxLayout,
 		styleEntriesToString,
-		stylePx
-	} from '$lib/components/dot-matrix/layout.js';
+		stylePx,
+	} from "$lib/components/dot-matrix/layout.js";
 	import {
 		clampUnitInterval,
 		getBloomHaloSpreadClass,
 		getDotBloomParts,
 		isBloomRootActive,
-		remapOpacityToTriplet
-	} from '$lib/components/dot-matrix/opacity.js';
-	import type { DotMatrixCommonProps } from '$lib/components/dot-matrix/types.js';
+		remapOpacityToTriplet,
+	} from "$lib/components/dot-matrix/opacity.js";
+	import type { DotMatrixCommonProps } from "$lib/components/dot-matrix/types.js";
 
-	import { getHexLayout, HEX_ROWS, type HexCellState } from './shared.js';
+	import { getHexLayout, HEX_ROWS, type HexCellState } from "./shared.js";
 
-	import '$lib/styles/dot-matrix.css';
+	import "$lib/styles/dot-matrix.css";
 
 	interface HexMatrixBaseProps extends DotMatrixCommonProps {
 		cells: HexCellState[];
@@ -29,7 +29,7 @@
 
 	function mergeStyles(...styles: Array<string | undefined>): string | undefined {
 		const tokens = styles.filter(Boolean);
-		return tokens.length > 0 ? tokens.join('; ') : undefined;
+		return tokens.length > 0 ? tokens.join("; ") : undefined;
 	}
 
 	function normalizeStyle(style: string | null | undefined): string | undefined {
@@ -41,14 +41,14 @@
 		ref = $bindable(null),
 		class: className,
 		style: userStyle,
-		role = 'status',
-		'aria-live': ariaLive = 'polite',
-		'aria-label': ariaLabel = 'Loading',
+		role = "status",
+		"aria-live": ariaLive = "polite",
+		"aria-label": ariaLabel = "Loading",
 		onmouseenter,
 		onmouseleave,
 		size = 34,
 		dotSize = 5,
-		color = 'currentColor',
+		color = "currentColor",
 		speed = 1,
 		muted = false,
 		bloom = false,
@@ -78,9 +78,9 @@
 
 	const matrixClass = $derived(
 		cn(
-			'dmx-root',
-			muted && 'dmx-muted',
-			isBloomRootActive(bloom, halo) && 'dmx-bloom',
+			"dmx-root",
+			muted && "dmx-muted",
+			isBloomRootActive(bloom, halo) && "dmx-bloom",
 			getBloomHaloSpreadClass(halo),
 			!boxLayout.useWrapper && className
 		)
@@ -91,21 +91,21 @@
 			styleEntriesToString({
 				width: stylePx(layout.matrixWidth),
 				height: stylePx(layout.matrixHeight),
-				'--dmx-speed': speedScale,
-				'--dmx-dot-size': stylePx(dotSize),
+				"--dmx-speed": speedScale,
+				"--dmx-dot-size": stylePx(dotSize),
 				color,
-				...(baseOpacity !== undefined && { '--dmx-opacity-base': baseOpacity }),
-				...(midOpacity !== undefined && { '--dmx-opacity-mid': midOpacity }),
-				...(peakOpacity !== undefined && { '--dmx-opacity-peak': peakOpacity }),
+				...(baseOpacity !== undefined && { "--dmx-opacity-base": baseOpacity }),
+				...(midOpacity !== undefined && { "--dmx-opacity-mid": midOpacity }),
+				...(peakOpacity !== undefined && { "--dmx-opacity-peak": peakOpacity }),
 				...(boxLayout.useWrapper
 					? {
 							transform: `scale(${scale})`,
-							'transform-origin': 'center center'
+							"transform-origin": "center center",
 						}
 					: {
-							'min-width': minSize != null ? stylePx(minSize) : undefined,
-							'min-height': minSize != null ? stylePx(minSize) : undefined
-						})
+							"min-width": minSize != null ? stylePx(minSize) : undefined,
+							"min-height": minSize != null ? stylePx(minSize) : undefined,
+						}),
 			}),
 			!boxLayout.useWrapper ? normalizeStyle(userStyle) : undefined
 		)
@@ -114,14 +114,14 @@
 	const wrapperStyle = $derived.by(() =>
 		mergeStyles(
 			styleEntriesToString({
-				display: 'inline-flex',
-				'align-items': 'center',
-				'justify-content': 'center',
+				display: "inline-flex",
+				"align-items": "center",
+				"justify-content": "center",
 				width: stylePx(boxLayout.outerDim),
 				height: stylePx(boxLayout.outerDim),
-				'min-width': minSize != null ? stylePx(minSize) : undefined,
-				'min-height': minSize != null ? stylePx(minSize) : undefined,
-				overflow: 'hidden'
+				"min-width": minSize != null ? stylePx(minSize) : undefined,
+				"min-height": minSize != null ? stylePx(minSize) : undefined,
+				overflow: "hidden",
 			}),
 			boxLayout.useWrapper ? normalizeStyle(userStyle) : undefined
 		)
@@ -129,7 +129,7 @@
 
 	const gridStyle = $derived(
 		styleEntriesToString({
-			gap: stylePx(layout.rowGap)
+			gap: stylePx(layout.rowGap),
 		})
 	);
 
@@ -142,7 +142,7 @@
 					...definition,
 					isActive: false,
 					opacity: 0,
-					style: undefined
+					style: undefined,
 				};
 				const stylePatch = cell.style ? { ...cell.style } : {};
 				let isBloomDot = false;
@@ -164,28 +164,28 @@
 						midOpacity,
 						peakOpacity
 					);
-					stylePatch['--dmx-bloom-level'] = bloomParts.level;
+					stylePatch["--dmx-bloom-level"] = bloomParts.level;
 					isBloomDot = bloomParts.bloomDot;
 				} else {
 					stylePatch.opacity = 0;
-					stylePatch.visibility = 'hidden';
-					stylePatch['pointer-events'] = 'none';
-					stylePatch.animation = 'none';
+					stylePatch.visibility = "hidden";
+					stylePatch["pointer-events"] = "none";
+					stylePatch.animation = "none";
 				}
 
 				return {
 					id: cell.id,
 					className: cn(
-						'dmx-dot',
-						!cell.isActive && 'dmx-inactive',
-						isBloomDot && 'dmx-bloom-dot',
+						"dmx-dot",
+						!cell.isActive && "dmx-inactive",
+						isBloomDot && "dmx-bloom-dot",
 						dotClass
 					),
 					style: styleEntriesToString({
 						width: stylePx(dotSize),
 						height: stylePx(dotSize),
-						...stylePatch
-					})
+						...stylePatch,
+					}),
 				};
 			})
 		)
@@ -210,11 +210,12 @@
 					<div
 						class="dmx-hex-row"
 						style={styleEntriesToString({
-							gap: stylePx(layout.gap)
+							gap: stylePx(layout.gap),
 						})}
 					>
 						{#each row as cell (cell.id)}
-							<span aria-hidden="true" class={cell.className} style={cell.style}></span>
+							<span aria-hidden="true" class={cell.className} style={cell.style}
+							></span>
 						{/each}
 					</div>
 				{/each}
@@ -238,7 +239,7 @@
 				<div
 					class="dmx-hex-row"
 					style={styleEntriesToString({
-						gap: stylePx(layout.gap)
+						gap: stylePx(layout.gap),
 					})}
 				>
 					{#each row as cell (cell.id)}

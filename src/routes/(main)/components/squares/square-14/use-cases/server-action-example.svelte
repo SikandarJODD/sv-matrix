@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-	import { Button } from '$lib/components/ui/button';
-	import Square14 from '$lib/components/loaders/square/square-14.svelte';
+	import { onDestroy } from "svelte";
+	import { Button } from "$lib/components/ui/button";
+	import Square14 from "$lib/components/loaders/square/square-14.svelte";
 
 	const timeouts: number[] = [];
 
@@ -40,7 +40,8 @@
 					Triggers a server action to send a fresh invite email.
 				</p>
 			</div>
-			<Button variant="outline" onclick={runServerAction} disabled={isRunning}>Resend invite</Button
+			<Button variant="outline" onclick={runServerAction} disabled={isRunning}
+				>Resend invite</Button
 			>
 		</div>
 

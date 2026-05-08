@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { getPatternIndexes } from '$lib/components/dot-matrix/patterns.js';
-	import type { DotMatrixCommonProps } from '$lib/components/dot-matrix/types.js';
+	import { getPatternIndexes } from "$lib/components/dot-matrix/patterns.js";
+	import type { DotMatrixCommonProps } from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
 		createReducedMotionQuery,
-		createSteppedCycle
-	} from '$lib/hooks/dot-matrix/index.js';
+		createSteppedCycle,
+	} from "$lib/hooks/dot-matrix/index.js";
 
-	import HexMatrixBase from './hex-base.svelte';
-	import { buildHexCells, type HexTone } from './shared.js';
+	import HexMatrixBase from "./hex-base.svelte";
+	import { buildHexCells, type HexTone } from "./shared.js";
 
 	export type Hex8Props = DotMatrixCommonProps;
 
@@ -17,59 +17,59 @@
 	const HIGH_OPACITY = 0.98;
 	const FRAMES: readonly Readonly<Record<string, HexTone>>[] = [
 		{
-			'0,1': 'x',
-			'1,1': 'o',
-			'1,2': 'o',
-			'2,0': 'x',
-			'2,2': 'x',
-			'2,4': 'x',
-			'3,1': 'o',
-			'3,2': 'o',
-			'4,1': 'x'
+			"0,1": "x",
+			"1,1": "o",
+			"1,2": "o",
+			"2,0": "x",
+			"2,2": "x",
+			"2,4": "x",
+			"3,1": "o",
+			"3,2": "o",
+			"4,1": "x",
 		},
 		{
-			'0,0': 'x',
-			'0,2': 'x',
-			'1,0': 'o',
-			'1,3': 'o',
-			'2,1': 'x',
-			'2,2': 'o',
-			'2,3': 'x',
-			'3,0': 'o',
-			'3,3': 'o',
-			'4,0': 'x',
-			'4,2': 'x'
+			"0,0": "x",
+			"0,2": "x",
+			"1,0": "o",
+			"1,3": "o",
+			"2,1": "x",
+			"2,2": "o",
+			"2,3": "x",
+			"3,0": "o",
+			"3,3": "o",
+			"4,0": "x",
+			"4,2": "x",
 		},
 		{
-			'0,1': 'o',
-			'1,0': 'x',
-			'1,3': 'x',
-			'2,0': 'o',
-			'2,2': 'x',
-			'2,4': 'o',
-			'3,0': 'x',
-			'3,3': 'x',
-			'4,1': 'o'
+			"0,1": "o",
+			"1,0": "x",
+			"1,3": "x",
+			"2,0": "o",
+			"2,2": "x",
+			"2,4": "o",
+			"3,0": "x",
+			"3,3": "x",
+			"4,1": "o",
 		},
 		{
-			'0,0': 'o',
-			'0,2': 'o',
-			'1,1': 'x',
-			'1,2': 'x',
-			'2,1': 'o',
-			'2,3': 'o',
-			'3,1': 'x',
-			'3,2': 'x',
-			'4,0': 'o',
-			'4,2': 'o'
-		}
+			"0,0": "o",
+			"0,2": "o",
+			"1,1": "x",
+			"1,2": "x",
+			"2,1": "o",
+			"2,3": "o",
+			"3,1": "x",
+			"3,2": "x",
+			"4,0": "o",
+			"4,2": "o",
+		},
 	];
 
 	let {
 		onmouseenter,
 		onmouseleave,
 		speed = 1.35,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 34,
@@ -82,16 +82,17 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 	const steppedCycle = createSteppedCycle({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1400,
 		steps: () => FRAMES.length,
-		speed: () => speed
+		speed: () => speed,
 	});
 	const frame = $derived(
-		FRAMES[reducedMotion || phaseController.phase === 'idle' ? 0 : steppedCycle.current] ?? FRAMES[0]!
+		FRAMES[reducedMotion || phaseController.phase === "idle" ? 0 : steppedCycle.current] ??
+			FRAMES[0]!
 	);
 	const activePatternIndexes = $derived(new Set(getPatternIndexes(pattern)));
 	const cells = $derived.by(() =>
@@ -99,9 +100,9 @@
 			activePatternIndexes,
 			(cell) => {
 				const tone = frame[cell.id];
-				return tone === 'x' ? HIGH_OPACITY : tone === 'o' ? MID_OPACITY : BASE_OPACITY;
+				return tone === "x" ? HIGH_OPACITY : tone === "o" ? MID_OPACITY : BASE_OPACITY;
 			},
-			() => ({ transition: 'opacity 160ms ease-out' })
+			() => ({ transition: "opacity 160ms ease-out" })
 		)
 	);
 

@@ -30,7 +30,7 @@ bun x shadcn-svelte@latest add http://localhost:5173/r/circle-8.json
 
 ```svelte
 <script lang="ts">
-	import Circle8 from '$lib/components/loaders/circles/circle-8.svelte';
+  import Circle8 from "$lib/components/loaders/circles/circle-8.svelte";
 </script>
 
 <Circle8 />

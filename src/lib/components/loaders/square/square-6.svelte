@@ -1,13 +1,13 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Square6Props = DotMatrixCommonProps;
 
@@ -18,28 +18,28 @@
 		row,
 		col,
 		reducedMotion,
-		phase
+		phase,
 	}) => {
 		if (!isActive) {
-			return { className: 'dmx-inactive' };
+			return { className: "dmx-inactive" };
 		}
 
 		const goesUp = col % 2 === 0;
 		const position = goesUp ? COLUMN_HEIGHT - 1 - row : row;
 
-		if (reducedMotion || phase === 'idle') {
+		if (reducedMotion || phase === "idle") {
 			return {
 				style: {
-					opacity: 0.22 + (position / (COLUMN_HEIGHT - 1)) * 0.66
-				}
+					opacity: 0.22 + (position / (COLUMN_HEIGHT - 1)) * 0.66,
+				},
 			};
 		}
 
 		return {
-			className: 'dmx-square6-col-snake',
+			className: "dmx-square6-col-snake",
 			style: {
-				'--dmx-col-pos': position
-			}
+				"--dmx-col-pos": position,
+			},
 		};
 	};
 
@@ -47,7 +47,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 29,
@@ -60,7 +60,7 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

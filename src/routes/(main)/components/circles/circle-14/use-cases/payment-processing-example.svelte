@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-	import { Button } from '$lib/components/ui/button';
-	import Circle14 from '$lib/components/loaders/circles/circle-14.svelte';
+	import { onDestroy } from "svelte";
+	import { Button } from "$lib/components/ui/button";
+	import Circle14 from "$lib/components/loaders/circles/circle-14.svelte";
 
 	const timeouts: number[] = [];
 
@@ -35,7 +35,9 @@
 		<div class="flex items-center justify-between gap-3">
 			<div>
 				<p class="font-medium">Pro annual plan</p>
-				<p class="mt-1 text-sm text-muted-foreground">Priority support and unlimited automations</p>
+				<p class="mt-1 text-sm text-muted-foreground">
+					Priority support and unlimited automations
+				</p>
 			</div>
 			<p class="text-xl font-semibold">$48</p>
 		</div>

@@ -1,18 +1,18 @@
-import type { LinkItemType } from './types';
+import type { LinkItemType } from "./types";
 
 let navs: LinkItemType[] = [
 	{
-		name: 'Home',
-		href: '/'
+		name: "Home",
+		href: "/",
 	},
 	{
-		name: 'Docs',
-		href: '/docs/introduction'
+		name: "Docs",
+		href: "/docs/introduction",
 	},
 	{
-		name: 'Components',
-		href: '/components/squares/square-1'
-	}
+		name: "Components",
+		href: "/components/squares/square-1",
+	},
 ];
 
 export { navs };

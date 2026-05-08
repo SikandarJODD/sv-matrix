@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { data as squares } from '../loaders/square/data';
-	import { data as circles } from '$lib/components/loaders/circles/data';
-	import { data as hex } from '$lib/components/loaders/hex/data';
+	import { data as squares } from "../loaders/square/data";
+	import { data as circles } from "$lib/components/loaders/circles/data";
+	import { data as hex } from "$lib/components/loaders/hex/data";
 
 	let items = [...squares, ...circles, ...hex];
 </script>
@@ -29,7 +29,9 @@
 				</div>
 
 				<div class="absolute inset-x-0 bottom-5 px-4 text-center">
-					<span class="font-geist-pixel-grid text-sm tracking-wide text-foreground/80 md:text-sm">
+					<span
+						class="font-geist-pixel-grid text-sm tracking-wide text-foreground/80 md:text-sm"
+					>
 						{item.title}
 					</span>
 				</div>

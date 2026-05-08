@@ -1,14 +1,14 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { isWithinCircularMask, rowMajorIndex } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { isWithinCircularMask, rowMajorIndex } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Circle2Props = DotMatrixCommonProps;
 
@@ -24,7 +24,7 @@
 		rowMajorIndex(4, 1),
 		rowMajorIndex(3, 0),
 		rowMajorIndex(2, 0),
-		rowMajorIndex(1, 0)
+		rowMajorIndex(1, 0),
 	];
 
 	const LOOP_LEN = RING_PATH.length;
@@ -35,7 +35,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		...restProps
@@ -46,7 +46,7 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -54,7 +54,7 @@
 
 		return ({ isActive, index, row, col, phase }) => {
 			if (!isActive || !isWithinCircularMask(row, col)) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
 			const ringOrder = RING_PATH.indexOf(index);
@@ -62,24 +62,24 @@
 			if (ringOrder === -1) {
 				return {
 					style: {
-						opacity: row === 2 && col === 2 ? CORE_OPACITY : BASE_OPACITY
-					}
+						opacity: row === 2 && col === 2 ? CORE_OPACITY : BASE_OPACITY,
+					},
 				};
 			}
 
-			if (motionDisabled || phase === 'idle') {
+			if (motionDisabled || phase === "idle") {
 				return {
 					style: {
-						opacity: 0.28 + (ringOrder / (LOOP_LEN - 1)) * 0.58
-					}
+						opacity: 0.28 + (ringOrder / (LOOP_LEN - 1)) * 0.58,
+					},
 				};
 			}
 
 			return {
-				className: 'dmx-circular2-ring',
+				className: "dmx-circular2-ring",
 				style: {
-					'--dmx-ring-order': ringOrder
-				}
+					"--dmx-ring-order": ringOrder,
+				},
 			};
 		};
 	});

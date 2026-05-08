@@ -1,12 +1,12 @@
 <script lang="ts">
-	import SEOComponent from '$lib/components/docs/base/SEO.svelte';
-	import { H1, H2, Link, Paragraph, Strong } from '$lib/components/docs/markdown';
+	import SEOComponent from "$lib/components/docs/base/SEO.svelte";
+	import { H1, H2, Link, Paragraph, Strong } from "$lib/components/docs/markdown";
 </script>
 
 <SEOComponent
 	title="Introduction"
 	description="A short overview of Svelte Dot Matrix Loaders and the original project it was ported from."
-	keywords={['svelte loaders', 'dot matrix loaders', 'svelte dot matrix', 'loader docs']}
+	keywords={["svelte loaders", "dot matrix loaders", "svelte dot matrix", "loader docs"]}
 />
 
 <div class="space-y-8 md:space-y-10">
@@ -14,13 +14,15 @@
 		<H1 id="introduction">Svelte Dot Matrix Loaders</H1>
 		<div class="mt-3 max-w-2xl">
 			<Paragraph>
-				Svelte Dot Matrix Loaders is a collection of dot-matrix style loaders for Svelte. It is
-				built around reusable loading components and a shared runtime for the square loader family.
+				Svelte Dot Matrix Loaders is a collection of dot-matrix style loaders for Svelte. It
+				is built around reusable loading components and a shared runtime for the square
+				loader family.
 			</Paragraph>
 			<Paragraph>
 				This project is a Svelte port of the original <Strong>Dot Matrix</Strong>.
 				<br />
-				Start with <Link href="/docs/setup">Setup</Link> to get the base and your first loader running.
+				Start with <Link href="/docs/setup">Setup</Link> to get the base and your first loader
+				running.
 			</Paragraph>
 		</div>
 	</section>
@@ -50,7 +52,11 @@
 				<p class="mt-2 text-lg font-medium text-foreground">Bhide Svelte</p>
 				<p class="mt-2 text-sm text-muted-foreground">
 					Twitter:
-					<Link href="https://x.com/Sikandar_Bhide" target="_blank" rel="noopener noreferrer">
+					<Link
+						href="https://x.com/Sikandar_Bhide"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						@Sikandar_Bhide
 					</Link>
 				</p>

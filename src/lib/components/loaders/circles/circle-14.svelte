@@ -1,15 +1,15 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { isWithinCircularMask } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { isWithinCircularMask } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createCycleProgress,
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Circle14Props = DotMatrixCommonProps;
 
@@ -22,7 +22,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		...restProps
@@ -33,13 +33,13 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const cycleProgress = createCycleProgress({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1650,
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -48,12 +48,13 @@
 
 		return ({ isActive, row, col, phase }) => {
 			if (!isActive || !isWithinCircularMask(row, col)) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
 			const x = col - 2;
 			const y = row - 2;
-			const phaseStep = motionDisabled || phase === 'idle' ? 0 : Math.floor(animProgress * 10);
+			const phaseStep =
+				motionDisabled || phase === "idle" ? 0 : Math.floor(animProgress * 10);
 			const activeRow = (phaseStep + 5) % 5;
 			const rowDistance = Math.abs(row - activeRow);
 			const swing = Math.sin((phaseStep / 10) * Math.PI * 2 + y * 0.9);

@@ -1,33 +1,33 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import { page } from '$app/state';
-	import AppSidebar from '$lib/components/app-sidebar.svelte';
-	import Toc from '$lib/components/docs/base/toc/toc.svelte';
-	import DocsNavigation from '$lib/components/docs/navigation/DocsNavigation.svelte';
-	import { getPrevNext } from '$lib/content/matrix-navigation';
-	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import { UseToc } from '$lib/hooks/use-toc.svelte';
-	import { activeElement, PressedKeys } from 'runed';
-	import type { Snippet } from 'svelte';
+	import { goto } from "$app/navigation";
+	import { page } from "$app/state";
+	import AppSidebar from "$lib/components/app-sidebar.svelte";
+	import Toc from "$lib/components/docs/base/toc/toc.svelte";
+	import DocsNavigation from "$lib/components/docs/navigation/DocsNavigation.svelte";
+	import { getPrevNext } from "$lib/content/matrix-navigation";
+	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+	import { UseToc } from "$lib/hooks/use-toc.svelte";
+	import { activeElement, PressedKeys } from "runed";
+	import type { Snippet } from "svelte";
 
 	let {
-		children
+		children,
 	}: {
 		children: Snippet;
 	} = $props();
 
 	let toc = new UseToc();
 	let keys = new PressedKeys();
-	let metaKeyPressed = $derived(keys.has('meta'));
-	let controlKeyPressed = $derived(keys.has('control'));
-	let altKeyPressed = $derived(keys.has('alt'));
-	let shiftKeyPressed = $derived(keys.has('shift'));
+	let metaKeyPressed = $derived(keys.has("meta"));
+	let controlKeyPressed = $derived(keys.has("control"));
+	let altKeyPressed = $derived(keys.has("alt"));
+	let shiftKeyPressed = $derived(keys.has("shift"));
 
 	let navigation = $derived.by(() => {
 		let { prev, next } = getPrevNext(page.url.pathname);
 		return {
 			previous: prev ? { title: prev.title, href: prev.href, desc: prev.description } : null,
-			next: next ? { title: next.title, href: next.href, desc: next.description } : null
+			next: next ? { title: next.title, href: next.href, desc: next.description } : null,
 		};
 	});
 
@@ -43,9 +43,9 @@
 		}
 
 		if (
-			element.localName === 'input' ||
-			element.localName === 'textarea' ||
-			element.localName === 'select'
+			element.localName === "input" ||
+			element.localName === "textarea" ||
+			element.localName === "select"
 		) {
 			return true;
 		}
@@ -62,8 +62,8 @@
 					'[data-slot="command-input"]',
 					'[data-slot="dialog-content"]',
 					'[role="menu"]',
-					'[role="dialog"]'
-				].join(', ')
+					'[role="dialog"]',
+				].join(", ")
 			)
 		);
 	}
@@ -73,11 +73,11 @@
 			return null;
 		}
 
-		if (key === 'arrowleft') {
+		if (key === "arrowleft") {
 			return navigation.previous;
 		}
 
-		if (key === 'arrowright') {
+		if (key === "arrowright") {
 			return navigation.next;
 		}
 
@@ -105,7 +105,9 @@
 <Sidebar.Provider>
 	<AppSidebar />
 	<!-- <Sidebar.Inset> -->
-	<div class="mx-auto flex w-full max-w-7xl items-start gap-x-8 px-4 py-6 sm:px-6 lg:pr-4 lg:pl-8">
+	<div
+		class="mx-auto flex w-full max-w-7xl items-start gap-x-8 px-4 py-6 sm:px-6 lg:pr-4 lg:pl-8"
+	>
 		<!-- <aside class="sticky top-8 hidden w-44 shrink-0 lg:block">
   </aside> -->
 

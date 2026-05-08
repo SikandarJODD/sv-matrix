@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Square19 from '$lib/components/loaders/square/square-19.svelte';
+	import Square19 from "$lib/components/loaders/square/square-19.svelte";
 </script>
 
 <Square19 />

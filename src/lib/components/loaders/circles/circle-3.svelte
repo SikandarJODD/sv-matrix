@@ -1,15 +1,15 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { isWithinCircularMask, rowMajorIndex } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { isWithinCircularMask, rowMajorIndex } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
 		createReducedMotionQuery,
-		createSteppedCycle
-	} from '$lib/hooks/dot-matrix/index.js';
+		createSteppedCycle,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Circle3Props = DotMatrixCommonProps;
 
@@ -32,7 +32,7 @@
 		rowMajorIndex(4, 1),
 		rowMajorIndex(3, 0),
 		rowMajorIndex(2, 0),
-		rowMajorIndex(1, 0)
+		rowMajorIndex(1, 0),
 	];
 
 	const LOOP_LEN = CIRCULAR_RING_PATH.length;
@@ -41,7 +41,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		...restProps
@@ -52,15 +52,15 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const headStep = createSteppedCycle({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1650,
 		steps: () => STEP_COUNT,
 		speed: () => speed,
-		idleStep: () => 6
+		idleStep: () => 6,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -69,7 +69,7 @@
 
 		return ({ isActive, index, row, col, phase }) => {
 			if (!isActive || !isWithinCircularMask(row, col)) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
 			const pathOrder = CIRCULAR_RING_PATH.indexOf(index);
@@ -79,11 +79,11 @@
 				return { style: { opacity: isCore ? CORE_OPACITY : BASE_OPACITY } };
 			}
 
-			if (motionDisabled || phase === 'idle') {
+			if (motionDisabled || phase === "idle") {
 				return {
 					style: {
-						opacity: RING_BASE_OPACITY + (pathOrder / (LOOP_LEN - 1)) * 0.56
-					}
+						opacity: RING_BASE_OPACITY + (pathOrder / (LOOP_LEN - 1)) * 0.56,
+					},
 				};
 			}
 

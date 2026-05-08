@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 // @ts-check
 
-import { pathToFileURL } from 'node:url';
-import { createLoaderScaffold, parseLoaderArgs } from './scaffold/create-loader-docs.mjs';
+import { pathToFileURL } from "node:url";
+import { createLoaderScaffold, parseLoaderArgs } from "./scaffold/create-loader-docs.mjs";
 import {
 	circleCommonProps,
 	circleExamplePresets,
 	circleFamilyConfig,
 	circleForwardedProps,
-	circleUseCasePresets
-} from './scaffold/families/circle/presets.mjs';
+	circleUseCasePresets,
+} from "./scaffold/families/circle/presets.mjs";
 
 const isCliEntrypoint =
 	process.argv[1] !== undefined && import.meta.url === pathToFileURL(process.argv[1]).href;
@@ -41,6 +41,6 @@ export async function createCircle(args) {
 		examplePresets: circleExamplePresets,
 		useCasePresets: circleUseCasePresets,
 		commonProps: circleCommonProps,
-		forwardedProps: circleForwardedProps
+		forwardedProps: circleForwardedProps,
 	});
 }

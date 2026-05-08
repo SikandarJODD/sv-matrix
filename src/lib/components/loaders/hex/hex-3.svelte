@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { getPatternIndexes } from '$lib/components/dot-matrix/patterns.js';
-	import type { DotMatrixCommonProps } from '$lib/components/dot-matrix/types.js';
+	import { getPatternIndexes } from "$lib/components/dot-matrix/patterns.js";
+	import type { DotMatrixCommonProps } from "$lib/components/dot-matrix/types.js";
 	import {
 		createCycleProgress,
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
-	import HexMatrixBase from './hex-base.svelte';
-	import { buildHexCells, pointForCell } from './shared.js';
+	import HexMatrixBase from "./hex-base.svelte";
+	import { buildHexCells, pointForCell } from "./shared.js";
 
 	export type Hex3Props = DotMatrixCommonProps;
 
@@ -37,14 +37,17 @@
 			Math.max(0, 1 - Math.abs(sweep) / 0.68) * Math.max(0, 1 - centerDistance / 1.9);
 		const wake = 0.16 * Math.max(0, 1 - Math.abs(y - sweep * 0.22) / 1.2);
 
-		return Math.min(HIGH_OPACITY, BASE_OPACITY + gateA * 0.7 + gateB * 0.7 + centerFlash * 0.42 + wake);
+		return Math.min(
+			HIGH_OPACITY,
+			BASE_OPACITY + gateA * 0.7 + gateB * 0.7 + centerFlash * 0.42 + wake
+		);
 	}
 
 	let {
 		onmouseenter,
 		onmouseleave,
 		speed = 1.45,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 34,
@@ -57,19 +60,21 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 	const cycleProgress = createCycleProgress({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1850,
-		speed: () => speed
+		speed: () => speed,
 	});
 	const currentPhase = $derived(
-		reducedMotion || phaseController.phase === 'idle' ? 0.12 : cycleProgress.current
+		reducedMotion || phaseController.phase === "idle" ? 0.12 : cycleProgress.current
 	);
 	const activePatternIndexes = $derived(new Set(getPatternIndexes(pattern)));
 	const cells = $derived.by(() =>
-		buildHexCells(activePatternIndexes, (cell) => opacityForCell(cell.row, cell.col, currentPhase))
+		buildHexCells(activePatternIndexes, (cell) =>
+			opacityForCell(cell.row, cell.col, currentPhase)
+		)
 	);
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

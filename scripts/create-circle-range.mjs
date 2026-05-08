@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 // @ts-check
 
-import { promises as fs } from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
-import { createCircle } from './create-circle.mjs';
-import { circleFamilyConfig } from './scaffold/families/circle/presets.mjs';
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
+import { createCircle } from "./create-circle.mjs";
+import { circleFamilyConfig } from "./scaffold/families/circle/presets.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const repoRoot = path.resolve(__dirname, '..');
+const repoRoot = path.resolve(__dirname, "..");
 
 const isCliEntrypoint =
 	process.argv[1] !== undefined && import.meta.url === pathToFileURL(process.argv[1]).href;
@@ -24,11 +24,11 @@ if (isCliEntrypoint) {
 
 async function main(args) {
 	if (args.start === undefined || args.end === undefined) {
-		throw new Error('Usage: pnpm create:circles 2 5 [--force] [--examples glow,pattern-look]');
+		throw new Error("Usage: pnpm create:circles 2 5 [--force] [--examples glow,pattern-look]");
 	}
 
 	if (args.start < 1 || args.end < 1) {
-		throw new Error('Range values must be positive integers.');
+		throw new Error("Range values must be positive integers.");
 	}
 
 	if (args.start > args.end) {
@@ -48,7 +48,7 @@ async function main(args) {
 			title: `${circleFamilyConfig.familyLabel} ${number}`,
 			force: args.force,
 			examples: args.examples,
-			useCases: args.useCases
+			useCases: args.useCases,
 		});
 	}
 
@@ -63,7 +63,7 @@ async function main(args) {
 function parseArgs(argv) {
 	/** @type {{ start?: number; end?: number; force: boolean; examples?: string[]; useCases?: string[] }} */
 	const parsed = {
-		force: false
+		force: false,
 	};
 
 	const positionals = [];
@@ -71,20 +71,20 @@ function parseArgs(argv) {
 	for (let index = 0; index < argv.length; index += 1) {
 		const part = argv[index];
 
-		if (part === '--force') {
+		if (part === "--force") {
 			parsed.force = true;
 			continue;
 		}
 
-		if (!part.startsWith('--')) {
+		if (!part.startsWith("--")) {
 			positionals.push(part);
 			continue;
 		}
 
-		const [flag, inlineValue] = part.split('=', 2);
+		const [flag, inlineValue] = part.split("=", 2);
 		const value = inlineValue ?? argv[index + 1];
 
-		if (!value || value.startsWith('--')) {
+		if (!value || value.startsWith("--")) {
 			throw new Error(`Missing value for ${flag}.`);
 		}
 
@@ -93,10 +93,10 @@ function parseArgs(argv) {
 		}
 
 		switch (flag) {
-			case '--examples':
+			case "--examples":
 				parsed.examples = splitCsv(value);
 				break;
-			case '--use-cases':
+			case "--use-cases":
 				parsed.useCases = splitCsv(value);
 				break;
 			default:
@@ -105,15 +105,17 @@ function parseArgs(argv) {
 	}
 
 	if (positionals[0] !== undefined) {
-		parsed.start = parseRangeNumber(positionals[0], 'start');
+		parsed.start = parseRangeNumber(positionals[0], "start");
 	}
 
 	if (positionals[1] !== undefined) {
-		parsed.end = parseRangeNumber(positionals[1], 'end');
+		parsed.end = parseRangeNumber(positionals[1], "end");
 	}
 
 	if (positionals.length > 2) {
-		throw new Error(`Unexpected extra positional arguments: ${positionals.slice(2).join(', ')}`);
+		throw new Error(
+			`Unexpected extra positional arguments: ${positionals.slice(2).join(", ")}`
+		);
 	}
 
 	return parsed;
@@ -129,7 +131,7 @@ function parseRangeNumber(value, label) {
 
 function splitCsv(value) {
 	return value
-		.split(',')
+		.split(",")
 		.map((item) => item.trim())
 		.filter(Boolean);
 }
@@ -160,13 +162,13 @@ async function preflightRange(numbers, force, familyConfig) {
 				);
 			}
 		} catch (error) {
-			if (!(error instanceof Error) || !('code' in error) || error.code !== 'ENOENT') {
+			if (!(error instanceof Error) || !("code" in error) || error.code !== "ENOENT") {
 				throw error;
 			}
 		}
 	}
 
 	if (errors.length > 0) {
-		throw new Error(`Range preflight failed:\n- ${errors.join('\n- ')}`);
+		throw new Error(`Range preflight failed:\n- ${errors.join("\n- ")}`);
 	}
 }

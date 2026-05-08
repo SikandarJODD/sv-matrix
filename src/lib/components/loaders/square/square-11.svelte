@@ -1,13 +1,13 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Square11Props = DotMatrixCommonProps;
 
@@ -15,35 +15,35 @@
 		isActive,
 		manhattanDistance,
 		reducedMotion,
-		phase
+		phase,
 	}) => {
 		if (!isActive) {
-			return { className: 'dmx-inactive' };
+			return { className: "dmx-inactive" };
 		}
 
 		const ring = Math.max(0, Math.min(4, manhattanDistance));
 		const style = {
-			'--dmx-ripple-ring': ring,
-			'--dmx-ripple-parity': ring % 2
+			"--dmx-ripple-ring": ring,
+			"--dmx-ripple-parity": ring % 2,
 		};
 
-		if (reducedMotion || phase === 'idle') {
+		if (reducedMotion || phase === "idle") {
 			return {
 				style: {
 					...style,
-					opacity: 0.2 + (1 - ring / 4) * 0.72
-				}
+					opacity: 0.2 + (1 - ring / 4) * 0.72,
+				},
 			};
 		}
 
-		return { className: 'dmx-ripple-echo', style };
+		return { className: "dmx-ripple-echo", style };
 	};
 
 	let {
 		onmouseenter,
 		onmouseleave,
 		speed = 1.25,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 36,
@@ -56,7 +56,7 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

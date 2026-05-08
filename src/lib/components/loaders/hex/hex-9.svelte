@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { getPatternIndexes } from '$lib/components/dot-matrix/patterns.js';
-	import type { DotMatrixCommonProps } from '$lib/components/dot-matrix/types.js';
+	import { getPatternIndexes } from "$lib/components/dot-matrix/patterns.js";
+	import type { DotMatrixCommonProps } from "$lib/components/dot-matrix/types.js";
 	import {
 		createCycleProgress,
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
-	import HexMatrixBase from './hex-base.svelte';
-	import { buildHexCells, pointForCell } from './shared.js';
+	import HexMatrixBase from "./hex-base.svelte";
+	import { buildHexCells, pointForCell } from "./shared.js";
 
 	export type Hex9Props = DotMatrixCommonProps;
 
@@ -52,7 +52,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1.8,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 34,
@@ -65,19 +65,21 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 	const cycleProgress = createCycleProgress({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1650,
-		speed: () => speed
+		speed: () => speed,
 	});
 	const currentPhase = $derived(
-		reducedMotion || phaseController.phase === 'idle' ? 0.1 : cycleProgress.current
+		reducedMotion || phaseController.phase === "idle" ? 0.1 : cycleProgress.current
 	);
 	const activePatternIndexes = $derived(new Set(getPatternIndexes(pattern)));
 	const cells = $derived.by(() =>
-		buildHexCells(activePatternIndexes, (cell) => opacityForCell(cell.row, cell.col, currentPhase))
+		buildHexCells(activePatternIndexes, (cell) =>
+			opacityForCell(cell.row, cell.col, currentPhase)
+		)
 	);
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Circle18 from '$lib/components/loaders/circles/circle-18.svelte';
+	import Circle18 from "$lib/components/loaders/circles/circle-18.svelte";
 </script>
 
 <Circle18 />

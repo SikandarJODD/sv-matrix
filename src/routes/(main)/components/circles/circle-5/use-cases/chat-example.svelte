@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-	import * as Chat from '$lib/components/ui/chat';
-	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
-	import Circle5 from '$lib/components/loaders/circles/circle-5.svelte';
+	import { onDestroy } from "svelte";
+	import * as Chat from "$lib/components/ui/chat";
+	import { Button } from "$lib/components/ui/button";
+	import { Input } from "$lib/components/ui/input";
+	import Circle5 from "$lib/components/loaders/circles/circle-5.svelte";
 
 	type Message = {
 		id: number;
-		variant: 'sent' | 'received';
+		variant: "sent" | "received";
 		author: string;
 		avatar?: string;
 		fallback: string;
@@ -17,25 +17,25 @@
 	const timeouts: number[] = [];
 
 	let nextId = 3;
-	let draft = $state('Any new projects coming up?');
+	let draft = $state("Any new projects coming up?");
 	let isReplying = $state(false);
 	let messages = $state<Message[]>([
 		{
 			id: 1,
-			variant: 'received',
-			author: 'User 2',
-			avatar: 'https://github.com/purohitdheeraj.png',
-			fallback: 'U2',
-			text: 'Hello Brother, how you doing?'
+			variant: "received",
+			author: "User 2",
+			avatar: "https://github.com/purohitdheeraj.png",
+			fallback: "U2",
+			text: "Hello Brother, how you doing?",
 		},
 		{
 			id: 2,
-			variant: 'sent',
-			author: 'User 1',
-			avatar: 'https://github.com/SikandarJODD.png',
-			fallback: 'U1',
-			text: 'Good brother man, any plans for the weekend?'
-		}
+			variant: "sent",
+			author: "User 1",
+			avatar: "https://github.com/SikandarJODD.png",
+			fallback: "U1",
+			text: "Good brother man, any plans for the weekend?",
+		},
 	]);
 
 	onDestroy(() => {
@@ -60,14 +60,14 @@
 			...messages,
 			{
 				id: nextId++,
-				variant: 'sent',
-				author: 'User 1',
-				avatar: 'https://github.com/SikandarJODD.png',
-				fallback: 'U1',
-				text
-			}
+				variant: "sent",
+				author: "User 1",
+				avatar: "https://github.com/SikandarJODD.png",
+				fallback: "U1",
+				text,
+			},
 		];
-		draft = '';
+		draft = "";
 		isReplying = true;
 
 		schedule(() => {
@@ -75,12 +75,12 @@
 				...messages,
 				{
 					id: nextId++,
-					variant: 'received',
-					author: 'User 2',
-					avatar: 'https://github.com/purohitdheeraj.png',
-					fallback: 'U2',
-					text: 'Yeep, working on Svelte YouTube Stuff, you?'
-				}
+					variant: "received",
+					author: "User 2",
+					avatar: "https://github.com/purohitdheeraj.png",
+					fallback: "U2",
+					text: "Yeep, working on Svelte YouTube Stuff, you?",
+				},
 			];
 			isReplying = false;
 		}, 2400);

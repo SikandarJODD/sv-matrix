@@ -1,15 +1,15 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { isWithinCircularMask } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { isWithinCircularMask } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createCycleProgress,
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Circle19Props = DotMatrixCommonProps;
 
@@ -25,14 +25,14 @@
 		[3, 3],
 		[3, 2],
 		[3, 1],
-		[2, 1]
+		[2, 1],
 	];
 
 	let {
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		...restProps
@@ -43,13 +43,13 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const cycleProgress = createCycleProgress({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1280,
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -58,16 +58,17 @@
 
 		return ({ isActive, row, col, phase }) => {
 			if (!isActive || !isWithinCircularMask(row, col)) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
 			const t =
-				motionDisabled || phase === 'idle'
+				motionDisabled || phase === "idle"
 					? 0
 					: Math.floor(orbitPhase * ORBIT_POINTS.length) % ORBIT_POINTS.length;
 			const [headRow, headCol] = ORBIT_POINTS[t] ?? [1, 1];
-			const [tailRow, tailCol] =
-				ORBIT_POINTS[(t + ORBIT_POINTS.length - 1) % ORBIT_POINTS.length] ?? [1, 1];
+			const [tailRow, tailCol] = ORBIT_POINTS[
+				(t + ORBIT_POINTS.length - 1) % ORBIT_POINTS.length
+			] ?? [1, 1];
 
 			let opacity = BASE_OPACITY;
 

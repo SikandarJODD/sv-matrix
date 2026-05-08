@@ -101,8 +101,8 @@ export function isBloomRootActive(bloom: boolean, halo: number | undefined): boo
 	return bloom || clampHalo(halo) > 0;
 }
 
-export function getBloomHaloSpreadClass(halo: number | undefined): 'dmx-bloom-halo' | undefined {
-	return clampHalo(halo) > 0 ? 'dmx-bloom-halo' : undefined;
+export function getBloomHaloSpreadClass(halo: number | undefined): "dmx-bloom-halo" | undefined {
+	return clampHalo(halo) > 0 ? "dmx-bloom-halo" : undefined;
 }
 
 export function getDotBloomParts(
@@ -120,11 +120,16 @@ export function getDotBloomParts(
 		return { level: 0, bloomDot: false };
 	}
 
-	const remappedOpacity = remapOpacityToTriplet(curveOpacity, opacityBase, opacityMid, opacityPeak);
+	const remappedOpacity = remapOpacityToTriplet(
+		curveOpacity,
+		opacityBase,
+		opacityMid,
+		opacityPeak
+	);
 	const bloomLevel = bloom ? opacityToBloomLevel(remappedOpacity) : 0;
 
 	return {
 		level: Math.max(haloLevel, bloomLevel),
-		bloomDot: haloLevel > 0 || (bloom && qualifiesForBloom(remappedOpacity))
+		bloomDot: haloLevel > 0 || (bloom && qualifiesForBloom(remappedOpacity)),
 	};
 }

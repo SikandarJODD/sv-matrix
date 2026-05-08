@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { getPatternIndexes } from '$lib/components/dot-matrix/patterns.js';
-	import type { DotMatrixCommonProps } from '$lib/components/dot-matrix/types.js';
+	import { getPatternIndexes } from "$lib/components/dot-matrix/patterns.js";
+	import type { DotMatrixCommonProps } from "$lib/components/dot-matrix/types.js";
 	import {
 		createCycleProgress,
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
-	import HexMatrixBase from './hex-base.svelte';
-	import { buildHexCells, pointForCell } from './shared.js';
+	import HexMatrixBase from "./hex-base.svelte";
+	import { buildHexCells, pointForCell } from "./shared.js";
 
 	export type Hex4Props = DotMatrixCommonProps;
 
@@ -16,17 +16,17 @@
 	const MID_OPACITY = 0.36;
 	const HIGH_OPACITY = 0.98;
 	const TRAIL_SPAN = 2.2;
-	const VERTEX_PATH = ['0,2', '1,3', '2,4', '3,3', '4,2', '3,0', '2,0', '1,0', '0,0'] as const;
+	const VERTEX_PATH = ["0,2", "1,3", "2,4", "3,3", "4,2", "3,0", "2,0", "1,0", "0,0"] as const;
 	const ECHO_BY_VERTEX: Readonly<Record<(typeof VERTEX_PATH)[number], readonly string[]>> = {
-		'0,2': ['0,1', '1,2'],
-		'1,3': ['1,2', '2,3'],
-		'2,4': ['2,3', '2,2'],
-		'3,3': ['3,2', '2,3'],
-		'4,2': ['4,1', '3,2'],
-		'3,0': ['3,1', '2,1'],
-		'2,0': ['2,1', '2,2'],
-		'1,0': ['1,1', '2,1'],
-		'0,0': ['0,1', '1,1']
+		"0,2": ["0,1", "1,2"],
+		"1,3": ["1,2", "2,3"],
+		"2,4": ["2,3", "2,2"],
+		"3,3": ["3,2", "2,3"],
+		"4,2": ["4,1", "3,2"],
+		"3,0": ["3,1", "2,1"],
+		"2,0": ["2,1", "2,2"],
+		"1,0": ["1,1", "2,1"],
+		"0,0": ["0,1", "1,1"],
 	};
 	const PATH_LEN = VERTEX_PATH.length;
 
@@ -58,7 +58,7 @@
 			opacity = Math.max(opacity, BASE_OPACITY + echo * 0.52);
 		}
 
-		if (id === '2,2') {
+		if (id === "2,2") {
 			const centerBeat = 0.5 + 0.5 * Math.sin(phase * Math.PI * PATH_LEN);
 			opacity = Math.max(opacity, MID_OPACITY + centerBeat * 0.22);
 		}
@@ -72,7 +72,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1.5,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 34,
@@ -85,19 +85,21 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 	const cycleProgress = createCycleProgress({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1650,
-		speed: () => speed
+		speed: () => speed,
 	});
 	const currentPhase = $derived(
-		reducedMotion || phaseController.phase === 'idle' ? 0.12 : cycleProgress.current
+		reducedMotion || phaseController.phase === "idle" ? 0.12 : cycleProgress.current
 	);
 	const activePatternIndexes = $derived(new Set(getPatternIndexes(pattern)));
 	const cells = $derived.by(() =>
-		buildHexCells(activePatternIndexes, (cell) => opacityForCell(cell.row, cell.col, currentPhase))
+		buildHexCells(activePatternIndexes, (cell) =>
+			opacityForCell(cell.row, cell.col, currentPhase)
+		)
 	);
 
 	function handleMouseEnter(event: MouseEvent & { currentTarget: EventTarget & HTMLDivElement }) {

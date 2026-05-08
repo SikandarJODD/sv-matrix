@@ -9,9 +9,7 @@
 			"description": "Shared 5x5 dot matrix foundation with hooks, helpers, and styles for sv-matrix loaders.",
 			"type": "registry:block",
 			"registryDependencies": [],
-			"dependencies": [
-				"clsx"
-			],
+			"dependencies": ["clsx"],
 			"files": [
 				{
 					"path": "./src/lib/components/dot-matrix/dot-matrix.svelte",
@@ -105,9 +103,7 @@
 			"title": "Circle 1 Loader",
 			"description": "Circle 1 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-1.svelte",
@@ -121,9 +117,7 @@
 			"title": "Circle 2 Loader",
 			"description": "Circle 2 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-2.svelte",
@@ -137,9 +131,7 @@
 			"title": "Circle 3 Loader",
 			"description": "Circle 3 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-3.svelte",
@@ -153,9 +145,7 @@
 			"title": "Circle 4 Loader",
 			"description": "Circle 4 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-4.svelte",
@@ -169,9 +159,7 @@
 			"title": "Circle 5 Loader",
 			"description": "Circle 5 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-5.svelte",
@@ -185,9 +173,7 @@
 			"title": "Circle 6 Loader",
 			"description": "Circle 6 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-6.svelte",
@@ -201,9 +187,7 @@
 			"title": "Circle 7 Loader",
 			"description": "Circle 7 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-7.svelte",
@@ -217,9 +201,7 @@
 			"title": "Circle 8 Loader",
 			"description": "Circle 8 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-8.svelte",
@@ -233,9 +215,7 @@
 			"title": "Circle 9 Loader",
 			"description": "Circle 9 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-9.svelte",
@@ -249,9 +229,7 @@
 			"title": "Circle 10 Loader",
 			"description": "Circle 10 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-10.svelte",
@@ -265,9 +243,7 @@
 			"title": "Circle 11 Loader",
 			"description": "Circle 11 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-11.svelte",
@@ -281,9 +257,7 @@
 			"title": "Circle 12 Loader",
 			"description": "Circle 12 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-12.svelte",
@@ -297,9 +271,7 @@
 			"title": "Circle 13 Loader",
 			"description": "Circle 13 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-13.svelte",
@@ -313,9 +285,7 @@
 			"title": "Circle 14 Loader",
 			"description": "Circle 14 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-14.svelte",
@@ -329,9 +299,7 @@
 			"title": "Circle 15 Loader",
 			"description": "Circle 15 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-15.svelte",
@@ -345,9 +313,7 @@
 			"title": "Circle 16 Loader",
 			"description": "Circle 16 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-16.svelte",
@@ -361,9 +327,7 @@
 			"title": "Circle 17 Loader",
 			"description": "Circle 17 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-17.svelte",
@@ -377,9 +341,7 @@
 			"title": "Circle 18 Loader",
 			"description": "Circle 18 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-18.svelte",
@@ -393,9 +355,7 @@
 			"title": "Circle 19 Loader",
 			"description": "Circle 19 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-19.svelte",
@@ -409,9 +369,7 @@
 			"title": "Circle 20 Loader",
 			"description": "Circle 20 loader component.",
 			"type": "registry:block",
-			"registryDependencies": [
-				"local:dot-matrix"
-			],
+			"registryDependencies": ["local:dot-matrix"],
 			"files": [
 				{
 					"path": "./src/lib/components/loaders/circles/circle-20.svelte",

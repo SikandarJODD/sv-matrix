@@ -1,14 +1,14 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
 		createReducedMotionQuery,
-		createSteppedCycle
-	} from '$lib/hooks/dot-matrix/index.js';
+		createSteppedCycle,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Square19Props = DotMatrixCommonProps;
 
@@ -28,14 +28,14 @@
 		const t = (index / 96) * Math.PI * 2;
 		return {
 			x: Math.sin(t),
-			y: 0.58 * Math.sin(2 * t)
+			y: 0.58 * Math.sin(2 * t),
 		};
 	});
 
 	function gridPoint(row: number, col: number): Point {
 		return {
 			x: (col - 2) / 2,
-			y: (2 - row) / 2
+			y: (2 - row) / 2,
 		};
 	}
 
@@ -43,7 +43,7 @@
 		const t = ((step % STEP_COUNT) / STEP_COUNT) * Math.PI * 2;
 		return {
 			x: Math.sin(t),
-			y: 0.58 * Math.sin(2 * t)
+			y: 0.58 * Math.sin(2 * t),
 		};
 	}
 
@@ -72,7 +72,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 36,
@@ -85,14 +85,14 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const stepCycle = createSteppedCycle({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1700,
 		steps: () => STEP_COUNT,
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -101,12 +101,12 @@
 
 		return ({ isActive, row, col, phase }) => {
 			if (!isActive) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
 			const dot = gridPoint(row, col);
 
-			if (motionDisabled || phase === 'idle') {
+			if (motionDisabled || phase === "idle") {
 				const curveGlow = Math.exp(-minCurveDistanceSq(dot) / 0.2);
 				const centerBoost = Math.exp(-(dot.x * dot.x + dot.y * dot.y) / 0.06);
 
@@ -115,8 +115,8 @@
 						opacity: Math.min(
 							PEAK_OPACITY,
 							BASE_OPACITY + curveGlow * CURVE_OPACITY + centerBoost * 0.18
-						)
-					}
+						),
+					},
 				};
 			}
 
@@ -126,7 +126,8 @@
 			const trailB = loopPoint(step + STEP_COUNT / 2 - 4);
 			const lead = Math.max(headInfluence(dot, headA), headInfluence(dot, headB));
 			const trail = Math.max(headInfluence(dot, trailA), headInfluence(dot, trailB));
-			const centerPulse = Math.exp(-(dot.x * dot.x + dot.y * dot.y) / 0.05) * (0.45 + 0.55 * lead);
+			const centerPulse =
+				Math.exp(-(dot.x * dot.x + dot.y * dot.y) / 0.05) * (0.45 + 0.55 * lead);
 			const opacity =
 				BASE_OPACITY +
 				SECONDARY_TRAIL_OPACITY * trail +
@@ -135,8 +136,8 @@
 
 			return {
 				style: {
-					opacity: Math.min(PEAK_OPACITY, opacity)
-				}
+					opacity: Math.min(PEAK_OPACITY, opacity),
+				},
 			};
 		};
 	});

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ComponentDocPage from '$lib/components/docs/base/ComponentDocPage.svelte';
-	import { data } from './data';
+	import ComponentDocPage from "$lib/components/docs/base/ComponentDocPage.svelte";
+	import { data } from "./data";
 </script>
 
 <ComponentDocPage

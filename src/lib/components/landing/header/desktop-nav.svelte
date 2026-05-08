@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import { navs } from './nav-links';
+	import { Button } from "$lib/components/ui/button";
+	import { navs } from "./nav-links";
 </script>
 
 <div class="hidden w-full justify-center gap-6 md:flex">

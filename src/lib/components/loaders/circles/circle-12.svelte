@@ -1,15 +1,15 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { isWithinCircularMask } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { isWithinCircularMask } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
 		createReducedMotionQuery,
-		createSteppedCycle
-	} from '$lib/hooks/dot-matrix/index.js';
+		createSteppedCycle,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Circle12Props = DotMatrixCommonProps;
 
@@ -22,7 +22,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		...restProps
@@ -33,14 +33,14 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const arcStep = createSteppedCycle({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1700,
 		steps: () => STEP_COUNT,
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -49,14 +49,14 @@
 
 		return ({ isActive, row, col, phase }) => {
 			if (!isActive || !isWithinCircularMask(row, col)) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
 			const x = col - 2;
 			const y = row - 2;
 			const ring = Math.sqrt(x * x + y * y);
 			const angle = Math.atan2(y, x);
-			const stepIndex = motionDisabled || phase === 'idle' ? 0 : currentStep;
+			const stepIndex = motionDisabled || phase === "idle" ? 0 : currentStep;
 			const stepBand = Math.floor((stepIndex / STEP_COUNT) * 8) % 8;
 			const targetAngle = stepBand * (Math.PI / 4);
 			const angleDelta = Math.acos(Math.cos(angle - targetAngle));

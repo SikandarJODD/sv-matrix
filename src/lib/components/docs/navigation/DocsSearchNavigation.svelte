@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button/button.svelte';
-	import * as Command from '$lib/components/ui/command/index.js';
-	import * as Kbd from '$lib/components/ui/kbd/index.js';
+	import Button from "$lib/components/ui/button/button.svelte";
+	import * as Command from "$lib/components/ui/command/index.js";
+	import * as Kbd from "$lib/components/ui/kbd/index.js";
 	import {
 		navigationSections,
 		type MatrixNavItem,
-		type MatrixNavSection
-	} from '$lib/content/matrix-navigation';
+		type MatrixNavSection,
+	} from "$lib/content/matrix-navigation";
 
 	let open = $state(false);
 
 	function handleKeydown(e: KeyboardEvent) {
-		if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+		if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
 			e.preventDefault();
 			open = !open;
 		}
@@ -20,7 +20,7 @@
 	const groups: MatrixNavSection[] = navigationSections;
 
 	function isDocsItem(item: MatrixNavItem) {
-		return item.kind === 'doc';
+		return item.kind === "doc";
 	}
 </script>
 
@@ -76,7 +76,11 @@
 		{#each groups as group (group.id)}
 			<Command.Group heading={group.title}>
 				{#each group.items as item (item.id)}
-					<Command.LinkItem value={item.title} onclick={() => (open = false)} href={item.href}>
+					<Command.LinkItem
+						value={item.title}
+						onclick={() => (open = false)}
+						href={item.href}
+					>
 						{#if isDocsItem(item)}
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +123,8 @@
 								role="img"
 								color="currentColor"
 							>
-								<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"></circle>
+								<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"
+								></circle>
 								<circle
 									cx="12"
 									cy="12"

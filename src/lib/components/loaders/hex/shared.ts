@@ -19,7 +19,7 @@ export interface HexCellState extends HexCellDefinition {
 	style?: HexCellStyle;
 }
 
-export type HexTone = 'x' | 'o';
+export type HexTone = "x" | "o";
 
 export function hexPatternIndex(row: number, rowCount: number, col: number): number {
 	return row * ROW_COUNTS[2] + Math.floor((ROW_COUNTS[2] - rowCount) / 2) + col;
@@ -31,7 +31,7 @@ export const HEX_ROWS: readonly HexCellDefinition[][] = ROW_COUNTS.map((count, r
 		row,
 		col,
 		count,
-		index: hexPatternIndex(row, count, col)
+		index: hexPatternIndex(row, count, col),
 	}))
 );
 
@@ -62,7 +62,7 @@ export function getHexLayout(
 		rowGap,
 		matrixWidth,
 		matrixHeight,
-		matrixSpan: Math.max(matrixWidth, matrixHeight)
+		matrixSpan: Math.max(matrixWidth, matrixHeight),
 	};
 }
 
@@ -71,7 +71,7 @@ export function pointForCell(row: number, col: number): { x: number; y: number }
 
 	return {
 		x: col - (count - 1) / 2,
-		y: (row - 2) * HEX_ROW_PITCH_RATIO
+		y: (row - 2) * HEX_ROW_PITCH_RATIO,
 	};
 }
 
@@ -87,7 +87,7 @@ export function buildHexCells(
 			...cell,
 			isActive,
 			opacity: isActive ? resolveOpacity(cell) : 0,
-			style: resolveStyle?.(cell)
+			style: resolveStyle?.(cell),
 		};
 	});
 }

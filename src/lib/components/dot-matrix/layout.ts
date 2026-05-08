@@ -1,4 +1,4 @@
-import { MATRIX_SIZE } from './geometry.js';
+import { MATRIX_SIZE } from "./geometry.js";
 
 export function stylePx(value: number): string {
 	return `${value}px`;
@@ -12,10 +12,12 @@ export function styleEntriesToString(
 	entries: Record<string, string | number | undefined>
 ): string | undefined {
 	const tokens = Object.entries(entries)
-		.filter(([, value]) => value !== undefined && value !== null && value !== '')
-		.map(([key, value]) => `${key}: ${typeof value === 'number' ? styleOpacity(value) : value}`);
+		.filter(([, value]) => value !== undefined && value !== null && value !== "")
+		.map(
+			([key, value]) => `${key}: ${typeof value === "number" ? styleOpacity(value) : value}`
+		);
 
-	return tokens.length > 0 ? tokens.join('; ') : undefined;
+	return tokens.length > 0 ? tokens.join("; ") : undefined;
 }
 
 export function getMatrixLayout(

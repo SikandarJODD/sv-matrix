@@ -1,15 +1,15 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { isWithinCircularMask } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { isWithinCircularMask } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createCycleProgress,
 		createDotMatrixPhaseController,
-		createReducedMotionQuery
-	} from '$lib/hooks/dot-matrix/index.js';
+		createReducedMotionQuery,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Circle15Props = DotMatrixCommonProps;
 
@@ -18,19 +18,19 @@
 	const HIGH_OPACITY = 0.95;
 
 	const BRAILLE_PHASES: ReadonlyArray<ReadonlySet<string>> = [
-		new Set(['1,1', '2,1', '3,1', '1,3', '2,3', '3,3']),
-		new Set(['1,1', '2,1', '3,1', '2,2', '1,3', '2,3', '3,3']),
-		new Set(['1,1', '1,2', '1,3', '2,1', '2,3', '3,1', '3,2', '3,3']),
-		new Set(['1,1', '3,1', '2,2', '1,3', '3,3']),
-		new Set(['2,1', '1,2', '3,2', '2,3']),
-		new Set(['1,1', '2,1', '2,2', '2,3', '3,3'])
+		new Set(["1,1", "2,1", "3,1", "1,3", "2,3", "3,3"]),
+		new Set(["1,1", "2,1", "3,1", "2,2", "1,3", "2,3", "3,3"]),
+		new Set(["1,1", "1,2", "1,3", "2,1", "2,3", "3,1", "3,2", "3,3"]),
+		new Set(["1,1", "3,1", "2,2", "1,3", "3,3"]),
+		new Set(["2,1", "1,2", "3,2", "2,3"]),
+		new Set(["1,1", "2,1", "2,2", "2,3", "3,3"]),
 	];
 
 	let {
 		onmouseenter,
 		onmouseleave,
 		speed = 1,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		...restProps
@@ -41,13 +41,13 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const cycleProgress = createCycleProgress({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1680,
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -56,7 +56,7 @@
 
 		return ({ isActive, row, col, phase }) => {
 			if (!isActive || !isWithinCircularMask(row, col)) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
 			const x = col - 2;
@@ -64,7 +64,7 @@
 			const ring = Math.sqrt(x * x + y * y);
 			const count = BRAILLE_PHASES.length;
 			const phaseIndex =
-				motionDisabled || phase === 'idle'
+				motionDisabled || phase === "idle"
 					? 0
 					: (() => {
 							const raw = Math.floor(animProgress * count);

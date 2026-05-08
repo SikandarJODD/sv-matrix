@@ -1,15 +1,15 @@
 <script lang="ts">
-	import DotMatrixBase from '$lib/components/dot-matrix/dot-matrix-base.svelte';
-	import { MATRIX_SIZE } from '$lib/components/dot-matrix/geometry.js';
+	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
+	import { MATRIX_SIZE } from "$lib/components/dot-matrix/geometry.js";
 	import type {
 		DotAnimationResolver,
-		DotMatrixCommonProps
-	} from '$lib/components/dot-matrix/types.js';
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
 		createReducedMotionQuery,
-		createSteppedCycle
-	} from '$lib/hooks/dot-matrix/index.js';
+		createSteppedCycle,
+	} from "$lib/hooks/dot-matrix/index.js";
 
 	export type Square10Props = DotMatrixCommonProps;
 
@@ -23,7 +23,7 @@
 		onmouseenter,
 		onmouseleave,
 		speed = 2.5,
-		pattern = 'full',
+		pattern = "full",
 		animated = true,
 		hoverAnimated = false,
 		size = 36,
@@ -36,14 +36,14 @@
 	const phaseController = createDotMatrixPhaseController({
 		animated: () => Boolean(animated && !reducedMotion),
 		hoverAnimated: () => Boolean(hoverAnimated && !reducedMotion),
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const scanRowCycle = createSteppedCycle({
-		active: () => !reducedMotion && phaseController.phase !== 'idle',
+		active: () => !reducedMotion && phaseController.phase !== "idle",
 		cycleMsBase: () => 1500,
 		steps: () => ROWS,
-		speed: () => speed
+		speed: () => speed,
 	});
 
 	const animationResolver = $derived.by((): DotAnimationResolver => {
@@ -52,10 +52,10 @@
 
 		return ({ isActive, row, col, phase }) => {
 			if (!isActive) {
-				return { className: 'dmx-inactive' };
+				return { className: "dmx-inactive" };
 			}
 
-			if (motionDisabled || phase === 'idle') {
+			if (motionDisabled || phase === "idle") {
 				const falloff = (ROWS - 1 - row) / Math.max(1, ROWS - 1);
 				return { style: { opacity: BASE_OPACITY + falloff * 0.38 } };
 			}
@@ -72,8 +72,8 @@
 
 			return {
 				style: {
-					opacity: Math.min(PEAK_OPACITY, opacity)
-				}
+					opacity: Math.min(PEAK_OPACITY, opacity),
+				},
 			};
 		};
 	});
