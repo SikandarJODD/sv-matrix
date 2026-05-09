@@ -4,7 +4,7 @@
 	import LoadersShowcase from "$lib/components/landing/loaders-showcase.svelte";
 	import { JsonLd, MetaTags } from "svelte-meta-tags";
 
-	const siteName = "Svelte Dot Matrix - Free and Open-Source Loaders";
+	const siteName = "Svelte Dot Matrix Loaders - Free & Open-Source";
 	const siteUrl = "https://sv-matrix.vercel.app";
 	const canonical = `${siteUrl}/`;
 	const githubUrl = "https://github.com/SikandarJODD/sv-matrix";
@@ -12,7 +12,7 @@
 	const twitterHandle = "@Sikandar_Bhide";
 	const title = siteName;
 	const description =
-		"50+ free and open-source dot-matrix loaders for Svelte, built with TypeScript and Tailwind CSS. Browse the registry, preview animations, and install reusable loaders.";
+		"50+ free and open-source dot-matrix loaders for Svelte, built with TypeScript and Tailwind CSS.";
 	const keywords = [
 		"svelte loaders",
 		"dot matrix loaders",
@@ -91,7 +91,7 @@
 				url: "https://sv-matrix.vercel.app/og.png",
 				width: 1200,
 				height: 630,
-				alt: "Svelte Dot Matrix - A collection of free and open-source dot-matrix loaders for Svelte.",
+				alt: "Svelte Dot Matrix Loaders - A collection of free and open-source dot-matrix loaders for Svelte.",
 			},
 		],
 	}}

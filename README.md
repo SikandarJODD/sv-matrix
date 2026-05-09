@@ -1,26 +1,18 @@
 # Svelte Dot Matrix Loaders
 
-<p>
-  <a href="https://jsrepo.com/badges/@sv/loaders/dm">
-    <img src="https://jsrepo.com/badges/@sv/loaders/dm" alt="jsrepo downloads" />
-  </a>
-  <a href="https://github.com/SikandarJODD/sv-matrix/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
-  </a>
-  <a href="https://github.com/sponsors/SikandarJODD">
-    <img src="https://img.shields.io/github/sponsors/SikandarJODD?label=Sponsor&logo=githubsponsors&color=EA4AAA" alt="GitHub Sponsors" />
-  </a>
-</p>
+[![jsrepo downloads](https://jsrepo.com/badges/@sv/loaders/dm)](https://jsrepo.com/badges/@sv/loaders/dm) [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/SikandarJODD/sv-matrix/blob/main/LICENSE) [![GitHub Sponsors](https://img.shields.io/github/sponsors/SikandarJODD?label=Sponsor&logo=githubsponsors&color=EA4AAA)](https://github.com/SikandarJODD)
 
-A growing collection of dot-matrix loaders for Svelte. `sv-matrix` gives you reusable square matrix animations built on top of a shared `DotMatrix` foundation, with registry installs, live previews, and component docs.
+A growing collection of dot-matrix loaders for Svelte.
+
+It includes square, circle, hexagon, and triangle based loaders, all built on top of a shared `DotMatrix` foundation for consistent behavior and styling.
 
 - Live: [Preview](https://sv-matrix.vercel.app)
 - Docs: [Setup & Usage](https://sv-matrix.vercel.app/docs/setup)
-- Components: [View Loaders](https://sv-matrix.vercel.app/components/squares/square-1)
+- Loaders: [Browse Components](https://sv-matrix.vercel.app/components/squares/square-1)
 
 ## Installation
 
-Each loader depends on the shared dot-matrix foundation.
+Each loader depends on the shared `DotMatrix` foundation.
 
 ### 1. Install the base dot-matrix component
 
@@ -32,7 +24,7 @@ npx shadcn-svelte@latest add https://sv-matrix.vercel.app/r/dot-matrix.json
 
 ### 2. Install any matrix loader
 
-Pick any loader you want from the registry.
+Pick any loader family and install the component you want from the registry.
 
 ```bash
 npx shadcn-svelte@latest add https://sv-matrix.vercel.app/r/square-1.json
@@ -54,7 +46,7 @@ Example with `square-1`:
   import Square1 from "$lib/components/loaders/square-1.svelte";
 </script>
 
-<Square1 size={37} dotSize={5} speed={1.1} color="#f59e0b" />
+<Square1 size={37} dotSize={5} speed={1.1} />
 ```
 
 ## Credits

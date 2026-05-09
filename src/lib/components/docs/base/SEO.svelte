@@ -48,7 +48,7 @@
 
 <MetaTags
 	{title}
-	titleTemplate="%s - Svelte Dot Matrix"
+	titleTemplate="%s - Svelte Dot Matrix Loaders"
 	{keywords}
 	{description}
 	{canonical}
@@ -57,7 +57,7 @@
 		title: title,
 		description: description,
 		images: images,
-		siteName: "Svelte Dot Matrix",
+		siteName: "Svelte Dot Matrix Loaders",
 	}}
 	twitter={{
 		creator: "@Sikandar_Bhide",
