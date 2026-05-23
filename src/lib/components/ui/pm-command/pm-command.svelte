@@ -58,7 +58,7 @@
 					{#each agents as pm (pm)}
 						<Tabs.Trigger
 							value={pm}
-							class="h-7 border-none font-mono text-sm font-light"
+							class="h-7 border-none font-mono shadow-none! data-active:bg-neutral-200/50! dark:data-active:bg-secondary! text-sm font-light"
 						>
 							{pm}
 						</Tabs.Trigger>

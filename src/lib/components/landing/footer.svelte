@@ -17,11 +17,11 @@
 		{ label: "Setup", href: "/docs/setup" },
 	];
 
-	const resourceLinks: FooterLink[] = [
-		{ label: "Docs", href: "/docs" },
-		{ label: "GitHub", href: "https://github.com/SikandarJODD/sv-matrix", external: true },
-		{ label: "X / Twitter", href: "https://x.com/Sikandar_Bhide", external: true },
-	];
+	// const resourceLinks: FooterLink[] = [
+	// 	{ label: "Docs", href: "/docs" },
+	// 	{ label: "GitHub", href: "https://github.com/SikandarJODD/sv-matrix", external: true },
+	// 	{ label: "X / Twitter", href: "https://x.com/Sikandar_Bhide", external: true },
+	// ];
 
 	const socialLinks = [
 		{
@@ -41,6 +41,9 @@
 
 <div class="relative w-full overflow-clip bg-background pt-2">
 	<div class="relative mx-auto w-full max-w-7xl">
+		<div
+			class="absolute inset-x-0 -top-px mx-auto h-px w-1/3 bg-linear-to-r from-transparent via-primary/50 to-transparent shadow-2xl"
+		></div>
 		<footer class="relative">
 			<FullWidthDivider position="top" class="bg-border/80" />
 			<div class="container">
@@ -143,8 +146,8 @@
 					>
 						&copy; {currentYear} Svelte Dot Matrix. Built by
 						<a
-							class="ml-2 inline-flex items-center gap-1.5 font-medium text-foreground transition-colors hover:text-muted-foreground"
-							href="https://x.com/Sikandar_Bhide"
+							class="ml-2 inline-flex items-center gap-1.5 font-medium text-foreground transition-colors duration-150 hover:text-muted-foreground"
+							href="https://bhide.dev?utm_source=sv_dot_matrix&utm_medium=referral"
 							rel="noreferrer"
 							target="_blank"
 						>

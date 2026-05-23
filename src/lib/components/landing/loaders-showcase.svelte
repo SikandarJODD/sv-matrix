@@ -4,7 +4,7 @@
 	import { data as triangles } from "$lib/components/loaders/triangle/data";
 	import { data as hex } from "$lib/components/loaders/hex/data";
 
-	let items = [...squares, ...hex, ...circles, ...triangles,];
+	let items = [...hex,...triangles, ...squares, ...circles];
 </script>
 
 <section
@@ -31,7 +31,7 @@
 
 				<div class="absolute inset-x-0 bottom-5 px-4 text-center">
 					<span
-						class="font-geist-pixel-grid text-sm tracking-wide text-foreground/80 md:text-sm"
+						class="font-geist-pixel-circle text-sm tracking-wide text-foreground/80 md:text-sm"
 					>
 						{item.title}
 					</span>
