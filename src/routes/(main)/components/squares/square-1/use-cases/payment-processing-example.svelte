@@ -45,7 +45,7 @@
 
 	<Button class="w-full" size="lg" disabled={isProcessing || isPaid} onclick={processPayment}>
 		{#if isProcessing}
-			<Square1 size={24} dotSize={4} speed={1.15} />
+			<Square1 size={22} dotSize={4} speed={1.15} />
 			Authorizing payment
 		{:else if isPaid}
 			Payment received

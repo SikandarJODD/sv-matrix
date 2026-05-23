@@ -94,7 +94,7 @@
 
 <div class="flex h-full w-full flex-col">
 	<div class="flex h-100 flex-col bg-muted/10">
-		<Chat.List class="h-full max-h-100 gap-3">
+		<Chat.List class="h-full max-h-100 gap-3 max-w-2xl mx-auto">
 			{#each messages as message (message.id)}
 				<Chat.Bubble variant={message.variant}>
 					<Chat.BubbleAvatar size="sm">
@@ -115,7 +115,7 @@
 					<Chat.BubbleMessage typing class="min-w-24 px-2 py-2">
 						{#snippet typingIndicator()}
 							<div class="flex items-center gap-2">
-								<Circle4 size={20} dotSize={2} speed={1.2} />
+								<Circle4 size={23} dotSize={4} speed={1.2} />
 								<span class="text-sm text-muted-foreground">Typing...</span>
 							</div>
 						{/snippet}
@@ -125,9 +125,9 @@
 		</Chat.List>
 	</div>
 
-	<form class="flex w-full gap-2 bg-muted/10 p-4" onsubmit={handleSubmit}>
-		<Input bind:value={draft} placeholder="Write a follow-up..." disabled={isReplying} />
-		<Button type="submit" disabled={isReplying || !draft.trim()}>
+	<form class="flex w-full gap-2 bg-muted/10 p-4 max-w-2xl mx-auto" onsubmit={handleSubmit}>
+		<Input bind:value={draft} placeholder="Write a follow-up..." class='rounded-full' disabled={isReplying} />
+		<Button type="submit" class='rounded-full' disabled={isReplying || !draft.trim()}>
 			{#if isReplying}
 				Sending
 			{:else}

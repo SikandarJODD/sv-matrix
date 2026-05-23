@@ -31,13 +31,8 @@ import ServerActionExampleRaw from "./use-cases/server-action-example.svelte?raw
 import PaymentProcessingExample from "./use-cases/payment-processing-example.svelte";
 import PaymentProcessingExampleRaw from "./use-cases/payment-processing-example.svelte?raw";
 import Circle6Raw from "$lib/components/loaders/circles/circle-6.svelte?raw";
+import { circleItems } from "$lib/content/matrix-navigation";
 
-const meta: ComponentMeta = {
-	id: "circle-6",
-	title: "Circle 6",
-	description: "Circle 6 loader component.",
-	category: "loaders",
-};
 
 const examples: Example[] = [
 	{
@@ -320,9 +315,18 @@ const installBlock: InstallComponentDocs = {
 		"src/\n  lib/\n    components/\n      loaders/\n        circles/\n          circle-6.svelte",
 };
 
+
+
+const meta: ComponentMeta = {
+	id: circleItems[5].id,
+	title: circleItems[5].title,
+	description: circleItems[5].description,
+	category: circleItems[5].section,
+};
+
 const seo: SEO = {
-	title: meta.title,
-	description: meta.description || "",
+	title: circleItems[5].title,
+	description: circleItems[5].description || "",
 	keywords: ["svelte loader", "circle loader", "dot matrix", "svelte component"],
 };
 

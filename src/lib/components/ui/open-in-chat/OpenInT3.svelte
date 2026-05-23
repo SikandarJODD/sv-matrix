@@ -15,12 +15,14 @@
 	let url = $derived.by(() => providers.t3.createUrl(context.query));
 </script>
 
-<DropdownMenu.Item {...restProps}>
-	<a href={url} rel="noopener" target="_blank" class="flex w-full items-center gap-2">
-		<span class="shrink-0">
-			<MessageCircle size="1em" />
-		</span>
-		<span class="flex-1">{providers.t3.title}</span>
-		<ExternalLink class="size-4 shrink-0" />
-	</a>
+<DropdownMenu.Item {...restProps} class="cursor-pointer">
+	{#snippet child({ props })}
+		<a href={url} rel="noopener" target="_blank" {...props}>
+			<span class="shrink-0">
+				<MessageCircle size="1em" class="text-muted-foreground" />
+			</span>
+			<span class="flex-1">{providers.t3.title}</span>
+			<!-- <ExternalLink class="size-4 shrink-0" /> -->
+		</a>
+	{/snippet}
 </DropdownMenu.Item>
