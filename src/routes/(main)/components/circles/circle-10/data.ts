@@ -6,6 +6,7 @@ import type {
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
+import { circleItems } from "$lib/content/matrix-navigation";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import GlowExample from "./examples/glow-example.svelte";
@@ -33,10 +34,10 @@ import PaymentProcessingExampleRaw from "./use-cases/payment-processing-example.
 import Circle10Raw from "$lib/components/loaders/circles/circle-10.svelte?raw";
 
 const meta: ComponentMeta = {
-	id: "circle-10",
-	title: "Circle 10",
-	description: "Circle 10 loader component.",
-	category: "loaders",
+	id: circleItems[9].id,
+	title: circleItems[9].title,
+	description: circleItems[9].description,
+	category: circleItems[9].section,
 };
 
 const examples: Example[] = [
@@ -321,8 +322,8 @@ const installBlock: InstallComponentDocs = {
 };
 
 const seo: SEO = {
-	title: meta.title,
-	description: meta.description || "",
+	title: circleItems[9].title,
+	description: circleItems[9].description || "",
 	keywords: ["svelte loader", "circle loader", "dot matrix", "svelte component"],
 };
 
