@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-	import * as Chat from '$lib/components/ui/chat';
-	import { Button } from '$lib/components/ui/button';
-	import Triangle20 from '$lib/components/loaders/triangle/triangle-20.svelte';
-	import MicIcon from '@lucide/svelte/icons/mic';
-	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
-	import * as InputGroup from '$lib/components/ui/input-group/index.js';
-	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import { onDestroy } from "svelte";
+	import * as Chat from "$lib/components/ui/chat";
+	import { Button } from "$lib/components/ui/button";
+	import Triangle20 from "$lib/components/loaders/triangle/triangle-20.svelte";
+	import MicIcon from "@lucide/svelte/icons/mic";
+	import ArrowRightIcon from "@lucide/svelte/icons/arrow-right";
+	import * as InputGroup from "$lib/components/ui/input-group/index.js";
+	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 
 	type Message = {
 		id: number;
-		variant: 'sent' | 'received';
+		variant: "sent" | "received";
 		author: string;
 		avatar: string;
 		fallback: string;
@@ -20,7 +20,7 @@
 	const timeouts: number[] = [];
 
 	let nextId = 1;
-	let prompt = $state('Summarize the API rollout status for the team update.');
+	let prompt = $state("Summarize the API rollout status for the team update.");
 	let isThinking = $state(false);
 	let messages = $state<Message[]>([]);
 
@@ -46,14 +46,14 @@
 			...messages,
 			{
 				id: nextId++,
-				variant: 'sent',
-				author: 'You',
-				avatar: 'https://github.com/SikandarJODD.png',
-				fallback: 'YO',
-				text
-			}
+				variant: "sent",
+				author: "You",
+				avatar: "https://github.com/SikandarJODD.png",
+				fallback: "YO",
+				text,
+			},
 		];
-		prompt = '';
+		prompt = "";
 		isThinking = true;
 
 		schedule(() => {
@@ -61,12 +61,12 @@
 				...messages,
 				{
 					id: nextId++,
-					variant: 'received',
-					author: 'AI Copilot',
-					fallback: 'AI',
-					avatar: '',
-					text: 'Three endpoints are green, one background sync is still warming up, and no rollout blockers were detected.'
-				}
+					variant: "received",
+					author: "AI Copilot",
+					fallback: "AI",
+					avatar: "",
+					text: "Three endpoints are green, one background sync is still warming up, and no rollout blockers were detected.",
+				},
 			];
 			isThinking = false;
 		}, 3000);
@@ -79,13 +79,10 @@
 </script>
 
 <div class="flex h-full w-full flex-col">
-	<div class="flex h-96 flex-col bg-muted/30">
-		<Chat.List class="h-full max-h-96 gap-3">
+	<div class="flex h-96 flex-col bg-muted/30 pt-10">
+		<Chat.List class="mx-auto h-full max-h-96 max-w-2xl gap-3">
 			{#each messages as message (message.id)}
 				<Chat.Bubble variant={message.variant}>
-					<Chat.BubbleAvatar size="sm">
-						<Chat.BubbleAvatarFallback>{message.fallback}</Chat.BubbleAvatarFallback>
-					</Chat.BubbleAvatar>
 					<Chat.BubbleMessage class="py-2.5">
 						<p>{message.text}</p>
 					</Chat.BubbleMessage>
@@ -94,13 +91,10 @@
 
 			{#if isThinking}
 				<Chat.Bubble variant="received">
-					<Chat.BubbleAvatar size="sm">
-						<Chat.BubbleAvatarFallback>AI</Chat.BubbleAvatarFallback>
-					</Chat.BubbleAvatar>
-					<Chat.BubbleMessage typing class="min-w-fit p-2">
+					<Chat.BubbleMessage typing class="min-w-fit bg-transparent! p-2">
 						{#snippet typingIndicator()}
 							<div class="flex items-center gap-2 text-xs text-muted-foreground">
-								<Triangle20 size={18} dotSize={2} speed={1.15} />
+								<Triangle20 size={24} dotSize={4} speed={1.15} />
 								<span>Generating....</span>
 							</div>
 						{/snippet}
@@ -118,7 +112,7 @@
 				class="placeholder:text-sm"
 				disabled={isThinking}
 				onkeydown={(event) => {
-					if (event.key === 'Enter' && !event.shiftKey) {
+					if (event.key === "Enter" && !event.shiftKey) {
 						event.preventDefault();
 						generateReply();
 					}
@@ -135,7 +129,9 @@
 						<Tooltip.Content>Record voice message</Tooltip.Content>
 					</Tooltip.Root>
 				</Tooltip.Provider>
-				<InputGroup.Text class="ml-auto text-xs font-normal">Press Enter to send</InputGroup.Text>
+				<InputGroup.Text class="ml-auto text-xs font-normal"
+					>Press Enter to send</InputGroup.Text
+				>
 				<Tooltip.Provider>
 					<Tooltip.Root delayDuration={0}>
 						<Tooltip.Trigger class="border-none! bg-transparent! p-0!">

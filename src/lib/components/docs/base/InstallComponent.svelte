@@ -79,12 +79,12 @@
 				<layout.div>
 					<Tabs.Trigger
 						value="cli"
-						class="relative border-none bg-transparent! px-4 py-1.5 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
+						class="relative border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
 					>
 						CLI
 						{#if activeTab === "cli"}
 							<layout.span
-								class="absolute inset-0 -z-10 rounded-md bg-primary/10"
+								class="absolute inset-0 -z-10 rounded-md bg-neutral-200/50 dark:bg-primary/10"
 								layoutId="install-tab-highlight"
 								transition={{ duration: 0.2, type: "tween" }}
 							></layout.span>
@@ -95,30 +95,30 @@
 				<layout.div>
 					<Tabs.Trigger
 						value="manual"
-						class="relative border-none bg-transparent! px-4 py-1.5 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-accent hover:text-foreground data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary data-[state=active]:hover:bg-accent"
+						class="relative border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
 					>
 						Manual
 						{#if activeTab === "manual"}
-							<motion.span
-								class="absolute inset-0 -z-10 rounded-md bg-primary/10"
+							<layout.span
+								class="absolute inset-0 -z-10 rounded-md bg-neutral-200/50 dark:bg-primary/10"
 								layoutId="install-tab-highlight"
 								transition={{ duration: 0.2, type: "tween" }}
-							></motion.span>
+							></layout.span>
 						{/if}
 					</Tabs.Trigger>
 				</layout.div>
 				<layout.div>
 					<Tabs.Trigger
 						value="jsrepo"
-						class="relative border-none bg-transparent! px-4 py-1.5 text-yellow-500 after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:bg-amber-400/8 hover:text-amber-100 data-[state=active]:bg-transparent data-[state=active]:text-amber-500! data-[state=active]:shadow-none data-[state=active]:after:bg-amber-300 data-[state=active]:hover:bg-amber-400/8"
+						class="relative border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:text-amber-600 dark:hover:text-amber-300 data-active:text-amber-600 dark:data-active:text-amber-300"
 					>
 						jsrepo
 						{#if activeTab === "jsrepo"}
-							<motion.span
-								class="absolute inset-0 -z-10 rounded-md bg-amber-300/12"
+							<layout.span
+								class="absolute inset-0 -z-10 rounded-md bg-amber-300/30 dark:bg-amber-300/15"
 								layoutId="install-tab-highlight"
 								transition={{ duration: 0.2, type: "tween" }}
-							></motion.span>
+							></layout.span>
 						{/if}
 					</Tabs.Trigger>
 				</layout.div>

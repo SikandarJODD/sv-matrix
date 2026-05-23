@@ -58,17 +58,14 @@
 				<OpenInScira />
 				<OpenInT3 />
 				<OpenInSeparator />
-				<DropdownMenu.Item class="gap-2">
-					<a
-						href={llmsTxtUrl}
-						target="_blank"
-						rel="noopener"
-						class="flex w-full items-center gap-2"
-					>
-						<MarkdownIcon class="size-4" />
-						<span class="flex-1">Open as Markdown</span>
-						<ExternalLink class="size-4" />
-					</a>
+				<DropdownMenu.Item class="cursor-pointer gap-2">
+					{#snippet child({ props })}
+						<a href={llmsTxtUrl} target="_blank" rel="noopener" {...props}>
+							<MarkdownIcon class="size-4" />
+							<span class="flex-1">Open as Markdown</span>
+							<!-- <ExternalLink class="size-4" /> -->
+						</a>
+					{/snippet}
 				</DropdownMenu.Item>
 			</OpenInContent>
 		</OpenIn>

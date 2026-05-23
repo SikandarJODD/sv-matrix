@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-	import { Button } from '$lib/components/ui/button';
-	import Triangle7 from '$lib/components/loaders/triangle/triangle-7.svelte';
+	import { onDestroy } from "svelte";
+	import { Button } from "$lib/components/ui/button";
+	import Triangle7 from "$lib/components/loaders/triangle/triangle-7.svelte";
 
 	type Metrics = {
 		latency: string;
@@ -14,10 +14,10 @@
 
 	let isLoading = $state(false);
 	let metrics = $state<Metrics>({
-		latency: '182 ms',
-		successRate: '99.91%',
-		queueDepth: '14 jobs',
-		updatedAt: '1 minute ago'
+		latency: "182 ms",
+		successRate: "99.91%",
+		queueDepth: "14 jobs",
+		updatedAt: "1 minute ago",
 	});
 
 	onDestroy(() => {
@@ -35,10 +35,10 @@
 
 		const timeout = window.setTimeout(() => {
 			metrics = {
-				latency: '146 ms',
-				successRate: '99.97%',
-				queueDepth: '6 jobs',
-				updatedAt: 'just now'
+				latency: "146 ms",
+				successRate: "99.97%",
+				queueDepth: "6 jobs",
+				updatedAt: "just now",
 			};
 			isLoading = false;
 		}, 1500);
@@ -52,7 +52,9 @@
 		<div class="mb-2 flex items-center justify-between gap-2">
 			<p class="font-medium">Gateway health</p>
 			<div class="flex items-center gap-2">
-				<Button variant="outline" onclick={refreshMetrics} disabled={isLoading}>Refresh</Button>
+				<Button variant="outline" onclick={refreshMetrics} disabled={isLoading}
+					>Refresh</Button
+				>
 			</div>
 		</div>
 

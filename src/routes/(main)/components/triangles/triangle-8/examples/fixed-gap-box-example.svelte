@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Triangle8 from '$lib/components/loaders/triangle/triangle-8.svelte';
+	import Triangle8 from "$lib/components/loaders/triangle/triangle-8.svelte";
 </script>
 
 <Triangle8 dotSize={5} cellPadding={0} />

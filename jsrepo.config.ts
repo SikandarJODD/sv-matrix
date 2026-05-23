@@ -66,9 +66,9 @@ export default defineConfig({
 				],
 			},
 			{
-				name: 'circle-base',
-				description: 'circle dot matrix shared geometry helpers',
-				type: 'block',
+				name: "circle-base",
+				description: "circle dot matrix shared geometry helpers",
+				type: "block",
 				files: [
 					{
 						path: "src/lib/components/loaders/circles/circle-base.svelte",

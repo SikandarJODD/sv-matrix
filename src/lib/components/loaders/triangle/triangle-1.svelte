@@ -1,6 +1,9 @@
 <script lang="ts">
 	import DotMatrixBase from "$lib/components/dot-matrix/dot-matrix-base.svelte";
-	import type { DotAnimationResolver, DotMatrixCommonProps } from "$lib/components/dot-matrix/types.js";
+	import type {
+		DotAnimationResolver,
+		DotMatrixCommonProps,
+	} from "$lib/components/dot-matrix/types.js";
 	import {
 		createDotMatrixPhaseController,
 		createReducedMotionQuery,

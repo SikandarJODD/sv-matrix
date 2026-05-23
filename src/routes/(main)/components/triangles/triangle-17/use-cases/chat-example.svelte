@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-	import * as Chat from '$lib/components/ui/chat';
-	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
-	import Triangle17 from '$lib/components/loaders/triangle/triangle-17.svelte';
+	import { onDestroy } from "svelte";
+	import * as Chat from "$lib/components/ui/chat";
+	import { Button } from "$lib/components/ui/button";
+	import { Input } from "$lib/components/ui/input";
+	import Triangle17 from "$lib/components/loaders/triangle/triangle-17.svelte";
 
 	type Message = {
 		id: number;
-		variant: 'sent' | 'received';
+		variant: "sent" | "received";
 		author: string;
 		avatar?: string;
 		fallback: string;
@@ -17,25 +17,25 @@
 	const timeouts: number[] = [];
 
 	let nextId = 3;
-	let draft = $state('Any new projects coming up?');
+	let draft = $state("Any new projects coming up?");
 	let isReplying = $state(false);
 	let messages = $state<Message[]>([
 		{
 			id: 1,
-			variant: 'received',
-			author: 'User 2',
-			avatar: 'https://github.com/purohitdheeraj.png',
-			fallback: 'U2',
-			text: 'Hello Brother, how you doing?'
+			variant: "received",
+			author: "User 2",
+			avatar: "https://github.com/purohitdheeraj.png",
+			fallback: "U2",
+			text: "Hello Brother, how you doing?",
 		},
 		{
 			id: 2,
-			variant: 'sent',
-			author: 'User 1',
-			avatar: 'https://github.com/SikandarJODD.png',
-			fallback: 'U1',
-			text: 'Good brother man, any plans for the weekend?'
-		}
+			variant: "sent",
+			author: "User 1",
+			avatar: "https://github.com/SikandarJODD.png",
+			fallback: "U1",
+			text: "Good brother man, any plans for the weekend?",
+		},
 	]);
 
 	onDestroy(() => {
@@ -60,14 +60,14 @@
 			...messages,
 			{
 				id: nextId++,
-				variant: 'sent',
-				author: 'User 1',
-				avatar: 'https://github.com/SikandarJODD.png',
-				fallback: 'U1',
-				text
-			}
+				variant: "sent",
+				author: "User 1",
+				avatar: "https://github.com/SikandarJODD.png",
+				fallback: "U1",
+				text,
+			},
 		];
-		draft = '';
+		draft = "";
 		isReplying = true;
 
 		schedule(() => {
@@ -75,12 +75,12 @@
 				...messages,
 				{
 					id: nextId++,
-					variant: 'received',
-					author: 'User 2',
-					avatar: 'https://github.com/purohitdheeraj.png',
-					fallback: 'U2',
-					text: 'Yeep, working on Svelte YouTube Stuff, you?'
-				}
+					variant: "received",
+					author: "User 2",
+					avatar: "https://github.com/purohitdheeraj.png",
+					fallback: "U2",
+					text: "Yeep, working on Svelte YouTube Stuff, you?",
+				},
 			];
 			isReplying = false;
 		}, 2400);
@@ -94,7 +94,7 @@
 
 <div class="flex h-full w-full flex-col">
 	<div class="flex h-100 flex-col bg-muted/10">
-		<Chat.List class="h-full max-h-100 gap-3">
+		<Chat.List class="h-full max-h-100 gap-3 max-w-2xl mx-auto">
 			{#each messages as message (message.id)}
 				<Chat.Bubble variant={message.variant}>
 					<Chat.BubbleAvatar size="sm">
@@ -115,7 +115,7 @@
 					<Chat.BubbleMessage typing class="min-w-24 px-2 py-2">
 						{#snippet typingIndicator()}
 							<div class="flex items-center gap-2">
-								<Triangle17 size={20} dotSize={2} speed={1.2} />
+								<Triangle17 size={23} dotSize={4} speed={1.2} />
 								<span class="text-sm text-muted-foreground">Typing...</span>
 							</div>
 						{/snippet}
@@ -125,9 +125,9 @@
 		</Chat.List>
 	</div>
 
-	<form class="flex w-full gap-2 bg-muted/10 p-4" onsubmit={handleSubmit}>
-		<Input bind:value={draft} placeholder="Write a follow-up..." disabled={isReplying} />
-		<Button type="submit" disabled={isReplying || !draft.trim()}>
+	<form class="flex w-full gap-2 bg-muted/10 p-4 max-w-2xl mx-auto" onsubmit={handleSubmit}>
+		<Input bind:value={draft} placeholder="Write a follow-up..." class='rounded-full' disabled={isReplying} />
+		<Button type="submit" class='rounded-full' disabled={isReplying || !draft.trim()}>
 			{#if isReplying}
 				Sending
 			{:else}

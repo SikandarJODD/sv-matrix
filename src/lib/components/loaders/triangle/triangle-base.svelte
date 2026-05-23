@@ -101,9 +101,7 @@
 	const rawWidth = $derived(dotSize + colPitch * 3);
 	const rawHeight = $derived(dotSize + rowPitch * (TRIANGLE_VISIBLE_ROW_COUNT - 1));
 	const scale = $derived(
-		Math.max(rawWidth, rawHeight) > 0
-			? drawableSize / Math.max(rawWidth, rawHeight)
-			: 1
+		Math.max(rawWidth, rawHeight) > 0 ? drawableSize / Math.max(rawWidth, rawHeight) : 1
 	);
 	const baseOpacity = $derived(clampUnitInterval(opacityBase));
 	const midOpacity = $derived(clampUnitInterval(opacityMid));
@@ -155,89 +153,91 @@
 
 	const dots = $derived.by(() =>
 		TRIANGLE_ROW_GROUPS.flatMap((rowGroup, rowIndex) => {
-			const activeRowGroup = rowGroup.filter(([row, col]) => allowedIndexes.has(triangleIndex(row, col)));
+			const activeRowGroup = rowGroup.filter(([row, col]) =>
+				allowedIndexes.has(triangleIndex(row, col))
+			);
 			const rowWidth = dotSize + colPitch * Math.max(0, activeRowGroup.length - 1);
 			const rowStart = (rawWidth - rowWidth) / 2;
 
 			return activeRowGroup.flatMap(([row, col], colIndex) => {
-			const index = triangleIndex(row, col);
-			const left = rowStart + colIndex * colPitch;
-			const top = rowIndex * rowPitch;
-			const centeredX = left + dotSize / 2 - rawWidth / 2;
-			const centeredY = top + dotSize / 2 - rawHeight / 2;
-			const distance = Math.hypot(centeredX, centeredY);
-			const angle = Math.atan2(centeredY, centeredX);
-			const maxRadius = Math.hypot(rawWidth / 2, rawHeight / 2);
-			const radius = maxRadius > 0 ? distance / maxRadius : 0;
-			const manhattan = manhattanDistance(row, col, gridCenter);
-			const animationState = animationResolver
-				? animationResolver({
+				const index = triangleIndex(row, col);
+				const left = rowStart + colIndex * colPitch;
+				const top = rowIndex * rowPitch;
+				const centeredX = left + dotSize / 2 - rawWidth / 2;
+				const centeredY = top + dotSize / 2 - rawHeight / 2;
+				const distance = Math.hypot(centeredX, centeredY);
+				const angle = Math.atan2(centeredY, centeredX);
+				const maxRadius = Math.hypot(rawWidth / 2, rawHeight / 2);
+				const radius = maxRadius > 0 ? distance / maxRadius : 0;
+				const manhattan = manhattanDistance(row, col, gridCenter);
+				const animationState = animationResolver
+					? animationResolver({
+							index,
+							row,
+							col,
+							distanceFromCenter: distance,
+							angleFromCenter: angle,
+							radiusNormalized: radius,
+							manhattanDistance: manhattan,
+							phase,
+							isActive: true,
+							reducedMotion,
+						})
+					: {};
+				const stylePatch = animationState.style ? { ...animationState.style } : {};
+				const rawOpacity =
+					typeof stylePatch.opacity === "number" ? stylePatch.opacity : undefined;
+				let isBloomDot = false;
+
+				if (rawOpacity !== undefined) {
+					stylePatch.opacity = remapOpacityToTriplet(
+						rawOpacity,
+						baseOpacity,
+						midOpacity,
+						peakOpacity
+					);
+
+					const bloomParts = getDotBloomParts(
+						true,
+						rawOpacity,
+						bloom,
+						halo,
+						baseOpacity,
+						midOpacity,
+						peakOpacity
+					);
+
+					stylePatch["--dmx-bloom-level"] = bloomParts.level;
+					isBloomDot = bloomParts.bloomDot;
+				}
+
+				return [
+					{
 						index,
-						row,
-						col,
-						distanceFromCenter: distance,
-						angleFromCenter: angle,
-						radiusNormalized: radius,
-						manhattanDistance: manhattan,
-						phase,
-						isActive: true,
-						reducedMotion,
-					})
-				: {};
-			const stylePatch = animationState.style ? { ...animationState.style } : {};
-			const rawOpacity =
-				typeof stylePatch.opacity === "number" ? stylePatch.opacity : undefined;
-			let isBloomDot = false;
-
-			if (rawOpacity !== undefined) {
-				stylePatch.opacity = remapOpacityToTriplet(
-					rawOpacity,
-					baseOpacity,
-					midOpacity,
-					peakOpacity
-				);
-
-				const bloomParts = getDotBloomParts(
-					true,
-					rawOpacity,
-					bloom,
-					halo,
-					baseOpacity,
-					midOpacity,
-					peakOpacity
-				);
-
-				stylePatch["--dmx-bloom-level"] = bloomParts.level;
-				isBloomDot = bloomParts.bloomDot;
-			}
-
-			return [
-				{
-					index,
-					className: cn(
-						"dmx-dot",
-						isBloomDot && "dmx-bloom-dot",
-						dotClass,
-						animationState.className
-					),
-					style: styleEntriesToString({
-						position: "absolute",
-						left: stylePx(left),
-						top: stylePx(top),
-						width: stylePx(dotSize),
-						height: stylePx(dotSize),
-						"--dmx-distance": distance,
-						"--dmx-row": row,
-						"--dmx-col": col,
-						"--dmx-x": stylePx(centeredX),
-						"--dmx-y": stylePx(centeredY),
-						"--dmx-angle": angle,
-						"--dmx-radius": radius,
-						"--dmx-manhattan": manhattan,
-						...stylePatch,
-					}),
-				},
-			];
+						className: cn(
+							"dmx-dot",
+							isBloomDot && "dmx-bloom-dot",
+							dotClass,
+							animationState.className
+						),
+						style: styleEntriesToString({
+							position: "absolute",
+							left: stylePx(left),
+							top: stylePx(top),
+							width: stylePx(dotSize),
+							height: stylePx(dotSize),
+							"--dmx-distance": distance,
+							"--dmx-row": row,
+							"--dmx-col": col,
+							"--dmx-x": stylePx(centeredX),
+							"--dmx-y": stylePx(centeredY),
+							"--dmx-angle": angle,
+							"--dmx-radius": radius,
+							"--dmx-manhattan": manhattan,
+							...stylePatch,
+						}),
+					},
+				];
 			});
 		})
 	);

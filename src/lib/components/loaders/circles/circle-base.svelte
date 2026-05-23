@@ -18,4 +18,3 @@
 </script>
 
 <DotMatrixBase {size} {dotSize} {...restProps} />
-

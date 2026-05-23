@@ -30,7 +30,7 @@ bun x shadcn-svelte@latest add http://localhost:5173/r/triangle-14.json
 
 ```svelte
 <script lang="ts">
-	import Triangle14 from '$lib/components/loaders/triangle/triangle-14.svelte';
+  import Triangle14 from "$lib/components/loaders/triangle/triangle-14.svelte";
 </script>
 
 <Triangle14 />

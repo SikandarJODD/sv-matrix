@@ -77,7 +77,8 @@
 			<Command.Group heading={group.title}>
 				{#each group.items as item (item.id)}
 					<Command.LinkItem
-						value={item.title}
+						value={item.id}
+						keywords={[item.title]}
 						onclick={() => (open = false)}
 						href={item.href}
 					>
@@ -113,7 +114,7 @@
 									stroke-linejoin="round"
 								></path>
 							</svg>
-						{:else}
+						{:else if item.id.includes("circle")}
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								width="16"
@@ -134,6 +135,60 @@
 									stroke-linejoin="round"
 								></circle>
 							</svg>
+						{:else if item.id.includes("square")}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="size-4.5"
+								viewBox="0 0 24 24"
+								><!-- Icon from Material Line Icons by Vjacheslav Trushkin - https://github.com/cyberalien/line-md/blob/master/license.txt --><g
+									fill="none"
+									stroke="#888888"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									><path
+										fill="#888888"
+										fill-opacity="0"
+										d="M4 12v-7c0 -0.55 0.45 -1 1 -1h14c0.55 0 1 0.45 1 1v14c0 0.55 -0.45 1 -1 1h-14c-0.55 0 -1 -0.45 -1 -1Z"
+										><animate
+											fill="freeze"
+											attributeName="fill-opacity"
+											dur="0.15s"
+											values="0;0.3"
+											fill-opacity="0.2"
+										/></path
+									></g
+								></svg
+							>
+						{:else if item.id.includes("triangle")}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								viewBox="0 0 24 24"
+								><!-- Icon from Myna UI Icons by Praveen Juge - https://github.com/praveenjuge/mynaui-icons/blob/main/LICENSE --><path
+									fill="none"
+									stroke="#888888"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="1.5"
+									d="M5.98 10.762C8.608 5.587 9.92 3 12 3s3.393 2.587 6.02 7.762l.327.644c2.182 4.3 3.274 6.45 2.287 8.022C19.648 21 17.208 21 12.327 21h-.654c-4.88 0-7.321 0-8.307-1.572s.105-3.722 2.287-8.022z"
+								/></svg
+							>
+						{:else if item.id.includes("hex")}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="size-4.5"
+								viewBox="0 0 24 24"
+								><!-- Icon from Google Material Icons by Material Design Authors - https://github.com/material-icons/material-icons/blob/master/LICENSE --><path
+									fill="#888888"
+									d="M16.05 19h-8.1l-4.04-7l4.04-7h8.1l4.04 7z"
+									opacity=".3"
+								/><path
+									fill="#888888"
+									d="M17.2 3H6.8l-5.2 9l5.2 9h10.4l5.2-9zm-1.15 16h-8.1l-4.04-7l4.04-7h8.09l4.04 7z"
+								/></svg
+							>
 						{/if}
 						{item.title}
 					</Command.LinkItem>

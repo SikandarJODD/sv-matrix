@@ -67,7 +67,7 @@
 		</p>
 		<Button type="submit" disabled={isSubmitting}>
 			{#if isSubmitting}
-				<Square1 size={18} dotSize={2} speed={1.2} />
+				<Square1 size={20} dotSize={3} speed={1.2} />
 				Submitting
 			{:else}
 				Submit request

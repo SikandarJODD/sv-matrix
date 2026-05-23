@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Triangle9 from '$lib/components/loaders/triangle/triangle-9.svelte';
+	import Triangle9 from "$lib/components/loaders/triangle/triangle-9.svelte";
 </script>
 
 <Triangle9 size={32} dotSize={4} speed={1.2} bloom />

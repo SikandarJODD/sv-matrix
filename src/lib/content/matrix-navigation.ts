@@ -262,7 +262,7 @@ export const circleItems: MatrixNavItem[] = [
 	},
 	{
 		id: "circle-8",
-		title: "heart Pulse",
+		title: "Heart Pulse",
 		href: "/components/circles/circle-8",
 		description: "Circle 8 loader component.",
 		section: "circles",
