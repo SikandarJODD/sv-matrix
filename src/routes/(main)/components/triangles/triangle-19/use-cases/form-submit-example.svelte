@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
-	import { Textarea } from '$lib/components/ui/textarea';
-	import Triangle19 from '$lib/components/loaders/triangle/triangle-19.svelte';
+	import { onDestroy } from "svelte";
+	import { Button } from "$lib/components/ui/button";
+	import { Input } from "$lib/components/ui/input";
+	import { Textarea } from "$lib/components/ui/textarea";
+	import Triangle19 from "$lib/components/loaders/triangle/triangle-19.svelte";
 
 	const timeouts: number[] = [];
 
-	let company = $state('Northstar Labs');
-	let email = $state('pm@northstar.dev');
-	let notes = $state('Please enable the new dashboard loader for all async detail views.');
+	let company = $state("Northstar Labs");
+	let email = $state("pm@northstar.dev");
+	let notes = $state("Please enable the new dashboard loader for all async detail views.");
 	let isSubmitting = $state(false);
 	let isSubmitted = $state(false);
 

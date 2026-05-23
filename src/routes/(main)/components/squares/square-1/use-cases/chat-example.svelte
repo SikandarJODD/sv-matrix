@@ -112,11 +112,11 @@
 					<Chat.BubbleAvatar size="sm">
 						<Chat.BubbleAvatarFallback>U2</Chat.BubbleAvatarFallback>
 					</Chat.BubbleAvatar>
-					<Chat.BubbleMessage typing class="min-w-24 px-2 py-2">
+					<Chat.BubbleMessage typing class="min-w-3 px-2 py-2">
 						{#snippet typingIndicator()}
-							<div class="flex items-center gap-2">
-								<Square1 size={20} dotSize={2} speed={1.2} />
-								<span class="text-sm text-muted-foreground">Typing...</span>
+							<div class="flex items-start justify-start gap-2">
+								<Square1 size={23} dotSize={4} />
+								<span class="w-fit text-sm text-muted-foreground">Typing...</span>
 							</div>
 						{/snippet}
 					</Chat.BubbleMessage>

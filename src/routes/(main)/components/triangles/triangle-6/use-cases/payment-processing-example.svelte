@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
-	import { Button } from '$lib/components/ui/button';
-	import Triangle6 from '$lib/components/loaders/triangle/triangle-6.svelte';
+	import { onDestroy } from "svelte";
+	import { Button } from "$lib/components/ui/button";
+	import Triangle6 from "$lib/components/loaders/triangle/triangle-6.svelte";
 
 	const timeouts: number[] = [];
 
@@ -35,7 +35,9 @@
 		<div class="flex items-center justify-between gap-3">
 			<div>
 				<p class="font-medium">Pro annual plan</p>
-				<p class="mt-1 text-sm text-muted-foreground">Priority support and unlimited automations</p>
+				<p class="mt-1 text-sm text-muted-foreground">
+					Priority support and unlimited automations
+				</p>
 			</div>
 			<p class="text-xl font-semibold">$48</p>
 		</div>
@@ -43,7 +45,7 @@
 
 	<Button class="w-full" size="lg" disabled={isProcessing || isPaid} onclick={processPayment}>
 		{#if isProcessing}
-			<Triangle6 size={18} dotSize={2} speed={1.15} />
+			<Triangle6 size={24} dotSize={4} speed={1.15} />
 			Authorizing payment
 		{:else if isPaid}
 			Payment received

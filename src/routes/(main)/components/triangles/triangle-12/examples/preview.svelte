@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Triangle12 from '$lib/components/loaders/triangle/triangle-12.svelte';
+	import Triangle12 from "$lib/components/loaders/triangle/triangle-12.svelte";
 </script>
 
 <Triangle12 />
